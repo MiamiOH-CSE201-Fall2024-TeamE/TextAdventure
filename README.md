@@ -1,6 +1,6 @@
-# This is a test
+# CSE 201 Group Project
 
-Try editing this and add your name below:
+Members:
 * Ben Pryor
 * Trevor Coppess
 * James Squires
