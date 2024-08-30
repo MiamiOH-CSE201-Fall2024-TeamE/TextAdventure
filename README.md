@@ -1,6 +1,6 @@
 # CSE 201 Group Project
 
-Members:
+### Members: *(Add your name to show you can edit this)*
 * Ben Pryor
 * Trevor Coppess
 * James Squires
