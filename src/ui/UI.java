@@ -1,3 +1,5 @@
+package ui;
+
 /**
  * Provides user interaction commands; namely, text input and menus.
  * 

@@ -1,3 +1,7 @@
+package game;
+
+import rooms.Room;
+
 /**
  * Provides player inventory and state information.
  * 

@@ -1,4 +1,7 @@
+package game;
+
 import java.util.HashMap;
+import rooms.Room;
 
 /**
  * Holds game state data, including layout and player info.

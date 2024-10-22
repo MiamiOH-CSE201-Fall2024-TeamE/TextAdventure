@@ -1,3 +1,5 @@
+package game;
+
 /**
  * Holds turn state information and methods for updating/using turns.
  * 

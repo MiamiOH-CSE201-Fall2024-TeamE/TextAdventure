@@ -1,3 +1,6 @@
+package game;
+
+import items.Item;
 import java.util.HashMap;
 
 /**
@@ -14,7 +17,8 @@ public class Inventory {  // TODO: Javadocs
     Inventory() {}  // TODO
 
     public HashMap<String, Item> getItems() { return items; }
-    public void add(String name, Item item) {}            // TODO
-    public boolean remove(String name) { return false; }  // TODO
-    public boolean search(String name) { return false; }  // TODO
+    public void add(String name, Item item) {}        // TODO
+    public void use(String name) {}                   // TODO
+    public Item get(String name) { return null; }     // TODO
+    public Item remove(String name) { return null; }  // TODO
 }

@@ -1,3 +1,5 @@
+package items;
+
 /**
  * Provides the data and methods necessary for an interactable item.
  * 
@@ -13,7 +15,7 @@ public class Item {  // TODO: Javadocs
 
     Item() {}  // TODO
     
-    public void onUse() {}                             // TODO
-    public void onPickUp() {}                          // TODO
+    public boolean onUse() { return false; }           // TODO
+    public boolean onPickUp() { return false; }        // TODO
     public String buildDescription() { return null; }  // TODO
 }

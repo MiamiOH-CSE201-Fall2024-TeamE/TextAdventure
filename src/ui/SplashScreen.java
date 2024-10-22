@@ -1,3 +1,5 @@
+package ui;
+
 /**
  * Displays various splash screens/sequences for the beginning/end of the game.
  * 

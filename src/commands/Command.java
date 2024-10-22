@@ -1,3 +1,5 @@
+package commands;
+
 /**
  * Provides the data and methods necessary to build a usable console command.
  * 
@@ -7,10 +9,10 @@
  * @version 1.0.0
  */
 public class Command {  // TODO: Javadocs
-    private String name;
+    private String[] aliases;
 
     Command() {}  // TODO
     
-    public String getName() { return name; }
+    public String[] getAliases() { return aliases; }
     public void execute(String[] args) {}  // TODO
 }
