@@ -10,7 +10,7 @@ import game.Inventory;
  * 
  * @version 1.0.0
  */
-public class Room {  // TODO: Javadocs
+abstract public class Room {  // TODO: Javadocs
     private Inventory inventory;
     private boolean isLocked;
 
@@ -20,5 +20,5 @@ public class Room {  // TODO: Javadocs
     public boolean isLocked() { return isLocked; }
     public void lock() { isLocked = true; }
     public void unlock() { isLocked = false; }
-    public String buildDescription() { return null; }  // TODO
+    abstract public String buildDescription();  // TODO
 }

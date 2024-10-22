@@ -8,14 +8,14 @@ package items;
  * 
  * @version 1.0.0
  */
-public class Item {  // TODO: Javadocs
+abstract public class Item {  // TODO: Javadocs
     private boolean canPickUp;
     private boolean canUse;
     private int turnsToUse;
 
     Item() {}  // TODO
     
-    public boolean onUse() { return false; }           // TODO
-    public boolean onPickUp() { return false; }        // TODO
-    public String buildDescription() { return null; }  // TODO
+    abstract public boolean onUse();            // TODO
+    abstract public boolean onPickUp();         // TODO
+    abstract public String buildDescription();  // TODO
 }

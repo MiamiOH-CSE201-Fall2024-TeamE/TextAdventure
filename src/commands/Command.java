@@ -8,11 +8,11 @@ package commands;
  * 
  * @version 1.0.0
  */
-public class Command {  // TODO: Javadocs
+abstract public class Command {  // TODO: Javadocs
     private String[] aliases;
 
     Command() {}  // TODO
     
     public String[] getAliases() { return aliases; }
-    public void execute(String[] args) {}  // TODO
+    abstract public void execute(String[] args);  // TODO
 }
