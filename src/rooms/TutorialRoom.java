@@ -3,10 +3,10 @@ package rooms;
 import game.Inventory;
 
 /**
- * Provides the data and methods necessary to build an interactable room.
+ * This is the class for the tutorial room
  * 
  * Coding trail:
- *   10/16/2024 - Created class stub (Benjamin Pryor)
+ *   10/23/2024 created class stub - Owen
  * 
  * @version 1.0.0
  */
