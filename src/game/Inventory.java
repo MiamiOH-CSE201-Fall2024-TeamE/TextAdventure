@@ -1,6 +1,5 @@
 package game;
 
-import items.Item;
 import java.util.HashMap;
 
 /**
