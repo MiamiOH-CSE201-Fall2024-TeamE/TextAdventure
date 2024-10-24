@@ -21,15 +21,17 @@ public class StateManager {  // TODO: Javadocs
     public static final int END_2ND_TRY  = 5;
     public static final int END_FAIL     = 6;
 
-    private Countdown countdown;
-    private Player player;
-    private HashMap<String, Room> rooms;
-    private boolean isSaved;
+    private static Countdown countdown;
+    private static Player player;
+    private static HashMap<String, Room> rooms;
+    private static boolean isSaved;
 
-    StateManager() {}  // TODO
-
-    public boolean isSaved() { return isSaved; }
-    public boolean save() { return false; }  // TODO
-    public void load() {}  // TODO
-    public int calculateEnding() { return 0; }  // TODO
+    public static Countdown getCountdown() { return countdown; }
+    public static Player getPlayer() { return player; }
+    public static Room getRoom(String name) { return rooms.get(name); }
+    public static boolean isSaved() { return isSaved; }
+    public static boolean saveGame() { return false; }  // TODO
+    public static void loadGame() {}                    // TODO
+    public static void newGame() {}                     // TODO
+    public static int calculateEnding() { return 0; }   // TODO
 }

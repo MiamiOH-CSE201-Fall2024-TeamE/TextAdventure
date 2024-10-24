@@ -27,6 +27,11 @@ public class Item {
     private int turnsToUse;
 
     /**
+     * The item's name.
+     */
+    private String name;
+
+    /**
      * The item's description.
      */
     private String description;
@@ -39,14 +44,16 @@ public class Item {
     /**
      * Instantiates a new item.
      * 
+     * @param name The item's name.
      * @param description The item's description.
      * @param amount How many items there are.
      * @param turnsToUse The number of turns to use.
      * @param canPickUp Whether the item can be picked up.
      * @param canUse Whether the item can be used.
      */
-    Item(String description, int amount, int turnsToUse,
-         boolean canPickUp, boolean canUse) {
+    Item(String name, String description, int amount,
+         int turnsToUse, boolean canPickUp, boolean canUse) {
+        this.name = name;
         this.description = description;
         this.amount = amount;
         this.turnsToUse = turnsToUse;
@@ -76,13 +83,6 @@ public class Item {
     public int turnsToUse() { return turnsToUse; }
 
     /**
-     * Returns this item's description.
-     * 
-     * @return The description.
-     */
-    public String getDescription() { return description; }
-
-    /**
      * Returns the number of items available.
      * 
      * @return The number of items.
@@ -95,4 +95,19 @@ public class Item {
      * @param amount The new number of items.
      */
     public void setAmount(int amount) { this.amount = amount; }
+
+    /**
+     * Returns this item's description.
+     * 
+     * @return The description.
+     */
+    public String getDescription() { return description; }
+
+    /**
+     * Returns this item's name.
+     * 
+     * @return The name.
+     */
+    @Override
+    public String toString() { return name; }
 }
