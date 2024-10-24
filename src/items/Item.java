@@ -1,4 +1,4 @@
-package game;
+package items;
 
 /**
  * Provides the data and methods necessary for an interactable item.

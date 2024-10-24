@@ -1,6 +1,6 @@
 package rooms;
 
-import game.Inventory;
+import items.Inventory;
 
 /**
  * Provides the data and methods necessary to build an interactable room.

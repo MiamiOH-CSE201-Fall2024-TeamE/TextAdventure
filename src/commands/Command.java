@@ -9,7 +9,7 @@ package commands;
  * 
  * @version 1.0.0
  */
-abstract public class Command {  // TODO: Javadocs
+abstract public class Command {
 
     /**
      * This command's names/aliases.
