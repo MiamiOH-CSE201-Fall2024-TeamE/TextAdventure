@@ -1,5 +1,7 @@
 # CSE 201 Group Project
 
+### [Documentation](https://miamioh-cse201-fall2024-teame.github.io/TextAdventure/)
+
 ### Members: *(Add your name to show you can edit this)*
 * Ben Pryor ([programmer2514](https://github.com/programmer2514))
 * Trevor Coppess ([coppestj](https://github.com/coppestj))
