@@ -1,6 +1,6 @@
 package rooms;
 
-import game.Inventory;
+import items.Inventory;
 
 /**
  * Provides the data and methods necessary to build an interactable room.
@@ -20,5 +20,7 @@ abstract public class Room {  // TODO: Javadocs
     public boolean isLocked() { return isLocked; }
     public void lock() { isLocked = true; }
     public void unlock() { isLocked = false; }
-    abstract public String buildDescription();  // TODO
+    
+    @Override
+    abstract public String toString();  // TODO
 }
