@@ -9,6 +9,7 @@ import rooms.Room;
  * 
  * Coding trail:
  *   10/16/2024 - Created class stub (Benjamin Pryor)
+ *   10/25/2024 - Made constructor private (Benjamin Pryor)
  * 
  * @version 1.0.0
  */
@@ -25,6 +26,11 @@ public class StateManager {  // TODO: Javadocs
     private static Player player;
     private static HashMap<String, Room> rooms;
     private static boolean isSaved;
+
+    /**
+     * Prevent instantiating static class.
+     */
+    private StateManager() {}
 
     public static Countdown getCountdown() { return countdown; }
     public static Player getPlayer() { return player; }

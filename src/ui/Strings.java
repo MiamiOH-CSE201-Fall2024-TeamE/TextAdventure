@@ -6,10 +6,16 @@ package ui;
  * Coding trail:
  *   10/16/2024 - Created class stub (Benjamin Pryor)
  *   10/25/2024 - Added strings for Countdown and Input (Benjamin Pryor)
+ *   10/25/2024 - Made constructor private (Benjamin Pryor)
  * 
  * @version 1.0.0
  */
 public class Strings {
+
+    /**
+     * Prevent instantiating static class.
+     */
+    private Strings() {}
 
     /**
      * Strings for the game.Countdown class to use.
