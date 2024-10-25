@@ -2,6 +2,8 @@ package game;
 
 import java.util.Scanner;
 
+import ui.Strings;
+
 /**
  * Provides user interaction commands; namely, text input and menus.
  * 
@@ -24,7 +26,7 @@ public class Input {
      * @return A String array of arguments passed by the user.
      */
     public static String[] getInput() {
-        System.out.print("> ");
+        System.out.print(Strings.Input.INPUT_INDICATOR);
         return inputScanner.nextLine().split(" ");
     }
 
@@ -34,7 +36,8 @@ public class Input {
      * @return True if the user selected yes, false otherwise.
      */
     public static boolean getConfirmation() {
-        System.out.print("Are you sure (Y/n)? ");
-        return inputScanner.nextLine().equalsIgnoreCase("Y");
+        System.out.print(Strings.Input.ARE_YOU_SURE);
+        return inputScanner.nextLine()
+            .equalsIgnoreCase(Strings.Input.CONFIRMATION);
     }
 }

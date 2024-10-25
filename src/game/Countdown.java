@@ -1,5 +1,7 @@
 package game;
 
+import ui.Strings;
+
 /**
  * Holds turn state information and methods for updating/using turns.
  * 
@@ -86,6 +88,6 @@ public class Countdown {
      */
     @Override
     public String toString() {
-        return "Turns remaining: " + turnsRemaining;
+        return Strings.Countdown.TURNS_REMAINING + turnsRemaining;
     }
 }
