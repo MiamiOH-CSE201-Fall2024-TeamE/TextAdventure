@@ -1,6 +1,6 @@
 # CSE 201 Group Project
 
-### <a href="https://miamioh-cse201-fall2024-teame.github.io/TextAdventure/" target="_blank" aria-label="Documentation - Opens in a new tab">Documentation</a>
+### [Documentation](https://miamioh-cse201-fall2024-teame.github.io/TextAdventure/)
 
 ### Members: *(Add your name to show you can edit this)*
 * Ben Pryor ([programmer2514](https://github.com/programmer2514))
