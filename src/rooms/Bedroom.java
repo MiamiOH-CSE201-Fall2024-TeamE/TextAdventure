@@ -1,7 +1,5 @@
 package rooms;
 
-import items.Inventory;
-
 /**
  * This is the class for the Bedroom Room. 
  * 
