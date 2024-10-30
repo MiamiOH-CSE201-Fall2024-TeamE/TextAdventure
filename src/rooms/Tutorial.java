@@ -8,9 +8,9 @@ package rooms;
  * 
  * @version 1.0.0
  */
-public class TutorialRoom extends Room {  // TODO: Javadocs
+public class Tutorial extends Room {  // TODO: Javadocs
 
-    TutorialRoom() {}  // TODO
+    Tutorial() {}  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO
