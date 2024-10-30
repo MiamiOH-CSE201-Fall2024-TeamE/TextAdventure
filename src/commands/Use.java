@@ -10,7 +10,7 @@ package commands;
  */
 public class Use extends Command {  // TODO: Javadocs
 
-    Use(String[] aliases) {
+    public Use(String[] aliases) {
         super(aliases);
     }
     

@@ -21,7 +21,7 @@ abstract public class Command {
      * 
      * @param aliases An array of names/aliases.
      */
-    Command(String[] aliases) {
+    public Command(String[] aliases) {
         this.aliases = aliases;
     }
     

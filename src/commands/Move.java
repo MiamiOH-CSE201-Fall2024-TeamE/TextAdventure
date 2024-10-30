@@ -10,7 +10,7 @@ package commands;
  */
 public class Move extends Command {  // TODO: Javadocs
 
-    Move(String[] aliases) {
+    public Move(String[] aliases) {
         super(aliases);
     }
     

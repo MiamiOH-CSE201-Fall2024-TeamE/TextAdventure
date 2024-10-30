@@ -10,7 +10,7 @@ package rooms;
  */
 public class Tutorial extends Room {  // TODO: Javadocs
 
-    Tutorial() {}  // TODO
+    public Tutorial() {}  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO

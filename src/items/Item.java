@@ -51,7 +51,7 @@ public class Item {
      * @param canPickUp Whether the item can be picked up.
      * @param canUse Whether the item can be used.
      */
-    Item(String name, String description, int amount,
+    public Item(String name, String description, int amount,
          int turnsToUse, boolean canPickUp, boolean canUse) {
         this.name = name;
         this.description = description;

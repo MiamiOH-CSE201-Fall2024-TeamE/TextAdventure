@@ -14,7 +14,7 @@ abstract public class Room {  // TODO: Javadocs
     private Inventory inventory;
     private boolean isLocked;
 
-    Room() {}  // TODO
+    public Room() {}  // TODO
 
     public Inventory getInventory() { return inventory; }
     public boolean isLocked() { return isLocked; }

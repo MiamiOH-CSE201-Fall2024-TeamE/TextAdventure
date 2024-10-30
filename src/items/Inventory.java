@@ -46,7 +46,7 @@ public class Inventory {
     /**
      * Instantiates a new inventory with the largest possible maximums.
      */
-    Inventory() {
+    public Inventory() {
         items = new HashMap<>();
         maxSize = Integer.MAX_VALUE;
         stackSize = Integer.MAX_VALUE;
@@ -55,7 +55,7 @@ public class Inventory {
     /**
      * Instantiates a new inventory with a specified maximum unique items.
      */
-    Inventory(int maxSize) {
+    public Inventory(int maxSize) {
         this();
         this.maxSize = maxSize;
     }
@@ -63,7 +63,7 @@ public class Inventory {
     /**
      * Instantiates a new inventory with specified maximums.
      */
-    Inventory(int maxSize, int stackSize) {
+    public Inventory(int maxSize, int stackSize) {
         this(maxSize);
         this.stackSize = stackSize;
     }

@@ -10,7 +10,7 @@ package commands;
  */
 public class Help extends Command {  // TODO: Javadocs
 
-    Help(String[] aliases) {
+    public Help(String[] aliases) {
         super(aliases);
     }
     

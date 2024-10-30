@@ -15,7 +15,10 @@ public class Player {  // TODO: Javadocs
     private Room room;
     private Inventory inventory;
 
-    Player() {}  // TODO
+    public Player(Room startingRoom) {
+        this.room = startingRoom;
+        this.inventory = new Inventory();
+    }
 
     public Inventory getInventory() { return inventory; }
     public Room getRoom() { return room; }

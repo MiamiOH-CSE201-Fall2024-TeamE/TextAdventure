@@ -10,7 +10,7 @@ package commands;
  */
 public class Check extends Command {  // TODO: Javadocs
 
-    Check(String[] aliases) {
+    public Check(String[] aliases) {
         super(aliases);
     }
     

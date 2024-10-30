@@ -10,7 +10,7 @@ package commands;
  */
 public class Look extends Command {  // TODO: Javadocs
 
-    Look(String[] aliases) {
+    public Look(String[] aliases) {
         super(aliases);
     }
     

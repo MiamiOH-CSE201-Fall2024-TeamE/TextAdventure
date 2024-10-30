@@ -10,7 +10,7 @@ package commands;
  */
 public class Quit extends Command {  // TODO: Javadocs
 
-    Quit(String[] aliases) {
+    public Quit(String[] aliases) {
         super(aliases);
     }
     

@@ -10,7 +10,7 @@ package rooms;
  */
 abstract public class Foyer extends Room {  // TODO: Javadocs
 
-    Foyer() {}  // TODO
+    public Foyer() {}  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO

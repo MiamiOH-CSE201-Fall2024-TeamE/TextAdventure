@@ -12,7 +12,7 @@ abstract public class Lab extends Room {  // TODO: Javadocs
 
     
 
-    Lab() {}  // TODO
+    public Lab() {}  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO

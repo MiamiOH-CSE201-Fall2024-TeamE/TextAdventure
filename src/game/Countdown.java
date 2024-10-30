@@ -28,7 +28,7 @@ public class Countdown {
      * 
      * @param turnsRemaining The number of turns until the countdown reaches 0.
      */
-    Countdown(int turnsRemaining) {
+    public Countdown(int turnsRemaining) {
         this.turnsUsed = 0;
         this.turnsRemaining = turnsRemaining;
     }
@@ -40,7 +40,7 @@ public class Countdown {
      * @param turnsRemaining The number of turns until the countdown reaches 0.
      * @param turnsUsed The number of turns that have already been used.
      */
-    Countdown(int turnsRemaining, int turnsUsed) {
+    public Countdown(int turnsRemaining, int turnsUsed) {
         this.turnsUsed = turnsUsed;
         this.turnsRemaining = turnsRemaining;
     }

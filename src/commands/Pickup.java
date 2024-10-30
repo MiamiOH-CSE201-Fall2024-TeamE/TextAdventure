@@ -10,7 +10,7 @@ package commands;
  */
 public class Pickup extends Command {  // TODO: Javadocs
 
-    Pickup(String[] aliases) {
+    public Pickup(String[] aliases) {
         super(aliases);
     }
     
