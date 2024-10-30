@@ -8,7 +8,7 @@ package rooms;
  * 
  * @version 1.0.0
  */
-abstract public class Bedroom extends Room {  // TODO: Javadocs
+public class Bedroom extends Room {  // TODO: Javadocs
 
     public Bedroom() {}  // TODO
 

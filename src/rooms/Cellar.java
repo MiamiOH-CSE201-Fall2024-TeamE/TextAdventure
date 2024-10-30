@@ -8,7 +8,7 @@ package rooms;
  * 
  * @version 1.0.0
  */
-abstract public class Cellar extends Room {  // TODO: Javadocs
+public class Cellar extends Room {  // TODO: Javadocs
 
     public Cellar() {}  // TODO
 
