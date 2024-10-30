@@ -6,9 +6,6 @@ import rooms.Room;
 /**
  * Provides player inventory and state information.
  * 
- * Coding trail:
- *   10/16/2024 - Created class stub (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class Player {  // TODO: Javadocs

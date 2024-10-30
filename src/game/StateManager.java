@@ -7,10 +7,6 @@ import rooms.Room;
  * Holds game state data, including layout and player info.
  *     Additionally, provides methods to save/load the game.
  * 
- * Coding trail:
- *   10/16/2024 - Created class stub (Benjamin Pryor)
- *   10/25/2024 - Made constructor private (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class StateManager {  // TODO: Javadocs

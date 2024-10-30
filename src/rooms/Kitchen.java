@@ -1,10 +1,7 @@
 package rooms;
 
 /**
- * This is the class for the Kitchen Room. 
- * 
- * Coding trail:
- *   10/30/2024 - Created class stub (Owen Ensley)
+ * This is the class for the Kitchen Room.
  * 
  * @version 1.0.0
  */

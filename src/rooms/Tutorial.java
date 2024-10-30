@@ -1,10 +1,7 @@
 package rooms;
 
 /**
- * This is the class for the tutorial room
- * 
- * Coding trail:
- *   10/23/2024 - Created class stub (Owen Ensley)
+ * This is the class for the Tutorial Room.
  * 
  * @version 1.0.0
  */

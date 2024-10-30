@@ -1,10 +1,7 @@
 package rooms;
 
 /**
- * This is the class for the Cellar Room. 
- * 
- * Coding trail:
- *   10/30/2024 - Created class stub (Owen Ensley)
+ * This is the class for the Cellar Room.
  * 
  * @version 1.0.0
  */

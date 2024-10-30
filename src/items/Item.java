@@ -3,10 +3,6 @@ package items;
 /**
  * Provides the data and methods necessary for an interactable item.
  * 
- * Coding trail:
- *   10/16/2024 - Created class stub (Benjamin Pryor)
- *   10/23/2024 - Filled out fields/methods (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class Item {

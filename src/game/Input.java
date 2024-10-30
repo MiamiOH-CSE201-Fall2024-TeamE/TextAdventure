@@ -7,11 +7,6 @@ import ui.Strings;
 /**
  * Provides user interaction commands; namely, text input and menus.
  * 
- * Coding trail:
- *   10/16/2024 - Created class stub (Benjamin Pryor)
- *   10/24/2024 - Filled out fields/methods (Benjamin Pryor)
- *   10/25/2024 - Made constructor private (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class Input {

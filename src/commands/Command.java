@@ -3,10 +3,6 @@ package commands;
 /**
  * Provides the data and methods necessary to build a usable console command.
  * 
- * Coding trail:
- *   10/16/2024 - Created class stub (Benjamin Pryor)
- *   10/24/2024 - Filled out fields/methods (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 abstract public class Command {

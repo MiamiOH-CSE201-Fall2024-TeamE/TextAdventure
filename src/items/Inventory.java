@@ -5,10 +5,6 @@ import java.util.HashMap;
 /**
  * A simple data structure that holds a list of Items.
  * 
- * Coding trail:
- *   10/16/2024 - Created class stub (Benjamin Pryor)
- *   10/24/2024 - Filled out fields/methods (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class Inventory {
