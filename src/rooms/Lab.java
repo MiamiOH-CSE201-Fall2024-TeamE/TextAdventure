@@ -1,5 +1,7 @@
 package rooms;
 
+import items.Inventory;
+
 /**
  * This is the class for the Lab Room.
  * 
@@ -7,13 +9,22 @@ package rooms;
  */
 public class Lab extends Room {  // TODO: Javadocs
 
-    public Lab() {}  // TODO
+    public static final String NAME = "lab";
+
+    public Lab(boolean isLocked, Inventory inventory) {
+        super(isLocked, inventory);
+    }
+
+    public Lab() { this(false, new Inventory()); }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO
 
     @Override
-    public String toString() { return null; }  // TODO
+    public String getDescription() { return null; }  // TODO
+
+    @Override
+    public String toString() { return NAME; }
 
     public void spawnScientist() {} // TODO
 

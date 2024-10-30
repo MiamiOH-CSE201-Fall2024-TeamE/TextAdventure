@@ -65,6 +65,13 @@ public class Inventory {
     }
 
     /**
+     * Returns the size of this inventory.
+     * 
+     * @return The inventory's size.
+     */
+    public int size() { return items.size(); }
+
+    /**
      * Adds a new item to the inventory, if it is possible to do so.
      *     Increments the item's counter if one or more already exist.
      * 
@@ -116,6 +123,21 @@ public class Inventory {
      * @return The maximum stack size.
      */
     public int getMaxStackSize() { return stackSize; }
+
+    /**
+     * Returns an array containing all of this inventory's items.
+     * 
+     * @return An array of items.
+     */
+    public Item[] toArray() {
+        Item[] ret = new Item[items.size()];
+        int i = 0;
+        for (Item item : items.values()) {
+            ret[i] = item;
+            i++;
+        }
+        return ret;
+    }
 
     /**
      * Returns a nicely formatted string showing all items in the inventory and

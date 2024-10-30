@@ -1,5 +1,7 @@
 package rooms;
 
+import items.Inventory;
+
 /**
  * This is the class for the Kitchen Room.
  * 
@@ -7,11 +9,20 @@ package rooms;
  */
 public class Kitchen extends Room {  // TODO: Javadocs
 
-    public Kitchen() {}  // TODO
+    public static final String NAME = "kitchen";
+
+    public Kitchen(boolean isLocked, Inventory inventory) {
+        super(isLocked, inventory);
+    }
+
+    public Kitchen() { this(false, new Inventory()); }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO
 
     @Override
-    public String toString() { return null; }  // TODO
+    public String getDescription() { return null; }  // TODO
+
+    @Override
+    public String toString() { return NAME; }
 }

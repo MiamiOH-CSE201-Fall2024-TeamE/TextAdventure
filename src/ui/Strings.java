@@ -24,7 +24,15 @@ public class Strings {
      */
     public class Input {
         public static final String INPUT_INDICATOR = "> ";
-        public static final String ARE_YOU_SURE = "Are you sure (Y/n)? ";
+        public static final String PROMPT_APPENDIX = " (Y/n)? ";
         public static final String CONFIRMATION = "Y";
+    }
+
+    /**
+     * Strings for the game.StateManager class to use.
+     */
+    public class StateManager {
+        public static final String SAVE_FOUND = "Saved game found!";
+        public static final String LOAD_CONFIRMATION = "Would you like to pick up where you left off";
     }
 }
