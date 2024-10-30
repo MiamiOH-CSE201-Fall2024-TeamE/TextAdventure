@@ -8,9 +8,7 @@ package rooms;
  * 
  * @version 1.0.0
  */
-abstract public class Lab extends Room {  // TODO: Javadocs
-
-    
+public class Lab extends Room {  // TODO: Javadocs
 
     Lab() {}  // TODO
 
