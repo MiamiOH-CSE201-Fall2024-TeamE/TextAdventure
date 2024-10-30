@@ -20,6 +20,12 @@ abstract public class Room {  // TODO: Javadocs
     public boolean isLocked() { return isLocked; }
     public void lock() { isLocked = true; }
     public void unlock() { isLocked = false; }
+
+    abstract public boolean use(String toUse, String useOn);
+    
+    public boolean use(String toUse) {
+        return use(toUse, null);
+    }
     
     @Override
     abstract public String toString();  // TODO
