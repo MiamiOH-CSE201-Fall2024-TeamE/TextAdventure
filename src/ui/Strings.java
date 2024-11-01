@@ -33,14 +33,20 @@ public class Strings {
      */
     public class StateManager {
         public static final String SAVE_FOUND = "Saved game found!";
-        public static final String LOAD_CONFIRMATION = "Would you like to pick up where you left off";
+        public static final String LOAD_CONFIRMATION
+            = "Would you like to pick up where you left off";
     }
 
     /* 
-     * Strings for the SplashScreen 
-    */
+     * Strings for the ui.SplashScreen class to use.
+     */
     public class SplashScreen{
         public static final String TITLE = "ZOMBIE MANOR";
-        public static final String PROLOGUE = "A zombie infection has tormented the world. You have heard rumors that an ecentric scientist has been working on a cure, but no one has heard from him in months.\nYou've decided to take things into your own hands and head to the manor yourself.";
+        public static final String PROLOGUE
+            = "A zombie infection has tormented the world. You have heard "
+            + "rumors that an ecentric scientist has been working on a cure, "
+            + "but no one has heard from him in months.\n"
+            + "You've decided to take things into your own hands and head to "
+            + "the manor yourself.";
     }
 }

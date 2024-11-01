@@ -10,7 +10,11 @@ import ui.SplashScreen;
  */
 public class App {
 
+    /**
+     * Contains the game's current state.
+     */
     public static StateManager stateManager = new StateManager();
+
     public static void main(String[] args) {
         stateManager.saveGame();
         SplashScreen.displayTitle();

@@ -13,15 +13,15 @@ public class SplashScreen {  // TODO: Javadocs
     private SplashScreen() {}
 
     /* 
-     * Prints the title
-    */
+     * Prints the title.
+     */
     public static void displayTitle() {
         System.out.println(Strings.SplashScreen.TITLE+ "\n");
     }     
 
-     /* 
-     * Prints the prologue
-    */
+    /* 
+     * Prints the prologue.
+     */
     public static void displayPrologue() {
         System.out.println(Strings.SplashScreen.PROLOGUE);
     }  // TODO
