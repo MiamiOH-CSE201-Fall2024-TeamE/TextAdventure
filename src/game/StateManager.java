@@ -142,7 +142,7 @@ public class StateManager {
         try {
             saveFile = new PrintWriter(new File("savegame.dat"));
         } catch(FileNotFoundException e) {
-            throw new IllegalStateException("Savefile could not be written");
+            throw new IllegalStateException("Save file could not be written");
         }
 
         // Save countdown
@@ -185,7 +185,7 @@ public class StateManager {
     /**
      * Loads the savegame file.
      * 
-     * @return True if state successfully loaded, false if no savefile found.
+     * @return True if state successfully loaded, false if no save file found.
      */
     public boolean loadGame() {
 
@@ -246,7 +246,7 @@ public class StateManager {
                     rooms.put(roomName, new Tutorial(isLocked, inventory));
                     break;
                 default:
-                    throw new IllegalStateException("Savefile is corrupted");
+                    throw new IllegalStateException("Save file is corrupted");
             }
             saveFile.nextLine();  // Skip blank line
         }

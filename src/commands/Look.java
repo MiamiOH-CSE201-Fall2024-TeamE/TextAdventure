@@ -7,9 +7,9 @@ package commands;
  */
 public class Look extends Command {  // TODO: Javadocs
 
-    public Look(String[] aliases) {
-        super(aliases);
-    }
+    public Look() {
+        super(null);
+    }  // TODO
     
     @Override
     public void execute(String[] args) {}  // TODO

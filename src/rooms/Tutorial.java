@@ -1,4 +1,7 @@
+// TODO: Strings
+
 package rooms;
+
 import game.Player;
 import items.*;
 

@@ -1,41 +1,46 @@
 package ui;
 
-import app.App;
+import static app.App.stateManager;
 
 /**
  * Displays various splash screens/sequences for the beginning/end of the game.
  * 
  * @version 1.0.0
  */
-public class SplashScreen {  // TODO: Javadocs
+public class SplashScreen {
     
     /**
      * Prevent instantiating static class.
      */
     private SplashScreen() {}
 
-    /* 
-     * Prints the title.
+    /**
+     * Prints the game's title screen.
      */
     public static void displayTitle() {
-        System.out.println(Strings.SplashScreen.TITLE+ "\n");
+        System.out.println(Strings.SplashScreen.TITLE);
     }     
 
-    /* 
-     * Prints the prologue.
+    /**
+     * Prints the game's prologue/intro.
      */
     public static void displayPrologue() {
         System.out.println(Strings.SplashScreen.PROLOGUE);
     }
+
+    /**
+     * Displays the appropriate ending screen based on the calculated ending.
+     */
     public static void displayEnding() {
-        switch (App.stateManager.calculateEnding()){
-
-            case -1 :
-                System.out.println("Congrats you have reached the end of this demo!");
+        switch (stateManager.calculateEnding()) {
+            default:
+                System.out.println(Strings.SplashScreen.DEMO_ENDING);
                 break;
-
-            case 0 :
         }
     }
-    public static void displayStats() {}     // TODO
+
+    /**
+     * Display's the player's run stats.
+     */
+    public static void displayStats() {}  // TODO
 }

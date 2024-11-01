@@ -1,7 +1,7 @@
 package items;
 
 /**
- * Provides the data and methods necessary for an interactable item.
+ * Provides the data and methods necessary for an interactive item.
  * 
  * @version 1.0.0
  */

@@ -7,9 +7,9 @@ package commands;
  */
 public class Help extends Command {  // TODO: Javadocs
 
-    public Help(String[] aliases) {
-        super(aliases);
-    }
+    public Help() {
+        super(null);
+    }  // TODO
     
     @Override
     public void execute(String[] args) {}  // TODO

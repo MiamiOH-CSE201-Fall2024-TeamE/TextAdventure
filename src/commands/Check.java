@@ -7,9 +7,9 @@ package commands;
  */
 public class Check extends Command {  // TODO: Javadocs
 
-    public Check(String[] aliases) {
-        super(aliases);
-    }
+    public Check() {
+        super(null);
+    }  // TODO
     
     @Override
     public void execute(String[] args) {}  // TODO

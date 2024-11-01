@@ -7,9 +7,9 @@ package commands;
  */
 public class Use extends Command {  // TODO: Javadocs
 
-    public Use(String[] aliases) {
-        super(aliases);
-    }
+    public Use() {
+        super(null);
+    }  // TODO
     
     @Override
     public void execute(String[] args) {}  // TODO

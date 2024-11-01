@@ -7,9 +7,9 @@ package commands;
  */
 public class Pickup extends Command {  // TODO: Javadocs
 
-    public Pickup(String[] aliases) {
-        super(aliases);
-    }
+    public Pickup() {
+        super(null);
+    }  // TODO
     
     @Override
     public void execute(String[] args) {}  // TODO

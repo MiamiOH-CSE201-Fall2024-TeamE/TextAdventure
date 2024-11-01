@@ -7,9 +7,9 @@ package commands;
  */
 public class Move extends Command {  // TODO: Javadocs
 
-    public Move(String[] aliases) {
-        super(aliases);
-    }
+    public Move() {
+        super(null);
+    }  // TODO
     
     @Override
     public void execute(String[] args) {}  // TODO

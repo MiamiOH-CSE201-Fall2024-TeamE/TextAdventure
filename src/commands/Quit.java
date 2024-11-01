@@ -1,8 +1,9 @@
 package commands;
 
-import app.App;
+import static app.App.stateManager;
+
 import game.Input;
-import game.StateManager;
+import ui.Strings;
 
 /**
  * Defines the logic for the 'quit' command.
@@ -11,18 +12,16 @@ import game.StateManager;
  */
 public class Quit extends Command {  // TODO: Javadocs
 
-    public Quit(String[] aliases) {
-        super(aliases);
+    public Quit() {
+        super(Strings.Aliases.QUIT);
     }
     
     @Override
     public void execute(String[] args) {
-        if (Input.getConfirmation("Are you sure you want to quit?"))
-        {
-            App.stateManager.quitGame();
+        if (Input.getConfirmation(Strings.Quit.ARE_YOU_SURE)) {
+            stateManager.quitGame();
         }
-
-    }  // TODO
+    }
 
     @Override
     public String toString() { return null; };  // TODO
