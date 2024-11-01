@@ -1,4 +1,5 @@
 import game.StateManager;
+import ui.SplashScreen;
 
 /**
  * Main App class, contains the code to initialize the game.
@@ -7,6 +8,7 @@ import game.StateManager;
  */
 public class App {
     public static void main(String[] args) {
-        new StateManager().saveGame();
+        SplashScreen.displayTitle();
+        SplashScreen.displayPrologue();
     }  // TODO
 }
