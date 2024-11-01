@@ -1,5 +1,8 @@
 package commands;
 
+import game.Input;
+import game.StateManager;
+
 /**
  * Defines the logic for the 'quit' command.
  * 
@@ -12,7 +15,13 @@ public class Quit extends Command {  // TODO: Javadocs
     }
     
     @Override
-    public void execute(String[] args) {}  // TODO
+    public void execute(String[] args) {
+        if (Input.getConfirmation("Are you sure you want to quit?"))
+        {
+            .quitGame();
+        }
+
+    }  // TODO
 
     @Override
     public String toString() { return null; };  // TODO

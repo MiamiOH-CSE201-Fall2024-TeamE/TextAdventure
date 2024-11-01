@@ -1,6 +1,7 @@
 package rooms;
 
 import items.Inventory;
+import items.Item;
 
 /**
  * This is the class for the Tutorial Room.
@@ -17,6 +18,8 @@ public class Tutorial extends Room {  // TODO: Javadocs
 
     public Tutorial() {
         this(false, new Inventory());
+        getInventory().add(new Item("Rock", "A rock you can use to distract the zombies", 3, 1, true, true));
+        getInventory().add(new Item("Car", "A car you could throw a rock at to distract the zombies", 1, 0, false, false));
     }  // TODO
 
     @Override
