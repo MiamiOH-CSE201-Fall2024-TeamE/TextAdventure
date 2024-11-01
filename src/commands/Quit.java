@@ -1,5 +1,6 @@
 package commands;
 
+import app.App;
 import game.Input;
 import game.StateManager;
 
@@ -18,7 +19,7 @@ public class Quit extends Command {  // TODO: Javadocs
     public void execute(String[] args) {
         if (Input.getConfirmation("Are you sure you want to quit?"))
         {
-            
+            App.stateManager.quitGame();
         }
 
     }  // TODO

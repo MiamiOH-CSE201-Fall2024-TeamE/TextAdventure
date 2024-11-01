@@ -1,3 +1,5 @@
+package app;
+
 import game.StateManager;
 import ui.SplashScreen;
 
