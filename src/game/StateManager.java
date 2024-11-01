@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import items.Item;
+import items.*;
 import rooms.*;
 import ui.Strings;
 
@@ -132,6 +132,31 @@ public class StateManager {  // TODO: Javadocs
             String roomName = saveFile.nextLine().split(" ")[1];
             boolean isLocked = Boolean.valueOf(saveFile.nextLine().split(" ")[1]);
             int size = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
+            Inventory inventory = new Inventory();
+            Room room;
+
+            switch (roomName) {
+                case Bedroom.NAME:
+                    room = new Bedroom(isLocked, inventory);
+                    break;
+                case Cellar.NAME:
+                    room = new Cellar(isLocked, inventory);
+                    break;
+                case Foyer.NAME:
+                    room = new Foyer(isLocked, inventory);
+                    break;
+                case Kitchen.NAME:
+                    room = new Kitchen(isLocked, inventory);
+                    break;
+                case Lab.NAME:
+                    room = new Lab(isLocked, inventory);
+                    break;
+                case Tutorial.NAME:
+                    room = new Tutorial(isLocked, inventory);
+                    break;
+                default:
+                    throw new IllegalStateException("Savefile is corrupted");
+            }
         }
 
         // Load player
