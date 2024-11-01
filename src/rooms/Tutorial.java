@@ -1,7 +1,7 @@
 package rooms;
 
-import items.Inventory;
-import items.Item;
+import game.Player;
+import items.*;
 
 /**
  * This is the class for the Tutorial Room.
@@ -23,7 +23,17 @@ public class Tutorial extends Room {  // TODO: Javadocs
     }  // TODO
 
     @Override
-    public boolean use(String toUse, String useOn) { return false; }  // TODO
+    public boolean use(String toUse, String useOn) { 
+
+        // This is a work in progress
+
+        // if (Player.getInventory().get(toUse) != null) {
+        //     Player.getInventory().get(toUse).setAmount(Player.getInventory().get(toUse).getAmount() - 1);
+        //     System.out.println("You threw a " + toUse + " at the " + useOn + ", and distracted the zombies. Get to the manor while they are distracted");
+        // }
+        
+        return false;
+    }  // TODO
 
     @Override
     public String getDescription() { return null; }  // TODO
