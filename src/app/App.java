@@ -1,3 +1,5 @@
+package app;
+
 import game.StateManager;
 import ui.SplashScreen;
 
@@ -7,7 +9,14 @@ import ui.SplashScreen;
  * @version 1.0.0
  */
 public class App {
+
+    /**
+     * Contains the game's current state.
+     */
+    public static StateManager stateManager = new StateManager();
+
     public static void main(String[] args) {
+        stateManager.saveGame();
         SplashScreen.displayTitle();
         SplashScreen.displayPrologue();
     }  // TODO

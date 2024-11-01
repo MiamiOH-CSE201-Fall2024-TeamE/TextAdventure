@@ -4,8 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.Scanner;
 
-import items.Item;
+import items.*;
 import rooms.*;
 import ui.Strings;
 
@@ -71,22 +72,10 @@ public class StateManager {  // TODO: Javadocs
         }
 
         // Save countdown
-        saveFile.printf("countdown.turnsUsed: %d\n",
-            countdown.getTurnsUsed());
         saveFile.printf("countdown.turnsRemaining: %d\n",
             countdown.getTurnsRemaining());
-        saveFile.println();
-        
-        // Save player
-        saveFile.printf("player.room: %s\n", player.getRoom().toString());
-        saveFile.printf("player.inventory.size: %d\n",
-            player.getInventory().size());
-        for (Item item : player.getInventory().toArray()) {
-            saveFile.printf("\t%s|%s|%d|%d|%s|%s\n",
-                item.toString(), item.getDescription(),
-                item.getAmount(), item.turnsToUse(),
-                item.canPickUp(), item.canUse());
-        }
+        saveFile.printf("countdown.turnsUsed: %d\n",
+            countdown.getTurnsUsed());
         saveFile.println();
 
         // Save rooms
@@ -103,13 +92,80 @@ public class StateManager {  // TODO: Javadocs
             }
             saveFile.println();
         }
+        
+        // Save player
+        saveFile.printf("player.room: %s\n", player.getRoom().toString());
+        saveFile.printf("player.inventory.size: %d\n",
+            player.getInventory().size());
+        for (Item item : player.getInventory().toArray()) {
+            saveFile.printf("\t%s|%s|%d|%d|%s|%s\n",
+                item.toString(), item.getDescription(),
+                item.getAmount(), item.turnsToUse(),
+                item.canPickUp(), item.canUse());
+        }
+        saveFile.println();
 
         // Close savegame file
         saveFile.close();
         return true;
     }
 
-    public boolean loadGame() { return false; }  // TODO
+    public boolean loadGame() {
+
+        // Open savegame file
+        Scanner saveFile;
+        try {
+            saveFile = new Scanner(new File("savegame.dat"));
+        } catch(FileNotFoundException e) {
+            return false;
+        }
+
+        // Load countdown
+        int turnsRemaining = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
+        int turnsUsed = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
+        saveFile.nextLine();  // Skip blank line
+
+        countdown = new Countdown(turnsRemaining, turnsUsed);
+
+        // Load rooms
+        for (int i = 0; i < 6; i++) {
+            String roomName = saveFile.nextLine().split(" ")[1];
+            boolean isLocked = Boolean.valueOf(saveFile.nextLine().split(" ")[1]);
+            int size = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
+            Inventory inventory = new Inventory();
+            Room room;
+
+            switch (roomName) {
+                case Bedroom.NAME:
+                    room = new Bedroom(isLocked, inventory);
+                    break;
+                case Cellar.NAME:
+                    room = new Cellar(isLocked, inventory);
+                    break;
+                case Foyer.NAME:
+                    room = new Foyer(isLocked, inventory);
+                    break;
+                case Kitchen.NAME:
+                    room = new Kitchen(isLocked, inventory);
+                    break;
+                case Lab.NAME:
+                    room = new Lab(isLocked, inventory);
+                    break;
+                case Tutorial.NAME:
+                    room = new Tutorial(isLocked, inventory);
+                    break;
+                default:
+                    throw new IllegalStateException("Savefile is corrupted");
+            }
+        }
+
+        // Load player
+
+        // Close savegame file
+        saveFile.close();
+        return true;
+
+    }  // TODO
 
     public void quitGame() { isRunning = false; }
 
