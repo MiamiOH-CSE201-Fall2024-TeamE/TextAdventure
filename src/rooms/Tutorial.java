@@ -1,5 +1,4 @@
 package rooms;
-
 import game.Player;
 import items.*;
 
@@ -27,12 +26,15 @@ public class Tutorial extends Room {  // TODO: Javadocs
 
         // This is a work in progress
 
-        // if (Player.getInventory().get(toUse) != null) {
-        //     Player.getInventory().get(toUse).setAmount(Player.getInventory().get(toUse).getAmount() - 1);
-        //     System.out.println("You threw a " + toUse + " at the " + useOn + ", and distracted the zombies. Get to the manor while they are distracted");
-        // }
-        
-        return false;
+        if (player.getInventory().get(toUse) != null) {
+            player.getInventory().get(toUse).setAmount(player.getInventory().get(toUse).getAmount() - 1);
+            System.out.println("You threw a " + toUse + " at the " + useOn + ", and distracted the zombies. Get to the manor while they are distracted");
+            return true;
+        }
+        else {
+            System.out.println("You don't have a " + toUse + " in your inventory.");
+            return false;
+        }
     }  // TODO
 
     @Override
