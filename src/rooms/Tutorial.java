@@ -15,7 +15,9 @@ public class Tutorial extends Room {  // TODO: Javadocs
         super(isLocked, inventory);
     }
 
-    public Tutorial() { this(false, new Inventory()); }  // TODO
+    public Tutorial() {
+        this(false, new Inventory());
+    }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO

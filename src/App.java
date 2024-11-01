@@ -6,7 +6,9 @@ import game.StateManager;
  * @version 1.0.0
  */
 public class App {
+
+    public static StateManager stateManager = new StateManager();
     public static void main(String[] args) {
-        new StateManager().saveGame();
+        stateManager.saveGame();
     }  // TODO
 }
