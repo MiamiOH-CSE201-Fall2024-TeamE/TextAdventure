@@ -1,20 +1,28 @@
 package rooms;
 
+import items.Inventory;
+
 /**
- * This is the class for the tutorial room
- * 
- * Coding trail:
- *   10/23/2024 - Created class stub (Owen Ensley)
+ * This is the class for the Tutorial Room.
  * 
  * @version 1.0.0
  */
 public class Tutorial extends Room {  // TODO: Javadocs
 
-    Tutorial() {}  // TODO
+    public static final String NAME = "tutorial";
+
+    public Tutorial(boolean isLocked, Inventory inventory) {
+        super(isLocked, inventory);
+    }
+
+    public Tutorial() { this(false, new Inventory()); }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO
 
     @Override
-    public String toString() { return null; }  // TODO
+    public String getDescription() { return null; }  // TODO
+
+    @Override
+    public String toString() { return NAME; }
 }

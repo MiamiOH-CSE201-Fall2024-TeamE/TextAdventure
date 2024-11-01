@@ -3,14 +3,11 @@ package commands;
 /**
  * Defines the logic for the 'move' command.
  * 
- * Coding trail:
- *   10/30/2024 - Created class stub (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class Move extends Command {  // TODO: Javadocs
 
-    Move(String[] aliases) {
+    public Move(String[] aliases) {
         super(aliases);
     }
     

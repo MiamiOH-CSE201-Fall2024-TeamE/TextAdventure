@@ -5,10 +5,6 @@ import ui.Strings;
 /**
  * Holds turn state information and methods for updating/using turns.
  * 
- * Coding trail:
- *   10/16/2024 - Created class stub (Benjamin Pryor)
- *   10/24/2024 - Filled out fields/methods (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class Countdown {
@@ -28,7 +24,7 @@ public class Countdown {
      * 
      * @param turnsRemaining The number of turns until the countdown reaches 0.
      */
-    Countdown(int turnsRemaining) {
+    public Countdown(int turnsRemaining) {
         this.turnsUsed = 0;
         this.turnsRemaining = turnsRemaining;
     }
@@ -40,7 +36,7 @@ public class Countdown {
      * @param turnsRemaining The number of turns until the countdown reaches 0.
      * @param turnsUsed The number of turns that have already been used.
      */
-    Countdown(int turnsRemaining, int turnsUsed) {
+    public Countdown(int turnsRemaining, int turnsUsed) {
         this.turnsUsed = turnsUsed;
         this.turnsRemaining = turnsRemaining;
     }

@@ -3,11 +3,6 @@ package ui;
 /**
  * Contains all messages, descriptions, and other Strings shown across the UI.
  * 
- * Coding trail:
- *   10/16/2024 - Created class stub (Benjamin Pryor)
- *   10/25/2024 - Added strings for Countdown and Input (Benjamin Pryor)
- *   10/25/2024 - Made constructor private (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class Strings {
@@ -29,7 +24,15 @@ public class Strings {
      */
     public class Input {
         public static final String INPUT_INDICATOR = "> ";
-        public static final String ARE_YOU_SURE = "Are you sure (Y/n)? ";
+        public static final String PROMPT_APPENDIX = " (Y/n)? ";
         public static final String CONFIRMATION = "Y";
+    }
+
+    /**
+     * Strings for the game.StateManager class to use.
+     */
+    public class StateManager {
+        public static final String SAVE_FOUND = "Saved game found!";
+        public static final String LOAD_CONFIRMATION = "Would you like to pick up where you left off";
     }
 }

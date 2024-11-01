@@ -1,20 +1,28 @@
 package rooms;
 
+import items.Inventory;
+
 /**
- * This is the class for the Cellar Room. 
- * 
- * Coding trail:
- *   10/30/2024 - Created class stub (Owen Ensley)
+ * This is the class for the Cellar Room.
  * 
  * @version 1.0.0
  */
 public class Cellar extends Room {  // TODO: Javadocs
 
-    Cellar() {}  // TODO
+    public static final String NAME = "cellar";
+
+    public Cellar(boolean isLocked, Inventory inventory) {
+        super(isLocked, inventory);
+    }
+
+    public Cellar() { this(false, new Inventory()); }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO
 
     @Override
-    public String toString() { return null; }  // TODO
+    public String getDescription() { return null; }  // TODO
+
+    @Override
+    public String toString() { return NAME; }
 }

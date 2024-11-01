@@ -1,25 +1,32 @@
 package rooms;
 
+import items.Inventory;
+
 /**
- * This is the class for the Lab Room. 
- * 
- * Coding trail:
- *   10/30/2024 - Created class stub (Owen Ensley)
- *   11/1/2024  - added ingredients array and checkCorrect method stub
+ * This is the class for the Lab Room.
  * 
  * @version 1.0.0
  */
 public class Lab extends Room {  // TODO: Javadocs
 
+    public static final String NAME = "lab";
+
     private String[] ingredients = new String[3];
-    
-    Lab() {}  // TODO
+
+    public Lab(boolean isLocked, Inventory inventory) {
+        super(isLocked, inventory);
+    }
+
+    public Lab() { this(false, new Inventory()); }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO
 
     @Override
-    public String toString() { return null; }  // TODO
+    public String getDescription() { return null; }  // TODO
+
+    @Override
+    public String toString() { return NAME; }
 
     public void spawnScientist() {} // TODO
 

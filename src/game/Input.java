@@ -7,11 +7,6 @@ import ui.Strings;
 /**
  * Provides user interaction commands; namely, text input and menus.
  * 
- * Coding trail:
- *   10/16/2024 - Created class stub (Benjamin Pryor)
- *   10/24/2024 - Filled out fields/methods (Benjamin Pryor)
- *   10/25/2024 - Made constructor private (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class Input {
@@ -39,10 +34,11 @@ public class Input {
     /**
      * Gets confirmation from the user.
      * 
+     * @param prompt The prompt to get confirmation for, without punctuation.
      * @return True if the user selected yes, false otherwise.
      */
-    public static boolean getConfirmation() {
-        System.out.print(Strings.Input.ARE_YOU_SURE);
+    public static boolean getConfirmation(String prompt) {
+        System.out.print(prompt + Strings.Input.PROMPT_APPENDIX);
         return inputScanner.nextLine()
             .equalsIgnoreCase(Strings.Input.CONFIRMATION);
     }

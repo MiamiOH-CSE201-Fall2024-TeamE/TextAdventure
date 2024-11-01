@@ -3,14 +3,11 @@ package commands;
 /**
  * Defines the logic for the 'pickup' command.
  * 
- * Coding trail:
- *   10/30/2024 - Created class stub (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class Pickup extends Command {  // TODO: Javadocs
 
-    Pickup(String[] aliases) {
+    public Pickup(String[] aliases) {
         super(aliases);
     }
     

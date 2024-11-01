@@ -3,10 +3,6 @@ package items;
 /**
  * Provides the data and methods necessary for an interactable item.
  * 
- * Coding trail:
- *   10/16/2024 - Created class stub (Benjamin Pryor)
- *   10/23/2024 - Filled out fields/methods (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class Item {
@@ -51,7 +47,7 @@ public class Item {
      * @param canPickUp Whether the item can be picked up.
      * @param canUse Whether the item can be used.
      */
-    Item(String name, String description, int amount,
+    public Item(String name, String description, int amount,
          int turnsToUse, boolean canPickUp, boolean canUse) {
         this.name = name;
         this.description = description;

@@ -5,10 +5,6 @@ import java.util.HashMap;
 /**
  * A simple data structure that holds a list of Items.
  * 
- * Coding trail:
- *   10/16/2024 - Created class stub (Benjamin Pryor)
- *   10/24/2024 - Filled out fields/methods (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class Inventory {
@@ -46,7 +42,7 @@ public class Inventory {
     /**
      * Instantiates a new inventory with the largest possible maximums.
      */
-    Inventory() {
+    public Inventory() {
         items = new HashMap<>();
         maxSize = Integer.MAX_VALUE;
         stackSize = Integer.MAX_VALUE;
@@ -55,7 +51,7 @@ public class Inventory {
     /**
      * Instantiates a new inventory with a specified maximum unique items.
      */
-    Inventory(int maxSize) {
+    public Inventory(int maxSize) {
         this();
         this.maxSize = maxSize;
     }
@@ -63,10 +59,17 @@ public class Inventory {
     /**
      * Instantiates a new inventory with specified maximums.
      */
-    Inventory(int maxSize, int stackSize) {
+    public Inventory(int maxSize, int stackSize) {
         this(maxSize);
         this.stackSize = stackSize;
     }
+
+    /**
+     * Returns the size of this inventory.
+     * 
+     * @return The inventory's size.
+     */
+    public int size() { return items.size(); }
 
     /**
      * Adds a new item to the inventory, if it is possible to do so.
@@ -120,6 +123,21 @@ public class Inventory {
      * @return The maximum stack size.
      */
     public int getMaxStackSize() { return stackSize; }
+
+    /**
+     * Returns an array containing all of this inventory's items.
+     * 
+     * @return An array of items.
+     */
+    public Item[] toArray() {
+        Item[] ret = new Item[items.size()];
+        int i = 0;
+        for (Item item : items.values()) {
+            ret[i] = item;
+            i++;
+        }
+        return ret;
+    }
 
     /**
      * Returns a nicely formatted string showing all items in the inventory and

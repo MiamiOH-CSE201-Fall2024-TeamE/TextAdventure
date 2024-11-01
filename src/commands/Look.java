@@ -3,14 +3,11 @@ package commands;
 /**
  * Defines the logic for the 'look' command.
  * 
- * Coding trail:
- *   10/30/2024 - Created class stub (Benjamin Pryor)
- * 
  * @version 1.0.0
  */
 public class Look extends Command {  // TODO: Javadocs
 
-    Look(String[] aliases) {
+    public Look(String[] aliases) {
         super(aliases);
     }
     
