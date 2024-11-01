@@ -18,7 +18,7 @@ public class Quit extends Command {  // TODO: Javadocs
     public void execute(String[] args) {
         if (Input.getConfirmation("Are you sure you want to quit?"))
         {
-            .quitGame();
+            
         }
 
     }  // TODO
