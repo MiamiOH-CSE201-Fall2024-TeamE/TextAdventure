@@ -5,8 +5,11 @@ package commands;
  * 
  * @version 1.0.0
  */
-public class Use extends Command {  // TODO: Javadocs
+public class Use extends Command {
 
+    /**
+     * Instantiates the command with a set of pre-defined aliases (ui.Strings).
+     */
     public Use() {
         super(null);
     }  // TODO

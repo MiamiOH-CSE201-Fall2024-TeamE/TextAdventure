@@ -10,12 +10,15 @@ import ui.Strings;
  * 
  * @version 1.0.0
  */
-public class Quit extends Command {  // TODO: Javadocs
+public class Quit extends Command {
 
+    /**
+     * Instantiates the command with a set of pre-defined aliases (ui.Strings).
+     */
     public Quit() {
         super(Strings.Aliases.QUIT);
     }
-    
+
     @Override
     public void execute(String[] args) {
         if (Input.getConfirmation(Strings.Quit.ARE_YOU_SURE)) {

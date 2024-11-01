@@ -5,8 +5,11 @@ package commands;
  * 
  * @version 1.0.0
  */
-public class Pickup extends Command {  // TODO: Javadocs
+public class Pickup extends Command {
 
+    /**
+     * Instantiates the command with a set of pre-defined aliases (ui.Strings).
+     */
     public Pickup() {
         super(null);
     }  // TODO
