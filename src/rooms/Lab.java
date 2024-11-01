@@ -11,10 +11,11 @@ public class Lab extends Room {  // TODO: Javadocs
 
     public static final String NAME = "lab";
 
-    private String[] ingredients = new String[3];
+    private String[] ingredients;
 
     public Lab(boolean isLocked, Inventory inventory) {
         super(isLocked, inventory);
+        ingredients = new String[3];
     }
 
     public Lab() { this(false, new Inventory()); }  // TODO
@@ -28,9 +29,9 @@ public class Lab extends Room {  // TODO: Javadocs
     @Override
     public String toString() { return NAME; }
 
-    public void spawnScientist() {} // TODO
+    public void spawnScientist() {}  // TODO
 
-    public boolean checkCorrect(){  return true;  } //TODO
+    public boolean checkCorrect(){ return false; }  // TODO
 
 
 }
