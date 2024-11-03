@@ -1,5 +1,7 @@
 package game;
 
+import static app.App.stateManager;
+
 import items.Inventory;
 import rooms.Room;
 
@@ -21,6 +23,11 @@ public class Player {
     private Inventory inventory;
 
     /**
+     * Whether or not the player is dead.
+     */
+    private boolean isDead;
+
+    /**
      * Instantiates a new player in a specified starting room.
      * 
      * @param startingRoom The room to start in.
@@ -28,6 +35,7 @@ public class Player {
     public Player(Room startingRoom) {
         room = startingRoom;
         inventory = new Inventory();
+        isDead = false;
     }
 
     /**
@@ -61,4 +69,19 @@ public class Player {
      * @param room The room to move the player to.
      */
     public void setRoom(Room room) { this.room = room; }
+
+    /**
+     * Kills the player.
+     */
+    public void kill() {
+        isDead = true;
+        stateManager.quitGame();
+    }
+
+    /**
+     * Returns whether or not the player is dead.
+     * 
+     * @return True if the player is dead, false otherwise.
+     */
+    public boolean isDead() { return isDead; }
 }

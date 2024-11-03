@@ -41,6 +41,12 @@ public class SplashScreen {
         = "Congrats, you have reached the end of this demo!";
     
     /**
+     * The splash screen text for the die ending.
+     */
+    public static final String DIE_ENDING
+        = "You died!";
+    
+    /**
      * The splash screen text for saving/quitting the game.
      */
     public static final String GOODBYE_ENDING

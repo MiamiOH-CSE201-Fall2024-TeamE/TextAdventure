@@ -57,8 +57,9 @@ abstract public class Room {
     /**
      * Contains the room-specific code for using items.
      * 
-     * @param toUse The name of the item to use.
-     * @param useOn The name of the item to use it on.
+     * @param toUse The name of the item to use. Guaranteed to be a valid item.
+     * @param useOn The name of the item to use it on. Guaranteed to be either
+     *     a valid item, or null.
      * @return True if item was used successfully, false otherwise.
      */
     abstract public boolean use(String toUse, String useOn);

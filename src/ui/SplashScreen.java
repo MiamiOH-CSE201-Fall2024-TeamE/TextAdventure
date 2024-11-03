@@ -42,6 +42,10 @@ public class SplashScreen {
                 System.out.println(GOODBYE_ENDING);
                 break;
 
+            case StateManager.END_DIE:
+                System.out.println(DIE_ENDING);
+                break;
+
             default:
                 System.out.println(DEMO_ENDING);
                 break;

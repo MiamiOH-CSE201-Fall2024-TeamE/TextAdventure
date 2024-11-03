@@ -1,12 +1,13 @@
 package commands;
 
 import static app.App.stateManager;
+import static items.Item.getItem;
 
-import game.Input;
 import ui.strings.commands.Actions;
 import ui.strings.commands.Descriptions;
 import ui.strings.commands.Errors;
 
+import game.Input;
 import items.Item;
 
 /**

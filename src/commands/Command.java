@@ -1,9 +1,5 @@
 package commands;
 
-import static app.App.stateManager;
-
-import items.Item;
-
 /**
  * Provides the data and methods necessary to build a usable console command.
  * 
@@ -60,18 +56,4 @@ abstract public class Command {
      */
     @Override
     abstract public String toString();
-
-    /**
-     * Gets an item from either the player or the room (player prioritized).
-     * 
-     * @param name The name of the item to get.
-     * @return The item, or null if not found.
-     */
-    protected static Item getItem(String name) {
-
-        Item inPlayer = stateManager.getPlayer().getInventory().get(name);
-        Item inRoom = stateManager.getPlayer().getRoom().getInventory().get(name);
-
-        return (inPlayer == null) ? inRoom : inPlayer;
-    }
 }

@@ -1,5 +1,7 @@
 package items;
 
+import static app.App.stateManager;
+
 /**
  * Provides the data and methods necessary for an interactive item.
  * 
@@ -120,4 +122,18 @@ public class Item {
      */
     @Override
     public String toString() { return name; }
+
+    /**
+     * Gets an item from either the player or the room (player prioritized).
+     * 
+     * @param name The name of the item to get.
+     * @return The item, or null if not found.
+     */
+    public static Item getItem(String name) {
+
+        Item inPlayer = stateManager.getPlayer().getInventory().get(name);
+        Item inRoom = stateManager.getPlayer().getRoom().getInventory().get(name);
+
+        return (inPlayer == null) ? inRoom : inPlayer;
+    }
 }

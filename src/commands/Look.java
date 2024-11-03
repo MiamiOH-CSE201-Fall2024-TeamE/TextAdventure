@@ -1,6 +1,7 @@
 package commands;
 
 import static app.App.stateManager;
+import static items.Item.getItem;
 
 import ui.strings.commands.Actions;
 import ui.strings.commands.Descriptions;

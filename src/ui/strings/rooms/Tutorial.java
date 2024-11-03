@@ -13,10 +13,35 @@ public class Tutorial {
     private Tutorial() {}
 
     /**
+     * The name string for the 'rock' item.
+     */
+    public static final String ROCK
+        = "rock";
+
+    /**
+     * The name string for the 'car' item.
+     */
+    public static final String CAR
+        = "car";
+
+    /**
+     * The name string for the 'zombies' item.
+     */
+    public static final String ZOMBIES
+        = "zombies";
+
+    /**
+     * The name string for the 'manor' item.
+     */
+    public static final String MANOR
+        = "manor";
+
+    /**
      * The description string for the 'rock' item.
      */
     public static final String DESC_ROCK
-        = "A regular-looking grey rock, about the size of a tennis ball";
+        = "A pile of regular-looking grey rocks sits off to your side, each\n"
+        + "about the size of a tennis ball.";
 
     /**
      * The description string for the 'car' item.
@@ -39,4 +64,10 @@ public class Tutorial {
     public static final String DESC_MANOR
         = "A large, intimidating manor looms in front of you, just beyond the\n"
         + "zombies. This must be where the scientist lives...";
+
+    /**
+     * The action string for using a rock on nothing.
+     */
+    public static final String USE_ROCK_ON_NULL
+        = "The rock doesn't seem to be very useful by itself...";
 }

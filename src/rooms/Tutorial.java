@@ -37,26 +37,50 @@ public class Tutorial extends Room {
         this(false, new Inventory());
       
         // Fill room's inventory
-        getInventory().add(new Item("rock", DESC_ROCK, 3, 1, true, true));
-        getInventory().add(new Item("car", DESC_CAR, 1, 0, false, false));
-        getInventory().add(new Item("zombies", DESC_ZOMBIES, 99, 1, false, true));
-        getInventory().add(new Item("manor", DESC_MANOR, 1, 0, false, false));
+        getInventory().add(new Item(ROCK, DESC_ROCK, 3, 1, true, true));
+        getInventory().add(new Item(CAR, DESC_CAR, 1, 0, false, false));
+        getInventory().add(new Item(ZOMBIES, DESC_ZOMBIES, 99, 1, false, true));
+        getInventory().add(new Item(MANOR, DESC_MANOR, 1, 0, false, false));
     }
 
     // TODO
     @Override
     public boolean use(String toUse, String useOn) {
-    
-        if (stateManager.getPlayer().getInventory().get(toUse) != null && toUse.strip().toLowerCase() == "rock") {
-            stateManager.getPlayer().getInventory().get(toUse).setAmount(stateManager.getPlayer().getInventory().get(toUse).getAmount() - 1);
 
-            System.out.println("You threw a " + toUse + " at the " + useOn + ", and distracted the zombies. Get to the manor while they are distracted");
+        // Using a rock
+        if (toUse.equalsIgnoreCase(ROCK)) {
+
+            switch (useOn) {
+                case ROCK:
+                    
+                    break;
+                    
+                case CAR:
+                    
+                    break;
+                    
+                case ZOMBIES:
+                    
+                    break;
+
+                case MANOR:
+                    
+                    break;
+            
+                default:
+                    System.out.println(USE_ROCK_ON_NULL);
+                    break;
+            }
+
+        }
+
+        // Using the zombies (because why not lol)
+        if (toUse.equalsIgnoreCase(ZOMBIES)) {
+            stateManager.getPlayer().kill();
             return true;
         }
-        else {
-            System.out.println("You don't have a " + toUse + " in your inventory.");
-            return false;
-        }
+
+        return false;
     }
 
     @Override
@@ -65,7 +89,8 @@ public class Tutorial extends Room {
     // TODO
     @Override
     public String getDescription() {
-        String outString = "The player " + stateManager.getPlayer() + " is in the Tutorial room. ";
+
+        String outString = "";
         
         if (getInventory().size() == 0) {
             outString += "The room is empty.";
