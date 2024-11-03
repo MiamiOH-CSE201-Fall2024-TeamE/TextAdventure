@@ -226,6 +226,10 @@ public class StateManager {
             return END_DIE;
         }
 
+        if (!getRoom(Foyer.NAME).isLocked()) {
+            return -1;
+        }
+
         return END_NONE;
     }
 }

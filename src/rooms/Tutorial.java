@@ -56,6 +56,7 @@ public class Tutorial extends Room {
                 case CAR:
                     System.out.println(USE_ROCK_ON_CAR);
                     stateManager.getRoom(Foyer.NAME).unlock();
+                    stateManager.quitGame();
                     break;
 
                 case ROCK:
