@@ -16,7 +16,7 @@ import items.*;
 public class Pickup extends Command {
 
     /**
-     * Instantiates the command with a set of pre-defined aliases (ui.Strings).
+     * Instantiates the command with a set of pre-defined aliases.
      */
     public Pickup() {
         super(Aliases.PICKUP);
@@ -25,8 +25,14 @@ public class Pickup extends Command {
     @Override
     public boolean execute(String[] args) {
 
+        String item;
+
         // Ensure correct number of arguments
-        if (args.length != 1) {
+        if (args.length == 2) {
+            item = args[1];
+        } else if (args.length == 3) {
+            item = args[2];
+        } else {
             System.out.printf(Errors.INVALID, args[0]);
             return false;
         }
@@ -36,12 +42,12 @@ public class Pickup extends Command {
         Inventory roomInventory = stateManager.getPlayer().getRoom().getInventory();
 
         // Get player and room copies of item to pick up
-        Item toPickUp = roomInventory.get(args[0]);
-        Item toPickUpPlayer = playerInventory.get(args[0]);
+        Item toPickUp = roomInventory.get(item);
+        Item toPickUpPlayer = playerInventory.get(item);
 
         // Ensure item exists
         if (toPickUp == null) {
-            System.out.printf(Errors.ITEM_NOT_FOUND, args[1]);
+            System.out.printf(Errors.ITEM_NOT_FOUND, item);
             return false;
         }
 

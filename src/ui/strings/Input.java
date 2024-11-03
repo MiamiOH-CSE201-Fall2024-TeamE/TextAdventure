@@ -12,10 +12,15 @@ public class Input {
      */
     private Input() {}
 
+    /**
+     * The prefix shown when asking the player for input.
+     */
     public static final String INPUT_INDICATOR
         = "> ";
+
+    /**
+     * The text appended to every confirmation dialog.
+     */
     public static final String PROMPT_APPENDIX
         = " (Y/n)? ";
-    public static final String CONFIRMATION
-        = "Y";
 }

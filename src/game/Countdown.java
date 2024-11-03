@@ -1,6 +1,6 @@
 package game;
 
-import ui.Strings;
+import static ui.strings.Countdown.*;
 
 /**
  * Holds turn state information and methods for updating/using turns.
@@ -84,6 +84,6 @@ public class Countdown {
      */
     @Override
     public String toString() {
-        return Strings.Countdown.TURNS_REMAINING + turnsRemaining;
+        return TURNS_REMAINING + turnsRemaining;
     }
 }

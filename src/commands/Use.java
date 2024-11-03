@@ -15,7 +15,7 @@ import items.Item;
 public class Use extends Command {
 
     /**
-     * Instantiates the command with a set of pre-defined aliases (ui.Strings).
+     * Instantiates the command with a set of pre-defined aliases.
      */
     public Use() {
         super(Aliases.USE);

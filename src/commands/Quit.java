@@ -15,7 +15,7 @@ import game.Input;
 public class Quit extends Command {
 
     /**
-     * Instantiates the command with a set of pre-defined aliases (ui.Strings).
+     * Instantiates the command with a set of pre-defined aliases.
      */
     public Quit() {
         super(Aliases.QUIT);

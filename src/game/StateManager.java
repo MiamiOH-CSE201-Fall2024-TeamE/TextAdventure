@@ -1,5 +1,7 @@
 package game;
 
+import static ui.strings.StateManager.*;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -8,7 +10,6 @@ import java.util.Scanner;
 
 import items.*;
 import rooms.*;
-import ui.Strings;
 
 /**
  * Holds game state data, including layout and player info.
@@ -79,8 +80,8 @@ public class StateManager {
         isRunning = true;
 
         if (loadGame()) {
-            System.out.println(Strings.StateManager.SAVE_FOUND);
-            startNewGame = !Input.getConfirmation(Strings.StateManager.LOAD_CONFIRMATION);
+            System.out.println(SAVE_FOUND);
+            startNewGame = !Input.getConfirmation(LOAD_CONFIRMATION);
         }
 
         if (startNewGame) {

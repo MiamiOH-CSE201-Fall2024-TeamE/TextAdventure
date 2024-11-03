@@ -16,7 +16,7 @@ import rooms.Room;
 public class Move extends Command {
 
     /**
-     * Instantiates the command with a set of pre-defined aliases (ui.Strings).
+     * Instantiates the command with a set of pre-defined aliases.
      */
     public Move() {
         super(Aliases.MOVE);
@@ -25,18 +25,24 @@ public class Move extends Command {
     @Override
     public boolean execute(String[] args) {
 
+        String room;
+
         // Ensure correct number of arguments
-        if (args.length != 1) {
+        if (args.length == 2) {
+            room = args[1];
+        } else if (args.length == 3) {
+            room = args[2];
+        } else {
             System.out.printf(Errors.INVALID, args[0]);
             return false;
         }
 
         // Get room
-        Room newRoom = stateManager.getRoom(args[1]);
+        Room newRoom = stateManager.getRoom(room);
 
         // Ensure room exists
         if (newRoom == null) {
-            System.out.printf(Errors.ROOM_NOT_FOUND, args[1]);
+            System.out.printf(Errors.ROOM_NOT_FOUND, room);
             return false;
         }
 

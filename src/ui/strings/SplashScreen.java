@@ -12,8 +12,15 @@ public class SplashScreen {
      */
     private SplashScreen() {}
 
+    /**
+     * The title splash screen text.
+     */
     public static final String TITLE
         = "ZOMBIE MANOR";
+    
+    /**
+     * The prologue splash screen text.
+     */
     public static final String PROLOGUE
         = "A zombie infection has tormented the world!\n"
         + "\n"
@@ -26,6 +33,10 @@ public class SplashScreen {
         + "scientist's last known location:\n"
         + "\n"
         + "His personal manor...";
+    
+    /**
+     * The splash screen text for the demo ending.
+     */
     public static final String DEMO_ENDING
         = "Congrats, you have reached the end of this demo!";
 }

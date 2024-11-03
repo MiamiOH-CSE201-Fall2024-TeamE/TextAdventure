@@ -10,11 +10,11 @@ import ui.strings.commands.Descriptions;
 public class Look extends Command {
 
     /**
-     * Instantiates the command with a set of pre-defined aliases (ui.Strings).
+     * Instantiates the command with a set of pre-defined aliases.
      */
     public Look() {
-        super(null);
-    }  // TODO
+        super(Aliases.LOOK);
+    }
     
     @Override
     public boolean execute(String[] args) { return false; }  // TODO

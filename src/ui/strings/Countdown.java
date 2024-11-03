@@ -12,6 +12,9 @@ public class Countdown {
      */
     private Countdown() {}
 
+    /**
+     * Prefix text when displaying turns remaining.
+     */
     public static final String TURNS_REMAINING
         = "Turns remaining: ";
 }

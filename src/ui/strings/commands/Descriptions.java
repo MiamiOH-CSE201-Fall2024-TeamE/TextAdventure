@@ -6,16 +6,30 @@ package ui.strings.commands;
  * @version 1.0
  */
 public class Descriptions {
+
+    /**
+     * Prevent instantiating static class.
+     */
+    private Descriptions() {}
+
+    /**
+     * The usage text and description for the 'look' command.
+     */
     public static final String LOOK
         = "Usage:\n"
-        + "\tlook room/item\n"
+        + "\tlook [at] room/item\n"
         + "\n"
         + "Description:\n"
         + "\tProvides a description of the room/item"
         + "\n"
         + "Parameters:\n"
+        + "\tat (optional) - The literal word 'at'\n"
         + "\troom - The literal word 'room'\n"
         + "\titem - The item to look at";
+
+    /**
+     * The usage text and description for the 'move' command.
+     */
     public static final String MOVE
         = "Usage:\n"
         + "\tmove [to] room\n"
@@ -24,16 +38,26 @@ public class Descriptions {
         + "\tMoves to a new room"
         + "\n"
         + "Parameters:\n"
+        + "\tto (optional) - The literal word 'to'\n"
         + "\troom - The room to move to";
+
+    /**
+     * The usage text and description for the 'pickup' command.
+     */
     public static final String PICKUP
         = "Usage:\n"
-        + "\tpickup to_pickup\n"
+        + "\tpickup [up] to_pickup\n"
         + "\n"
         + "Description:\n"
         + "\tPicks an item up"
         + "\n"
         + "Parameters:\n"
+        + "\tup - The literal word 'up' (allows use of 'pick up')"
         + "\tto_pickup - The item to pick up";
+
+    /**
+     * The usage text and description for the 'quit' command.
+     */
     public static final String QUIT
         = "Usage:\n"
         + "\tquit\n"
@@ -43,6 +67,10 @@ public class Descriptions {
         + "\n"
         + "Parameters:\n"
         + "\t<none>";
+
+    /**
+     * The usage text and description for the 'use' command.
+     */
     public static final String USE
         = "Usage:\n"
         + "\tuse to_use [on] [use_on]\n"

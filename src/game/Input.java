@@ -1,8 +1,8 @@
 package game;
 
-import java.util.Scanner;
+import static ui.strings.Input.*;
 
-import ui.Strings;
+import java.util.Scanner;
 
 /**
  * Provides user interaction commands; namely, text input and menus.
@@ -27,7 +27,7 @@ public class Input {
      * @return A String array of arguments passed by the user.
      */
     public static String[] getInput() {
-        System.out.print(Strings.Input.INPUT_INDICATOR);
+        System.out.print(INPUT_INDICATOR);
         return inputScanner.nextLine().split(" ");
     }
 
@@ -38,8 +38,7 @@ public class Input {
      * @return True if the user selected yes, false otherwise.
      */
     public static boolean getConfirmation(String prompt) {
-        System.out.print(prompt + Strings.Input.PROMPT_APPENDIX);
-        return inputScanner.nextLine()
-            .equalsIgnoreCase(Strings.Input.CONFIRMATION);
+        System.out.print(prompt + PROMPT_APPENDIX);
+        return inputScanner.nextLine().equalsIgnoreCase("Y");
     }
 }

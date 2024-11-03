@@ -6,13 +6,35 @@ package commands;
  * @version 1.0
  */
 public class Aliases {
+
+    /**
+     * Prevent instantiating static class.
+     */
+    private Aliases() {}
+
+    /**
+     * Aliases for the 'look' command.
+     */
+    public static final String[] LOOK = new String[] {
+        "look",
+        "l"
+    };
+
+    /**
+     * Aliases for the 'move' command.
+     */
     public static final String[] MOVE = new String[] {
         "move",
         "go",
         "m"
     };
+
+    /**
+     * Aliases for the 'pickup' command.
+     */
     public static final String[] PICKUP = new String[] {
         "pickup",
+        "pick",
         "take",
         "grab",
         "get",
@@ -20,14 +42,21 @@ public class Aliases {
         "t",
         "g"
     };
+
+    /**
+     * Aliases for the 'quit' command.
+     */
     public static final String[] QUIT = new String[] {
         "quit",
         "exit",
         "leave",
         "q",
-        "e",
-        "l"
+        "e"
     };
+
+    /**
+     * Aliases for the 'use' command.
+     */
     public static final String[] USE = new String[] {
         "use",
         "u"
