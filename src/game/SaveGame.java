@@ -1,5 +1,6 @@
 package game;
 
+
 import static app.App.stateManager;
 import static ui.strings.SaveGame.GAME_SAVED;
 
@@ -13,10 +14,14 @@ import rooms.*;
 
 public class SaveGame {
 
+    private static boolean saveMade;
+
     /**
      * Prevent instantiating static class.
      */
-    private SaveGame() {}
+    private SaveGame() {
+        saveMade = false;
+    }
 
     /**
      * Saves the game to the file [savegame.dat].
@@ -68,6 +73,9 @@ public class SaveGame {
         // Close savegame file
         saveFile.close();
 
+        //Marks Game as saved
+        saveMade = true;
+
         System.out.println(GAME_SAVED);
     }
 
@@ -83,6 +91,12 @@ public class SaveGame {
         try {
             saveFile = new Scanner(new File("savegame.dat"));
         } catch(FileNotFoundException e) {
+            return false;
+        }
+
+        //The game will only try to load if a saveHas already been made
+        if (saveMade == false){
+            saveFile.close();
             return false;
         }
 
