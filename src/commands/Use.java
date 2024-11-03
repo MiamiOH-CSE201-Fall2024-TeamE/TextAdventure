@@ -71,18 +71,4 @@ public class Use extends Command {
     public String toString() {
         return Descriptions.USE;
     };
-
-    /**
-     * Gets an item from either the player or the room (player prioritized).
-     * 
-     * @param name The name of the item to get.
-     * @return The item, or null if not found.
-     */
-    private Item getItem(String name) {
-
-        Item inPlayer = stateManager.getPlayer().getInventory().get(name);
-        Item inRoom = stateManager.getPlayer().getRoom().getInventory().get(name);
-
-        return (inPlayer == null) ? inRoom : inPlayer;
-    }
 }

@@ -28,7 +28,7 @@ public class Input {
      */
     public static String[] getInput() {
         System.out.print(INPUT_INDICATOR);
-        return inputScanner.nextLine().split(" ");
+        return inputScanner.nextLine().toLowerCase().split(" ");
     }
 
     /**
