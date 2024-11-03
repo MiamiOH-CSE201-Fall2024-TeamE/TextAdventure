@@ -2,8 +2,11 @@ package commands;
 
 import static app.App.stateManager;
 
+import ui.strings.commands.Aliases;
+import ui.strings.commands.Descriptions;
+import ui.strings.commands.Errors;
+
 import items.Item;
-import ui.Strings;
 
 /**
  * Defines the logic for the 'use' command.
@@ -16,7 +19,7 @@ public class Use extends Command {
      * Instantiates the command with a set of pre-defined aliases (ui.Strings).
      */
     public Use() {
-        super(Strings.Aliases.USE);
+        super(Aliases.USE);
     }
     
     @Override
@@ -24,7 +27,7 @@ public class Use extends Command {
 
         // Ensure correct number of arguments
         if (args.length != 2 && args.length != 4) {
-            System.out.printf(Strings.Command.INVALID, args[0]);
+            System.out.printf(Errors.INVALID, args[0]);
             return false;
         }
 
@@ -33,7 +36,7 @@ public class Use extends Command {
 
         // Ensure item to use exists
         if (toUse == null) {
-            System.out.printf(Strings.Use.ITEM_NOT_FOUND, args[1]);
+            System.out.printf(Errors.ITEM_NOT_FOUND, args[1]);
             return false;
         }
 
@@ -46,14 +49,14 @@ public class Use extends Command {
 
             // Ensure item to use on exists
             if (useOn == null) {
-                System.out.printf(Strings.Use.ITEM_NOT_FOUND, args[3]);
+                System.out.printf(Errors.ITEM_NOT_FOUND, args[3]);
                 return false;
             }
         }
 
         // Ensure item to use can be used
         if (!toUse.canUse()) {
-            System.out.printf(Strings.Use.CANNOT_USE, toUse.toString());
+            System.out.printf(Errors.CANNOT_USE, toUse.toString());
             return false;
         }
 
@@ -67,7 +70,7 @@ public class Use extends Command {
 
     @Override
     public String toString() {
-        return Strings.Use.DESCRIPTION;
+        return Descriptions.USE;
     };
 
     /**

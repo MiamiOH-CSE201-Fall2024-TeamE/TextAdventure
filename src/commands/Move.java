@@ -2,8 +2,12 @@ package commands;
 
 import static app.App.stateManager;
 
+import ui.strings.commands.Actions;
+import ui.strings.commands.Aliases;
+import ui.strings.commands.Descriptions;
+import ui.strings.commands.Errors;
+
 import rooms.Room;
-import ui.Strings;
 
 /**
  * Defines the logic for the 'move' command.
@@ -16,7 +20,7 @@ public class Move extends Command {
      * Instantiates the command with a set of pre-defined aliases (ui.Strings).
      */
     public Move() {
-        super(Strings.Aliases.MOVE);
+        super(Aliases.MOVE);
     }
     
     @Override
@@ -24,7 +28,7 @@ public class Move extends Command {
 
         // Ensure correct number of arguments
         if (args.length != 1) {
-            System.out.printf(Strings.Command.INVALID, args[0]);
+            System.out.printf(Errors.INVALID, args[0]);
             return false;
         }
 
@@ -33,20 +37,20 @@ public class Move extends Command {
 
         // Ensure room exists
         if (newRoom == null) {
-            System.out.printf(Strings.Move.ROOM_NOT_FOUND, args[1]);
+            System.out.printf(Errors.ROOM_NOT_FOUND, args[1]);
             return false;
         }
 
         // Ensure room is unlocked
         if (newRoom.isLocked()) {
-            System.out.printf(Strings.Move.ROOM_LOCKED, newRoom.toString());
+            System.out.printf(Errors.ROOM_LOCKED, newRoom.toString());
             return false;
         }
 
         // Move to room
         stateManager.getPlayer().setRoom(newRoom);
         
-        System.out.printf(Strings.Move.YOU_MOVE_TO, newRoom.toString());
+        System.out.printf(Actions.MOVE_TO, newRoom.toString());
         System.out.println(newRoom.getDescription());
 
         return true;
@@ -54,6 +58,6 @@ public class Move extends Command {
 
     @Override
     public String toString() {
-        return Strings.Move.DESCRIPTION;
+        return Descriptions.MOVE;
     };
 }

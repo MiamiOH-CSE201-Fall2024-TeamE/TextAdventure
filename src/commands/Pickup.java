@@ -2,8 +2,12 @@ package commands;
 
 import static app.App.stateManager;
 
+import ui.strings.commands.Actions;
+import ui.strings.commands.Aliases;
+import ui.strings.commands.Descriptions;
+import ui.strings.commands.Errors;
+
 import items.*;
-import ui.Strings;
 
 /**
  * Defines the logic for the 'pickup' command.
@@ -16,7 +20,7 @@ public class Pickup extends Command {
      * Instantiates the command with a set of pre-defined aliases (ui.Strings).
      */
     public Pickup() {
-        super(Strings.Aliases.PICKUP);
+        super(Aliases.PICKUP);
     }
     
     @Override
@@ -24,7 +28,7 @@ public class Pickup extends Command {
 
         // Ensure correct number of arguments
         if (args.length != 1) {
-            System.out.printf(Strings.Command.INVALID, args[0]);
+            System.out.printf(Errors.INVALID, args[0]);
             return false;
         }
 
@@ -38,13 +42,13 @@ public class Pickup extends Command {
 
         // Ensure item exists
         if (toPickUp == null) {
-            System.out.printf(Strings.Pickup.ITEM_NOT_FOUND, args[1]);
+            System.out.printf(Errors.ITEM_NOT_FOUND, args[1]);
             return false;
         }
 
         // Ensure item can be picked up
         if (!toPickUp.canPickUp()) {
-            System.out.printf(Strings.Pickup.CANNOT_PICKUP, toPickUp.toString());
+            System.out.printf(Errors.CANNOT_PICKUP, toPickUp.toString());
             return false;
         }
 
@@ -65,7 +69,7 @@ public class Pickup extends Command {
         }
 
         // Pick up item
-        System.out.printf(Strings.Pickup.YOU_PICK_UP, toPickUp.toString());
+        System.out.printf(Actions.PICK_UP, toPickUp.toString());
         stateManager.getPlayer().getRoom().pickup(toPickUp.toString());
 
         return true;
@@ -73,6 +77,6 @@ public class Pickup extends Command {
 
     @Override
     public String toString() {
-        return Strings.Pickup.DESCRIPTION;
+        return Descriptions.PICKUP;
     };
 }

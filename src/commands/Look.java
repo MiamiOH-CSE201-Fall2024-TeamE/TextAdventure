@@ -1,5 +1,7 @@
 package commands;
 
+import ui.strings.commands.Descriptions;
+
 /**
  * Defines the logic for the 'look' command.
  * 
@@ -18,5 +20,7 @@ public class Look extends Command {
     public boolean execute(String[] args) { return false; }  // TODO
 
     @Override
-    public String toString() { return null; };  // TODO
+    public String toString() {
+        return Descriptions.LOOK;
+    };
 }
