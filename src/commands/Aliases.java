@@ -13,6 +13,21 @@ public class Aliases {
     private Aliases() {}
 
     /**
+     * Aliases for the 'check' command.
+     */
+    public static final String[] CHECK = new String[] {
+        "check",
+        "open",
+        "view",
+        "see",
+        "chk",
+        "ci", "oi", "vi", "si",
+        "cd", "od", "vd", "sd",
+        "cj", "oj", "vj", "sj",
+        "c", "o", "v", "s"
+    };
+
+    /**
      * Aliases for the 'help' command.
      */
     public static final String[] HELP = new String[] {
@@ -63,7 +78,8 @@ public class Aliases {
         "exit",
         "leave",
         "q",
-        "e"
+        "e",
+        "x"
     };
 
     /**

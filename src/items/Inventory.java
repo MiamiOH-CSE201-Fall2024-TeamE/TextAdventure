@@ -150,14 +150,11 @@ public class Inventory {
 
             // Convert item name to title case
             String name = item.toString().toLowerCase();
-            String finalName = "";
-            for (String word : name.split(" ")) {
-                finalName += word.substring(0, 1).toUpperCase()
-                    + word.substring(1) + " ";
-            }
+            name = name.substring(0, 1).toUpperCase()
+                + name.substring(1);
 
             // Append item and count to return string
-            ret += finalName + "x" + item.getAmount() + "\n";
+            ret += name + " x" + item.getAmount() + "\n";
         }
         return ret;
     }

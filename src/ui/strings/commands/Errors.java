@@ -23,7 +23,7 @@ public class Errors {
      */
     public static final String INVALID
         = "Error: Invalid syntax\n"
-        + "Try using 'help %s\n'";
+        + "Try using 'help %s'\n";
 
     /**
      * The error shown when an item does not exist.

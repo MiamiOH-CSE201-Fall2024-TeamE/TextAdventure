@@ -28,9 +28,24 @@ public class Descriptions {
     /**
      * The usage text and description for the 'help' command.
      */
+    public static final String CHECK
+        = "Usage:\n"
+        + "\tcheck/c inventory/diary/journal/i/d/j\n"
+        + "\n"
+        + "Description:\n"
+        + "\tShows the contents of your inventory or the diary/journal"
+        + "\n"
+        + "Parameters:\n"
+        + "\tinventory/i - Checks the contents of your inventory\n"
+        + "\tdiary/d - Checks the contents of the diary\n"
+        + "\tjournal/j - Identical to diary";
+
+    /**
+     * The usage text and description for the 'help' command.
+     */
     public static final String HELP
         = "Usage:\n"
-        + "\thelp [command]\n"
+        + "\thelp/h [command]\n"
         + "\n"
         + "Description:\n"
         + "\tProvides a list of commands and detailed help for each one"
@@ -43,7 +58,7 @@ public class Descriptions {
      */
     public static final String LOOK
         = "Usage:\n"
-        + "\tlook [at] room/item\n"
+        + "\tlook/l [at] room/item\n"
         + "\n"
         + "Description:\n"
         + "\tProvides a description of the room/item"
@@ -58,7 +73,7 @@ public class Descriptions {
      */
     public static final String MOVE
         = "Usage:\n"
-        + "\tmove [to] room\n"
+        + "\tmove/m [to] room\n"
         + "\n"
         + "Description:\n"
         + "\tMoves to a new room"
@@ -72,7 +87,7 @@ public class Descriptions {
      */
     public static final String PICKUP
         = "Usage:\n"
-        + "\tpickup [up] to_pickup\n"
+        + "\tpickup/p [up] to_pickup\n"
         + "\n"
         + "Description:\n"
         + "\tPicks an item up"
@@ -86,7 +101,7 @@ public class Descriptions {
      */
     public static final String QUIT
         = "Usage:\n"
-        + "\tquit\n"
+        + "\tquit/q\n"
         + "\n"
         + "Description:\n"
         + "\tExits the game"
@@ -99,7 +114,7 @@ public class Descriptions {
      */
     public static final String USE
         = "Usage:\n"
-        + "\tuse to_use [on] [use_on]\n"
+        + "\tuse/u to_use [on] [use_on]\n"
         + "\n"
         + "Description:\n"
         + "\tUses an item (optionally: on another item)"
