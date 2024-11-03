@@ -44,8 +44,14 @@ public class Lab extends Room {  // TODO: Javadocs
     @Override
     public String toString() { return NAME; }
 
+    /*
+     * Code that handles interactions when the scientist spawns
+     */
     public void spawnScientist() {}  // TODO
 
+    /*
+     * Code to check if the solution is correct
+     */
     public boolean checkCorrect(){ return false; }  // TODO
 
 
