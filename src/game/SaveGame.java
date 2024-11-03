@@ -14,6 +14,7 @@ import rooms.*;
 
 public class SaveGame {
 
+    //TEMPORARY BOOLEAN
     private static boolean saveMade;
 
     /**
@@ -94,7 +95,7 @@ public class SaveGame {
             return false;
         }
 
-        //The game will only try to load if a saveHas already been made
+        //TEMPORARY CODE SO WE CAN TEST THE GAME ITSELF
         if (saveMade == false){
             saveFile.close();
             return false;
