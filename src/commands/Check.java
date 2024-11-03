@@ -76,7 +76,8 @@ public class Check extends Command {
         /* Check inventory */
 
         if (checkingInventory) {
-            System.out.println(stateManager.getPlayer().getInventory().toString());
+            System.out.println(Descriptions.INVENTORY);
+            System.out.print(stateManager.getPlayer().getInventory().toString());
             return true;
         }
 

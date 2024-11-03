@@ -15,7 +15,7 @@ public class Kitchen extends Room {  // TODO: Javadocs
         super(isLocked, inventory);
     }
 
-    public Kitchen() { this(false, new Inventory()); }  // TODO
+    public Kitchen() { this(true, new Inventory()); }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO

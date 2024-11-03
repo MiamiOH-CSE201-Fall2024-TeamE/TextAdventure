@@ -16,7 +16,7 @@ public class SplashScreen {
      * The title splash screen text.
      */
     public static final String TITLE
-        = "ZOMBIE MANOR";
+        = "\nZOMBIE MANOR\n";
     
     /**
      * The prologue splash screen text.
@@ -32,11 +32,17 @@ public class SplashScreen {
         + "decide to take things into your own hands and head to the\n"
         + "scientist's last known location:\n"
         + "\n"
-        + "His personal manor...";
+        + "His personal manor...\n";
     
     /**
      * The splash screen text for the demo ending.
      */
     public static final String DEMO_ENDING
         = "Congrats, you have reached the end of this demo!";
+    
+    /**
+     * The splash screen text for saving/quitting the game.
+     */
+    public static final String GOODBYE_ENDING
+        = "Thanks for playing!";
 }

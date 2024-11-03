@@ -2,6 +2,7 @@ package commands;
 
 import static app.App.stateManager;
 
+import game.Input;
 import ui.strings.commands.Actions;
 import ui.strings.commands.Descriptions;
 import ui.strings.commands.Errors;
@@ -54,6 +55,14 @@ public class Pickup extends Command {
         // Ensure item can be picked up
         if (!toPickUp.canPickUp()) {
             System.out.printf(Errors.CANNOT_PICKUP, toPickUp.toString());
+            return false;
+        }
+
+        // Use turns (with confirmation)
+        if (Input.getConfirmation(Actions.USE_TURNS.formatted(1))) {
+            stateManager.getCountdown().useTurns(1);
+        } else {
+            System.out.println(Actions.CANCELLED);
             return false;
         }
 

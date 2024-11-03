@@ -154,7 +154,7 @@ public class Inventory {
                 + name.substring(1);
 
             // Append item and count to return string
-            ret += name + " x" + item.getAmount() + "\n";
+            ret += "\t" + name + " x" + item.getAmount() + "\n";
         }
         return ret;
     }

@@ -15,7 +15,7 @@ public class Foyer extends Room {  // TODO: Javadocs
         super(isLocked, inventory);
     }
 
-    public Foyer() { this(false, new Inventory()); }  // TODO
+    public Foyer() { this(true, new Inventory()); }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO

@@ -4,6 +4,8 @@ import static app.App.stateManager;
 
 import static ui.strings.SplashScreen.*;
 
+import game.StateManager;
+
 /**
  * Displays various splash screens/sequences for the beginning/end of the game.
  * 
@@ -35,6 +37,11 @@ public class SplashScreen {
      */
     public static void displayEnding() {
         switch (stateManager.calculateEnding()) {
+
+            case StateManager.END_NONE:
+                System.out.println(GOODBYE_ENDING);
+                break;
+
             default:
                 System.out.println(DEMO_ENDING);
                 break;

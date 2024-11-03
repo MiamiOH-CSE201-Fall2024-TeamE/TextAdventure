@@ -31,6 +31,19 @@ public class Actions {
         = "You pick up the %s...\n";
 
     /**
+     * Confirmation text for using turns.
+     */
+    public static final String USE_TURNS
+        = "This action will use %d turns.\n"
+        + "Would you like to continue";
+
+    /**
+     * Action text for cancelling a command.
+     */
+    public static final String CANCELLED
+        = "Action cancelled!";
+
+    /**
      * Confirmation text for quitting the game.
      */
     public static final String QUIT

@@ -2,6 +2,8 @@ package commands;
 
 import static app.App.stateManager;
 
+import game.Input;
+import ui.strings.commands.Actions;
 import ui.strings.commands.Descriptions;
 import ui.strings.commands.Errors;
 
@@ -56,6 +58,15 @@ public class Use extends Command {
         // Ensure item to use can be used
         if (!toUse.canUse()) {
             System.out.printf(Errors.CANNOT_USE, toUse.toString());
+            return false;
+        }
+
+        // Use turns (with confirmation)
+        int turnsToUse = toUse.turnsToUse();
+        if (Input.getConfirmation(Actions.USE_TURNS.formatted(turnsToUse))) {
+            stateManager.getCountdown().useTurns(turnsToUse);
+        } else {
+            System.out.println(Actions.CANCELLED);
             return false;
         }
 

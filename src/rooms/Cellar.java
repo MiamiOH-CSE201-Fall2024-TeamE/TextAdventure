@@ -15,7 +15,7 @@ public class Cellar extends Room {  // TODO: Javadocs
         super(isLocked, inventory);
     }
 
-    public Cellar() { this(false, new Inventory()); }  // TODO
+    public Cellar() { this(true, new Inventory()); }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO

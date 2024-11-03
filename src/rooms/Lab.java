@@ -18,7 +18,7 @@ public class Lab extends Room {  // TODO: Javadocs
         ingredients = new String[3];
     }
 
-    public Lab() { this(false, new Inventory()); }  // TODO
+    public Lab() { this(true, new Inventory()); }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO
