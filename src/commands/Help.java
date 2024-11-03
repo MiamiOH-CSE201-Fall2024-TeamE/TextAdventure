@@ -15,10 +15,7 @@ public class Help extends Command {
     }  // TODO
     
     @Override
-    public void execute(String[] args) {}  // TODO
-
-    @Override
-    public String getDescription() { return null; }  // TODO
+    public boolean execute(String[] args) { return false; }  // TODO
 
     @Override
     public String toString() { return null; };  // TODO

@@ -18,8 +18,23 @@ public class Strings {
     public class Aliases {
         public static final String[] QUIT = new String[] {
             "quit",
-            "exit"
+            "exit",
+            "q",
+            "e"
         };
+        public static final String[] USE = new String[] {
+            "use",
+            "u"
+        };
+    }
+
+    /**
+     * Strings for the commands.Command class(es) to use.
+     */
+    public class Command {
+        public static final String INVALID
+            = "Error: Invalid syntax\n"
+            + "Try using 'help <command>'";
     }
 
     /**
@@ -48,9 +63,7 @@ public class Strings {
     public class Quit {
         public static final String ARE_YOU_SURE
             = "Are you sure you want to quit";
-        public static final String DESCRIPTION_SHORT
-            = "Exits the game";
-        public static final String DESCRIPTION_FULL
+        public static final String DESCRIPTION
             = "Usage:\n"
             + "\tquit\n"
             + "\n"
@@ -91,5 +104,26 @@ public class Strings {
             = "Saved game found!";
         public static final String LOAD_CONFIRMATION
             = "Would you like to continue where you left off";
+    }
+
+    /**
+     * Strings for the commands.Use class to use.
+     */
+    public class Use {
+        public static final String CANNOT_USE
+            = "Error: Item %s cannot be used\n";
+        public static final String DESCRIPTION
+            = "Usage:\n"
+            + "\tuse to_use [on] [use_on]\n"
+            + "\n"
+            + "Description:\n"
+            + "\tUses an item (optionally: on another item)"
+            + "\n"
+            + "Parameters:\n"
+            + "\tto_use - The item to use"
+            + "\ton (optional) - The literal word 'on'"
+            + "\tuse_on (optional) - The item to use the first item on";
+        public static final String ITEM_NOT_FOUND
+            = "Error: Item %s does not exist\n";
     }
 }

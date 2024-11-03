@@ -20,19 +20,17 @@ public class Quit extends Command {
     }
 
     @Override
-    public void execute(String[] args) {
+    public boolean execute(String[] args) {
+
         if (Input.getConfirmation(Strings.Quit.ARE_YOU_SURE)) {
             stateManager.quitGame();
         }
-    }
-
-    @Override
-    public String getDescription() {
-        return Strings.Quit.DESCRIPTION_FULL;
+        
+        return true;
     }
 
     @Override
     public String toString() {
-        return Strings.Quit.DESCRIPTION_SHORT;
+        return Strings.Quit.DESCRIPTION;
     };
 }

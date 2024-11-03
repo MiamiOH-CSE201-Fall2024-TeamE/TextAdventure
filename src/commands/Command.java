@@ -47,16 +47,12 @@ abstract public class Command {
      * Contains the command's functionality.
      * 
      * @param args A list of arguments to pass to the command.
+     * @return True if the command succeeded, false otherwise.
      */
-    abstract public void execute(String[] args);
+    abstract public boolean execute(String[] args);
 
     /**
-     * Returns the command's extended description.
-     */
-    abstract public String getDescription();
-
-    /**
-     * Returns the command's short description.
+     * Returns the command's description.
      */
     @Override
     abstract public String toString();
