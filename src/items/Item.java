@@ -136,4 +136,38 @@ public class Item {
 
         return (inPlayer == null) ? inRoom : inPlayer;
     }
+
+    /**
+     * Removes an item from either the player's or the room's inventory
+     *     (player prioritized). Assumes the item exists.
+     * 
+     * @param name The name of the item to remove.
+     */
+    public static void removeFromInventory(String name) {
+
+        Inventory playerInventory = stateManager.getPlayer().getInventory();
+        Inventory roomInventory = stateManager.getPlayer().getRoom().getInventory();
+
+        Item inPlayer = playerInventory.get(name);
+        Item inRoom = roomInventory.get(name);
+
+        // Get correct item and inventory
+        Item item;
+        Inventory inventory;
+
+        if (inPlayer == null) {
+            item = inRoom;
+            inventory = roomInventory;
+        } else {
+            item = inPlayer;
+            inventory = playerInventory;
+        }
+
+        // Remove item
+        if (item.getAmount() > 1) {
+            item.setAmount(item.getAmount() - 1);
+        } else {
+            inventory.remove(item.toString());
+        }
+    }
 }

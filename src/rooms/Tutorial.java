@@ -3,6 +3,7 @@
 package rooms;
 
 import static app.App.stateManager;
+import static items.Item.removeFromInventory;
 
 import static ui.strings.rooms.Tutorial.*;
 
@@ -49,33 +50,36 @@ public class Tutorial extends Room {
 
         // Using a rock
         if (toUse.equalsIgnoreCase(ROCK)) {
+            removeFromInventory(ROCK);
 
             switch (useOn) {
-                case ROCK:
-                    
-                    break;
-                    
                 case CAR:
-                    
+                    System.out.println(USE_ROCK_ON_CAR);
+                    stateManager.getRoom(Foyer.NAME).unlock();
+                    break;
+
+                case ROCK:
+                    System.out.println(USE_ROCK_ON_ROCK);
                     break;
                     
                 case ZOMBIES:
-                    
+                    System.out.println(USE_ROCK_ON_ZOMBIES);
                     break;
 
                 case MANOR:
-                    
+                    System.out.println(USE_ROCK_ON_MANOR);
                     break;
             
                 default:
                     System.out.println(USE_ROCK_ON_NULL);
                     break;
             }
-
+            return true;
         }
 
         // Using the zombies (because why not lol)
         if (toUse.equalsIgnoreCase(ZOMBIES)) {
+            System.out.println(USE_ZOMBIES);
             stateManager.getPlayer().kill();
             return true;
         }

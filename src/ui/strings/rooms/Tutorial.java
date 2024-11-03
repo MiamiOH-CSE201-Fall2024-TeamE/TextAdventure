@@ -66,8 +66,40 @@ public class Tutorial {
         + "zombies. This must be where the scientist lives...";
 
     /**
+     * The action string for using a rock on the car.
+     */
+    public static final String USE_ROCK_ON_CAR
+        = "";
+
+    /**
+     * The action string for using a rock on another rock.
+     */
+    public static final String USE_ROCK_ON_ROCK
+        = "";
+
+    /**
+     * The action string for using a rock on the zombies.
+     */
+    public static final String USE_ROCK_ON_ZOMBIES
+        = "";
+
+    /**
+     * The action string for using a rock on the manor.
+     */
+    public static final String USE_ROCK_ON_MANOR
+        = "";
+
+    /**
      * The action string for using a rock on nothing.
      */
     public static final String USE_ROCK_ON_NULL
         = "The rock doesn't seem to be very useful by itself...";
+
+    /**
+     * The action string for using the zombies.
+     */
+    public static final String USE_ZOMBIES
+        = "You walk up to and grab a zombie. It proceeds to bite you, quickly\n"
+        + "infecting you and rendering you incapable of fighting back. Why\n"
+        + "would you do that?!";
 }
