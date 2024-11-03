@@ -23,30 +23,30 @@ public class Use extends Command {
     public boolean execute(String[] args) {
 
         // Ensure correct number of arguments
-        if (args.length != 1 && args.length != 3) {
-            System.out.println(Strings.Command.INVALID);
+        if (args.length != 2 && args.length != 4) {
+            System.out.printf(Strings.Command.INVALID, args[0]);
             return false;
         }
 
         // Get item to use
-        Item toUse = getItem(args[0]);
+        Item toUse = getItem(args[1]);
 
         // Ensure item to use exists
         if (toUse == null) {
-            System.out.printf(Strings.Use.ITEM_NOT_FOUND, args[0]);
+            System.out.printf(Strings.Use.ITEM_NOT_FOUND, args[1]);
             return false;
         }
 
         // Get item to use on
         Item useOn = null;
 
-        if (args.length == 3) {
+        if (args.length == 4) {
 
-            useOn = getItem(args[2]);
+            useOn = getItem(args[3]);
 
             // Ensure item to use on exists
             if (useOn == null) {
-                System.out.printf(Strings.Use.ITEM_NOT_FOUND, args[2]);
+                System.out.printf(Strings.Use.ITEM_NOT_FOUND, args[3]);
                 return false;
             }
         }

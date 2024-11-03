@@ -16,6 +16,15 @@ public class Strings {
      * Aliases for the various command classes to use.
      */
     public class Aliases {
+        public static final String[] PICKUP = new String[] {
+            "pickup",
+            "take",
+            "grab",
+            "get",
+            "p",
+            "t",
+            "g"
+        };
         public static final String[] QUIT = new String[] {
             "quit",
             "exit",
@@ -34,7 +43,7 @@ public class Strings {
     public class Command {
         public static final String INVALID
             = "Error: Invalid syntax\n"
-            + "Try using 'help <command>'";
+            + "Try using 'help %s\n'";
     }
 
     /**
@@ -55,6 +64,25 @@ public class Strings {
             = " (Y/n)? ";
         public static final String CONFIRMATION
             = "Y";
+    }
+
+    /**
+     * Strings for the commands.Pickup class to use.
+     */
+    public class Pickup {
+        public static final String CANNOT_PICKUP
+            = "Error: Item %s cannot be picked up\n";
+        public static final String DESCRIPTION
+            = "Usage:\n"
+            + "\tpickup to_pickup\n"
+            + "\n"
+            + "Description:\n"
+            + "\tPicks an item up"
+            + "\n"
+            + "Parameters:\n"
+            + "\tto_pickup - The item to pick up";
+        public static final String ITEM_NOT_FOUND
+            = "Error: Item %s does not exist\n";
     }
 
     /**

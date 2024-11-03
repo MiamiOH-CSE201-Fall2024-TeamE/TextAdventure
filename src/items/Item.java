@@ -58,6 +58,20 @@ public class Item {
     }
 
     /**
+     * Instantiates a new copy of an item.
+     * 
+     * @param item The item to copy.
+     */
+    public Item(Item item) {
+        this.name = item.toString();
+        this.description = item.getDescription();
+        this.amount = item.getAmount();
+        this.turnsToUse = item.turnsToUse();
+        this.canPickUp = item.canPickUp();
+        this.canUse = item.canUse();
+    }
+
+    /**
      * Returns whether or not the player can pick this item up.
      * 
      * @return True if the item can be picked up, false otherwise.
