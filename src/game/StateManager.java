@@ -107,7 +107,6 @@ public class StateManager {
         }
 
         if (startNewGame) {
-            SaveGame.delete();
 
             countdown = new Countdown(3);
 
