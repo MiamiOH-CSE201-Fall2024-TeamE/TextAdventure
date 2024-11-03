@@ -37,10 +37,10 @@ public class Tutorial extends Room {
         this(false, new Inventory());
       
         // Fill room's inventory
-        getInventory().add(new Item("Rock", DESC_ROCK, 3, 1, true, true));
-        getInventory().add(new Item("Car", DESC_CAR, 1, 0, false, false));
-        getInventory().add(new Item("Zombies", DESC_ZOMBIES, 99, 1, false, true));
-        getInventory().add(new Item("Manor", DESC_MANOR, 1, 0, false, false));
+        getInventory().add(new Item("rock", DESC_ROCK, 3, 1, true, true));
+        getInventory().add(new Item("car", DESC_CAR, 1, 0, false, false));
+        getInventory().add(new Item("zombies", DESC_ZOMBIES, 99, 1, false, true));
+        getInventory().add(new Item("manor", DESC_MANOR, 1, 0, false, false));
     }
 
     // TODO
@@ -70,7 +70,7 @@ public class Tutorial extends Room {
         if (getInventory().size() == 0) {
             outString += "The room is empty.";
         } else {
-            outString += "You see the following items: \n";
+            outString += "You see the following Objects: \n";
             for (Item item : getInventory().toArray()) {
                 outString += String.format("%s: %s \n\t| Amount: %d | Turns: %d | Can Pick Up: %s | Can Use: %s\n",
                     item.toString(), item.getDescription(),
