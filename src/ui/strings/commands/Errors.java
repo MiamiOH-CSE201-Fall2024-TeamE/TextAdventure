@@ -13,6 +13,12 @@ public class Errors {
     private Errors() {}
 
     /**
+     * The error shown when an command does not exist.
+     */
+    public static final String COMMAND_NOT_FOUND
+        = "Error: Command '%s' not found\n";
+
+    /**
      * The error shown when the syntax of a command is invalid.
      */
     public static final String INVALID

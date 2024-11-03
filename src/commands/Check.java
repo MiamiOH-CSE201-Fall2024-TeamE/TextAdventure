@@ -8,7 +8,7 @@ package commands;
 public class Check extends Command {
 
     /**
-     * Instantiates the command with a set of pre-defined aliases (ui.Strings).
+     * Instantiates the command with a set of pre-defined aliases.
      */
     public Check() {
         super(null);

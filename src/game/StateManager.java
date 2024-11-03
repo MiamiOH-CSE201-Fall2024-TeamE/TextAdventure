@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import commands.*;
 import items.*;
 import rooms.*;
 
@@ -65,6 +66,11 @@ public class StateManager {
     private HashMap<String, Room> rooms;
 
     /**
+     * The game's usable commands.
+     */
+    private Command[] commands;
+
+    /**
      * Whether or not the game should be running.
      */
     private boolean isRunning;
@@ -76,8 +82,19 @@ public class StateManager {
      */
     public StateManager() {
 
-        boolean startNewGame = true;
+        // Load all available commands
+        commands = new Command[] {
+            new Check(),
+            new Help(),
+            new Look(),
+            new Move(),
+            new Pickup(),
+            new Quit(),
+            new Use()
+        };
+
         isRunning = true;
+        boolean startNewGame = true;
 
         if (loadGame()) {
             System.out.println(SAVE_FOUND);
@@ -125,6 +142,31 @@ public class StateManager {
      * @return The room.
      */
     public Room getRoom(String name) { return rooms.get(name); }
+
+    /**
+     * Returns a command by name.
+     * 
+     * @param name The name of the command to get.
+     * @return The command, or null if not found.
+     */
+    public Command getCommand(String name) {
+        
+        for (Command command : commands) {
+            for (String alias : command.getAliases()) {
+                if (alias.equalsIgnoreCase(name)) {
+                    return command;
+                }
+            }
+        }
+
+        return null;
+    }
+    /**
+     * Returns an array of all commands.
+     * 
+     * @return All available commands.
+     */
+    public Command[] getCommands() { return commands; }
 
     /**
      * Returns whether or not the game should be running.

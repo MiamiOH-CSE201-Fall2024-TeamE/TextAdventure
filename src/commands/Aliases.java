@@ -13,10 +13,21 @@ public class Aliases {
     private Aliases() {}
 
     /**
+     * Aliases for the 'help' command.
+     */
+    public static final String[] HELP = new String[] {
+        "help",
+        "manual",
+        "man",
+        "h"
+    };
+
+    /**
      * Aliases for the 'look' command.
      */
     public static final String[] LOOK = new String[] {
         "look",
+        "lk",
         "l"
     };
 
@@ -26,6 +37,7 @@ public class Aliases {
     public static final String[] MOVE = new String[] {
         "move",
         "go",
+        "mv",
         "m"
     };
 

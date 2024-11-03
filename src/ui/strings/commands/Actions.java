@@ -35,4 +35,10 @@ public class Actions {
      */
     public static final String QUIT
         = "Are you sure you want to quit";
+
+    /**
+     * Action text for using the help command without parameters.
+     */
+    public static final String USE_HELP
+        = "For more information, use 'help <command>'";
 }

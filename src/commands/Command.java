@@ -67,7 +67,7 @@ abstract public class Command {
      * @param name The name of the item to get.
      * @return The item, or null if not found.
      */
-    protected Item getItem(String name) {
+    protected static Item getItem(String name) {
 
         Item inPlayer = stateManager.getPlayer().getInventory().get(name);
         Item inRoom = stateManager.getPlayer().getRoom().getInventory().get(name);

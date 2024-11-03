@@ -11,7 +11,7 @@ import ui.SplashScreen;
 public class App {
 
     /**
-     * Contains the game's current state.
+     * The game's current state.
      */
     public static StateManager stateManager = new StateManager();
 

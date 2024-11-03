@@ -11,6 +11,32 @@ public class Descriptions {
      * Prevent instantiating static class.
      */
     private Descriptions() {}
+    
+    /**
+     * The text to be printed before displaying a command's aliases.
+     */
+    public static final String ALIASES
+        = "\n"
+        + "Aliases:";
+    
+    /**
+     * The text to be printed before displaying a list of available commands.
+     */
+    public static final String COMMANDS
+        = "Available commands:";
+
+    /**
+     * The usage text and description for the 'help' command.
+     */
+    public static final String HELP
+        = "Usage:\n"
+        + "\thelp [command]\n"
+        + "\n"
+        + "Description:\n"
+        + "\tProvides a list of commands and detailed help for each one"
+        + "\n"
+        + "Parameters:\n"
+        + "\tcommand (optional) - The command to get detailed help for";
 
     /**
      * The usage text and description for the 'look' command.
