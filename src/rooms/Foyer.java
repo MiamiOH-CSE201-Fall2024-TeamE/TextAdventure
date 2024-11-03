@@ -7,14 +7,26 @@ import items.Inventory;
  * 
  * @version 1.0.0
  */
-public class Foyer extends Room {  // TODO: Javadocs
+public class Foyer extends Room {
 
+    /**
+     * The room's name.
+     */
     public static final String NAME = "foyer";
 
+    /**
+     * Instantiates a new room with a specified inventory and lock status.
+     * 
+     * @param isLocked Whether or not the room is locked.
+     * @param inventory The room's inventory.
+     */
     public Foyer(boolean isLocked, Inventory inventory) {
         super(isLocked, inventory);
     }
 
+    /**
+     * Instantiates a new room with the room's default inventory and lock status.
+     */
     public Foyer() { this(true, new Inventory()); }  // TODO
 
     @Override

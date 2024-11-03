@@ -9,15 +9,27 @@ import items.Inventory;
  */
 public class Lab extends Room {  // TODO: Javadocs
 
+    /**
+     * The room's name.
+     */
     public static final String NAME = "lab";
 
     private String[] ingredients;
 
+    /**
+     * Instantiates a new room with a specified inventory and lock status.
+     * 
+     * @param isLocked Whether or not the room is locked.
+     * @param inventory The room's inventory.
+     */
     public Lab(boolean isLocked, Inventory inventory) {
         super(isLocked, inventory);
         ingredients = new String[3];
     }
 
+    /**
+     * Instantiates a new room with the room's default inventory and lock status.
+     */
     public Lab() { this(true, new Inventory()); }  // TODO
 
     @Override

@@ -7,14 +7,26 @@ import items.Inventory;
  * 
  * @version 1.0.0
  */
-public class Kitchen extends Room {  // TODO: Javadocs
+public class Kitchen extends Room {
 
+    /**
+     * The room's name.
+     */
     public static final String NAME = "kitchen";
 
+    /**
+     * Instantiates a new room with a specified inventory and lock status.
+     * 
+     * @param isLocked Whether or not the room is locked.
+     * @param inventory The room's inventory.
+     */
     public Kitchen(boolean isLocked, Inventory inventory) {
         super(isLocked, inventory);
     }
 
+    /**
+     * Instantiates a new room with the room's default inventory and lock status.
+     */
     public Kitchen() { this(true, new Inventory()); }  // TODO
 
     @Override

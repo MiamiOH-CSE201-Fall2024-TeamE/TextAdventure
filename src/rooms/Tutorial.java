@@ -4,6 +4,8 @@ package rooms;
 
 import static app.App.stateManager;
 
+import static ui.strings.rooms.Tutorial.*;
+
 import items.*;
 
 /**
@@ -11,21 +13,37 @@ import items.*;
  * 
  * @version 1.0.0
  */
-public class Tutorial extends Room {  // TODO: Javadocs
+public class Tutorial extends Room {
 
+    /**
+     * The room's name.
+     */
     public static final String NAME = "tutorial";
 
+    /**
+     * Instantiates a new room with a specified inventory and lock status.
+     * 
+     * @param isLocked Whether or not the room is locked.
+     * @param inventory The room's inventory.
+     */
     public Tutorial(boolean isLocked, Inventory inventory) {
         super(isLocked, inventory);
     }
 
+    /**
+     * Instantiates a new room with the room's default inventory and lock status.
+     */
     public Tutorial() {
         this(false, new Inventory());
       
-        getInventory().add(new Item("Rock", "A rock you can use to distract the zombies", 3, 1, true, true));
-        getInventory().add(new Item("Car", "A car you could throw a rock at to distract the zombies", 1, 0, false, false));
+        // Fill room's inventory
+        getInventory().add(new Item("rock", DESC_ROCK, 3, 1, true, true));
+        getInventory().add(new Item("car", DESC_CAR, 1, 0, false, false));
+        getInventory().add(new Item("zombies", DESC_ZOMBIES, 99, 1, false, true));
+        getInventory().add(new Item("manor", DESC_MANOR, 1, 0, false, false));
     }
 
+    // TODO
     @Override
     public boolean use(String toUse, String useOn) {
     
@@ -41,6 +59,10 @@ public class Tutorial extends Room {  // TODO: Javadocs
         }
     }
 
+    @Override
+    public void pickup(String toPickUp) { /* Do nothing */ }
+
+    // TODO
     @Override
     public String getDescription() {
         String outString = "The player " + stateManager.getPlayer() + " is in the Tutorial room. ";

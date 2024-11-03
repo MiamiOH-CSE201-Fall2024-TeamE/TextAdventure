@@ -21,6 +21,9 @@ abstract public class Room {
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
+     * 
+     * @param isLocked Whether or not the room is locked.
+     * @param inventory The room's inventory.
      */
     public Room(boolean isLocked, Inventory inventory) {
         this.inventory = inventory;
