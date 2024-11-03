@@ -16,6 +16,11 @@ public class Strings {
      * Aliases for the various command classes to use.
      */
     public class Aliases {
+        public static final String[] MOVE = new String[] {
+            "move",
+            "go",
+            "m"
+        };
         public static final String[] PICKUP = new String[] {
             "pickup",
             "take",
@@ -28,8 +33,10 @@ public class Strings {
         public static final String[] QUIT = new String[] {
             "quit",
             "exit",
+            "leave",
             "q",
-            "e"
+            "e",
+            "l"
         };
         public static final String[] USE = new String[] {
             "use",
@@ -67,11 +74,32 @@ public class Strings {
     }
 
     /**
+     * Strings for the commands.Move class to use.
+     */
+    public class Move {
+        public static final String ROOM_LOCKED
+            = "Error: Cannot move to room '%s'\n";
+        public static final String DESCRIPTION
+            = "Usage:\n"
+            + "\tmove [to] room\n"
+            + "\n"
+            + "Description:\n"
+            + "\tMoves to a new room"
+            + "\n"
+            + "Parameters:\n"
+            + "\troom - The room to move to";
+        public static final String ROOM_NOT_FOUND
+            = "Error: Room '%s' does not exist\n";
+        public static final String YOU_MOVE_TO
+            = "You move to the %s...\n";
+    }
+
+    /**
      * Strings for the commands.Pickup class to use.
      */
     public class Pickup {
         public static final String CANNOT_PICKUP
-            = "Error: Item %s cannot be picked up\n";
+            = "Error: Item '%s' cannot be picked up\n";
         public static final String DESCRIPTION
             = "Usage:\n"
             + "\tpickup to_pickup\n"
@@ -82,7 +110,9 @@ public class Strings {
             + "Parameters:\n"
             + "\tto_pickup - The item to pick up";
         public static final String ITEM_NOT_FOUND
-            = "Error: Item %s does not exist\n";
+            = "Error: Item '%s' does not exist\n";
+        public static final String YOU_PICK_UP
+            = "You pick up the %s...\n";
     }
 
     /**
@@ -139,7 +169,7 @@ public class Strings {
      */
     public class Use {
         public static final String CANNOT_USE
-            = "Error: Item %s cannot be used\n";
+            = "Error: Item '%s' cannot be used\n";
         public static final String DESCRIPTION
             = "Usage:\n"
             + "\tuse to_use [on] [use_on]\n"
@@ -152,6 +182,6 @@ public class Strings {
             + "\ton (optional) - The literal word 'on'"
             + "\tuse_on (optional) - The item to use the first item on";
         public static final String ITEM_NOT_FOUND
-            = "Error: Item %s does not exist\n";
+            = "Error: Item '%s' does not exist\n";
     }
 }

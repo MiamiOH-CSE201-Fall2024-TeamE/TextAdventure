@@ -64,6 +64,10 @@ public class Pickup extends Command {
             toPickUpPlayer.setAmount(toPickUpPlayer.getAmount() + 1);
         }
 
+        // Pick up item
+        System.out.printf(Strings.Pickup.YOU_PICK_UP, toPickUp.toString());
+        stateManager.getPlayer().getRoom().pickup(toPickUp.toString());
+
         return true;
     }
 

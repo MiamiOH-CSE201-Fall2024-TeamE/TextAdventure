@@ -41,6 +41,9 @@ public class Tutorial extends Room {  // TODO: Javadocs
     }  // TODO
 
     @Override
+    public void pickup(String toPickUp) {}  // TODO
+
+    @Override
     public String getDescription() { return null; }  // TODO
 
     @Override

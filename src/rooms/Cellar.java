@@ -21,6 +21,9 @@ public class Cellar extends Room {  // TODO: Javadocs
     public boolean use(String toUse, String useOn) { return false; }  // TODO
 
     @Override
+    public void pickup(String toPickUp) {}  // TODO
+
+    @Override
     public String getDescription() { return null; }  // TODO
 
     @Override
