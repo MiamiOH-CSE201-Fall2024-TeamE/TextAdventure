@@ -2,7 +2,6 @@ package commands;
 
 import static app.App.stateManager;
 
-import ui.strings.commands.Aliases;
 import ui.strings.commands.Descriptions;
 import ui.strings.commands.Errors;
 
