@@ -2,8 +2,10 @@ package commands;
 
 import static app.App.stateManager;
 
+import ui.strings.commands.Actions;
+import ui.strings.commands.Descriptions;
+
 import game.Input;
-import ui.Strings;
 
 /**
  * Defines the logic for the 'quit' command.
@@ -13,19 +15,24 @@ import ui.Strings;
 public class Quit extends Command {
 
     /**
-     * Instantiates the command with a set of pre-defined aliases (ui.Strings).
+     * Instantiates the command with a set of pre-defined aliases.
      */
     public Quit() {
-        super(Strings.Aliases.QUIT);
+        super(Aliases.QUIT);
     }
 
     @Override
-    public void execute(String[] args) {
-        if (Input.getConfirmation(Strings.Quit.ARE_YOU_SURE)) {
+    public boolean execute(String[] args) {
+
+        if (Input.getConfirmation(Actions.QUIT)) {
             stateManager.quitGame();
         }
+        
+        return true;
     }
 
     @Override
-    public String toString() { return null; };  // TODO
+    public String toString() {
+        return Descriptions.QUIT;
+    };
 }

@@ -71,6 +71,13 @@ abstract public class Room {
     }
     
     /**
+     * Contains the room-specific code for picking up items.
+     * 
+     * @param toPickUp The name of the item to pick up.
+     */
+    abstract public void pickup(String toPickUp);
+    
+    /**
      * Returns the room's description, based on its current state.
      * 
      * @return The room's description.

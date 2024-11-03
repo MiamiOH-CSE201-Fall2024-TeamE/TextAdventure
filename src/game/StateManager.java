@@ -1,14 +1,13 @@
 package game;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Scanner;
+import static ui.strings.StateManager.*;
+import static ui.strings.SaveGame.GAME_LOADED;
 
-import items.*;
+import java.util.HashMap;
+
+import commands.*;
 import rooms.*;
-import ui.Strings;
+import ui.SplashScreen;
 
 /**
  * Holds game state data, including layout and player info.
@@ -64,34 +63,53 @@ public class StateManager {
     private HashMap<String, Room> rooms;
 
     /**
+     * The game's usable commands.
+     */
+    private Command[] commands;
+
+    /**
      * Whether or not the game should be running.
      */
     private boolean isRunning;
 
     /**
-     * Instantiates the game. If a save file is present, asks the user if they
-     *     would like to continue. If user answers no, or if the file is not
-     *     present, ensures save file is deleted and starts a new game.
+     * Instantiates the game. begin() should be called before reading fields.
      */
     public StateManager() {
 
-        boolean startNewGame = true;
-        isRunning = true;
+        // Load all available commands
+        commands = new Command[] {
+            new Check(),
+            new Help(),
+            new Look(),
+            new Move(),
+            new Pickup(),
+            new Quit(),
+            new Use()
+        };
 
-        if (loadGame()) {
-            System.out.println(Strings.StateManager.SAVE_FOUND);
-            startNewGame = !Input.getConfirmation(Strings.StateManager.LOAD_CONFIRMATION);
+        rooms = new HashMap<>();
+        isRunning = false;
+    }
+
+    /**
+     * Initializes and starts the game.
+     *     Should be called right after construction.
+     */
+    public void begin() {
+
+        isRunning = true;
+        boolean startNewGame = true;
+
+        if (SaveGame.load()) {
+            System.out.println(SAVE_FOUND);
+            startNewGame = !Input.getConfirmation(LOAD_CONFIRMATION);
         }
 
         if (startNewGame) {
-            File saveFile = new File("savegame.dat");
-            if (saveFile.exists()) {
-                saveFile.delete();
-            }
 
             countdown = new Countdown(3);
 
-            rooms = new HashMap<>();
             rooms.put(Tutorial.NAME, new Tutorial());
             rooms.put(Foyer.NAME, new Foyer());
             rooms.put(Kitchen.NAME, new Kitchen());
@@ -100,7 +118,15 @@ public class StateManager {
             rooms.put(Lab.NAME, new Lab());
 
             player = new Player(rooms.get(Tutorial.NAME));
+
+            SplashScreen.displayTitle();
+            SplashScreen.displayPrologue();
+
+        } else {
+            System.out.println(GAME_LOADED);
         }
+
+        System.out.println(player.getRoom().getDescription());
     }
 
     /**
@@ -109,6 +135,20 @@ public class StateManager {
      * @return The turn counter.
      */
     public Countdown getCountdown() { return countdown; }
+
+    /**
+     * Replaces the active player with a new one.
+     * 
+     * @param player The new player.
+     */
+    public void setPlayer(Player player) { this.player = player; }
+
+    /**
+     * Replaces the active turn counter with a new one.
+     * 
+     * @param countdown The new turn counter.
+     */
+    public void setCountdown(Countdown countdown) { this.countdown = countdown; }
 
     /**
      * Returns the active player.
@@ -126,156 +166,43 @@ public class StateManager {
     public Room getRoom(String name) { return rooms.get(name); }
 
     /**
+     * Returns a hashmap of all rooms.
+     * 
+     * @return All available rooms.
+     */
+    public HashMap<String, Room> getRooms() { return rooms; }
+
+    /**
+     * Returns a command by name.
+     * 
+     * @param name The name of the command to get.
+     * @return The command, or null if not found.
+     */
+    public Command getCommand(String name) {
+        
+        for (Command command : commands) {
+            for (String alias : command.getAliases()) {
+                if (alias.equalsIgnoreCase(name)) {
+                    return command;
+                }
+            }
+        }
+
+        return null;
+    }
+    /**
+     * Returns an array of all commands.
+     * 
+     * @return All available commands.
+     */
+    public Command[] getCommands() { return commands; }
+
+    /**
      * Returns whether or not the game should be running.
      * 
      * @return True if game is running, false otherwise.
      */
     public boolean isRunning() { return isRunning; }
-
-    /**
-     * Saves the game to the file [savegame.dat].
-     */
-    public void saveGame() {
-
-        // Open savegame file
-        PrintWriter saveFile;
-        try {
-            saveFile = new PrintWriter(new File("savegame.dat"));
-        } catch(FileNotFoundException e) {
-            throw new IllegalStateException("Save file could not be written");
-        }
-
-        // Save countdown
-        saveFile.printf("countdown.turnsRemaining: %d\n",
-            countdown.getTurnsRemaining());
-        saveFile.printf("countdown.turnsUsed: %d\n",
-            countdown.getTurnsUsed());
-        saveFile.println();
-
-        // Save rooms
-        for (Room room : rooms.values()) {
-            saveFile.printf("room.name: %s\n", room.toString());
-            saveFile.printf("room.isLocked: %s\n", room.isLocked());
-            saveFile.printf("room.inventory.size: %d\n",
-                room.getInventory().size());
-            for (Item item : room.getInventory().toArray()) {
-                saveFile.printf("\t%s|%s|%d|%d|%s|%s\n",
-                    item.toString(), item.getDescription(),
-                    item.getAmount(), item.turnsToUse(),
-                    item.canPickUp(), item.canUse());
-            }
-            saveFile.println();
-        }
-        
-        // Save player
-        saveFile.printf("player.room: %s\n", player.getRoom().toString());
-        saveFile.printf("player.inventory.size: %d\n",
-            player.getInventory().size());
-        for (Item item : player.getInventory().toArray()) {
-            saveFile.printf("\t%s|%s|%d|%d|%s|%s\n",
-                item.toString(), item.getDescription(),
-                item.getAmount(), item.turnsToUse(),
-                item.canPickUp(), item.canUse());
-        }
-
-        // Close savegame file
-        saveFile.close();
-    }
-
-    /**
-     * Loads the savegame file.
-     * 
-     * @return True if state successfully loaded, false if no save file found.
-     */
-    public boolean loadGame() {
-
-        // Open savegame file
-        Scanner saveFile;
-        try {
-            saveFile = new Scanner(new File("savegame.dat"));
-        } catch(FileNotFoundException e) {
-            return false;
-        }
-
-        // Load countdown
-        int turnsRemaining = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
-        int turnsUsed = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
-        saveFile.nextLine();  // Skip blank line
-
-        countdown = new Countdown(turnsRemaining, turnsUsed);
-
-        // Load rooms
-        for (int i = 0; i < 6; i++) {
-            String roomName = saveFile.nextLine().strip().split(" ")[1];
-            boolean isLocked = Boolean.valueOf(saveFile.nextLine().split(" ")[1]);
-            int size = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
-
-            // Fill the room's inventory
-            Inventory inventory = new Inventory();
-            for (int j = 0; j < size; j++) {
-                String[] itemData = saveFile.nextLine().split("|");
-                String name = itemData[0];
-                String description = itemData[1];
-                int amount = Integer.valueOf(itemData[2]);
-                int turnsToUse = Integer.valueOf(itemData[3]);
-                boolean canPickUp = Boolean.valueOf(itemData[4]);
-                boolean canUse = Boolean.valueOf(itemData[5]);
-
-                inventory.add(new Item(name, description, amount, turnsToUse,
-                    canPickUp, canUse));
-            }
-
-            // Create the appropriate room instance
-            switch (roomName) {
-                case Bedroom.NAME:
-                    rooms.put(roomName, new Bedroom(isLocked, inventory));
-                    break;
-                case Cellar.NAME:
-                    rooms.put(roomName, new Cellar(isLocked, inventory));
-                    break;
-                case Foyer.NAME:
-                    rooms.put(roomName, new Foyer(isLocked, inventory));
-                    break;
-                case Kitchen.NAME:
-                    rooms.put(roomName, new Kitchen(isLocked, inventory));
-                    break;
-                case Lab.NAME:
-                    rooms.put(roomName, new Lab(isLocked, inventory));
-                    break;
-                case Tutorial.NAME:
-                    rooms.put(roomName, new Tutorial(isLocked, inventory));
-                    break;
-                default:
-                    throw new IllegalStateException("Save file is corrupted");
-            }
-            saveFile.nextLine();  // Skip blank line
-        }
-
-        // Load player
-        Room startingRoom = rooms.get(saveFile.nextLine().split(" ")[1]);
-        int size = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
-
-        // Fill the player's inventory
-        Inventory inventory = new Inventory();
-        for (int i = 0; i < size; i++) {
-            String[] itemData = saveFile.nextLine().strip().split("|");
-            String name = itemData[0];
-            String description = itemData[1];
-            int amount = Integer.valueOf(itemData[2]);
-            int turnsToUse = Integer.valueOf(itemData[3]);
-            boolean canPickUp = Boolean.valueOf(itemData[4]);
-            boolean canUse = Boolean.valueOf(itemData[5]);
-
-            inventory.add(new Item(name, description, amount, turnsToUse,
-                canPickUp, canUse));
-        }
-
-        player = new Player(startingRoom, inventory);
-
-        // Close savegame file
-        saveFile.close();
-        return true;
-    }
 
     /**
      * Quits the game.
@@ -288,5 +215,5 @@ public class StateManager {
      * 
      * @return The ending state.
      */
-    public int calculateEnding() { return -1; }  // TODO
+    public int calculateEnding() { return END_NONE; }  // TODO
 }

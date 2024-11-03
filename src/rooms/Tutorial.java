@@ -2,7 +2,8 @@
 
 package rooms;
 
-import app.App;
+import static app.App.stateManager;
+
 import items.*;
 
 /**
@@ -20,14 +21,17 @@ public class Tutorial extends Room {  // TODO: Javadocs
 
     public Tutorial() {
         this(false, new Inventory());
+      
         getInventory().add(new Item("Rock", "A rock you can use to distract the zombies", 3, 1, true, true));
         getInventory().add(new Item("Car", "A car you could throw a rock at to distract the zombies", 1, 0, false, false));
     }
 
     @Override
-    public boolean use(String toUse, String useOn) { 
-        if (App.stateManager.getPlayer().getInventory().get(toUse) != null && toUse.strip().toLowerCase() == "rock") {
-            App.stateManager.getPlayer().getInventory().get(toUse).setAmount(App.stateManager.getPlayer().getInventory().get(toUse).getAmount() - 1);
+    public boolean use(String toUse, String useOn) {
+    
+        if (stateManager.getPlayer().getInventory().get(toUse) != null && toUse.strip().toLowerCase() == "rock") {
+            stateManager.getPlayer().getInventory().get(toUse).setAmount(stateManager.getPlayer().getInventory().get(toUse).getAmount() - 1);
+
             System.out.println("You threw a " + toUse + " at the " + useOn + ", and distracted the zombies. Get to the manor while they are distracted");
             return true;
         }
@@ -39,7 +43,7 @@ public class Tutorial extends Room {  // TODO: Javadocs
 
     @Override
     public String getDescription() {
-        String outString = "The player " + App.stateManager.getPlayer() + " is in the Tutorial room. ";
+        String outString = "The player " + stateManager.getPlayer() + " is in the Tutorial room. ";
         
         if (getInventory().size() == 0) {
             outString += "The room is empty.";

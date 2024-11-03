@@ -2,6 +2,10 @@ package ui;
 
 import static app.App.stateManager;
 
+import static ui.strings.SplashScreen.*;
+
+import game.StateManager;
+
 /**
  * Displays various splash screens/sequences for the beginning/end of the game.
  * 
@@ -18,14 +22,14 @@ public class SplashScreen {
      * Prints the game's title screen.
      */
     public static void displayTitle() {
-        System.out.println(Strings.SplashScreen.TITLE);
+        System.out.println(TITLE);
     }     
 
     /**
      * Prints the game's prologue/intro.
      */
     public static void displayPrologue() {
-        System.out.println(Strings.SplashScreen.PROLOGUE);
+        System.out.println(PROLOGUE);
     }
 
     /**
@@ -33,8 +37,13 @@ public class SplashScreen {
      */
     public static void displayEnding() {
         switch (stateManager.calculateEnding()) {
+
+            case StateManager.END_NONE:
+                System.out.println(GOODBYE_ENDING);
+                break;
+
             default:
-                System.out.println(Strings.SplashScreen.DEMO_ENDING);
+                System.out.println(DEMO_ENDING);
                 break;
         }
     }

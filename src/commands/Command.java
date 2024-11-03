@@ -1,5 +1,9 @@
 package commands;
 
+import static app.App.stateManager;
+
+import items.Item;
+
 /**
  * Provides the data and methods necessary to build a usable console command.
  * 
@@ -47,12 +51,27 @@ abstract public class Command {
      * Contains the command's functionality.
      * 
      * @param args A list of arguments to pass to the command.
+     * @return True if the command succeeded, false otherwise.
      */
-    abstract public void execute(String[] args);
+    abstract public boolean execute(String[] args);
 
     /**
      * Returns the command's description.
      */
     @Override
     abstract public String toString();
+
+    /**
+     * Gets an item from either the player or the room (player prioritized).
+     * 
+     * @param name The name of the item to get.
+     * @return The item, or null if not found.
+     */
+    protected static Item getItem(String name) {
+
+        Item inPlayer = stateManager.getPlayer().getInventory().get(name);
+        Item inRoom = stateManager.getPlayer().getRoom().getInventory().get(name);
+
+        return (inPlayer == null) ? inRoom : inPlayer;
+    }
 }
