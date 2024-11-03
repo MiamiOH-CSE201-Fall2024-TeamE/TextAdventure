@@ -27,5 +27,12 @@ public class Quit extends Command {
     }
 
     @Override
-    public String toString() { return null; };  // TODO
+    public String getDescription() {
+        return Strings.Quit.DESCRIPTION_FULL;
+    }
+
+    @Override
+    public String toString() {
+        return Strings.Quit.DESCRIPTION_SHORT;
+    };
 }

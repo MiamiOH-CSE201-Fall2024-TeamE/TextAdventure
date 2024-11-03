@@ -51,7 +51,12 @@ abstract public class Command {
     abstract public void execute(String[] args);
 
     /**
-     * Returns the command's description.
+     * Returns the command's extended description.
+     */
+    abstract public String getDescription();
+
+    /**
+     * Returns the command's short description.
      */
     @Override
     abstract public String toString();

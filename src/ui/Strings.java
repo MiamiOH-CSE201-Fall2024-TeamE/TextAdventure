@@ -48,6 +48,17 @@ public class Strings {
     public class Quit {
         public static final String ARE_YOU_SURE
             = "Are you sure you want to quit";
+        public static final String DESCRIPTION_SHORT
+            = "Exits the game";
+        public static final String DESCRIPTION_FULL
+            = "Usage:\n"
+            + "\tquit\n"
+            + "\n"
+            + "Description:\n"
+            + "\tExits the game"
+            + "\n"
+            + "Parameters:\n"
+            + "\t<none>";
     }
 
     /**

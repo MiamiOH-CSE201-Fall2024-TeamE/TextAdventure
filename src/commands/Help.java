@@ -18,5 +18,8 @@ public class Help extends Command {
     public void execute(String[] args) {}  // TODO
 
     @Override
+    public String getDescription() { return null; }  // TODO
+
+    @Override
     public String toString() { return null; };  // TODO
 }
