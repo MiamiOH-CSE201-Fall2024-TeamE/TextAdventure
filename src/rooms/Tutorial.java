@@ -95,9 +95,9 @@ public class Tutorial extends Room {
         if (getInventory().size() == 0) {
             outString += "The room is empty.";
         } else {
-            outString += "You see the following items: ";
+            outString += "You see the following Objects: \n";
             for (Item item : getInventory().toArray()) {
-                outString += String.format("\t%s | %s | Amount: %d | Turns: %d | Can Pick Up: %s | Can Use: %s\n",
+                outString += String.format("%s: %s \n\t| Amount: %d | Turns: %d | Can Pick Up: %s | Can Use: %s\n",
                     item.toString(), item.getDescription(),
                     item.getAmount(), item.turnsToUse(),
                     item.canPickUp(), item.canUse());
