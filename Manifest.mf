@@ -1,0 +1,6 @@
+Name: Zombie Manor
+Main-Class: app.App
+Built-By: Team E (CSE 201 - Fall 2024)
+Implementation-Title: Zombie Manor
+Implementation-Version: 1.0.0
+Implementation-Vendor: Team E (CSE 201 - Fall 2024)
