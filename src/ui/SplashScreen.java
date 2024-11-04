@@ -46,6 +46,10 @@ public class SplashScreen {
                 System.out.println(DIE_ENDING);
                 break;
 
+            case StateManager.END_TURNS:
+                System.out.println(TURNS_ENDING);
+                break;
+
             default:
                 System.out.println(DEMO_ENDING);
                 break;
@@ -55,5 +59,12 @@ public class SplashScreen {
     /**
      * Display's the player's run stats.
      */
-    public static void displayStats() {}  // TODO
+    public static void displayStats() {
+
+        System.out.println(STATS.formatted(
+            stateManager.getCountdown().getTurnsUsed(),
+            stateManager.getCountdown().getTurnsRemaining(),
+            stateManager.calculateEnding()
+        ));
+    }
 }

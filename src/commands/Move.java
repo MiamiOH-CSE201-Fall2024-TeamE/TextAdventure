@@ -5,7 +5,7 @@ import static app.App.stateManager;
 import ui.strings.commands.Actions;
 import ui.strings.commands.Descriptions;
 import ui.strings.commands.Errors;
-
+import rooms.Foyer;
 import rooms.Room;
 
 /**
@@ -35,6 +35,11 @@ public class Move extends Command {
         } else {
             System.out.printf(Errors.INVALID, args[0]);
             return false;
+        }
+
+        // Support 'move manor'
+        if (room.equalsIgnoreCase("manor")) {
+            room = Foyer.NAME;
         }
 
         // Get room

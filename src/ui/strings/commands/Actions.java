@@ -16,19 +16,19 @@ public class Actions {
      * Action text for looking at something.
      */
     public static final String LOOK_AT
-        = "You take a closer look at the %s...\n";
+        = "You take a closer look at the %s...\n\n";
 
     /**
      * Action text for moving to a new room.
      */
     public static final String MOVE_TO
-        = "You move to the %s...\n";
+        = "You move to the %s...\n\n";
 
     /**
      * Action text for picking something up.
      */
     public static final String PICK_UP
-        = "You pick up the %s...\n";
+        = "You pick up the %s...\n\n";
 
     /**
      * Confirmation text for using turns.
@@ -41,7 +41,7 @@ public class Actions {
      * Action text for cancelling a command.
      */
     public static final String CANCELLED
-        = "Action cancelled!";
+        = "Action cancelled!\n";
 
     /**
      * Confirmation text for quitting the game.
@@ -53,5 +53,5 @@ public class Actions {
      * Action text for using the help command without parameters.
      */
     public static final String USE_HELP
-        = "For more information, use 'help <command>'";
+        = "\nFor more information, use 'help <command>'\n";
 }

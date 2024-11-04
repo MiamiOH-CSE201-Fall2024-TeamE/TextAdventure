@@ -44,17 +44,21 @@ public class Tutorial extends Room {
         getInventory().add(new Item(MANOR, DESC_MANOR, 1, 0, false, false));
     }
 
-    // TODO
     @Override
     public boolean use(String toUse, String useOn) {
 
         // Using a rock
         if (toUse.equalsIgnoreCase(ROCK)) {
-            removeFromInventory(ROCK);
+
+            if (useOn == null) {
+                System.out.println(USE_ROCK_ON_NULL);
+                return true;
+            }
 
             switch (useOn) {
                 case CAR:
                     System.out.println(USE_ROCK_ON_CAR);
+                    removeFromInventory(ROCK);
                     stateManager.getRoom(Foyer.NAME).unlock();
                     stateManager.quitGame();
                     break;
@@ -65,14 +69,12 @@ public class Tutorial extends Room {
                     
                 case ZOMBIES:
                     System.out.println(USE_ROCK_ON_ZOMBIES);
+                    removeFromInventory(ROCK);
                     break;
 
                 case MANOR:
                     System.out.println(USE_ROCK_ON_MANOR);
-                    break;
-            
-                default:
-                    System.out.println(USE_ROCK_ON_NULL);
+                    removeFromInventory(ROCK);
                     break;
             }
             return true;
@@ -81,7 +83,7 @@ public class Tutorial extends Room {
         // Using the zombies (because why not lol)
         if (toUse.equalsIgnoreCase(ZOMBIES)) {
             System.out.println(USE_ZOMBIES);
-            stateManager.getPlayer().kill();
+            stateManager.getPlayer().kill(false);
             return true;
         }
 
@@ -91,24 +93,16 @@ public class Tutorial extends Room {
     @Override
     public void pickup(String toPickUp) { /* Do nothing */ }
 
-    // TODO
     @Override
     public String getDescription() {
 
-        String outString = "";
-        
-        if (getInventory().size() == 0) {
-            outString += "The room is empty.";
-        } else {
-            outString += "You see the following Objects: \n";
-            for (Item item : getInventory().toArray()) {
-                outString += String.format("%s: %s \n\t| Amount: %d | Turns: %d | Can Pick Up: %s | Can Use: %s\n",
-                    item.toString(), item.getDescription(),
-                    item.getAmount(), item.turnsToUse(),
-                    item.canPickUp(), item.canUse());
-            }
-        }
-        return outString;
+        Item rock = getInventory().get(ROCK);
+
+        return DESCRIPTION.formatted(
+            (rock == null)
+                ? DESCRIPTION_NO_ROCKS_PART
+                : DESCRIPTION_ROCKS_PART.formatted(rock.getAmount())
+        );
     }
 
     @Override

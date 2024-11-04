@@ -26,31 +26,36 @@ public class StateManager {
      * The game ended with state [died].
      */
     public static final int END_DIE = 1;
+    
+    /**
+     * The game ended with state [ran out of turns].
+     */
+    public static final int END_TURNS = 2;
 
     /**
      * The game ended with state [cure completed 1st try].
      */
-    public static final int END_1ST_TRY = 2;
+    public static final int END_1ST_TRY = 3;
 
     /**
      * The game ended with state [died to scientist].
      */
-    public static final int END_SCI_DIE = 3;
+    public static final int END_SCI_DIE = 4;
     
     /**
      * The game ended with state [ran from scientist].
      */
-    public static final int END_SCI_RUN = 4;
+    public static final int END_SCI_RUN = 5;
     
     /**
      * The game ended with state [cure completed 2nd try].
      */
-    public static final int END_2ND_TRY = 5;
+    public static final int END_2ND_TRY = 6;
     
     /**
      * The game ended with state [failed to complete cure].
      */
-    public static final int END_FAIL = 6;
+    public static final int END_FAIL = 7;
 
     /**
      * The active turn counter.
@@ -222,8 +227,12 @@ public class StateManager {
      */
     public int calculateEnding() {
 
-        if (player.isDead()) {
+        if (player.getState() == Player.DEAD) {
             return END_DIE;
+        }
+
+        if (player.getState() == Player.RAN_OUT_OF_TURNS) {
+            return END_TURNS;
         }
 
         if (!getRoom(Foyer.NAME).isLocked()) {

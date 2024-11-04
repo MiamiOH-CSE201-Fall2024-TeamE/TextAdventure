@@ -28,7 +28,9 @@ public class Input {
      */
     public static String[] getInput() {
         System.out.print(INPUT_INDICATOR);
-        return inputScanner.nextLine().toLowerCase().split(" ");
+        String[] ret = inputScanner.nextLine().toLowerCase().split(" ");
+        System.out.println();
+        return ret;
     }
 
     /**
@@ -39,6 +41,8 @@ public class Input {
      */
     public static boolean getConfirmation(String prompt) {
         System.out.print(prompt + PROMPT_APPENDIX);
-        return inputScanner.nextLine().equalsIgnoreCase("Y");
+        boolean ret = inputScanner.nextLine().equalsIgnoreCase("Y");
+        System.out.println();
+        return ret;
     }
 }

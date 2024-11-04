@@ -45,10 +45,31 @@ public class SplashScreen {
      */
     public static final String DIE_ENDING
         = "You died!";
+
+    /**
+     * The splash screen text for the running out of turns ending.
+     */
+    public static final String TURNS_ENDING
+        = "You hear a loud groan behind you. Turning in horror, you realize\n"
+        + "that the zombies have caught up to you! You are quickly\n"
+        + "overwhelmed and infected.\n"
+        + "\n"
+        + DIE_ENDING;
     
     /**
      * The splash screen text for saving/quitting the game.
      */
     public static final String GOODBYE_ENDING
         = "Thanks for playing!";
+    
+    /**
+     * The splash screen text for the player's stats.
+     */
+    public static final String STATS
+        = "Run statistics:\n"
+        + "\tTurns used - %d\n"
+        + "\tTurns remaining - %d\n"
+        + "\tEnding reached - %d/7\n"
+        + "\n"
+        + GOODBYE_ENDING;
 }

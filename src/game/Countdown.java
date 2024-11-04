@@ -1,5 +1,6 @@
 package game;
 
+import static app.App.stateManager;
 import static ui.strings.Countdown.*;
 
 /**
@@ -62,11 +63,18 @@ public class Countdown {
      * @return True if there are enough turns, false otherwise.
      */
     public boolean useTurns(int turns) {
-        if (turns > turnsRemaining) {
+
+        if (turns <= turnsRemaining) {
+            turnsUsed += turns;
+        }
+
+        turnsRemaining -= turns;
+
+        if (turnsRemaining <= 0) {
+            stateManager.getPlayer().kill(true);
             return false;
         }
-        turnsRemaining -= turns;
-        turnsUsed += turns;
+
         return true;
     }
 

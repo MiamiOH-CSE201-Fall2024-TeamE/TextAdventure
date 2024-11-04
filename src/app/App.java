@@ -36,8 +36,6 @@ public class App {
             String[] input = Input.getInput();
             Command command = stateManager.getCommand(input[0]);
 
-            System.out.println();
-
             // Ensure command exists
             if (command == null) {
                 System.out.printf(Errors.COMMAND_NOT_FOUND, input[0]);
@@ -46,8 +44,6 @@ public class App {
 
             // Execute command
             command.execute(input);
-
-            System.out.println();
         }
 
         if (stateManager.calculateEnding() == StateManager.END_NONE) {

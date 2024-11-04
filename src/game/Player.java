@@ -13,6 +13,21 @@ import rooms.Room;
 public class Player {
 
     /**
+     * The player is alive.
+     */
+    public static final int ALIVE = 0;
+    
+    /**
+     * The player is dead.
+     */
+    public static final int DEAD = 1;
+
+    /**
+     * The player ran out of turns.
+     */
+    public static final int RAN_OUT_OF_TURNS = 2;
+
+    /**
      * The room that the player is currently in.
      */
     private Room room;
@@ -25,7 +40,7 @@ public class Player {
     /**
      * Whether or not the player is dead.
      */
-    private boolean isDead;
+    private int state;
 
     /**
      * Instantiates a new player in a specified starting room.
@@ -35,7 +50,7 @@ public class Player {
     public Player(Room startingRoom) {
         room = startingRoom;
         inventory = new Inventory();
-        isDead = false;
+        state = ALIVE;
     }
 
     /**
@@ -72,16 +87,20 @@ public class Player {
 
     /**
      * Kills the player.
+     * 
+     * @param ranOutOfTurns Whether or not the player ran out of turns.
      */
-    public void kill() {
-        isDead = true;
+    public void kill(boolean ranOutOfTurns) {
+        state = (ranOutOfTurns) ? RAN_OUT_OF_TURNS : DEAD;
         stateManager.quitGame();
     }
 
     /**
-     * Returns whether or not the player is dead.
+     * Returns the current state of the player.
      * 
-     * @return True if the player is dead, false otherwise.
+     * @return DEAD if the player is dead,
+     *     RAN_OUT_OF_TURNS if they ran out of turns,
+     *     ALIVE otherwise.
      */
-    public boolean isDead() { return isDead; }
+    public int getState() { return state; }
 }
