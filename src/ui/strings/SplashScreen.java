@@ -22,7 +22,9 @@ public class SplashScreen {
      * The prologue splash screen text.
      */
     public static final String PROLOGUE
-        = "A zombie infection has tormented the world!\n"
+        = "------------------------------------------------------------------\n"
+        + "\n"
+        + "A zombie infection has tormented the world!\n"
         + "\n"
         + "You have heard rumors that an eccentric, reclusive scientist\n"
         + "had been working on a cure in the depths of his secret lab,\n"
@@ -32,7 +34,9 @@ public class SplashScreen {
         + "decide to take things into your own hands and head to the\n"
         + "scientist's last known location:\n"
         + "\n"
-        + "His personal manor...\n";
+        + "His personal manor...\n"
+        + "\n"
+        + "------------------------------------------------------------------\n";
     
     /**
      * The splash screen text for the demo ending.

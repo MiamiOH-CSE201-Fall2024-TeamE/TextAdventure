@@ -120,7 +120,7 @@ public class Tutorial {
         + "Between you and the manor is a horde of zombies on high alert.\n"
         + "How did they know you were coming?...No matter, there wasn't time\n"
         + "for such questions. They hadn't spotted you yet but you didn't\n"
-        + "have long..."
+        + "have long...\n"
         + "\n"
         + "Off to your left is what appears to be the remains of an old car.\n"
         + "It clearly has not been driven in many years.\n"

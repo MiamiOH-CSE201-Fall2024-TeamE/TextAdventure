@@ -47,7 +47,7 @@ public class SaveGame {
                 room.getInventory().size());
             for (Item item : room.getInventory().toArray()) {
                 saveFile.printf("\t%s|%s|%d|%d|%s|%s\n",
-                    item.toString(), item.getDescription(),
+                    item.toString(), item.getDescription().replaceAll("\n", "%"),
                     item.getAmount(), item.turnsToUse(),
                     item.canPickUp(), item.canUse());
             }
@@ -61,7 +61,7 @@ public class SaveGame {
             stateManager.getPlayer().getInventory().size());
         for (Item item : stateManager.getPlayer().getInventory().toArray()) {
             saveFile.printf("\t%s|%s|%d|%d|%s|%s\n",
-                item.toString(), item.getDescription(),
+                item.toString(), item.getDescription().replaceAll("\n", "%"),
                 item.getAmount(), item.turnsToUse(),
                 item.canPickUp(), item.canUse());
         }
@@ -96,16 +96,16 @@ public class SaveGame {
 
         // Load rooms
         for (int i = 0; i < 6; i++) {
-            String roomName = saveFile.nextLine().strip().split(" ")[1];
+            String roomName = saveFile.nextLine().split(" ")[1];
             boolean isLocked = Boolean.valueOf(saveFile.nextLine().split(" ")[1]);
             int size = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
 
             // Fill the room's inventory
             Inventory inventory = new Inventory();
             for (int j = 0; j < size; j++) {
-                String[] itemData = saveFile.nextLine().split("\\|");
+                String[] itemData = saveFile.nextLine().strip().split("\\|");
                 String name = itemData[0];
-                String description = itemData[1];
+                String description = itemData[1].replaceAll("\\%", "\n");
                 int amount = Integer.valueOf(itemData[2]);
                 int turnsToUse = Integer.valueOf(itemData[3]);
                 boolean canPickUp = Boolean.valueOf(itemData[4]);
@@ -150,7 +150,7 @@ public class SaveGame {
         for (int i = 0; i < size; i++) {
             String[] itemData = saveFile.nextLine().strip().split("\\|");
             String name = itemData[0];
-            String description = itemData[1];
+            String description = itemData[1].replaceAll("\\%", "\n");
             int amount = Integer.valueOf(itemData[2]);
             int turnsToUse = Integer.valueOf(itemData[3]);
             boolean canPickUp = Boolean.valueOf(itemData[4]);
