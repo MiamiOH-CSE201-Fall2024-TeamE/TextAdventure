@@ -118,7 +118,7 @@ public class StateManager {
 
         if (startNewGame) {
 
-            countdown = new Countdown(3);
+            countdown = new Countdown(5);
 
             rooms.put(Tutorial.NAME, new Tutorial());
             rooms.put(Foyer.NAME, new Foyer());
