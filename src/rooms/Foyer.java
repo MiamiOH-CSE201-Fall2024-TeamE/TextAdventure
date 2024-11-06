@@ -1,7 +1,6 @@
 package rooms;
 
-import items.Inventory;
-import items.Item;
+import items.*;
 
 import static app.App.stateManager;
 import static ui.strings.rooms.Foyer.*;
