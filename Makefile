@@ -1,6 +1,6 @@
 build: bin dist
 	cd bin && jar cfmv ZombieManor.jar ../Manifest.mf *
-	cd bin && mv ZombieManor.jar ../dist
+	cd bin && move ZombieManor.jar ../dist
 	cd dist && $ (echo @echo off && echo java -jar ZombieManor.jar) > run.bat
 
 bin:
