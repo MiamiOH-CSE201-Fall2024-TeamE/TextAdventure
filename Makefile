@@ -1,6 +1,6 @@
 build: bin dist
 	cd bin && jar cfmv ZombieManor.jar ../Manifest.mf *
-	cd bin && move ZombieManor.jar ../dist
+	cd bin && mv ZombieManor.jar ../dist
 	cd dist && $ (echo @echo off && echo java -jar ZombieManor.jar) > run.bat
 
 bin:
@@ -13,5 +13,5 @@ run: bin
 	cd bin && java app.App
 
 clean:
-	rmdir /S /Q bin
-	rmdir /S /Q dist
+	rm -rf bin
+	rm -rf dist
