@@ -24,6 +24,15 @@ public class Kitchen extends Room {
      */
     public Kitchen(boolean isLocked, Inventory inventory, boolean hasLoaded) {
         super(isLocked, inventory, hasLoaded);
+
+        //Knife
+        //Oven
+        //Coal(added after opening the oven)
+        //Tongs
+        //Locked Drawer
+        //Open Drawer (added after opening locked drawer)
+        //Board
+        //Some Ingredient hint (to figure out later)
     }
 
     /**
