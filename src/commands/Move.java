@@ -59,6 +59,11 @@ public class Move extends Command {
 
         // Move to room
         stateManager.getPlayer().setRoom(newRoom);
+
+        // Load new room
+        if (!newRoom.hasLoaded()) {
+            newRoom.load();
+        }
         
         System.out.printf(Actions.MOVE_TO, newRoom.toString());
         System.out.println(newRoom.getDescription());

@@ -20,14 +20,20 @@ abstract public class Room {
     private boolean isLocked;
 
     /**
+     * Indicates whether or not the room has previously been loaded.
+     */
+    private boolean hasLoaded;
+
+    /**
      * Instantiates a new room with a specified inventory and lock status.
      * 
      * @param isLocked Whether or not the room is locked.
      * @param inventory The room's inventory.
      */
-    public Room(boolean isLocked, Inventory inventory) {
+    public Room(boolean isLocked, Inventory inventory, boolean hasLoaded) {
         this.inventory = inventory;
         this.isLocked = isLocked;
+        this.hasLoaded = hasLoaded;
     }
 
     /**
@@ -53,6 +59,20 @@ abstract public class Room {
      * Unlocks the room.
      */
     public void unlock() { isLocked = false; }
+
+    /**
+     * Returns whether or not the room has already been loaded.
+     * 
+     * @return True if already loaded, false otherwise.
+     */
+    public boolean hasLoaded() { return hasLoaded; }
+
+    /**
+     * Contains the code that should run when the user first enters the room.
+     */
+    public void load() {
+        hasLoaded = true;
+    }
 
     /**
      * Contains the room-specific code for using items.

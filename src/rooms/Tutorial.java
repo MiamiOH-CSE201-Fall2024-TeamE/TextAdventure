@@ -27,21 +27,27 @@ public class Tutorial extends Room {
      * @param isLocked Whether or not the room is locked.
      * @param inventory The room's inventory.
      */
-    public Tutorial(boolean isLocked, Inventory inventory) {
-        super(isLocked, inventory);
+    public Tutorial(boolean isLocked, Inventory inventory, boolean hasLoaded) {
+        super(isLocked, inventory, hasLoaded);
     }
 
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
     public Tutorial() {
-        this(false, new Inventory());
+        this(false, new Inventory(), false);
       
         // Fill room's inventory
         getInventory().add(new Item(ROCK, DESC_ROCK, 3, 1, true, true));
         getInventory().add(new Item(CAR, DESC_CAR, 1, 0, false, false));
         getInventory().add(new Item(ZOMBIES, DESC_ZOMBIES, 99, 1, false, true));
         getInventory().add(new Item(MANOR, DESC_MANOR, 1, 0, false, false));
+    }
+
+    @Override
+    public void load() {
+        stateManager.getCountdown().addTurns(5);
+        super.load();
     }
 
     @Override

@@ -20,14 +20,17 @@ public class Bedroom extends Room {
      * @param isLocked Whether or not the room is locked.
      * @param inventory The room's inventory.
      */
-    public Bedroom(boolean isLocked, Inventory inventory) {
-        super(isLocked, inventory);
+    public Bedroom(boolean isLocked, Inventory inventory, boolean hasLoaded) {
+        super(isLocked, inventory, hasLoaded);
     }
 
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
-    public Bedroom() { this(true, new Inventory()); }  // TODO
+    public Bedroom() { this(true, new Inventory(), false); }  // TODO
+
+    @Override
+    public void load() { super.load(); }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO

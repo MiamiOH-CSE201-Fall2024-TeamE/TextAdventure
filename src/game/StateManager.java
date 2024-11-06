@@ -118,7 +118,7 @@ public class StateManager {
 
         if (startNewGame) {
 
-            countdown = new Countdown(5);
+            countdown = new Countdown(0);
 
             rooms.put(Tutorial.NAME, new Tutorial());
             rooms.put(Foyer.NAME, new Foyer());
@@ -127,7 +127,10 @@ public class StateManager {
             rooms.put(Bedroom.NAME, new Bedroom());
             rooms.put(Lab.NAME, new Lab());
 
-            player = new Player(rooms.get(Tutorial.NAME));
+            Room tutorial = rooms.get(Tutorial.NAME);
+            player = new Player(tutorial);
+
+            tutorial.load();
 
             SplashScreen.displayTitle();
             SplashScreen.displayPrologue();

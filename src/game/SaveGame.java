@@ -43,6 +43,7 @@ public class SaveGame {
         for (Room room : stateManager.getRooms().values()) {
             saveFile.printf("room.name: %s\n", room.toString());
             saveFile.printf("room.isLocked: %s\n", room.isLocked());
+            saveFile.printf("room.hasLoaded: %s\n", room.hasLoaded());
             saveFile.printf("room.inventory.size: %d\n",
                 room.getInventory().size());
             for (Item item : room.getInventory().toArray()) {
@@ -79,30 +80,84 @@ public class SaveGame {
      */
     public static boolean load() {
 
-        // Open savegame file
-        Scanner saveFile;
         try {
-            saveFile = new Scanner(new File("savegame.dat"));
-        } catch(FileNotFoundException e) {
-            return false;
-        }
 
-        // Load countdown
-        int turnsRemaining = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
-        int turnsUsed = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
-        saveFile.nextLine();  // Skip blank line
+            // Open savegame file
+            Scanner saveFile;
+            try {
+                saveFile = new Scanner(new File("savegame.dat"));
+            } catch(FileNotFoundException e) {
+                return false;
+            }
 
-        stateManager.setCountdown(new Countdown(turnsRemaining, turnsUsed));
+            // Load countdown
+            int turnsRemaining = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
+            int turnsUsed = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
+            saveFile.nextLine();  // Skip blank line
 
-        // Load rooms
-        for (int i = 0; i < 6; i++) {
-            String roomName = saveFile.nextLine().split(" ")[1];
-            boolean isLocked = Boolean.valueOf(saveFile.nextLine().split(" ")[1]);
+            stateManager.setCountdown(new Countdown(turnsRemaining, turnsUsed));
+
+            // Load rooms
+            for (int i = 0; i < 6; i++) {
+                String roomName = saveFile.nextLine().split(" ")[1];
+                boolean isLocked = Boolean.valueOf(saveFile.nextLine().split(" ")[1]);
+                boolean hasLoaded = Boolean.valueOf(saveFile.nextLine().split(" ")[1]);
+                int size = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
+
+                // Fill the room's inventory
+                Inventory inventory = new Inventory();
+                for (int j = 0; j < size; j++) {
+                    String[] itemData = saveFile.nextLine().strip().split("\\|");
+                    String name = itemData[0];
+                    String description = itemData[1].replaceAll("\\%", "\n");
+                    int amount = Integer.valueOf(itemData[2]);
+                    int turnsToUse = Integer.valueOf(itemData[3]);
+                    boolean canPickUp = Boolean.valueOf(itemData[4]);
+                    boolean canUse = Boolean.valueOf(itemData[5]);
+
+                    inventory.add(new Item(name, description, amount, turnsToUse,
+                        canPickUp, canUse));
+                }
+
+                // Create the appropriate room instance
+                switch (roomName) {
+                    case Bedroom.NAME:
+                        stateManager.getRooms().put(roomName,
+                            new Bedroom(isLocked, inventory, hasLoaded));
+                        break;
+                    case Cellar.NAME:
+                        stateManager.getRooms().put(roomName,
+                            new Cellar(isLocked, inventory, hasLoaded));
+                        break;
+                    case Foyer.NAME:
+                        stateManager.getRooms().put(roomName,
+                            new Foyer(isLocked, inventory, hasLoaded));
+                        break;
+                    case Kitchen.NAME:
+                        stateManager.getRooms().put(roomName,
+                            new Kitchen(isLocked, inventory, hasLoaded));
+                        break;
+                    case Lab.NAME:
+                        stateManager.getRooms().put(roomName,
+                            new Lab(isLocked, inventory, hasLoaded));
+                        break;
+                    case Tutorial.NAME:
+                        stateManager.getRooms().put(roomName,
+                            new Tutorial(isLocked, inventory, hasLoaded));
+                        break;
+                    default:
+                        throw new IllegalStateException("Save file is corrupted! Please delete it and try again");
+                }
+                saveFile.nextLine();  // Skip blank line
+            }
+
+            // Load player
+            Room startingRoom = stateManager.getRoom(saveFile.nextLine().split(" ")[1]);
             int size = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
 
-            // Fill the room's inventory
+            // Fill the player's inventory
             Inventory inventory = new Inventory();
-            for (int j = 0; j < size; j++) {
+            for (int i = 0; i < size; i++) {
                 String[] itemData = saveFile.nextLine().strip().split("\\|");
                 String name = itemData[0];
                 String description = itemData[1].replaceAll("\\%", "\n");
@@ -115,56 +170,15 @@ public class SaveGame {
                     canPickUp, canUse));
             }
 
-            // Create the appropriate room instance
-            switch (roomName) {
-                case Bedroom.NAME:
-                    stateManager.getRooms().put(roomName, new Bedroom(isLocked, inventory));
-                    break;
-                case Cellar.NAME:
-                    stateManager.getRooms().put(roomName, new Cellar(isLocked, inventory));
-                    break;
-                case Foyer.NAME:
-                    stateManager.getRooms().put(roomName, new Foyer(isLocked, inventory));
-                    break;
-                case Kitchen.NAME:
-                    stateManager.getRooms().put(roomName, new Kitchen(isLocked, inventory));
-                    break;
-                case Lab.NAME:
-                    stateManager.getRooms().put(roomName, new Lab(isLocked, inventory));
-                    break;
-                case Tutorial.NAME:
-                    stateManager.getRooms().put(roomName, new Tutorial(isLocked, inventory));
-                    break;
-                default:
-                    throw new IllegalStateException("Save file is corrupted");
-            }
-            saveFile.nextLine();  // Skip blank line
+            stateManager.setPlayer(new Player(startingRoom, inventory));
+
+            // Close savegame file
+            saveFile.close();
+            return true;
+
+        } catch (Exception e) {
+            throw new IllegalStateException("Save file is corrupted! Please delete it and try again");
         }
-
-        // Load player
-        Room startingRoom = stateManager.getRoom(saveFile.nextLine().split(" ")[1]);
-        int size = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
-
-        // Fill the player's inventory
-        Inventory inventory = new Inventory();
-        for (int i = 0; i < size; i++) {
-            String[] itemData = saveFile.nextLine().strip().split("\\|");
-            String name = itemData[0];
-            String description = itemData[1].replaceAll("\\%", "\n");
-            int amount = Integer.valueOf(itemData[2]);
-            int turnsToUse = Integer.valueOf(itemData[3]);
-            boolean canPickUp = Boolean.valueOf(itemData[4]);
-            boolean canUse = Boolean.valueOf(itemData[5]);
-
-            inventory.add(new Item(name, description, amount, turnsToUse,
-                canPickUp, canUse));
-        }
-
-        stateManager.setPlayer(new Player(startingRoom, inventory));
-
-        // Close savegame file
-        saveFile.close();
-        return true;
     }
 
     /**

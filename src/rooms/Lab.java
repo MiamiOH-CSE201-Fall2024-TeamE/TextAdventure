@@ -22,15 +22,18 @@ public class Lab extends Room {  // TODO: Javadocs
      * @param isLocked Whether or not the room is locked.
      * @param inventory The room's inventory.
      */
-    public Lab(boolean isLocked, Inventory inventory) {
-        super(isLocked, inventory);
+    public Lab(boolean isLocked, Inventory inventory, boolean hasLoaded) {
+        super(isLocked, inventory, hasLoaded);
         ingredients = new String[3];
     }
 
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
-    public Lab() { this(true, new Inventory()); }  // TODO
+    public Lab() { this(true, new Inventory(), false); }  // TODO
+
+    @Override
+    public void load() { super.load(); }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO
