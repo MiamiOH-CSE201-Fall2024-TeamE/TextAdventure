@@ -2,6 +2,7 @@ package rooms;
 
 import items.Inventory;
 
+import static app.App.stateManager;
 import static ui.strings.rooms.Foyer.*;
 
 /**
@@ -29,13 +30,36 @@ public class Foyer extends Room {
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
-    public Foyer() { this(true, new Inventory(), false); }  // TODO
+    public Foyer() {
+        this(true, new Inventory(), false);
+    
+        //Fill Room's inventory
+        //Button (false true) Lights the fire
+        //Fireplace (false true) Place to put the coal
+        //Painting (false false) Initial painting before puzzle is solved
+        //NewPainting (false false) Painting after puzzle is solved
+        //Boards (atleast 1, true, true) 
+        //Main Door (false, true) Place to put the boards
+
+
+    }  // TODO
 
     @Override
-    public void load() { super.load(); }  // TODO
+    public void load() {
+        stateManager.getRoom(Tutorial.NAME).lock();
+        super.load();
+    }  // TODO
 
     @Override
-    public boolean use(String toUse, String useOn) { return false; }  // TODO
+    public boolean use(String toUse, String useOn) {
+        return false; 
+    
+        //Use coal on fireplace
+        //Use sparker after coal is placed then change painting (Check room inventory)
+        //Use boards on mainDoor and increase turn order
+
+
+    }  // TODO
 
     @Override
     public void pickup(String toPickUp) {}  // TODO
