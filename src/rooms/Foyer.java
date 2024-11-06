@@ -34,12 +34,12 @@ public class Foyer extends Room {
         this(true, new Inventory(), false);
     
         //Fill Room's inventory
-        //Button (false true)
-        //Fireplace (false true)
-        //Painting (false false)
-        //NewPainting (false false)
-        //Boards (atleast 1, true, true)
-        //Main Door (false, true)
+        //Button (false true) Lights the fire
+        //Fireplace (false true) Place to put the coal
+        //Painting (false false) Initial painting before puzzle is solved
+        //NewPainting (false false) Painting after puzzle is solved
+        //Boards (atleast 1, true, true) 
+        //Main Door (false, true) Place to put the boards
 
 
     }  // TODO
