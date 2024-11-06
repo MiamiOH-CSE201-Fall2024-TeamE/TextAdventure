@@ -1,5 +1,7 @@
 package rooms;
 
+import static ui.strings.rooms.Room.*;
+
 import items.Inventory;
 
 /**
@@ -82,7 +84,17 @@ abstract public class Room {
      *     a valid item, or null.
      * @return True if item was used successfully, false otherwise.
      */
-    abstract public boolean use(String toUse, String useOn);
+    public boolean use(String toUse, String useOn) {
+        
+        // Default case (item use not accounted for)
+        if (useOn == null) {
+            System.out.printf(USE_NOTHING_HAPPENS_1, toUse);
+        } else {
+            System.out.printf(USE_NOTHING_HAPPENS_2, toUse, useOn);
+        }
+
+        return false;
+    }
     
     /**
      * Contains the room-specific code for using items.

@@ -16,7 +16,6 @@ public class Foyer {
      * The action string for using a board on the door.
      */
     public static final String USE_BOARD_ON_DOOR
-        = "You successfully use a board to block the door.\n" 
-        + "Your genius idea has bought you a little extra time.\n";
-    
+        = "You use the board to reinforce the blocked door against the zombie\n" 
+        + "horde outside. Your genius idea has bought you some extra time.\n";
 }

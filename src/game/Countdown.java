@@ -88,6 +88,15 @@ public class Countdown {
     }
 
     /**
+     * Sets a new number of remaining turns.
+     * 
+     * @param turns The new number of turns.
+     */
+    public void setTurns(int turns) {
+        turnsRemaining = turns;
+    }
+
+    /**
      * Returns a String representation of this countdown.
      */
     @Override

@@ -93,7 +93,8 @@ public class Tutorial extends Room {
             return true;
         }
 
-        return false;
+        // Default case
+        return super.use(toUse, useOn);
     }
 
     @Override
