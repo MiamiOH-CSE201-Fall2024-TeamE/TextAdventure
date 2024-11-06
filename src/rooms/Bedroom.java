@@ -24,6 +24,14 @@ public class Bedroom extends Room {
      */
     public Bedroom(boolean isLocked, Inventory inventory, boolean hasLoaded) {
         super(isLocked, inventory, hasLoaded);
+
+        //Diary
+        //Big Safe
+        //Samll safe (After opening big safe)
+        //BriefCase (after opening small safe)
+        //NightStand
+        //Key (added after nightstand is "opened" with the crowbar)
+        //Some Ingredient hint (to figure out later)
     }
 
     /**
