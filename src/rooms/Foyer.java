@@ -2,6 +2,7 @@ package rooms;
 
 import items.Inventory;
 
+import static app.App.stateManager;
 import static ui.strings.rooms.Foyer.*;
 
 /**
@@ -32,7 +33,10 @@ public class Foyer extends Room {
     public Foyer() { this(true, new Inventory(), false); }  // TODO
 
     @Override
-    public void load() { super.load(); }  // TODO
+    public void load() {
+        stateManager.getRoom(Tutorial.NAME).lock();
+        super.load();
+    }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO
