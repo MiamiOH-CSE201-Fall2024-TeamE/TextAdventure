@@ -2,6 +2,8 @@ package rooms;
 
 import items.Inventory;
 
+import static ui.strings.rooms.Lab.*;
+
 /**
  * This is the class for the Lab Room.
  * 

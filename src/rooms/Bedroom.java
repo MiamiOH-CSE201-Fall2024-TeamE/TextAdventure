@@ -2,6 +2,8 @@ package rooms;
 
 import items.Inventory;
 
+import static ui.strings.rooms.Bedroom.*;
+
 /**
  * This is the class for the Bedroom Room.
  * 

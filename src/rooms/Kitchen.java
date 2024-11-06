@@ -2,6 +2,8 @@ package rooms;
 
 import items.Inventory;
 
+import static ui.strings.rooms.Kitchen.*;
+
 /**
  * This is the class for the Kitchen Room.
  * 
