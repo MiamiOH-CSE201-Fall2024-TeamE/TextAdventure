@@ -18,6 +18,5 @@ public class Foyer {
     public static final String USE_BOARD_ON_DOOR
         = "You successfully use a board to block the door.\n" 
         + "Your genius idea has bought you a little extra time.\n";
-
-
+    
 }

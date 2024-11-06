@@ -1,6 +1,7 @@
 package rooms;
 
 import items.Inventory;
+import items.Item;
 
 import static app.App.stateManager;
 import static ui.strings.rooms.Foyer.*;
@@ -39,7 +40,9 @@ public class Foyer extends Room {
         //Painting (false false)
         //NewPainting (false false)
         //Boards (atleast 1, true, true)
+        getInventory().add(new Item(BOARD, DESC_BOARD, 1, 1, true, true));
         //Main Door (false, true)
+
 
 
     }  // TODO
