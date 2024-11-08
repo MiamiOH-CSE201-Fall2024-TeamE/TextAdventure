@@ -117,4 +117,18 @@ public class Kitchen {
         = "A small torn paper was the only thing you found in the locked drawer.\n"
         + "On the paper is faded handwriting similar to the one you found in the journal";
 
+    /**
+     * The name string for the 'coal' item.
+     */
+    public static final String COAL 
+        = "coal";
+
+    /**
+     * The description string for the 'coal' item.
+     */
+    public static final String DESC_COAL
+        = "A heavy oak door stands at the front of the room, its surface weathered.\n"
+        + "An intricate iron handle, offers the only means of entry in or out of the room.\n";
+
+
 }

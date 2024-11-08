@@ -73,6 +73,7 @@ abstract public class Room {
      * Contains the code that should run when the user first enters the room.
      */
     public void load() {
+        System.out.println(getDescription());
         hasLoaded = true;
     }
 

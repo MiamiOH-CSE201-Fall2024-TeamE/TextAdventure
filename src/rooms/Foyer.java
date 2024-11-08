@@ -1,7 +1,10 @@
 package rooms;
+
 import static app.App.stateManager;
+import static items.Item.removeFromInventory;
 
 import static ui.strings.rooms.Foyer.*;
+import static ui.strings.rooms.Kitchen.COAL;
 
 import items.*;
 
@@ -35,24 +38,27 @@ public class Foyer extends Room {
         this(true, new Inventory(), false);
     
         // Fill room's inventory
-        //Button (false true) Lights the fire
         getInventory().add(new Item(BUTTON, DESC_BUTTON, 1, 1, false, true));
-        //Fireplace (false false) Place to put the coal
         getInventory().add(new Item(FIREPLACE, DESC_FIREPLACE, 1, 0, false, false));
-        //Painting (false false) Initial painting before puzzle is solved
-        getInventory().add(new Item(PAINTING, DESC_PAINTING, 1, 0, false, false));
-        //NewPainting (false false) Painting after puzzle is solved (this will be added in use())
-        //Boards (atleast 1, true, true)
-        getInventory().add(new Item(BOARD, DESC_BOARD, 1, 2, true, true));
-        //Main Door (false, true) Place to put the boards
-        getInventory().add(new Item(DOOR, DESC_DOOR, 1, 0, false, true));
-    }  // TODO
+        getInventory().add(new Item(PAINTING, DESC_PAINTING_UNSOLVED, 1, 0, false, false));
+        getInventory().add(new Item(BOARD, DESC_BOARD, 1, 1, true, true));
+        getInventory().add(new Item(DOOR, DESC_DOOR, 1, 1, false, true));
+    }
 
     @Override
     public void load() {
-
-        stateManager.getRoom(Tutorial.NAME).lock();
         stateManager.getCountdown().setTurns(1000);  // TODO: Balance changes
+
+        // Unlock main manor rooms
+        stateManager.getRoom(Bedroom.NAME).unlock();
+        stateManager.getRoom(Kitchen.NAME).unlock();
+        stateManager.getRoom(Cellar.NAME).unlock();
+        
+        // Lock tutorial
+        stateManager.getRoom(Tutorial.NAME).lock();
+
+        // Print initial load message
+        System.out.println(LOAD);
 
         super.load();
     }
@@ -60,24 +66,96 @@ public class Foyer extends Room {
     @Override
     public boolean use(String toUse, String useOn) {
     
+        // Using the button
+        if (toUse.equalsIgnoreCase(BUTTON)) {
 
+            // If coal is in fireplace
+            if (getInventory().get(COAL) != null) {
 
-        //Use coal on fireplace
-        //Use sparker after coal is placed then change painting (Check room inventory)
-        //Use boards on mainDoor and increase turn order
-        //Use door to get outside (death)
+                System.out.println(USE_BUTTON_COAL);
 
+                // Replace unsolved painting with solved one
+                getInventory().remove(PAINTING);
+                getInventory().add(new Item(PAINTING, DESC_PAINTING_SOLVED, 1, 0, false, false));
+
+                return true;
+
+            } else {
+                System.out.println(USE_BUTTON_NO_COAL);
+                return true;
+            }
+        }
+
+        // Using the coal
+        if (toUse.equalsIgnoreCase(COAL)) {
+
+            if (useOn == null) {
+                System.out.println(USE_COAL_ON_NULL);
+                return true;
+            }
+            
+            if (useOn.equalsIgnoreCase(FIREPLACE)) {
+                
+                System.out.println(USE_COAL_ON_FIREPLACE);
+                
+                // If the coal is in the player's inventory, move it to room
+                Item playerCoal = stateManager.getPlayer().getInventory().get(COAL);
+                if (playerCoal != null) {
+                    getInventory().add(playerCoal);
+                    removeFromInventory(COAL);
+                }
+                
+                return true;
+            }
+        }
+
+        // Using a board
+        if (toUse.equalsIgnoreCase(BOARD)) {
+
+            if (useOn == null) {
+                System.out.println(USE_BOARD_ON_NULL);
+                return true;
+            }
+
+            if (useOn.equalsIgnoreCase(DOOR)) {
+
+                System.out.println(USE_BOARD_ON_DOOR);
+
+                stateManager.getCountdown().addTurns(4);
+                removeFromInventory(BOARD);
+
+                return true;
+            }
+        }
+
+        // Using the door
+        if (toUse.equalsIgnoreCase(DOOR)) {
+            System.out.println(USE_DOOR);
+            stateManager.getPlayer().kill(false);
+            return true;
+        }
 
         // Default case
         return super.use(toUse, useOn);
-    }  // TODO
+    }
 
     @Override
-    public void pickup(String toPickUp) {}  // TODO
+    public void pickup(String toPickUp) { /* Do nothing */ }
 
     @Override
-    public String getDescription() { return null; }  // TODO
+    public String getDescription() {
+
+        Item board = getInventory().get(BOARD);
+
+        return DESCRIPTION.formatted(
+            (board == null)
+                ? DESCRIPTION_NO_BOARD_PART
+                : DESCRIPTION_BOARD_PART
+        );
+    }
 
     @Override
-    public String toString() { return NAME; }
+    public String toString() {
+        return NAME;
+    }
 }
