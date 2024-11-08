@@ -68,7 +68,8 @@ public class Foyer extends Room {
             if(getInventory().get(COAL) != null) //Coal is in fireplace
             {
                 System.out.println(USE_BUTTON_WITH_COAL);
-                return true;
+                //Remove painting and put new painting
+                return true; 
             }
             if(getInventory().get(COAL) == null) //Coal isn't in fireplace
             {
@@ -88,7 +89,7 @@ public class Foyer extends Room {
             switch (useOn) {
                 case FIREPLACE:
                     System.out.println(USE_COAL_ON_FIREPLACE);
-                    getInventory().add(stateManager.getPlayer().getInventory().get(COAL));
+                    getInventory().add(stateManager.getPlayer().getInventory().get(COAL)); //watch for errors
                     removeFromInventory(COAL);
                     break;
             
