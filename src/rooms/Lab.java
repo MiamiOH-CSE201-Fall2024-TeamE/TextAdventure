@@ -1,6 +1,7 @@
 package rooms;
 
 import items.Inventory;
+import items.Item;
 
 import static ui.strings.rooms.Lab.*;
 
@@ -32,7 +33,19 @@ public class Lab extends Room {  // TODO: Javadocs
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
-    public Lab() { this(true, new Inventory(), false); }  // TODO
+    public Lab() { this(true, new Inventory(), false); 
+        
+        getInventory().add(new Item(ITEM1, DESC_ITEM1, 1, 1, true, true));
+        getInventory().add(new Item(ITEM2, DESC_ITEM2, 1, 1, true, true));
+        getInventory().add(new Item(ITEM3, DESC_ITEM3, 1, 1, true, true));
+        getInventory().add(new Item(ITEM4, DESC_ITEM4, 1, 1, true, true));
+        getInventory().add(new Item(ITEM5, DESC_ITEM5, 1, 1, true, true));
+        getInventory().add(new Item(ITEM6, DESC_ITEM6, 1, 1, true, true));
+        getInventory().add(new Item(ITEM7, DESC_ITEM7, 1, 1, true, true));
+        getInventory().add(new Item(ITEM8, DESC_ITEM8, 1, 1, true, true));
+        getInventory().add(new Item(CURE_MACHINE, DESC_CURE_MACHINE, 1, 1, false, false));
+        
+    }  // TODO
 
     @Override
     public void load() { super.load(); }  // TODO
