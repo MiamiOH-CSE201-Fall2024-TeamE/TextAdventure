@@ -12,4 +12,7 @@ public class Kitchen {
      */
     private Kitchen() {}
 
+    public static final String COAL 
+        = "coal";
+
 }

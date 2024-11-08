@@ -1,7 +1,8 @@
 package rooms;
 import static app.App.stateManager;
-
+import static items.Item.removeFromInventory;
 import static ui.strings.rooms.Foyer.*;
+import static ui.strings.rooms.Kitchen.COAL;
 
 import items.*;
 
@@ -60,7 +61,40 @@ public class Foyer extends Room {
     @Override
     public boolean use(String toUse, String useOn) {
     
+        if(toUse.equalsIgnoreCase(BUTTON))
+        {
+            if(getInventory().get(COAL) != null) //Coal is in fireplace
+            {
+                System.out.println(USE_BUTTON_WITH_COAL);
+            }
+            if(getInventory().get(COAL) == null) //Coal isn't in fireplace
+            {
+                System.out.println(USE_BUTTON);
+            }
+        }
 
+        if(toUse.equalsIgnoreCase(COAL))
+        {
+            if(useOn == null) 
+            {
+                System.out.println(USE_COAL_ON_NULL);
+                return true;
+            }
+
+            switch (useOn) {
+                case FIREPLACE:
+                    System.out.println(USE_COAL_ON_FIREPLACE);
+                    getInventory().add(stateManager.getPlayer().getInventory().get(COAL));
+                    removeFromInventory(COAL);
+
+                    
+                    break;
+            
+                default:
+                    break;
+            }
+            return true;
+        }
 
         //Use coal on fireplace
         //Use sparker after coal is placed then change painting (Check room inventory)

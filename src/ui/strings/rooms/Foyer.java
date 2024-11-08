@@ -60,4 +60,18 @@ public class Foyer {
     public static final String USE_BOARD_ON_DOOR
         = "You use the board to reinforce the blocked door against the zombie\n" 
         + "horde outside. Your genius idea has bought you some extra time.\n";
+
+    public static final String USE_COAL_ON_NULL
+        = "The coal wont do much without something to light it\n";
+    
+    public static final String USE_COAL_ON_FIREPLACE
+        = "You place the coal into the fireplace.  If only there was a way to light it...\n";
+
+    public static final String USE_BUTTON
+        = "The button causes a spark in the fireplace but there isn't anything \n"
+        + "to light\n";
+    
+    public static final String USE_BUTTON_WITH_COAL
+        = "The button causes a spark in the fireplace and lights the coal \n"
+        + "Something seems to have changed with the painting\n";
 }
