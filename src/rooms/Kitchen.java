@@ -38,13 +38,33 @@ public class Kitchen extends Room {
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
-    public Kitchen() { this(true, new Inventory(), false); }  // TODO
+    public Kitchen() { 
+        this(true, new Inventory(), false); 
+        
+        //Filling the Kitchen's Inventory 
+        getInventory().add(new Item(KNIFE, DESC_KNIFE, 1, 5, true, true));
+        getInventory().add(new Item(OVEN, DESC_OVEN, 1, 0, false, true));
+        getInventory().add(new Item(COAL, DESC_COAL, 1, 1, true, true));
+        getInventory().add(new Item(TONGS, DESC_TONGS, 1, 1, true, true));
+        getInventory().add(new Item(LOCKED_DRAWER, DESC_LOCKED_DRAWER, 1, 3, false, false));
+        getInventory().add(new Item(OPEN_DRAWER, DESC_OPEN_DRAWER, 1, 1, false, false));
+        getInventory().add(new Item(BOARD, DESC_BOARD, 3, 1, true, true));
+        getInventory().add(new Item(INGREDIENT_HINT, DESC_INGREDIENT_HINT, 1, 0, true, false));
+
+    
+    }
 
     @Override
-    public void load() { super.load(); }  // TODO
+    public void load() { 
+        stateManager.getCountdown().addTurns(3);
+        super.load(); 
+    }
 
     @Override
-    public boolean use(String toUse, String useOn) { return false; }  // TODO
+    public boolean use(String toUse, String useOn) {
+    
+         return false; 
+    }  // TODO
 
     @Override
     public void pickup(String toPickUp) {}  // TODO
