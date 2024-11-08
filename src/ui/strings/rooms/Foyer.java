@@ -133,7 +133,7 @@ public class Foyer {
      */
     public static final String USE_BUTTON_COAL
         = "The button once more causes a spark to flare in the fireplace,\n"
-        + "lighting the coal withing. As the heat of the flames rises, you\n"
+        + "lighting the coal within. As the heat of the flames rises, you\n"
         + "hear a faint crackling above you. Something appears to be happening\n"
         + "to the painting over the fire...\n";
         
