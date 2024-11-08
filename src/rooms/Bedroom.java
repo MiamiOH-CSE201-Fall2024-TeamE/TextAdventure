@@ -1,6 +1,7 @@
 package rooms;
 
 import items.Inventory;
+import items.Item;
 
 import static ui.strings.rooms.Bedroom.*;
 
@@ -24,7 +25,15 @@ public class Bedroom extends Room {
      */
     public Bedroom(boolean isLocked, Inventory inventory, boolean hasLoaded) {
         super(isLocked, inventory, hasLoaded);
+    }
 
+    /**
+     * Instantiates a new room with the room's default inventory and lock status.
+     */
+    public Bedroom() { 
+        this(true, new Inventory(), false);
+
+        // Fill room's inventory
         //Diary
         //Big Safe
         //Samll safe (After opening big safe)
@@ -32,12 +41,7 @@ public class Bedroom extends Room {
         //NightStand
         //Key (added after nightstand is "opened" with the crowbar)
         //Some Ingredient hint (to figure out later)
-    }
-
-    /**
-     * Instantiates a new room with the room's default inventory and lock status.
-     */
-    public Bedroom() { this(true, new Inventory(), false); }  // TODO
+    } // TODO
 
     @Override
     public void load() { super.load(); }  // TODO
