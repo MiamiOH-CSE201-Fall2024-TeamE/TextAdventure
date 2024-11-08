@@ -66,4 +66,10 @@ public class Lab {
         public static final String DESC_CURE_MACHINE
         = "CURE_MACHINE_DESC";
 
+        public static final String USE_INGREDIENT_ON_NULL
+        = "This ingredient needs to be inserted into the Cure Machine";
+
+        public static final String USE_INGREDIENT_ON_CURE_MACHINE
+        = "You inserted the ingredient into the Cure Machine";
+
 }

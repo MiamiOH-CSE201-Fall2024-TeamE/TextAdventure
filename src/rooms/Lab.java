@@ -4,6 +4,8 @@ import items.Inventory;
 import items.Item;
 
 import static ui.strings.rooms.Lab.*;
+import static items.Item.removeFromInventory;
+import static items.Item.getItem;
 
 /**
  * This is the class for the Lab Room.
@@ -17,7 +19,12 @@ public class Lab extends Room {  // TODO: Javadocs
      */
     public static final String NAME = "lab";
 
-    private String[] ingredients;
+    //Contains the ingredients the user put into the Cure Machine
+    private Item[] ingredients;
+    //Index used for traversing the array
+    private int index;
+
+    private Item[] correctIngredients;
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
@@ -27,7 +34,7 @@ public class Lab extends Room {  // TODO: Javadocs
      */
     public Lab(boolean isLocked, Inventory inventory, boolean hasLoaded) {
         super(isLocked, inventory, hasLoaded);
-        ingredients = new String[3];
+        
     }
 
     /**
@@ -45,13 +52,48 @@ public class Lab extends Room {  // TODO: Javadocs
         getInventory().add(new Item(ITEM8, DESC_ITEM8, 1, 1, true, true));
         getInventory().add(new Item(CURE_MACHINE, DESC_CURE_MACHINE, 1, 1, false, false));
         
+        ingredients = new Item[3];
+        correctIngredients = new Item[]{getItem(ITEM3), getItem(ITEM5), getItem(ITEM8)};
+        index = 0;
     }  // TODO
 
     @Override
     public void load() { super.load(); }  // TODO
 
     @Override
-    public boolean use(String toUse, String useOn) { return false; }  // TODO
+    public boolean use(String toUse, String useOn) { 
+        if (toUse.equalsIgnoreCase(ITEM1)
+            || toUse.equalsIgnoreCase(ITEM2)
+            || toUse.equalsIgnoreCase(ITEM3)
+            || toUse.equalsIgnoreCase(ITEM4)
+            || toUse.equalsIgnoreCase(ITEM5)
+            || toUse.equalsIgnoreCase(ITEM6)
+            || toUse.equalsIgnoreCase(ITEM7)
+            || toUse.equalsIgnoreCase(ITEM8)) {
+
+            if (useOn == null) {
+                System.out.println(USE_INGREDIENT_ON_NULL);
+                return true;
+            }
+
+            switch (useOn) {
+                case CURE_MACHINE:
+                System.out.println(USE_INGREDIENT_ON_CURE_MACHINE);
+                ingredients[index] = getItem(toUse);
+                index++;   
+                removeFromInventory(toUse);
+                checkCorrect();
+                    break;
+
+                default:
+                    break;
+            }
+            return true;
+        }
+        
+        //Default Case
+        return super.use(toUse, useOn); 
+    }  // TODO
 
     @Override
     public void pickup(String toPickUp) {}  // TODO
@@ -70,7 +112,15 @@ public class Lab extends Room {  // TODO: Javadocs
     /*
      * Code to check if the solution is correct
      */
-    public boolean checkCorrect(){ return false; }  // TODO
+    public boolean checkCorrect(){ 
+        if (index == ingredients.length - 1){
+            for (int i = 0; i < ingredients.length; i++){
+                if (!ingredients[i].equals(correctIngredients[i]))
+                    return false;
+            }
+            return true;
+        }
+        return false; }  // TODO
 
 
 }
