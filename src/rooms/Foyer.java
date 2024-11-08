@@ -47,6 +47,8 @@ public class Foyer extends Room {
         getInventory().add(new Item(BOARD, DESC_BOARD, 1, 2, true, true));
         //Main Door (false, true) Place to put the boards
         getInventory().add(new Item(DOOR, DESC_DOOR, 1, 0, false, true));
+
+        //getInventory().add(new Item(COAL, DESC_BOARD, 1, 1, true, true));
     }  // TODO
 
     @Override
@@ -66,10 +68,12 @@ public class Foyer extends Room {
             if(getInventory().get(COAL) != null) //Coal is in fireplace
             {
                 System.out.println(USE_BUTTON_WITH_COAL);
+                return true;
             }
             if(getInventory().get(COAL) == null) //Coal isn't in fireplace
             {
                 System.out.println(USE_BUTTON);
+                return true;
             }
         }
 
@@ -86,8 +90,6 @@ public class Foyer extends Room {
                     System.out.println(USE_COAL_ON_FIREPLACE);
                     getInventory().add(stateManager.getPlayer().getInventory().get(COAL));
                     removeFromInventory(COAL);
-
-                    
                     break;
             
                 default:
