@@ -49,10 +49,6 @@ public class SplashScreen {
             case StateManager.END_TURNS:
                 System.out.println(TURNS_ENDING);
                 break;
-
-            default:
-                System.out.println(DEMO_ENDING);
-                break;
         }
     }
 

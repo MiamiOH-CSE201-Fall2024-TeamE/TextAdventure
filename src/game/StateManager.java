@@ -238,10 +238,6 @@ public class StateManager {
             return END_TURNS;
         }
 
-        if (!getRoom(Foyer.NAME).isLocked()) {
-            return -1;
-        }
-
         return END_NONE;
     }
 }

@@ -53,7 +53,11 @@ public class Lab extends Room {  // TODO: Javadocs
         getInventory().add(new Item(CURE_MACHINE, DESC_CURE_MACHINE, 1, 1, false, false));
         
         ingredients = new Item[3];
-        correctIngredients = new Item[]{getItem(ITEM3), getItem(ITEM5), getItem(ITEM8)};
+        correctIngredients = new Item[] {
+            getInventory().get(ITEM3),
+            getInventory().get(ITEM5),
+            getInventory().get(ITEM8)
+        };
         index = 0;
     }  // TODO
 

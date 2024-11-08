@@ -78,12 +78,6 @@ public class SplashScreen {
         + "------------------------------------------------------------------\n";
     
     /**
-     * The splash screen text for the demo ending.
-     */
-    public static final String DEMO_ENDING
-        = "Congrats, you have reached the end of this demo!";
-    
-    /**
      * The splash screen text for the die ending.
      */
     public static final String DIE_ENDING

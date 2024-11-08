@@ -1,5 +1,3 @@
-// TODO: Strings
-
 package rooms;
 
 import static app.App.stateManager;
@@ -46,7 +44,7 @@ public class Tutorial extends Room {
 
     @Override
     public void load() {
-        stateManager.getCountdown().addTurns(5);
+        stateManager.getCountdown().setTurns(5);
         super.load();
     }
 
@@ -66,7 +64,6 @@ public class Tutorial extends Room {
                     System.out.println(USE_ROCK_ON_CAR);
                     removeFromInventory(ROCK);
                     stateManager.getRoom(Foyer.NAME).unlock();
-                    stateManager.quitGame();
                     break;
 
                 case ROCK:
