@@ -46,13 +46,38 @@ public class Foyer {
      * The description string for the 'button' item.
      */
     public static final String DESC_BUTTON
-        = "There is a button above the fireplace that is labeled with a fire symbol."
-        + "It's a mechanical button that is connected to a fire starter";
+        = "Above the fireplace, a circular button etched with a flame icon catches the light.\n"
+        + "It's a mechanical button that's connected to a fire starter.\n";
 
-    public static final String DESC_FIREPLACE = ""; // TODO
-    public static final String DESC_PAINTING = ""; // TODO
-    public static final String DESC_BOARD = ""; // TODO
-    public static final String DESC_DOOR = ""; // TODO
+    /**
+     * The description string for the 'fireplace' item.
+     */
+    public static final String DESC_FIREPLACE
+        = "Dominating the far wall, a grand fireplace promises warmth and comfort.\n"
+        + "Above the fireplace is a large, but blank canvas that looms over the fireplace.\n"
+        + "How odd...\n";
+    
+    /**
+     * The description string for the 'painting' item.
+     */
+    public static final String DESC_PAINTING
+        = "A canvas hangs slightly askew above the fireplace, its frame dulled with age.\n"
+        + "It is a blank canvas that that has been tainted by many years of smoke and soot.\n"
+        + "Yet a faint, almost imperceptible, shimmer seems to emanate from the canvas.\n";
+
+    /**
+     * The description string for the 'board' item.
+     */
+    public static final String DESC_BOARD
+        = "A loose floorboard near the hearth creaks ominously underfoot.\n"
+        + "A small gap reveals a glimpse of darkness beneath.\n";
+
+    /**
+     * The description string for the 'door' item.
+     */
+    public static final String DESC_DOOR
+        = "A heavy oak door stands at the front of the room, its surface weathered.\n"
+        + "An intricate iron handle, offers the only means of entry in or out of the room.\n";
 
     /**
      * The action string for using a board on the door.
