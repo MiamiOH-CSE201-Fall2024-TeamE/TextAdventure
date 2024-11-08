@@ -12,6 +12,10 @@ public class Foyer {
      */
     private Foyer() {}
 
+    public static final String DESC_BUTTON
+        = "There is a button above the fireplace that is labeled with a fire symbol."
+        + "It's a mechanical button that is connected to a fire starter";
+
     /**
      * The action string for using a board on the door.
      */
