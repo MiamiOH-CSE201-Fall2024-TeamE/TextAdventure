@@ -50,7 +50,7 @@ public class Kitchen {
     /**
     * The name string for the 'board' item.
     */
-    public static final String Board
+    public static final String BOARD
         = "board";
 
     /**
@@ -67,7 +67,7 @@ public class Kitchen {
     public static final String DESC_KNIFE
         = "As you looked around the kitchen a shiny glare catches your eyes.\n"
         + "On the kitchen counter by the sink sit an old steak knife.\n"
-        + "Although the leather on the handle being old the blade is still sharp.\m";
+        + "Although the leather on the handle being old the blade is still sharp.\n";
 
     
     /**
@@ -116,19 +116,4 @@ public class Kitchen {
     public static final String DESC_INGREDIENT_HINT
         = "A small torn paper was the only thing you found in the locked drawer.\n"
         + "On the paper is faded handwriting similar to the one you found in the journal";
-
-    /**
-     * The name string for the 'coal' item.
-     */
-    public static final String COAL 
-        = "coal";
-
-    /**
-     * The description string for the 'coal' item.
-     */
-    public static final String DESC_COAL
-        = "A heavy oak door stands at the front of the room, its surface weathered.\n"
-        + "An intricate iron handle, offers the only means of entry in or out of the room.\n";
-
-
 }

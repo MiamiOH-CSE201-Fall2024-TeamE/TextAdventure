@@ -1,6 +1,7 @@
 package rooms;
 
-import items.Inventory;
+import static app.App.stateManager;
+import items.*;
 
 import static ui.strings.rooms.Kitchen.*;
 
@@ -50,8 +51,6 @@ public class Kitchen extends Room {
         getInventory().add(new Item(OPEN_DRAWER, DESC_OPEN_DRAWER, 1, 1, false, false));
         getInventory().add(new Item(BOARD, DESC_BOARD, 3, 1, true, true));
         getInventory().add(new Item(INGREDIENT_HINT, DESC_INGREDIENT_HINT, 1, 0, true, false));
-
-    
     }
 
     @Override
