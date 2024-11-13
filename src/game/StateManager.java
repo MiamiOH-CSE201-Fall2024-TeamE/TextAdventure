@@ -1,5 +1,7 @@
 package game;
 
+import static game.Player.*;
+
 import static ui.strings.StateManager.*;
 import static ui.strings.SaveGame.GAME_LOADED;
 
@@ -127,7 +129,7 @@ public class StateManager {
             rooms.put(Bedroom.NAME, new Bedroom());
             rooms.put(Lab.NAME, new Lab());
 
-            Room tutorial = rooms.get(Tutorial.NAME);
+            Room tutorial = getRoom(Tutorial.NAME);
             player = new Player(tutorial);
 
             tutorial.load();
@@ -230,15 +232,17 @@ public class StateManager {
      */
     public int calculateEnding() {
 
-        if (( (Lab) rooms.get(Lab.NAME) ).getEnding() == 1) {
-            return END_SCI_DIE;
+        int labEnding = ( (Lab) getRoom(Lab.NAME) ).getEnding();
+
+        if (labEnding != END_NONE) {
+            return labEnding;
         }
 
-        if (player.getState() == Player.DEAD) {
+        if (player.getState() == DEAD) {
             return END_DIE;
         }
 
-        if (player.getState() == Player.RAN_OUT_OF_TURNS) {
+        if (player.getState() == RAN_OUT_OF_TURNS) {
             return END_TURNS;
         }
 
