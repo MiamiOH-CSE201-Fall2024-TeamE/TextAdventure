@@ -2,7 +2,7 @@ package ui.strings;
 
 /**
  * Strings for the ui.SplashScreen class to use.
- * 
+ *
  * @version 1.0
  */
 public class SplashScreen {
@@ -56,7 +56,7 @@ public class SplashScreen {
         + "         |                                                                                                   | |\n"
         + "         \\___________________________________________________________________________________________________/ /\n"
         + "          \\___________________________________________________________________________________________________/\n";
-    
+
     /**
      * The prologue splash screen text.
      */
@@ -76,7 +76,7 @@ public class SplashScreen {
         + "His personal manor...\n"
         + "\n"
         + "------------------------------------------------------------------\n";
-    
+
     /**
      * The splash screen text for the die ending.
      */
@@ -92,13 +92,13 @@ public class SplashScreen {
         + "overwhelmed and infected.\n"
         + "\n"
         + DIE_ENDING;
-    
+
     /**
      * The splash screen text for saving/quitting the game.
      */
     public static final String GOODBYE_ENDING
         = "Thanks for playing!";
-    
+
     /**
      * The splash screen text for the player's stats.
      */

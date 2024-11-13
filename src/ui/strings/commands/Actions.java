@@ -2,7 +2,7 @@ package ui.strings.commands;
 
 /**
  * Action strings for the commands.Command classes to use.
- * 
+ *
  * @version 1.0
  */
 public class Actions {

@@ -6,7 +6,7 @@ import items.Inventory;
 
 /**
  * Provides the data and methods necessary to build an interactable room.
- * 
+ *
  * @version 1.0.0
  */
 abstract public class Room {
@@ -28,7 +28,7 @@ abstract public class Room {
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
-     * 
+     *
      * @param isLocked Whether or not the room is locked.
      * @param inventory The room's inventory.
      */
@@ -40,14 +40,14 @@ abstract public class Room {
 
     /**
      * Return's the room's inventory.
-     * 
+     *
      * @return An inventory of items in the room.
      */
     public Inventory getInventory() { return inventory; }
 
     /**
      * Returns whether or not the room is locked.
-     * 
+     *
      * @return True if locked, false otherwise.
      */
     public boolean isLocked() { return isLocked; }
@@ -64,7 +64,7 @@ abstract public class Room {
 
     /**
      * Returns whether or not the room has already been loaded.
-     * 
+     *
      * @return True if already loaded, false otherwise.
      */
     public boolean hasLoaded() { return hasLoaded; }
@@ -79,14 +79,14 @@ abstract public class Room {
 
     /**
      * Contains the room-specific code for using items.
-     * 
+     *
      * @param toUse The name of the item to use. Guaranteed to be a valid item.
      * @param useOn The name of the item to use it on. Guaranteed to be either
      *     a valid item, or null.
      * @return True if item was used successfully, false otherwise.
      */
     public boolean use(String toUse, String useOn) {
-        
+
         // Default case (item use not accounted for)
         if (useOn == null) {
             System.out.printf(USE_NOTHING_HAPPENS_1, toUse);
@@ -96,27 +96,27 @@ abstract public class Room {
 
         return false;
     }
-    
+
     /**
      * Contains the room-specific code for using items.
-     * 
+     *
      * @param toUse The name of the item to use.
      * @return True if item was used successfully, false otherwise.
      */
     public boolean use(String toUse) {
         return use(toUse, null);
     }
-    
+
     /**
      * Contains the room-specific code for picking up items.
-     * 
+     *
      * @param toPickUp The name of the item to pick up.
      */
     abstract public void pickup(String toPickUp);
-    
+
     /**
      * Returns the room's description, based on its current state.
-     * 
+     *
      * @return The room's description.
      */
     abstract public String getDescription();

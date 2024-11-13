@@ -2,7 +2,7 @@ package ui.strings;
 
 /**
  * Strings for the game.StateManager class to use.
- * 
+ *
  * @version 1.0
  */
 public class StateManager {
@@ -17,7 +17,7 @@ public class StateManager {
      */
     public static final String SAVE_FOUND
         = "Saved game found!";
-    
+
     /**
      * The confirmation text when loading a saved game.
      */

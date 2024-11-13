@@ -3,7 +3,7 @@ import org.junit.Test;
 
 /**
  * Contains unit tests to ensure the app functions.
- * 
+ *
  * @version 1.0.0
  */
 public class AppTest {

@@ -6,7 +6,7 @@ import static ui.strings.rooms.Cellar.*;
 
 /**
  * This is the class for the Cellar Room.
- * 
+ *
  * @version 1.0.0
  */
 public class Cellar extends Room {
@@ -18,7 +18,7 @@ public class Cellar extends Room {
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
-     * 
+     *
      * @param isLocked Whether or not the room is locked.
      * @param inventory The room's inventory.
      */
@@ -38,7 +38,7 @@ public class Cellar extends Room {
         getInventory().add(new Item(WINE3, DESC_WINE3, 1, 0, true, true));
         getInventory().add(new Item(WINE4, DESC_WINE4, 1, 0, true, true));
         getInventory().add(new Item(WINE5, DESC_WINE5, 1, 0, true, true));
-        
+
         getInventory().add(new Item(WINE_HINT, DESC_WINEHINT, 1, 0, false, true));
 
         getInventory().add(new Item(VENT, DESC_VENT, 1, 1, false, true));

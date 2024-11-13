@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * A simple data structure that holds a list of Items.
- * 
+ *
  * @version 1.0.0
  */
 public class Inventory {
@@ -66,7 +66,7 @@ public class Inventory {
 
     /**
      * Returns the size of this inventory.
-     * 
+     *
      * @return The inventory's size.
      */
     public int size() { return items.size(); }
@@ -74,7 +74,7 @@ public class Inventory {
     /**
      * Adds a new item to the inventory, if it is possible to do so.
      *     Increments the item's counter if one or more already exist.
-     * 
+     *
      * @param item The item to add to the inventory.
      * @return One of either SUCCESS, INVENTORY_FULL, or STACK_FULL.
      */
@@ -96,7 +96,7 @@ public class Inventory {
 
     /**
      * Returns an item in this inventory by name.
-     * 
+     *
      * @param name The name of the item.
      * @return The item, or null if not found.
      */
@@ -104,7 +104,7 @@ public class Inventory {
 
     /**
      * Removes an item from this inventory by name.
-     * 
+     *
      * @param name The name of the item.
      * @return The item, or null if not found.
      */
@@ -112,21 +112,21 @@ public class Inventory {
 
     /**
      * Returns the maximum number of unique items in the inventory.
-     * 
+     *
      * @return The maximum size.
      */
     public int getMaxSize() { return maxSize; }
 
     /**
      * Returns the maximum number of duplicates per unique item.
-     * 
+     *
      * @return The maximum stack size.
      */
     public int getMaxStackSize() { return stackSize; }
 
     /**
      * Returns an array containing all of this inventory's items.
-     * 
+     *
      * @return An array of items.
      */
     public Item[] toArray() {

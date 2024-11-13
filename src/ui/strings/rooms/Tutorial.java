@@ -2,7 +2,7 @@ package ui.strings.rooms;
 
 /**
  * Strings for the rooms.Tutorial class to use.
- * 
+ *
  * @version 1.0
  */
 public class Tutorial {
@@ -107,7 +107,7 @@ public class Tutorial {
         = "You walk up to and grab a zombie. It proceeds to bite you, quickly\n"
         + "infecting you and rendering you incapable of fighting back.\n"
         + "Why would you do that?!";
-    
+
     /**
      * The room's description.
      */

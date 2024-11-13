@@ -8,7 +8,7 @@ import ui.strings.commands.Errors;
 
 /**
  * Defines the logic for the 'help' command.
- * 
+ *
  * @version 1.0.0
  */
 public class Help extends Command {
@@ -19,7 +19,7 @@ public class Help extends Command {
     public Help() {
         super(Aliases.HELP);
     }
-    
+
     @Override
     public boolean execute(String[] args) {
 

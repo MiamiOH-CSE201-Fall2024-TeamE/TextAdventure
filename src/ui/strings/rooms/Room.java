@@ -2,7 +2,7 @@ package ui.strings.rooms;
 
 /**
  * Strings for the rooms.Room class to use.
- * 
+ *
  * @version 1.0
  */
 public class Room {

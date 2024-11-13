@@ -10,7 +10,7 @@ import items.*;
 
 /**
  * This is the class for the Bedroom Room.
- * 
+ *
  * @version 1.0.0
  */
 public class Bedroom extends Room {
@@ -22,7 +22,7 @@ public class Bedroom extends Room {
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
-     * 
+     *
      * @param isLocked Whether or not the room is locked.
      * @param inventory The room's inventory.
      */
@@ -33,7 +33,7 @@ public class Bedroom extends Room {
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
-    public Bedroom() { 
+    public Bedroom() {
         this(true, new Inventory(), false);
 
         // Fill room's inventory
@@ -50,7 +50,7 @@ public class Bedroom extends Room {
 
     @Override
     public boolean use(String toUse, String useOn) {
-        
+
         // Using the safe
         if (toUse.equalsIgnoreCase(SAFE)) {
 
@@ -61,36 +61,36 @@ public class Bedroom extends Room {
                 if (Input.getInput(QUESTION_LARGE_SAFE)[0].equalsIgnoreCase(ANSWER_LARGE_SAFE)) {
 
                     System.out.println(LARGE_SAFE_OPENED);
-                    
+
                     getInventory().remove(SAFE);
                     getInventory().add(new Item(SAFE, DESC_SAFE_SMALL, 1, 1, false, true));
-                    
+
                     return true;
-                
+
                 } else {
                     System.out.println(INCORRECT_ANSWER);
                     return true;
                 }
-            
+
             } else {
 
                 if (Input.getInput(QUESTION_SMALL_SAFE)[0].equalsIgnoreCase(ANSWER_SMALL_SAFE)) {
-                    
+
                     System.out.println(SMALL_SAFE_OPENED);
-                    
+
                     getInventory().remove(SAFE);
                     getInventory().add(new Item(SAFE, DESC_SAFE_SMALL_OPEN, 1, 0, false, false));
                     getInventory().add(new Item(BRIEFCASE, DESC_BRIEFCASE, 1, 1, false, true));
-                    
+
                     return true;
-                
+
                 } else {
                     System.out.println(INCORRECT_ANSWER);
                     return true;
                 }
             }
         }
-        
+
         // Using the briefcase
         if (toUse.equalsIgnoreCase(BRIEFCASE)) {
 
@@ -102,7 +102,7 @@ public class Bedroom extends Room {
 
                 getInventory().remove(BRIEFCASE);
                 getInventory().add(new Item(BRIEFCASE, DESC_BRIEFCASE_OPEN, 1, 0, false, false));
-                
+
                 return true;
 
             } else {
@@ -110,7 +110,7 @@ public class Bedroom extends Room {
                 return true;
             }
         }
-        
+
         // Using the crowbar
         if (toUse.equalsIgnoreCase(CROWBAR)) {
 
@@ -159,7 +159,7 @@ public class Bedroom extends Room {
                     : (briefcase.getDescription().equals(DESC_BRIEFCASE))
                         ? DESCRIPTION_SMALL_SAFE_OPEN_PART
                         : DESCRIPTION_ALL_OPEN_PART,
-                        
+
             (nightstand.getDescription().equals(DESC_NIGHTSTAND))
                 ? DESCRIPTION_NIGHTSTAND_PART
                 : DESCRIPTION_BROKEN_NIGHTSTAND_PART

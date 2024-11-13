@@ -7,7 +7,7 @@ import rooms.Room;
 
 /**
  * Provides player inventory and state information.
- * 
+ *
  * @version 1.0.0
  */
 public class Player {
@@ -16,7 +16,7 @@ public class Player {
      * The player is alive.
      */
     public static final int ALIVE = 0;
-    
+
     /**
      * The player is dead.
      */
@@ -44,7 +44,7 @@ public class Player {
 
     /**
      * Instantiates a new player in a specified starting room.
-     * 
+     *
      * @param startingRoom The room to start in.
      */
     public Player(Room startingRoom) {
@@ -55,7 +55,7 @@ public class Player {
 
     /**
      * Instantiates a new player with a specified inventory and starting room.
-     * 
+     *
      * @param startingRoom The room to start in.
      * @param inventory The player's inventory.
      */
@@ -66,28 +66,28 @@ public class Player {
 
     /**
      * Returns the player's inventory.
-     * 
+     *
      * @return The player's inventory.
      */
     public Inventory getInventory() { return inventory; }
 
     /**
      * Returns the room that the player is currently in.
-     * 
+     *
      * @return The player's current room.
      */
     public Room getRoom() { return room; }
 
     /**
      * Moves the player into a different room.
-     * 
+     *
      * @param room The room to move the player to.
      */
     public void setRoom(Room room) { this.room = room; }
 
     /**
      * Kills the player.
-     * 
+     *
      * @param ranOutOfTurns Whether or not the player ran out of turns.
      */
     public void kill(boolean ranOutOfTurns) {
@@ -97,7 +97,7 @@ public class Player {
 
     /**
      * Returns the current state of the player.
-     * 
+     *
      * @return DEAD if the player is dead,
      *     RAN_OUT_OF_TURNS if they ran out of turns,
      *     ALIVE otherwise.

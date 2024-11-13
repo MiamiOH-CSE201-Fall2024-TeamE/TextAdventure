@@ -13,7 +13,7 @@ import ui.SplashScreen;
 
 /**
  * Main App class, contains the code to initialize the game.
- * 
+ *
  * @version 1.0.0
  */
 public class App {
@@ -24,7 +24,7 @@ public class App {
     public static StateManager stateManager = new StateManager();
 
     public static void main(String[] args) {
-        
+
         // Start the game
         stateManager.begin();
 
@@ -48,7 +48,7 @@ public class App {
         }
 
         if (stateManager.calculateEnding() == StateManager.END_NONE) {
-        
+
             // Save/quit the game
             if (Input.getConfirmation(SAVE_GAME)) {
                 SaveGame.save();

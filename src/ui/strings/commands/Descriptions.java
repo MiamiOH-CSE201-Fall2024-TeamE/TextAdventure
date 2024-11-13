@@ -2,7 +2,7 @@ package ui.strings.commands;
 
 /**
  * Description strings for the commands.Command classes to use.
- * 
+ *
  * @version 1.0
  */
 public class Descriptions {
@@ -11,20 +11,20 @@ public class Descriptions {
      * Prevent instantiating static class.
      */
     private Descriptions() {}
-    
+
     /**
      * The text to be printed before displaying a command's aliases.
      */
     public static final String ALIASES
         = "\n"
         + "Aliases:";
-    
+
     /**
      * The text to be printed before displaying a list of available commands.
      */
     public static final String COMMANDS
         = "Available commands:";
-    
+
     /**
      * The text to be printed before displaying the user's inventory.
      */

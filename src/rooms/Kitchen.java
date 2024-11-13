@@ -9,7 +9,7 @@ import items.*;
 
 /**
  * This is the class for the Kitchen Room.
- * 
+ *
  * @version 1.0.0
  */
 public class Kitchen extends Room {
@@ -21,7 +21,7 @@ public class Kitchen extends Room {
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
-     * 
+     *
      * @param isLocked Whether or not the room is locked.
      * @param inventory The room's inventory.
      */
@@ -32,9 +32,9 @@ public class Kitchen extends Room {
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
-    public Kitchen() { 
-        this(true, new Inventory(), false); 
-        
+    public Kitchen() {
+        this(true, new Inventory(), false);
+
         // Fill room's inventory
         getInventory().add(new Item(KNIFE, DESC_KNIFE, 1, 5, true, true));
         getInventory().add(new Item(OVEN, DESC_OVEN, 1, 0, false, true));
