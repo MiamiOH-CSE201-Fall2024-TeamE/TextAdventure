@@ -1,6 +1,7 @@
 package rooms;
 
 import items.Inventory;
+import items.Item;
 
 import static ui.strings.rooms.Cellar.*;
 
@@ -29,7 +30,11 @@ public class Cellar extends Room {
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
-    public Cellar() { this(true, new Inventory(), false); }  // TODO
+    public Cellar() {
+        this(true, new Inventory(), false);
+
+        getInventory().add(new Item(PAPER, DESC_PAPER, 1, 1, true, true));
+    }  // TODO
 
     @Override
     public void load() { super.load(); }  // TODO
