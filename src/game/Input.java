@@ -1,6 +1,6 @@
 package game;
 
-import static ui.strings.Input.*;
+import static ui.strings.Input.PROMPT_APPENDIX;
 
 import java.util.Scanner;
 
@@ -26,8 +26,8 @@ public class Input {
      * 
      * @return A String array of arguments passed by the user.
      */
-    public static String[] getInput() {
-        System.out.print(INPUT_INDICATOR);
+    public static String[] getInput(String prompt) {
+        System.out.print(prompt);
         String[] ret = inputScanner.nextLine().toLowerCase().split(" ");
         System.out.println();
         return ret;

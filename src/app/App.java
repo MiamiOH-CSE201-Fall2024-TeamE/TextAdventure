@@ -3,6 +3,7 @@ package app;
 import ui.strings.commands.Errors;
 
 import static ui.strings.SaveGame.SAVE_GAME;
+import static ui.strings.Input.INPUT_INDICATOR;
 
 import commands.Command;
 import game.Input;
@@ -33,7 +34,7 @@ public class App {
             System.out.println(stateManager.getCountdown().toString());
 
             // Get user input
-            String[] input = Input.getInput();
+            String[] input = Input.getInput(INPUT_INDICATOR);
             Command command = stateManager.getCommand(input[0]);
 
             // Ensure command exists

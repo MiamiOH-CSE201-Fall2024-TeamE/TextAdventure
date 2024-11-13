@@ -5,7 +5,7 @@ package ui.strings.rooms;
  * 
  * @version 1.0
  */
-public class Cellar{
+public class Cellar {
 
     /**
      * Prevent instantiating static class.
