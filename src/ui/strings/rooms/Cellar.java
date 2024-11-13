@@ -13,6 +13,12 @@ public class Cellar {
     private Cellar() {}
 
     /**
+     * The name string for the 'crowbar' item
+     */
+    public static final String CROWBAR
+        = "crowbar";
+
+    /**
      * The name string for the 'paper' item
      */
     public static final String PAPER
