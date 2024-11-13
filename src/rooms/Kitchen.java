@@ -50,7 +50,13 @@ public class Kitchen extends Room {
     public void load() { super.load(); }
 
     @Override
-    public boolean use(String toUse, String useOn) { return false; }  // TODO
+    public boolean use(String toUse, String useOn) {
+
+        // TODO
+
+        // Default case
+        return super.use(toUse, useOn);
+    }  // TODO
 
     @Override
     public void pickup(String toPickUp) {}  // TODO
