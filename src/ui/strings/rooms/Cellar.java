@@ -12,4 +12,19 @@ public class Cellar {
      */
     private Cellar() {}
 
+    /**
+     * The name string for the 'paper' item
+     */
+    public static final String PAPER
+        = "paper";
+
+    /**
+     * The description string for the 'rock' item.
+     */
+    public static final String DESC_PAPER
+        = "A strange scrap of paper exists within your vicinity.\n"
+        + "It says, \"Bottles of wine, aged over time,\n"
+        + "Taste best when sipped in order of mine\".\n";
+
+
 }
