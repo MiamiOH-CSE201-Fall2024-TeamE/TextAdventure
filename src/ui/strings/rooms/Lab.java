@@ -72,4 +72,16 @@ public class Lab {
         public static final String USE_INGREDIENT_ON_CURE_MACHINE
         = "You inserted the ingredient into the Cure Machine";
 
+        public static final String SCIENTIST_APPEARS
+        = "Ooga booga scientist";
+
+        public static final String FIGHT_PROMPT
+        = "Do you want to fight?";
+
+        public static final String SCIENTIST
+        = "Do you want to fight?";
+
+        public static final String DESC_SCIENTIST
+        = "Do you want to fight?";
+
 }

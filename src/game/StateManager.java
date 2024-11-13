@@ -3,6 +3,7 @@ package game;
 import static ui.strings.StateManager.*;
 import static ui.strings.SaveGame.GAME_LOADED;
 
+
 import java.util.HashMap;
 
 import commands.*;
@@ -229,7 +230,12 @@ public class StateManager {
      * @return The ending state.
      */
     public int calculateEnding() {
-
+        
+        if (((Lab)rooms.get(Lab.NAME)).getEnding() == 1){
+            return END_SCI_DIE;
+        }
+            
+        
         if (player.getState() == Player.DEAD) {
             return END_DIE;
         }
