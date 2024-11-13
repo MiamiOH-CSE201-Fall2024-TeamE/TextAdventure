@@ -35,7 +35,7 @@ public class Bedroom extends Room {
         // Fill room's inventory
         //Diary
         //Big Safe
-        //Samll safe (After opening big safe)
+        //Small safe (After opening big safe)
         //BriefCase (after opening small safe)
         //NightStand
         //Key (added after nightstand is "opened" with the crowbar)

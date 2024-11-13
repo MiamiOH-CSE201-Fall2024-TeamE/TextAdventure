@@ -8,7 +8,6 @@ import static ui.strings.rooms.Kitchen.COAL;
 
 import items.*;
 
-
 /**
  * This is the class for the Foyer Room.
  * 
