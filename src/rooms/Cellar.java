@@ -59,5 +59,7 @@ public class Cellar extends Room {
     public String getDescription() { return null; }  // TODO
 
     @Override
-    public String toString() { return NAME; }
+    public String toString() {
+        return NAME;
+    }
 }

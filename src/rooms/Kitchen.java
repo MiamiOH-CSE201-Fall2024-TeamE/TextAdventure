@@ -4,6 +4,7 @@ import static app.App.stateManager;
 import static items.Item.removeFromInventory;
 
 import static ui.strings.rooms.Kitchen.*;
+import static ui.strings.rooms.Bedroom.KEY;
 
 import items.*;
 
@@ -86,6 +87,9 @@ public class Kitchen extends Room {
                 }
             }
         }
+
+        // Default case
+        return super.use(toUse, useOn);
     }
 
     @Override

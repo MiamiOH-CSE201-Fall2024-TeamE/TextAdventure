@@ -167,5 +167,7 @@ public class Bedroom extends Room {
     }
 
     @Override
-    public String toString() { return NAME; }
+    public String toString() {
+        return NAME;
+    }
 }

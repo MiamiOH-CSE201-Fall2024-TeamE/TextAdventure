@@ -1,16 +1,13 @@
 package rooms;
 
-import items.Inventory;
-import items.Item;
+import static items.Item.*;
+import static game.StateManager.*;
 
 import static ui.strings.rooms.Lab.*;
+import static ui.strings.rooms.Kitchen.KNIFE;
 
 import game.Input;
-import game.StateManager;
-
-import static items.Item.removeFromInventory;
-import static items.Item.getItem;
-import static app.App.stateManager;
+import items.*;
 
 /**
  * This is the class for the Lab Room.
@@ -24,16 +21,25 @@ public class Lab extends Room {  // TODO: Javadocs
      */
     public static final String NAME = "lab";
 
-    //Contains the ingredients the user put into the Cure Machine
+    /**
+     * Contains the ingredients the user has placed into the cure machine.
+     */
     private Item[] ingredients;
 
-    //Index used for traversing the array
-    private int index;
-
-    //int showing what ending the player acheived
-    private int ending;
-
+    /**
+     * Contains the ingredients that should be present in the correct cure.
+     */
     private Item[] correctIngredients;
+
+    /**
+     * The current number of elements in the ingredients array.
+     */
+    private int size;
+
+    /**
+     * The current ending state of the room.
+     */
+    private int ending;
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
@@ -43,7 +49,6 @@ public class Lab extends Room {  // TODO: Javadocs
      */
     public Lab(boolean isLocked, Inventory inventory, boolean hasLoaded) {
         super(isLocked, inventory, hasLoaded);
-
     }
 
     /**
@@ -67,8 +72,9 @@ public class Lab extends Room {  // TODO: Javadocs
             getInventory().get(ITEM5),
             getInventory().get(ITEM8)
         };
-        index = 0;
-        ending = 0;
+
+        size = 0;
+        ending = END_NONE;
     }  // TODO
 
     @Override
@@ -93,8 +99,8 @@ public class Lab extends Room {  // TODO: Javadocs
             switch (useOn) {
                 case CURE_MACHINE:
                 System.out.println(USE_INGREDIENT_ON_CURE_MACHINE);
-                ingredients[index] = getItem(toUse);
-                index++;
+                ingredients[size] = getItem(toUse);
+                size++;
                 removeFromInventory(toUse);
                 checkCorrect();
                     break;
@@ -105,7 +111,7 @@ public class Lab extends Room {  // TODO: Javadocs
             return true;
         }
 
-        //Default Case
+        // Default case
         return super.use(toUse, useOn);
     }  // TODO
 
@@ -116,40 +122,54 @@ public class Lab extends Room {  // TODO: Javadocs
     public String getDescription() { return null; }  // TODO
 
     @Override
-    public String toString() { return NAME; }
+    public String toString() {
+        return NAME;
+    }
 
-    /*
-     * Code that handles interactions when the scientist spawns
+    /**
+     * Handles player interaction when the scientist spawns.
      */
     public void spawnScientist() {
         getInventory().add(new Item(SCIENTIST, DESC_SCIENTIST, 1, 1, true, true));
         System.out.println(SCIENTIST_APPEARS);
         if (Input.getConfirmation(FIGHT_PROMPT)) {
-            if (stateManager.getPlayer().getInventory().get("Knife") != null) {
+            if (getItem(KNIFE) != null) {
 
             } else {
-                ending = 1;
+                ending = END_SCI_DIE;
             }
         } else {
-            ending = 2;
+            ending = END_SCI_RUN;
         }
     }  // TODO
 
-    /*
-     * Code to check if the solution is correct
+    /**
+     * Checks if the cure solution is correct.
+     * 
+     * @return True if the cure is correct, false otherwise.
      */
     public boolean checkCorrect() {
-        if (index == ingredients.length - 1) {
+        if (size == ingredients.length - 1) {
+            
             for (int i = 0; i < ingredients.length; i++) {
-                if (!ingredients[i].equals(correctIngredients[i]))
+                if (!ingredients[i].toString().equals(correctIngredients[i].toString())) {
                     return false;
+                }
             }
+
             return true;
         }
-        return false; }
 
-    /*
-    Returns the ending variable
-    */
-    public int getEnding() { return ending; }
+        return false;
+    }
+
+    /**
+     * Returns the current ending state of the room.
+     * 
+     * @return One of END_NONE, END_1ST_TRY, END_SCI_DIE, END_SCI_RUN,
+     *         END_2ND_TRY, or END_FAIL.
+     */
+    public int getEnding() {
+        return ending;
+    }
 }
