@@ -43,7 +43,8 @@ public class Cellar extends Room {
 
         getInventory().add(new Item(VENT, DESC_VENT, 1, 1, false, true));
         //getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
-    } //To Finish
+        getInventory().add(new Item(PAPER, DESC_PAPER, 1, 1, true, false));
+    }  // TODO
 
     @Override
     public void load() { super.load(); }

@@ -33,8 +33,9 @@ public class Bedroom extends Room {
         this(true, new Inventory(), false);
 
         // Fill room's inventory
-        //Diary
+        getInventory().add(new Item(DIARY, DESC_DIARY, 1, 0, false, false));
         //Big Safe
+        getInventory().add(new Item(DIARY, DESC_DIARY, 1, 0, false, false));
         //Small safe (After opening big safe)
         //BriefCase (after opening small safe)
         //NightStand
