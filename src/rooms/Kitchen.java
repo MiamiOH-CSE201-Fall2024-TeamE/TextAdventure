@@ -38,10 +38,8 @@ public class Kitchen extends Room {
         // Fill room's inventory
         getInventory().add(new Item(KNIFE, DESC_KNIFE, 1, 5, true, true));
         getInventory().add(new Item(OVEN, DESC_OVEN, 1, 0, false, true));
-        //getInventory().add(new Item(COAL, DESC_COAL, 1, 1, true, true)); - Added when oven is opened
         getInventory().add(new Item(TONGS, DESC_TONGS, 1, 1, true, true));
         getInventory().add(new Item(DRAWER, DESC_DRAWER_LOCKED, 1, 3, false, false));
-        //getInventory().add(new Item(DRAWER, DESC_DRAWER_OPEN, 1, 1, false, false)); - Added When drawer is opened
         getInventory().add(new Item(BOARD, DESC_BOARD, 3, 1, true, true));
         //getInventory().add(new Item(INGREDIENT_HINT, DESC_INGREDIENT_HINT, 1, 0, true, false)); - Figure this out
     }
@@ -50,20 +48,90 @@ public class Kitchen extends Room {
     public void load() { super.load(); }
 
     @Override
-    public boolean use(String toUse, String useOn) {
+    public boolean use(String toUse, String useOn) { 
 
-        // TODO
+        // Player opens oven
+        if (toUse.equalsIgnoreCase(OVEN)) {
+            System.out.println(OVEN_DOOR_OPENED);
+            getInventory().add(new Item(COAL, DESC_COAL, 1, 1, true, true));
+            return true;
+        }
 
-        // Default case
-        return super.use(toUse, useOn);
+        // Player uses key to open drawer
+        if (toUse.equalsIgnoreCase(KEY)) {
+
+            if (useOn == null) {
+                System.out.println(USE_KEY_ON_NULL);
+                return true;
+            }
+            
+            if (useOn.equalsIgnoreCase(DRAWER)) {
+                // Get the current drawer item
+                Item drawer = getInventory().get(DRAWER);
+                
+                // Check if the drawer is locked based on its description
+                if (drawer != null && drawer.getDescription().equals(DESC_DRAWER_LOCKED)) {
+                    // Changes locked drawer to open
+                    System.out.println(USE_KEY_ON_DRAWER);
+                    removeFromInventory(DRAWER);
+                    getInventory().add(new Item(DRAWER, DESC_DRAWER_OPEN, 1, 1, false, false));
+
+                    // Player can then get the ingredient hint for the lab
+                    // getInventory().add(new Item(INGREDIENT_HINT, DESC_INGREDIENT_HINT, 1, 0, true, false)); - figure out this
+                    return true;
+                } else {
+                    // If used on open drawer
+                    System.out.println(USE_KEY_ON_OPEN_DRAWER);
+                    return true;
+                }
+            }
+        }
+    }
+
+    @Override
+    public void pickup(String toPickUp) {
+        // Player takes knife from room inventory
+        if (toPickUp.equalsIgnoreCase(KNIFE)) {
+            System.out.println(KNIFE_PICKED_UP);
+            stateManager.getPlayer().getInventory().add(getInventory().get(KNIFE));
+            removeFromInventory(KNIFE);
+        }
+        // Player takes tongs from room inventory
+        if (toPickUp.equalsIgnoreCase(TONGS)) {
+            System.out.println(TONGS_PICKED_UP);
+            stateManager.getPlayer().getInventory().add(getInventory().get(TONGS));
+            removeFromInventory(TONGS);
+        }
+
+        //player takes board from room inventory 
+        if (toPickUp.equalsIgnoreCase(BOARD)) {
+            System.out.println(BOARD_PICKED_UP);
+            stateManager.getPlayer().getInventory().add(getInventory().get(BOARD));
+            removeFromInventory(BOARD);
+        }
+
+        //player takes coal from room inventory 
+        if (toPickUp.equalsIgnoreCase(COAL)) {
+            System.out.println(COAL_PICKED_UP);
+            stateManager.getPlayer().getInventory().add(getInventory().get(COAL));
+            removeFromInventory(COAL);
+        }
+
+        //player takes hint from from room inventory FIGURE OUT HINT
+        //if (toPickUp.equalsIgnoreCase(INGREDIENT_HINT)) {
+        //    System.out.println(INGREDIENT_HINT_PICKED_UP);
+        //    stateManager.getPlayer().getInventory().add(getInventory().get(INGREDIENT_HINT));
+        //    removeFromInventory(INGREDIENT_HINT);
+        // }
+    } 
+
+    @Override
+    public String getDescription() {
+        return null; 
     }  // TODO
 
     @Override
-    public void pickup(String toPickUp) {}  // TODO
-
-    @Override
-    public String getDescription() { return null; }  // TODO
-
-    @Override
-    public String toString() { return NAME; }
+    public String toString() { 
+        return NAME; 
+    }
 }
