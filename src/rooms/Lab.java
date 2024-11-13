@@ -4,8 +4,13 @@ import items.Inventory;
 import items.Item;
 
 import static ui.strings.rooms.Lab.*;
+
+import game.Input;
+import game.StateManager;
+
 import static items.Item.removeFromInventory;
 import static items.Item.getItem;
+import static app.App.stateManager;
 
 /**
  * This is the class for the Lab Room.
@@ -21,8 +26,12 @@ public class Lab extends Room {  // TODO: Javadocs
 
     //Contains the ingredients the user put into the Cure Machine
     private Item[] ingredients;
+    
     //Index used for traversing the array
     private int index;
+
+    //int showing what ending the player acheived
+    private int ending;
 
     private Item[] correctIngredients;
 
@@ -51,6 +60,7 @@ public class Lab extends Room {  // TODO: Javadocs
         getInventory().add(new Item(ITEM7, DESC_ITEM7, 1, 1, true, true));
         getInventory().add(new Item(ITEM8, DESC_ITEM8, 1, 1, true, true));
         getInventory().add(new Item(CURE_MACHINE, DESC_CURE_MACHINE, 1, 1, false, false));
+
         
         ingredients = new Item[3];
         correctIngredients = new Item[] {
@@ -59,6 +69,7 @@ public class Lab extends Room {  // TODO: Javadocs
             getInventory().get(ITEM8)
         };
         index = 0;
+        ending = 0;
     }  // TODO
 
     @Override
@@ -111,7 +122,22 @@ public class Lab extends Room {  // TODO: Javadocs
     /*
      * Code that handles interactions when the scientist spawns
      */
-    public void spawnScientist() {}  // TODO
+    public void spawnScientist() {
+        getInventory().add(new Item(SCIENTIST, DESC_SCIENTIST, 1, 1, true, true));
+        System.out.println(SCIENTIST_APPEARS);
+        if(Input.getConfirmation(FIGHT_PROMPT)){
+            if (stateManager.getPlayer().getInventory().get("Knife") != null){
+                
+            } else {
+                ending = 1;
+            }
+        } else {
+            ending = 2;
+        }
+
+        
+
+    }  // TODO
 
     /*
      * Code to check if the solution is correct
@@ -124,7 +150,12 @@ public class Lab extends Room {  // TODO: Javadocs
             }
             return true;
         }
-        return false; }  // TODO
+        return false; } 
+
+    /*
+    Returns the ending variable
+    */    
+    public int getEnding(){ return ending;}    
 
 
 }
