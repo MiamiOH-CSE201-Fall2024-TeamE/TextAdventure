@@ -33,7 +33,7 @@ public class Cellar extends Room {
     public Cellar() {
         this(true, new Inventory(), false);
 
-        getInventory().add(new Item(PAPER, DESC_PAPER, 1, 1, true, true));
+        getInventory().add(new Item(PAPER, DESC_PAPER, 1, 1, true, false));
     }  // TODO
 
     @Override
