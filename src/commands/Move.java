@@ -10,7 +10,7 @@ import rooms.Room;
 
 /**
  * Defines the logic for the 'move' command.
- * 
+ *
  * @version 1.0.0
  */
 public class Move extends Command {
@@ -21,7 +21,7 @@ public class Move extends Command {
     public Move() {
         super(Aliases.MOVE);
     }
-    
+
     @Override
     public boolean execute(String[] args) {
 

@@ -3,7 +3,6 @@ package game;
 import static ui.strings.StateManager.*;
 import static ui.strings.SaveGame.GAME_LOADED;
 
-
 import java.util.HashMap;
 
 import commands.*;
@@ -13,7 +12,7 @@ import ui.SplashScreen;
 /**
  * Holds game state data, including layout and player info.
  *     Additionally, provides methods to save/load the game.
- * 
+ *
  * @version 1.0.0
  */
 public class StateManager {
@@ -22,12 +21,12 @@ public class StateManager {
      * The game has not ended yet.
      */
     public static final int END_NONE = 0;
-    
+
     /**
      * The game ended with state [died].
      */
     public static final int END_DIE = 1;
-    
+
     /**
      * The game ended with state [ran out of turns].
      */
@@ -42,17 +41,17 @@ public class StateManager {
      * The game ended with state [died to scientist].
      */
     public static final int END_SCI_DIE = 4;
-    
+
     /**
      * The game ended with state [ran from scientist].
      */
     public static final int END_SCI_RUN = 5;
-    
+
     /**
      * The game ended with state [cure completed 2nd try].
      */
     public static final int END_2ND_TRY = 6;
-    
+
     /**
      * The game ended with state [failed to complete cure].
      */
@@ -145,35 +144,35 @@ public class StateManager {
 
     /**
      * Returns the active turn counter.
-     * 
+     *
      * @return The turn counter.
      */
     public Countdown getCountdown() { return countdown; }
 
     /**
      * Replaces the active player with a new one.
-     * 
+     *
      * @param player The new player.
      */
     public void setPlayer(Player player) { this.player = player; }
 
     /**
      * Replaces the active turn counter with a new one.
-     * 
+     *
      * @param countdown The new turn counter.
      */
     public void setCountdown(Countdown countdown) { this.countdown = countdown; }
 
     /**
      * Returns the active player.
-     * 
+     *
      * @return The player.
      */
     public Player getPlayer() { return player; }
 
     /**
      * Gets a room by name.
-     * 
+     *
      * @param name The room's name.
      * @return The room.
      */
@@ -181,19 +180,19 @@ public class StateManager {
 
     /**
      * Returns a hashmap of all rooms.
-     * 
+     *
      * @return All available rooms.
      */
     public HashMap<String, Room> getRooms() { return rooms; }
 
     /**
      * Returns a command by name.
-     * 
+     *
      * @param name The name of the command to get.
      * @return The command, or null if not found.
      */
     public Command getCommand(String name) {
-        
+
         for (Command command : commands) {
             for (String alias : command.getAliases()) {
                 if (alias.equalsIgnoreCase(name)) {
@@ -206,14 +205,14 @@ public class StateManager {
     }
     /**
      * Returns an array of all commands.
-     * 
+     *
      * @return All available commands.
      */
     public Command[] getCommands() { return commands; }
 
     /**
      * Returns whether or not the game should be running.
-     * 
+     *
      * @return True if game is running, false otherwise.
      */
     public boolean isRunning() { return isRunning; }
@@ -226,16 +225,15 @@ public class StateManager {
     /**
      * Returns one of the constants [END_*], depending on which ending state
      *     the game is currently in.
-     * 
+     *
      * @return The ending state.
      */
     public int calculateEnding() {
-        
-        if (((Lab)rooms.get(Lab.NAME)).getEnding() == 1){
+
+        if (( (Lab) rooms.get(Lab.NAME) ).getEnding() == 1) {
             return END_SCI_DIE;
         }
-            
-        
+
         if (player.getState() == Player.DEAD) {
             return END_DIE;
         }

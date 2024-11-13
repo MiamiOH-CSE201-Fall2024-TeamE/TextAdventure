@@ -2,7 +2,7 @@ package ui.strings;
 
 /**
  * Strings for the game.Input class to use.
- * 
+ *
  * @version 1.0
  */
 public class Input {

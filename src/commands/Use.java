@@ -12,7 +12,7 @@ import items.Item;
 
 /**
  * Defines the logic for the 'use' command.
- * 
+ *
  * @version 1.0.0
  */
 public class Use extends Command {
@@ -23,7 +23,7 @@ public class Use extends Command {
     public Use() {
         super(Aliases.USE);
     }
-    
+
     @Override
     public boolean execute(String[] args) {
 

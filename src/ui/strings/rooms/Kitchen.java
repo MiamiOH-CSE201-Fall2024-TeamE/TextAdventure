@@ -2,7 +2,7 @@ package ui.strings.rooms;
 
 /**
  * Strings for the rooms.Foyer class to use.
- * 
+ *
  * @version 1.0
  */
 public class Kitchen {
@@ -11,12 +11,12 @@ public class Kitchen {
      * Prevent instantiating static class.
      */
     private Kitchen() {}
-    
+
     /**
      * The name string for the 'knife' item.
      */
     public static final String KNIFE
-        = "knife";    
+        = "knife";
 
     /**
      * The name string for the 'oven' item.
@@ -74,7 +74,7 @@ public class Kitchen {
      */
     public static final String DESC_COAL
         = "Hidden in the inside of the oven is a single piece of unlit coal.\n";
-    
+
     /**
      * The description string for the 'tongs' item.
      */
@@ -89,7 +89,7 @@ public class Kitchen {
         = "While searching the kitchen you find a locked drawer.\n"
         + "The drawer has no visible handles,\n"
         + "only a small keyhole staring back at you. \n";
-    
+
     /**
      * The description string for the open 'drawer' item.
      */
@@ -104,7 +104,7 @@ public class Kitchen {
     public static final String DESC_BOARD
         = "In the back corner of the kitchen you see 3 rough wooden boards resting against the wall.\n"
         + "The boards look large and heavy like they were cut in preparation of something.";
-        
+
     /**
      * The description string for the 'ingredient hint' item.
      */

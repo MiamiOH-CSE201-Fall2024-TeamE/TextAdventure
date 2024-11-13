@@ -10,7 +10,7 @@ import items.*;
 
 /**
  * This is the class for the Foyer Room.
- * 
+ *
  * @version 1.0.0
  */
 public class Foyer extends Room {
@@ -22,7 +22,7 @@ public class Foyer extends Room {
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
-     * 
+     *
      * @param isLocked Whether or not the room is locked.
      * @param inventory The room's inventory.
      */
@@ -35,7 +35,7 @@ public class Foyer extends Room {
      */
     public Foyer() {
         this(true, new Inventory(), false);
-    
+
         // Fill room's inventory
         getInventory().add(new Item(BUTTON, DESC_BUTTON, 1, 1, false, true));
         getInventory().add(new Item(FIREPLACE, DESC_FIREPLACE, 1, 0, false, false));
@@ -52,7 +52,7 @@ public class Foyer extends Room {
         stateManager.getRoom(Bedroom.NAME).unlock();
         stateManager.getRoom(Kitchen.NAME).unlock();
         stateManager.getRoom(Cellar.NAME).unlock();
-        
+
         // Lock tutorial
         stateManager.getRoom(Tutorial.NAME).lock();
 
@@ -64,7 +64,7 @@ public class Foyer extends Room {
 
     @Override
     public boolean use(String toUse, String useOn) {
-    
+
         // Using the button
         if (toUse.equalsIgnoreCase(BUTTON)) {
 
@@ -92,18 +92,18 @@ public class Foyer extends Room {
                 System.out.println(USE_COAL_ON_NULL);
                 return true;
             }
-            
+
             if (useOn.equalsIgnoreCase(FIREPLACE)) {
-                
+
                 System.out.println(USE_COAL_ON_FIREPLACE);
-                
+
                 // If the coal is in the player's inventory, move it to room
                 Item playerCoal = stateManager.getPlayer().getInventory().get(COAL);
                 if (playerCoal != null) {
                     getInventory().add(playerCoal);
                     removeFromInventory(COAL);
                 }
-                
+
                 return true;
             }
         }

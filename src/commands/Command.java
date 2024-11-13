@@ -2,7 +2,7 @@ package commands;
 
 /**
  * Provides the data and methods necessary to build a usable console command.
- * 
+ *
  * @version 1.0.0
  */
 abstract public class Command {
@@ -14,23 +14,23 @@ abstract public class Command {
 
     /**
      * Instantiates a new command with a set of names/aliases.
-     * 
+     *
      * @param aliases An array of names/aliases.
      */
     public Command(String[] aliases) {
         this.aliases = aliases;
     }
-    
+
     /**
      * Returns an array of aliases for this command.
-     * 
+     *
      * @return The command's aliases.
      */
     public String[] getAliases() { return aliases; }
 
     /**
      * Checks whether the command has an alias.
-     * 
+     *
      * @param alias The alias to check for.
      * @return True if alias is found, false otherwise.
      */
@@ -45,7 +45,7 @@ abstract public class Command {
 
     /**
      * Contains the command's functionality.
-     * 
+     *
      * @param args A list of arguments to pass to the command.
      * @return True if the command succeeded, false otherwise.
      */

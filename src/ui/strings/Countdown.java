@@ -2,7 +2,7 @@ package ui.strings;
 
 /**
  * Strings for the game.Countdown class to use.
- * 
+ *
  * @version 1.0
  */
 public class Countdown {

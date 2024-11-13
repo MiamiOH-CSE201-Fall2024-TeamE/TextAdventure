@@ -11,7 +11,7 @@ import items.*;
 
 /**
  * Defines the logic for the 'pickup' command.
- * 
+ *
  * @version 1.0.0
  */
 public class Pickup extends Command {
@@ -22,7 +22,7 @@ public class Pickup extends Command {
     public Pickup() {
         super(Aliases.PICKUP);
     }
-    
+
     @Override
     public boolean execute(String[] args) {
 

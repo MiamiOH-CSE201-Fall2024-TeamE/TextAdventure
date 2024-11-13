@@ -8,7 +8,7 @@ import ui.strings.commands.Errors;
 
 /**
  * Defines the logic for the 'check' command.
- * 
+ *
  * @version 1.0.0
  */
 public class Check extends Command {
@@ -19,7 +19,7 @@ public class Check extends Command {
     public Check() {
         super(Aliases.CHECK);
     }
-    
+
     @Override
     public boolean execute(String[] args) {
 

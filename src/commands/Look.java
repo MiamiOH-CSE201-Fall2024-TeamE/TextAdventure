@@ -11,7 +11,7 @@ import items.Item;
 
 /**
  * Defines the logic for the 'look' command.
- * 
+ *
  * @version 1.0.0
  */
 public class Look extends Command {
@@ -22,7 +22,7 @@ public class Look extends Command {
     public Look() {
         super(Aliases.LOOK);
     }
-    
+
     @Override
     public boolean execute(String[] args) {
 

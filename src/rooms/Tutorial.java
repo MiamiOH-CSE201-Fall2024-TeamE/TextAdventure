@@ -9,7 +9,7 @@ import items.*;
 
 /**
  * This is the class for the Tutorial Room.
- * 
+ *
  * @version 1.0.0
  */
 public class Tutorial extends Room {
@@ -21,7 +21,7 @@ public class Tutorial extends Room {
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
-     * 
+     *
      * @param isLocked Whether or not the room is locked.
      * @param inventory The room's inventory.
      */
@@ -34,7 +34,7 @@ public class Tutorial extends Room {
      */
     public Tutorial() {
         this(false, new Inventory(), false);
-      
+
         // Fill room's inventory
         getInventory().add(new Item(ROCK, DESC_ROCK, 3, 1, true, true));
         getInventory().add(new Item(CAR, DESC_CAR, 1, 0, false, false));
@@ -69,7 +69,7 @@ public class Tutorial extends Room {
                 case ROCK:
                     System.out.println(USE_ROCK_ON_ROCK);
                     break;
-                    
+
                 case ZOMBIES:
                     System.out.println(USE_ROCK_ON_ZOMBIES);
                     removeFromInventory(ROCK);

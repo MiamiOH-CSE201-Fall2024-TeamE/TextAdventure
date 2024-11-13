@@ -9,7 +9,7 @@ import game.Input;
 
 /**
  * Defines the logic for the 'quit' command.
- * 
+ *
  * @version 1.0.0
  */
 public class Quit extends Command {
@@ -27,7 +27,7 @@ public class Quit extends Command {
         if (Input.getConfirmation(Actions.QUIT)) {
             stateManager.quitGame();
         }
-        
+
         return true;
     }
 

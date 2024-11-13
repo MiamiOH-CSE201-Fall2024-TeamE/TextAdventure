@@ -1,6 +1,5 @@
 package game;
 
-
 import static app.App.stateManager;
 import static ui.strings.SaveGame.GAME_SAVED;
 
@@ -54,7 +53,7 @@ public class SaveGame {
             }
             saveFile.println();
         }
-        
+
         // Save player
         saveFile.printf("player.room: %s\n",
             stateManager.getPlayer().getRoom().toString());
@@ -75,7 +74,7 @@ public class SaveGame {
 
     /**
      * Loads the savegame file.
-     * 
+     *
      * @return True if state successfully loaded, false if no save file found.
      */
     public static boolean load() {

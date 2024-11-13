@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 /**
  * Provides user interaction commands; namely, text input and menus.
- * 
+ *
  * @version 1.0.0
  */
 public class Input {
-    
+
     /**
      * Prevent instantiating static class.
      */
@@ -23,7 +23,7 @@ public class Input {
 
     /**
      * Gets the user's input.
-     * 
+     *
      * @return A String array of arguments passed by the user.
      */
     public static String[] getInput(String prompt) {
@@ -35,7 +35,7 @@ public class Input {
 
     /**
      * Gets confirmation from the user.
-     * 
+     *
      * @param prompt The prompt to get confirmation for, without punctuation.
      * @return True if the user selected yes, false otherwise.
      */

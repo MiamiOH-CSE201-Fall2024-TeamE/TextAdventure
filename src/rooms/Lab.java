@@ -14,7 +14,7 @@ import static app.App.stateManager;
 
 /**
  * This is the class for the Lab Room.
- * 
+ *
  * @version 1.0.0
  */
 public class Lab extends Room {  // TODO: Javadocs
@@ -26,7 +26,7 @@ public class Lab extends Room {  // TODO: Javadocs
 
     //Contains the ingredients the user put into the Cure Machine
     private Item[] ingredients;
-    
+
     //Index used for traversing the array
     private int index;
 
@@ -37,20 +37,20 @@ public class Lab extends Room {  // TODO: Javadocs
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
-     * 
+     *
      * @param isLocked Whether or not the room is locked.
      * @param inventory The room's inventory.
      */
     public Lab(boolean isLocked, Inventory inventory, boolean hasLoaded) {
         super(isLocked, inventory, hasLoaded);
-        
+
     }
 
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
-    public Lab() { this(true, new Inventory(), false); 
-        
+    public Lab() { this(true, new Inventory(), false);
+
         getInventory().add(new Item(ITEM1, DESC_ITEM1, 1, 1, true, true));
         getInventory().add(new Item(ITEM2, DESC_ITEM2, 1, 1, true, true));
         getInventory().add(new Item(ITEM3, DESC_ITEM3, 1, 1, true, true));
@@ -61,7 +61,6 @@ public class Lab extends Room {  // TODO: Javadocs
         getInventory().add(new Item(ITEM8, DESC_ITEM8, 1, 1, true, true));
         getInventory().add(new Item(CURE_MACHINE, DESC_CURE_MACHINE, 1, 1, false, false));
 
-        
         ingredients = new Item[3];
         correctIngredients = new Item[] {
             getInventory().get(ITEM3),
@@ -76,7 +75,7 @@ public class Lab extends Room {  // TODO: Javadocs
     public void load() { super.load(); }  // TODO
 
     @Override
-    public boolean use(String toUse, String useOn) { 
+    public boolean use(String toUse, String useOn) {
         if (toUse.equalsIgnoreCase(ITEM1)
             || toUse.equalsIgnoreCase(ITEM2)
             || toUse.equalsIgnoreCase(ITEM3)
@@ -95,7 +94,7 @@ public class Lab extends Room {  // TODO: Javadocs
                 case CURE_MACHINE:
                 System.out.println(USE_INGREDIENT_ON_CURE_MACHINE);
                 ingredients[index] = getItem(toUse);
-                index++;   
+                index++;
                 removeFromInventory(toUse);
                 checkCorrect();
                     break;
@@ -105,9 +104,9 @@ public class Lab extends Room {  // TODO: Javadocs
             }
             return true;
         }
-        
+
         //Default Case
-        return super.use(toUse, useOn); 
+        return super.use(toUse, useOn);
     }  // TODO
 
     @Override
@@ -125,37 +124,32 @@ public class Lab extends Room {  // TODO: Javadocs
     public void spawnScientist() {
         getInventory().add(new Item(SCIENTIST, DESC_SCIENTIST, 1, 1, true, true));
         System.out.println(SCIENTIST_APPEARS);
-        if(Input.getConfirmation(FIGHT_PROMPT)){
-            if (stateManager.getPlayer().getInventory().get("Knife") != null){
-                
+        if (Input.getConfirmation(FIGHT_PROMPT)) {
+            if (stateManager.getPlayer().getInventory().get("Knife") != null) {
+
             } else {
                 ending = 1;
             }
         } else {
             ending = 2;
         }
-
-        
-
     }  // TODO
 
     /*
      * Code to check if the solution is correct
      */
-    public boolean checkCorrect(){ 
-        if (index == ingredients.length - 1){
-            for (int i = 0; i < ingredients.length; i++){
+    public boolean checkCorrect() {
+        if (index == ingredients.length - 1) {
+            for (int i = 0; i < ingredients.length; i++) {
                 if (!ingredients[i].equals(correctIngredients[i]))
                     return false;
             }
             return true;
         }
-        return false; } 
+        return false; }
 
     /*
     Returns the ending variable
-    */    
-    public int getEnding(){ return ending;}    
-
-
+    */
+    public int getEnding() { return ending; }
 }

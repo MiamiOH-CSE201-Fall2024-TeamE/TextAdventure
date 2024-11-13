@@ -4,7 +4,7 @@ import static app.App.stateManager;
 
 /**
  * Provides the data and methods necessary for an interactive item.
- * 
+ *
  * @version 1.0.0
  */
 public class Item {
@@ -41,7 +41,7 @@ public class Item {
 
     /**
      * Instantiates a new item.
-     * 
+     *
      * @param name The item's name.
      * @param description The item's description.
      * @param amount How many items there are.
@@ -61,7 +61,7 @@ public class Item {
 
     /**
      * Instantiates a new copy of an item.
-     * 
+     *
      * @param item The item to copy.
      */
     public Item(Item item) {
@@ -75,49 +75,49 @@ public class Item {
 
     /**
      * Returns whether or not the player can pick this item up.
-     * 
+     *
      * @return True if the item can be picked up, false otherwise.
      */
     public boolean canPickUp() { return canPickUp; }
 
     /**
      * Returns whether or not the player can use this item.
-     * 
+     *
      * @return True if the item can be used, false otherwise.
      */
     public boolean canUse() { return canUse; }
 
     /**
      * Returns the number of turns it takes for the player to use this item.
-     * 
+     *
      * @return The number of turns used.
      */
     public int turnsToUse() { return turnsToUse; }
 
     /**
      * Returns the number of items available.
-     * 
+     *
      * @return The number of items.
      */
     public int getAmount() { return amount; }
 
     /**
      * Sets the number of items available.
-     * 
+     *
      * @param amount The new number of items.
      */
     public void setAmount(int amount) { this.amount = amount; }
 
     /**
      * Returns this item's description.
-     * 
+     *
      * @return The description.
      */
     public String getDescription() { return description; }
 
     /**
      * Returns this item's name.
-     * 
+     *
      * @return The name.
      */
     @Override
@@ -125,7 +125,7 @@ public class Item {
 
     /**
      * Gets an item from either the player or the room (player prioritized).
-     * 
+     *
      * @param name The name of the item to get.
      * @return The item, or null if not found.
      */
@@ -140,7 +140,7 @@ public class Item {
     /**
      * Removes an item from either the player's or the room's inventory
      *     (player prioritized). Assumes the item exists.
-     * 
+     *
      * @param name The name of the item to remove.
      */
     public static void removeFromInventory(String name) {

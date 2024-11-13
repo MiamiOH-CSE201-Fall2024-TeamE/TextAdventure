@@ -2,7 +2,7 @@ package commands;
 
 /**
  * Alias strings for the commands.Command classes to use.
- * 
+ *
  * @version 1.0
  */
 public class Aliases {

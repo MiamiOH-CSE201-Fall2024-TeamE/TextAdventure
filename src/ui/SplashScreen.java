@@ -8,11 +8,11 @@ import game.StateManager;
 
 /**
  * Displays various splash screens/sequences for the beginning/end of the game.
- * 
+ *
  * @version 1.0.0
  */
 public class SplashScreen {
-    
+
     /**
      * Prevent instantiating static class.
      */
@@ -23,7 +23,7 @@ public class SplashScreen {
      */
     public static void displayTitle() {
         System.out.println(TITLE);
-    }     
+    }
 
     /**
      * Prints the game's prologue/intro.

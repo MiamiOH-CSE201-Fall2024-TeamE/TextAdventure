@@ -2,7 +2,7 @@ package ui.strings.rooms;
 
 /**
  * Strings for the rooms.Foyer class to use.
- * 
+ *
  * @version 1.0
  */
 public class Foyer {
@@ -23,7 +23,7 @@ public class Foyer {
      */
     public static final String FIREPLACE
         = "fireplace";
-    
+
     /**
      * The name string for the 'painting' item.
      */
@@ -41,7 +41,7 @@ public class Foyer {
      */
     public static final String DOOR
         = "door";
-    
+
     /**
      * The description string for the 'button' item.
      */
@@ -56,7 +56,7 @@ public class Foyer {
     public static final String DESC_FIREPLACE
         = "Dominating the far wall, a grand fireplace promises warmth and\n"
         + "comfort in the otherwise drafty space of the vast foyer.\n";
-    
+
     /**
      * The description string for the unsolved 'painting' item.
      */
@@ -105,7 +105,7 @@ public class Foyer {
      * The action string for using a board on the door.
      */
     public static final String USE_BOARD_ON_DOOR
-        = "You use the floorboard to reinforce the blocked door against the\n" 
+        = "You use the floorboard to reinforce the blocked door against the\n"
         + "horde outside. Your ingenious idea has bought you some extra time!\n";
 
     /**
@@ -113,7 +113,7 @@ public class Foyer {
      */
     public static final String USE_COAL_ON_NULL
         = "The coal wont do much without something to light it...\n";
-    
+
     /**
      * The action string for using coal on the fireplace.
      */
@@ -127,7 +127,7 @@ public class Foyer {
         = "Pressing the button, you hear a soft click as a spark flares briefly\n"
         + "inside the fireplace. Perhaps you could get a fire started if you\n"
         + "found something to light...\n";
-    
+
     /**
      * The action string for using the button with coal in the fireplace.
      */
@@ -136,7 +136,7 @@ public class Foyer {
         + "lighting the coal within. As the heat of the flames rises, you\n"
         + "hear a faint crackling above you. Something appears to be happening\n"
         + "to the painting over the fire...\n";
-        
+
     /**
      * The action string for using the door.
      */
@@ -145,7 +145,7 @@ public class Foyer {
         + "immediately, a horde of zombies forces their way through the open\n"
         + "door and surrounds you, cutting off your escape. You are quickly\n"
         + "overwhelmed and infected.\n";
-        
+
     /**
      * The room's first load description.
      */
@@ -170,5 +170,5 @@ public class Foyer {
         + "creak of a loose board beneath your feet. Regaining your composure,\n"
         + "y";
     public static final String DESCRIPTION_NO_BOARD_PART
-        = "Y";    
+        = "Y";
 }
