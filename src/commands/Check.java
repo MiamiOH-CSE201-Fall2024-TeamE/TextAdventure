@@ -3,6 +3,7 @@ package commands;
 import static app.App.stateManager;
 import static items.Item.getItem;
 
+import ui.strings.commands.Aliases;
 import ui.strings.commands.Descriptions;
 import ui.strings.commands.Errors;
 

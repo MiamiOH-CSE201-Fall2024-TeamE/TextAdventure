@@ -1,4 +1,4 @@
-package commands;
+package ui.strings.commands;
 
 /**
  * Alias strings for the commands.Command classes to use.

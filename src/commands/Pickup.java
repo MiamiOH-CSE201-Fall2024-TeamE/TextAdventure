@@ -4,6 +4,7 @@ import static app.App.stateManager;
 
 import game.Input;
 import ui.strings.commands.Actions;
+import ui.strings.commands.Aliases;
 import ui.strings.commands.Descriptions;
 import ui.strings.commands.Errors;
 

@@ -3,6 +3,7 @@ package commands;
 import static app.App.stateManager;
 
 import ui.strings.commands.Actions;
+import ui.strings.commands.Aliases;
 import ui.strings.commands.Descriptions;
 
 import game.Input;
