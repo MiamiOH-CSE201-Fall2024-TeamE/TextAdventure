@@ -1,9 +1,11 @@
 package rooms;
 
 import static app.App.stateManager;
-import items.*;
+import static items.Item.removeFromInventory;
 
 import static ui.strings.rooms.Kitchen.*;
+
+import items.*;
 
 /**
  * This is the class for the Kitchen Room.
@@ -25,15 +27,6 @@ public class Kitchen extends Room {
      */
     public Kitchen(boolean isLocked, Inventory inventory, boolean hasLoaded) {
         super(isLocked, inventory, hasLoaded);
-
-        //Knife
-        //Oven
-        //Coal(added after opening the oven)
-        //Tongs
-        //Locked Drawer
-        //Open Drawer (added after opening locked drawer)
-        //Board
-        //Some Ingredient hint (to figure out later)
     }
 
     /**
@@ -42,28 +35,22 @@ public class Kitchen extends Room {
     public Kitchen() { 
         this(true, new Inventory(), false); 
         
-        //Filling the Kitchen's Inventory 
+        // Fill room's inventory
         getInventory().add(new Item(KNIFE, DESC_KNIFE, 1, 5, true, true));
         getInventory().add(new Item(OVEN, DESC_OVEN, 1, 0, false, true));
-        getInventory().add(new Item(COAL, DESC_COAL, 1, 1, true, true));
+        //getInventory().add(new Item(COAL, DESC_COAL, 1, 1, true, true)); - Added when oven is opened
         getInventory().add(new Item(TONGS, DESC_TONGS, 1, 1, true, true));
-        getInventory().add(new Item(LOCKED_DRAWER, DESC_LOCKED_DRAWER, 1, 3, false, false));
-        getInventory().add(new Item(OPEN_DRAWER, DESC_OPEN_DRAWER, 1, 1, false, false));
+        getInventory().add(new Item(DRAWER, DESC_DRAWER_LOCKED, 1, 3, false, false));
+        //getInventory().add(new Item(DRAWER, DESC_DRAWER_OPEN, 1, 1, false, false)); - Added When drawer is opened
         getInventory().add(new Item(BOARD, DESC_BOARD, 3, 1, true, true));
-        getInventory().add(new Item(INGREDIENT_HINT, DESC_INGREDIENT_HINT, 1, 0, true, false));
+        //getInventory().add(new Item(INGREDIENT_HINT, DESC_INGREDIENT_HINT, 1, 0, true, false)); - Figure this out
     }
 
     @Override
-    public void load() { 
-        stateManager.getCountdown().addTurns(3);
-        super.load(); 
-    }
+    public void load() { super.load(); }
 
     @Override
-    public boolean use(String toUse, String useOn) {
-    
-         return false; 
-    }  // TODO
+    public boolean use(String toUse, String useOn) { return false; }  // TODO
 
     @Override
     public void pickup(String toPickUp) {}  // TODO
