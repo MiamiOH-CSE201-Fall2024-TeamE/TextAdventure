@@ -1,6 +1,6 @@
 package rooms;
 
-import items.Inventory;
+import items.*;
 
 import static ui.strings.rooms.Cellar.*;
 
@@ -31,10 +31,22 @@ public class Cellar extends Room {
      */
     public Cellar() {
         this(true, new Inventory(), false);
-    }  // TODO
+
+        //Fill room's inventory
+        getInventory().add(new Item(WINE1, DESC_WINE1, 1, 0, true, true));
+        getInventory().add(new Item(WINE2, DESC_WINE2, 1, 0, true, true));
+        getInventory().add(new Item(WINE3, DESC_WINE3, 1, 0, true, true));
+        getInventory().add(new Item(WINE4, DESC_WINE4, 1, 0, true, true));
+        getInventory().add(new Item(WINE5, DESC_WINE5, 1, 0, true, true));
+        
+        getInventory().add(new Item(WINE_HINT, DESC_WINEHINT, 1, 0, false, true));
+
+        getInventory().add(new Item(VENT, DESC_VENT, 1, 1, false, true));
+        //getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
+    } //To Finish
 
     @Override
-    public void load() { super.load(); }  // TODO
+    public void load() { super.load(); }
 
     @Override
     public boolean use(String toUse, String useOn) { return false; }  // TODO
