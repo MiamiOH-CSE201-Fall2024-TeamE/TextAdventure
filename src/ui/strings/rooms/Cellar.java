@@ -24,7 +24,7 @@ public class Cellar {
     public static final String DESC_PAPER
         = "A strange scrap of paper exists within your vicinity.\n"
         + "It says, \"Bottles of wine, aged over time,\n"
-        + "Taste best when sipped in order of mine\".\n";
+        + "Taste best when sipped in the order of mine\".\n";
 
 
 }
