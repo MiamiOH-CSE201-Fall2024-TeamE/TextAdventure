@@ -82,9 +82,10 @@ public class Cellar extends Room {
             {
                 System.out.println(USE_TONGS_ON_VENT);
 
-                stateManager.getPlayer().getInventory().add(/* crowbar item */);
+                //Add crowbar to player inventory
+                //stateManager.getPlayer().getInventory().add(/* crowbar item */);
                 //remove from rooms inventory
-
+                
             }
         }
         
