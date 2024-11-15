@@ -2,7 +2,11 @@ package rooms;
 
 import items.*;
 
+import static app.App.stateManager;
 import static ui.strings.rooms.Cellar.*;
+import static ui.strings.rooms.Kitchen.TONGS;
+
+import game.StateManager;
 
 /**
  * This is the class for the Cellar Room.
@@ -40,7 +44,7 @@ public class Cellar extends Room {
         getInventory().add(new Item(WINE5, DESC_WINE5, 1, 0, true, true));
 
         getInventory().add(new Item(VENT, DESC_VENT, 1, 1, false, true));
-        //getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
+        getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
         getInventory().add(new Item(HINT_PAPER, DESC_HINT_PAPER, 1, 0, false, false));
     }  // TODO
 
@@ -48,7 +52,44 @@ public class Cellar extends Room {
     public void load() { super.load(); }
 
     @Override
-    public boolean use(String toUse, String useOn) { return false; }  // TODO
+    public boolean use(String toUse, String useOn) {
+        // Using WINE1
+        if (toUse.equalsIgnoreCase(WINE1)) {
+
+            if (useOn == null) {
+                System.out.println(USE_WINE1_ON_SELF);
+                return true;
+            }
+
+            if (useOn.equalsIgnoreCase(WINE2)) {
+
+                // System.out.println(USE_WINE1_ON_SLOT1);
+
+                // In Progress
+
+                return true;
+            }
+        }
+        
+        if(toUse.equalsIgnoreCase(TONGS))
+        {
+            if (useOn == null)
+            {
+                //null use statement
+            }
+
+            if(toUse.equalsIgnoreCase(VENT))
+            {
+                System.out.println(USE_TONGS_ON_VENT);
+
+                stateManager.getPlayer().getInventory().add(/* crowbar item */);
+                //remove from rooms inventory
+
+            }
+        }
+        
+        return super.use(toUse, useOn);
+    }  // TODO
 
     @Override
     public void pickup(String toPickUp) {}  // TODO

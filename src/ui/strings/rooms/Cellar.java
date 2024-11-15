@@ -48,6 +48,12 @@ public class Cellar {
     public static final String DESC_VENT
         = "Description vent";
 
+    public static final String DESC_WINEHINT
+        = "Description wine hint";
+
+    public static final String DESC_CROWBAR
+        = "Description crowbar";
+
     /**
      * The name string for the 'crowbar' item
      */
@@ -70,4 +76,8 @@ public class Cellar {
 
     public static final String USE_WINE1_ON_SELF
         = "You drink the wine, and then die because a piano fell on your head."; // TODO
+    
+        public static final String USE_TONGS_ON_VENT
+        = "Use statement here";
+
 }

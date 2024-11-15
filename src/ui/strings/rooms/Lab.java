@@ -84,4 +84,10 @@ public class Lab {
         public static final String DESC_SCIENTIST
         = "Do you want to fight?";
 
+        public static final String RUNNING_MACHINE
+        = "The Machine whirs and starts to process the ingredients";
+
+        public static final String KILL_SCIENTIST
+        = "he's dead lol, try angain stupid";
+
 }
