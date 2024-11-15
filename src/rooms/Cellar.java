@@ -7,7 +7,6 @@ import static items.Item.removeFromInventory;
 import static ui.strings.rooms.Cellar.*;
 import static ui.strings.rooms.Kitchen.TONGS;
 
-import game.StateManager;
 
 /**
  * This is the class for the Cellar Room.
