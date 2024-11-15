@@ -75,7 +75,7 @@ public class Cellar {
         + "Taste best when sipped in the order of mine\".\n";
 
     public static final String USE_WINE1_ON_SELF
-        = "You drink the wine, and then die because a piano fell on your head."; // TODO
+        = "You drink the wine, and then you hallucinate a piano falling on your head."; // TODO
     
         public static final String USE_TONGS_ON_VENT
         = "Use statement here";
