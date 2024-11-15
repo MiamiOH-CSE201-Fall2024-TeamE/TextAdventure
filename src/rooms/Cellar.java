@@ -48,26 +48,7 @@ public class Cellar extends Room {
     public void load() { super.load(); }
 
     @Override
-    public boolean use(String toUse, String useOn) {
-        // Using WINE1
-        if (toUse.equalsIgnoreCase(WINE1)) {
-
-            if (useOn == null) {
-                System.out.println(USE_WINE1_ON_SELF);
-                return true;
-            }
-
-            if (useOn.equalsIgnoreCase(WINE2)) {
-
-                // System.out.println(USE_WINE1_ON_SLOT1);
-
-                // In Progress
-
-                return true;
-            }
-        }
-        return false;
-    }  // TODO
+    public boolean use(String toUse, String useOn) { return false; }  // TODO
 
     @Override
     public void pickup(String toPickUp) {}  // TODO
