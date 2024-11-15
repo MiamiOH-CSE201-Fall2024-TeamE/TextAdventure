@@ -3,6 +3,7 @@ package rooms;
 import items.*;
 
 import static app.App.stateManager;
+import static items.Item.removeFromInventory;
 import static ui.strings.rooms.Cellar.*;
 import static ui.strings.rooms.Kitchen.TONGS;
 
@@ -81,10 +82,12 @@ public class Cellar extends Room {
             if(toUse.equalsIgnoreCase(VENT))
             {
                 System.out.println(USE_TONGS_ON_VENT);
-
-                //Add crowbar to player inventory
-                //stateManager.getPlayer().getInventory().add(/* crowbar item */);
+                
                 //remove from rooms inventory
+                removeFromInventory(CROWBAR);
+                //Add crowbar to player inventory
+                stateManager.getPlayer().getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, true));
+                
                 
             }
         }
