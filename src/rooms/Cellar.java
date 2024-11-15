@@ -21,6 +21,11 @@ public class Cellar extends Room {
     public static final String NAME = "cellar";
 
     /**
+     * The slots the user has to place the wine into.
+     */
+    private Item[] slots = new Item[4];
+
+    /**
      * Instantiates a new room with a specified inventory and lock status.
      *
      * @param isLocked Whether or not the room is locked.
@@ -61,11 +66,14 @@ public class Cellar extends Room {
                 return true;
             }
 
-            if (useOn.equalsIgnoreCase(WINE2)) {
+            if (useOn.equalsIgnoreCase(SLOT1)) {
 
-                // System.out.println(USE_WINE1_ON_SLOT1);
-
-                // In Progress
+                // Make sure the bottle you are trying to place doesn't already exist in the array
+                // Place Wine bottle into slots array
+                slots[0] = getInventory().get(WINE1);
+                // Print message that describes what happened
+                System.out.println();
+                // IDK if anything else needs to happen here
 
                 return true;
             }
