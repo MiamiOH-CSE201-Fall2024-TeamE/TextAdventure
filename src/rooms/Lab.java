@@ -64,7 +64,9 @@ public class Lab extends Room {  // TODO: Javadocs
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
-    public Lab() { this(true, new Inventory(), false);
+    public Lab() { 
+        
+        this(true, new Inventory(), false);
 
         getInventory().add(new Item(ITEM1, DESC_ITEM1, 6, 0, true, true));
         getInventory().add(new Item(ITEM2, DESC_ITEM2, 6, 0, true, true));
@@ -74,7 +76,7 @@ public class Lab extends Room {  // TODO: Javadocs
         getInventory().add(new Item(ITEM6, DESC_ITEM6, 6, 0, true, true));
         getInventory().add(new Item(ITEM7, DESC_ITEM7, 6, 0, true, true));
         getInventory().add(new Item(ITEM8, DESC_ITEM8, 6, 0, true, true));
-        getInventory().add(new Item(CURE_MACHINE, DESC_CURE_MACHINE, 1, 0, false, false));
+        getInventory().add(new Item(MACHINE, DESC_CURE_MACHINE, 1, 0, false, false));
 
         ingredients = new Item[3];
         correctIngredients = new Item[] {
@@ -108,14 +110,14 @@ public class Lab extends Room {  // TODO: Javadocs
             }
 
             switch (useOn) {
-                case CURE_MACHINE:
-                System.out.println(USE_INGREDIENT_ON_CURE_MACHINE);
-                ingredients[size] = getItem(toUse);
-                size++;
-                removeFromInventory(toUse);
-                if(size == ingredients.length - 1){
-                    machineFilled();
-                }
+                case MACHINE:
+                    System.out.println(USE_INGREDIENT_ON_CURE_MACHINE);
+                    ingredients[size] = getItem(toUse);
+                    size++;
+                    removeFromInventory(toUse);
+                    if(size == ingredients.length){
+                        machineFilled();
+                    }
                     break;
 
                 default:
@@ -193,16 +195,13 @@ public class Lab extends Room {  // TODO: Javadocs
      * @return True if the cure is correct, false otherwise.
      */
     public boolean checkCorrect() {
-        if (size == ingredients.length - 1) {
-            
-            for (int i = 0; i < ingredients.length; i++) {
+                
+        for (int i = 0; i < ingredients.length; i++) {
                 if (!ingredients[i].toString().equals(correctIngredients[i].toString())) {
                     return false;
                 }
             }
             return true;
-        }
-        return false;
     }
 
     /**
@@ -214,4 +213,5 @@ public class Lab extends Room {  // TODO: Javadocs
     public int getEnding() {
         return ending;
     }
+
 }

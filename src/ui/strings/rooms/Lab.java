@@ -13,7 +13,7 @@ public class Lab {
     private Lab() {}
 
     public static final String ITEM1
-        = "Item1";
+        = "item1";
 
         public static final String ITEM2
         = "item2";
@@ -36,8 +36,8 @@ public class Lab {
         public static final String ITEM8
         = "item8";
 
-        public static final String CURE_MACHINE
-        = "item8";
+        public static final String MACHINE
+        = "machine";
 
         public static final String DESC_ITEM1
         = "ITEM1_DESC";
