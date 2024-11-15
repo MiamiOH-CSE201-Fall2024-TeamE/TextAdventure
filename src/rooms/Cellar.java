@@ -2,7 +2,11 @@ package rooms;
 
 import items.*;
 
+import static app.App.stateManager;
 import static ui.strings.rooms.Cellar.*;
+import static ui.strings.rooms.Kitchen.TONGS;
+
+import game.StateManager;
 
 /**
  * This is the class for the Cellar Room.
@@ -40,7 +44,7 @@ public class Cellar extends Room {
         getInventory().add(new Item(WINE5, DESC_WINE5, 1, 0, true, true));
 
         getInventory().add(new Item(VENT, DESC_VENT, 1, 1, false, true));
-        //getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
+        getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
         getInventory().add(new Item(HINT_PAPER, DESC_HINT_PAPER, 1, 0, false, false));
     }  // TODO
 
@@ -66,7 +70,25 @@ public class Cellar extends Room {
                 return true;
             }
         }
-        return false;
+        
+        if(toUse.equalsIgnoreCase(TONGS))
+        {
+            if (useOn == null)
+            {
+                //null use statement
+            }
+
+            if(toUse.equalsIgnoreCase(VENT))
+            {
+                System.out.println(USE_TONGS_ON_VENT);
+
+                stateManager.getPlayer().getInventory().add(/* crowbar item */);
+                //remove from rooms inventory
+
+            }
+        }
+        
+        return super.use(toUse, useOn);
     }  // TODO
 
     @Override
