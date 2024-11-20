@@ -85,6 +85,7 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[0]);
                     slots[0] = getItem(toUse);
                     System.out.println(slots[0]);
+                    //Check if correct
                     return true;
             
                 case SLOT2:
@@ -92,6 +93,7 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[0]);
                     slots[1] = getItem(toUse);
                     System.out.println(slots[1]);
+                    //Check if correct
                     return true;
 
                 case SLOT3:
@@ -99,6 +101,7 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[0]);
                     slots[2] = getItem(toUse);
                     System.out.println(slots[2]);
+                    //Check if correct
                     return true;
 
                 case SLOT4:
@@ -106,6 +109,7 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[0]);
                     slots[3] = getItem(toUse);
                     System.out.println(slots[3]);
+                    //Check if correct
                     return true;
 
                 case SLOT5:
@@ -113,6 +117,7 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[0]);
                     slots[4] = getItem(toUse);
                     System.out.println(slots[4]);
+                    //Check if correct
                     return true;
 
                 default:
