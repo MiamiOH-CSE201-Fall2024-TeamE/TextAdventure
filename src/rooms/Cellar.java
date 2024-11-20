@@ -48,6 +48,12 @@ public class Cellar extends Room {
         getInventory().add(new Item(WINE4, DESC_WINE4, 1, 0, true, true));
         getInventory().add(new Item(WINE5, DESC_WINE5, 1, 0, true, true));
 
+        getInventory().add(new Item(SLOT1, DESC_SLOT1, 1, 0, true, true));
+        getInventory().add(new Item(SLOT2, DESC_SLOT2, 1, 0, true, true));
+        getInventory().add(new Item(SLOT3, DESC_SLOT3, 1, 0, true, true));
+        getInventory().add(new Item(SLOT4, DESC_SLOT4, 1, 0, true, true));
+        getInventory().add(new Item(SLOT5, DESC_SLOT5, 1, 0, true, true));
+
         getInventory().add(new Item(VENT, DESC_VENT, 1, 1, false, true));
         getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
         getInventory().add(new Item(HINT_PAPER, DESC_HINT_PAPER, 1, 0, false, false));

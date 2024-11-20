@@ -27,6 +27,21 @@ public class Cellar {
     public static final String WINE5
         = "wine5";
 
+    public static final String SLOT1
+        = "wine1";
+
+    public static final String SLOT2
+        = "wine2";
+
+    public static final String SLOT3
+        = "wine3";
+
+    public static final String SLOT4
+        = "wine4";
+
+    public static final String SLOT5
+        = "wine5";
+
     public static final String VENT
         = "vent";
 
@@ -43,6 +58,21 @@ public class Cellar {
         = "Description wine 4";
 
     public static final String DESC_WINE5
+        = "Description wine 5";
+
+    public static final String DESC_SLOT1
+        = "Description wine 1";
+
+    public static final String DESC_SLOT2
+        = "Description wine 2";
+
+    public static final String DESC_SLOT3
+        = "Description wine 3";
+
+    public static final String DESC_SLOT4
+        = "Description wine 4";
+
+    public static final String DESC_SLOT5
         = "Description wine 5";
 
     public static final String DESC_VENT
