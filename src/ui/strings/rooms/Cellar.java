@@ -28,19 +28,19 @@ public class Cellar {
         = "wine5";
 
     public static final String SLOT1
-        = "wine1";
+        = "slot1";
 
     public static final String SLOT2
-        = "wine2";
+        = "slot2";
 
     public static final String SLOT3
-        = "wine3";
+        = "slot3";
 
     public static final String SLOT4
-        = "wine4";
+        = "slot4";
 
     public static final String SLOT5
-        = "wine5";
+        = "slot5";
 
     public static final String VENT
         = "vent";

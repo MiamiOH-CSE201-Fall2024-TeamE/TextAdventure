@@ -6,6 +6,7 @@ import static app.App.stateManager;
 import static items.Item.removeFromInventory;
 import static ui.strings.rooms.Cellar.*;
 import static ui.strings.rooms.Kitchen.TONGS;
+import static items.Item.getItem;
 
 
 /**
@@ -81,33 +82,37 @@ public class Cellar extends Room {
                 case SLOT1:
                     if(slots[0] != null)
                         stateManager.getPlayer().getInventory().add(slots[0]);
-                    slots[0] = getInventory().get(toUse);
-                    break;
+                    slots[0] = getItem(toUse);
+                    System.out.println(slots[0]);
+                    return true;
             
                 case SLOT2:
                     if(slots[0] != null)
                         stateManager.getPlayer().getInventory().add(slots[0]);
-                    slots[1] = getInventory().get(toUse);
-                    //Otherwise swtich bottles
-                    break;
+                    slots[1] = getItem(toUse);
+                    System.out.println(slots[1]);
+                    return true;
 
                 case SLOT3:
                     if(slots[0] != null)
                         stateManager.getPlayer().getInventory().add(slots[0]);
-                    slots[2] = getInventory().get(toUse);
-                    break;
+                    slots[2] = getItem(toUse);
+                    System.out.println(slots[2]);
+                    return true;
 
                 case SLOT4:
                     if(slots[0] != null)
                         stateManager.getPlayer().getInventory().add(slots[0]);
-                    slots[3] = getInventory().get(toUse);
-                    break;
+                    slots[3] = getItem(toUse);
+                    System.out.println(slots[3]);
+                    return true;
 
                 case SLOT5:
                     if(slots[0] != null)
                         stateManager.getPlayer().getInventory().add(slots[0]);
-                    slots[4] = getInventory().get(toUse);
-                    break;
+                    slots[4] = getItem(toUse);
+                    System.out.println(slots[4]);
+                    return true;
 
                 default:
                     break;
