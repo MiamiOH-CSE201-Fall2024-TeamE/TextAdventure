@@ -68,7 +68,14 @@ public class Kitchen {
     public static final String DESC_OVEN
         = "In the corner of the kitchen there sits an old cast-iron wood burning oven.\n"
         + "The dark heavy oven door is closed hiding whatever may be waiting inside.\n";
-    
+
+    /**
+     * The description string for the open 'oven' item.
+     */
+    public static final String DESC_OVEN_OPEN
+        = "In the corner of the kitchen there sits an old cast-iron wood burning oven.\n"
+        + "The dark heavy oven door sits open. Ready to be used \n";
+
     /**
      * The description string for the 'coal' item.
      */
@@ -166,5 +173,50 @@ public class Kitchen {
     public static final String OVEN_DOOR_OPENED
         = "You pull open the heavy oven door, releasing a faint scent of charred wood.\n"
         + "Inside, nestled among the ashes, you find a piece of coal.\n";
+
+    /**
+    * Room's Description
+    */
+    public static final String DESCRIPTION
+        = "You are in a dimly lit kitchen. There is a strong smell of wood smoke in the air.\n"
+        + "A knife is placed near the sink, and tongs rest beside it on the counter.\n"
+        + "You notice an old cast-iron oven in the corner, with the heavy door closed.\n"
+        + "There is a locked drawer that you cannot open yet, but you see a few items scattered across the room.\n"
+        + "There are three wooden boards leaning against the back wall of the room.\n";
+
+    public static final String DESCRIPTION_JUST_KNIFE_PART
+        = "On the kitchen counter, a shiny steak knife catches your eye.\n"
+        + "It rests near the sink, the blade still sharp despite the worn leather handle.\n";
+
+    public static final String DESCRIPTION_JUST_TONGS_PART
+        = "On the kitchen counter, a pair of heavy kitchen tongs rest.\n"
+        + "They seem to be made of thick metal, and their weight suggests they are used often.\n";
+
+    public static final String DESCRIPTION_BOTH_TONGS_KNIFE_PART
+        = "On the kitchen counter, a shiny steak knife and a pair of heavy kitchen tongs sit.\n"
+        + "They are both near the sink, their blades and metal handles gleaming faintly.\n";
+
+    public static final String DESCRIPTION_NO_BOARD_PART
+        = "You see no boards in the kitchen. There is an empty space in the back corner where they once stood.\n";
+
+    public static final String DESCRIPTION_BOARD_PART
+        = "In the back corner of the kitchen, three large wooden boards lean against the wall.\n"
+        + "They look to have been prepared for something, their edges rough as though hastily cut.\n";
+
+    public static final String DESCRIPTION_LOCKED_DRAWER_PART
+        = "There is a locked drawer in the kitchen with no visible handle.\n"
+        + "Only a small keyhole stands out, waiting for something to unlock it.\n";
+
+    public static final String DESCRIPTION_OPEN_DRAWER_PART
+        = "The old wooden drawer creaks as it opens, revealing a small torn piece of paper.\n"
+        + "No utensils or food are inside, just this mysterious note.\n";
+    public static final String DESCRIPTION_OVEN_OPEN_PART
+        = "The heavy oven door is open, revealing a piece of coal nestled among the ashes.\n"
+        + "The dark, cast-iron oven stands ready for use, its door ajar.\n";
+
+    public static final String DESCRIPTION_OVEN_CLOSED_PART
+        = "The oven door is shut tightly, hiding whatever is inside.\n"
+        + "The cast-iron exterior is old and weathered, but still sturdy.\n";
+    
 
 }

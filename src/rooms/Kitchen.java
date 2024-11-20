@@ -54,6 +54,8 @@ public class Kitchen extends Room {
         // Player opens oven
         if (toUse.equalsIgnoreCase(OVEN)) {
             System.out.println(OVEN_DOOR_OPENED);
+            removeFromInventory(OVEN);
+            getInventory().add(new Item(OVEN, DESC_OVEN_OPEN, 1, 1, false, false));
             getInventory().add(new Item(COAL, DESC_COAL, 1, 1, true, true));
             return true;
         }
@@ -131,8 +133,38 @@ public class Kitchen extends Room {
 
     @Override
     public String getDescription() {
-        return null; 
-    }  // TODO
+        Item knife = getInventory().get(KNIFE);
+        Item tongs = getInventory().get(TONGS);
+        Item boards = getInventory().get(BOARD);
+        Item oven = getInventory().get(OVEN);
+        Item drawer = getInventory().get(DRAWER);
+
+        return DESCRIPTION.formatted(
+            // Conditional check for knife and tongs
+            (knife == null && tongs != null)
+                ? DESCRIPTION_JUST_KNIFE_PART
+                : (tongs == null && knife != null)
+                    ? DESCRIPTION_JUST_TONGS_PART
+                    : (knife != null && tongs != null)
+                        ? DESCRIPTION_BOTH_TONGS_KNIFE_PART
+                        : "",
+
+            // Conditional check for oven description
+            (oven != null && oven.getDescription().equals(DESC_OVEN))
+                ? DESCRIPTION_OVEN_OPEN_PART
+                : DESCRIPTION_OVEN_CLOSED_PART,
+
+            // Conditional check for boards
+            (boards == null)
+                ? DESCRIPTION_NO_BOARD_PART
+                : DESCRIPTION_BOARD_PART,
+
+            // Conditional check for drawer
+            (drawer != null && drawer.getDescription().equals(DESC_DRAWER_LOCKED))
+                ? DESCRIPTION_LOCKED_DRAWER_PART
+                : DESCRIPTION_OPEN_DRAWER_PART
+        );
+    } 
 
     @Override
     public String toString() { 
