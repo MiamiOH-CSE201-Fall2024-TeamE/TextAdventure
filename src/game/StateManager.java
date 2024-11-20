@@ -132,16 +132,15 @@ public class StateManager {
             Room tutorial = getRoom(Tutorial.NAME);
             player = new Player(tutorial);
 
-            tutorial.load();
-
             SplashScreen.displayTitle();
             SplashScreen.displayPrologue();
 
+            tutorial.load();
+
         } else {
             System.out.println(GAME_LOADED);
+            System.out.println(player.getRoom().getDescription());
         }
-
-        System.out.println(player.getRoom().getDescription());
     }
 
     /**
