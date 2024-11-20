@@ -65,23 +65,52 @@ public class Cellar extends Room {
     @Override
     public boolean use(String toUse, String useOn) {
         // Using WINE1
-        if (toUse.equalsIgnoreCase(WINE1)) {
+        if (toUse.equalsIgnoreCase(WINE1) 
+            || (toUse.equalsIgnoreCase(WINE2))
+            || (toUse.equalsIgnoreCase(WINE3))
+            || (toUse.equalsIgnoreCase(WINE4))
+            || (toUse.equalsIgnoreCase(WINE5)))
+            {
 
             if (useOn == null) {
                 System.out.println(USE_WINE1_ON_SELF);
                 return true;
             }
 
-            if (useOn.equalsIgnoreCase(SLOT1)) {
+            switch (useOn) {
+                case SLOT1:
+                    if(slots[0] != null)
+                        stateManager.getPlayer().getInventory().add(slots[0]);
+                    slots[0] = getInventory().get(toUse);
+                    break;
+            
+                case SLOT2:
+                    if(slots[0] != null)
+                        stateManager.getPlayer().getInventory().add(slots[0]);
+                    slots[1] = getInventory().get(toUse);
+                    //Otherwise swtich bottles
+                    break;
 
-                // Make sure the bottle you are trying to place doesn't already exist in the array
-                // Place Wine bottle into slots array
-                slots[0] = getInventory().get(WINE1);
-                // Print message that describes what happened
-                System.out.println();
-                // IDK if anything else needs to happen here
+                case SLOT3:
+                    if(slots[0] != null)
+                        stateManager.getPlayer().getInventory().add(slots[0]);
+                    slots[2] = getInventory().get(toUse);
+                    break;
 
-                return true;
+                case SLOT4:
+                    if(slots[0] != null)
+                        stateManager.getPlayer().getInventory().add(slots[0]);
+                    slots[3] = getInventory().get(toUse);
+                    break;
+
+                case SLOT5:
+                    if(slots[0] != null)
+                        stateManager.getPlayer().getInventory().add(slots[0]);
+                    slots[4] = getInventory().get(toUse);
+                    break;
+
+                default:
+                    break;
             }
         }
         
