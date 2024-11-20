@@ -4,6 +4,8 @@ import static app.App.stateManager;
 import static items.Item.removeFromInventory;
 
 import static ui.strings.rooms.Kitchen.*;
+import static ui.strings.rooms.Lab.DESC_LEMON;
+import static ui.strings.rooms.Lab.LEMON;
 import static ui.strings.rooms.Bedroom.KEY;
 
 import items.*;
@@ -42,6 +44,7 @@ public class Kitchen extends Room {
         getInventory().add(new Item(TONGS, DESC_TONGS, 1, 1, true, true));
         getInventory().add(new Item(DRAWER, DESC_DRAWER_LOCKED, 1, 3, false, false));
         getInventory().add(new Item(BOARD, DESC_BOARD, 3, 1, true, true));
+        getInventory().add(new Item(COOKBOOK, DESC_COOKBOOK, 1, 0, false, false));
         //getInventory().add(new Item(INGREDIENT_HINT, DESC_INGREDIENT_HINT, 1, 0, true, false)); - Figure this out
     }
 

@@ -73,7 +73,7 @@ public class Lab extends Room {  // TODO: Javadocs
         getInventory().add(new Item(PORTOBELLO, DESC_PORTOBELLO, 6, 0, true, true));
         getInventory().add(new Item(WEBCAP, DESC_WEBCAP, 6, 0, true, true));
         getInventory().add(new Item(TOMATO, DESC_TOMATO, 6, 0, true, true));
-        getInventory().add(new Item(DESTROYING_ANGEL, DESC_DESTROYING_ANGEL, 6, 0, true, true));
+        getInventory().add(new Item(DEATHCAP, DESC_DEATHCAP, 6, 0, true, true));
         getInventory().add(new Item(POPPY, DESC_POPPY, 6, 0, true, true));
         getInventory().add(new Item(LAVENDER, DESC_LAVENDER, 6, 0, true, true));
         getInventory().add(new Item(MACHINE, DESC_CURE_MACHINE, 1, 0, false, false));
@@ -90,6 +90,9 @@ public class Lab extends Room {  // TODO: Javadocs
         aliveScientist = true;
     }  // TODO
 
+    /*
+     * Details what happens 
+     */
     @Override
     public void load() { super.load(); }  // TODO
 
@@ -100,7 +103,7 @@ public class Lab extends Room {  // TODO: Javadocs
             || toUse.equalsIgnoreCase(PORTOBELLO)
             || toUse.equalsIgnoreCase(WEBCAP)
             || toUse.equalsIgnoreCase(TOMATO)
-            || toUse.equalsIgnoreCase(DESTROYING_ANGEL)
+            || toUse.equalsIgnoreCase(DEATHCAP)
             || toUse.equalsIgnoreCase(POPPY)
             || toUse.equalsIgnoreCase(LAVENDER)) {
 

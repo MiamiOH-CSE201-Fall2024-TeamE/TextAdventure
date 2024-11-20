@@ -48,6 +48,13 @@ public class Kitchen {
     public static final String BOARD
         = "board";
 
+    public static final String COOKBOOK 
+        = "cookbook";
+
+    public static final String DESC_COOKBOOK
+        = "There is a cookbook on the countertop. It's open to a random page that states: \n"
+        + "\"There are many different types of acidic plants for cooking. These include lemons, tomatoes, limes amd oranges\"";
+
     /**
      * The name string for the 'ingredient hint' item.
      */
@@ -179,6 +186,7 @@ public class Kitchen {
     */
     public static final String DESCRIPTION
         = "You are in a dimly lit kitchen. There is a strong smell of wood smoke in the air.\n"
+        + "An open cookbook is laying on the counter.\n"
         + "A knife is placed near the sink, and tongs rest beside it on the counter.\n"
         + "You notice an old cast-iron oven in the corner, with the heavy door closed.\n"
         + "There is a locked drawer that you cannot open yet, but you see a few items scattered across the room.\n"

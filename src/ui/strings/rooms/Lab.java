@@ -13,31 +13,31 @@ public class Lab {
     private Lab() {}
 
     public static final String LEMON
-        = "Lemon";
+        = "lemon";
 
         public static final String LANTANA
-        = "Lantana";
+        = "lantana";
 
         public static final String PORTOBELLO
         = "portobello";
 
         public static final String WEBCAP
-        = "Webcap";
+        = "webcap";
 
         public static final String TOMATO
-        = "Tomato";
+        = "tomato";
 
-        public static final String DESTROYING_ANGEL
-        = "DestroyingAngel";
+        public static final String DEATHCAP
+        = "deathcap";
 
         public static final String POPPY
-        = "Poppy";
+        = "poppy";
 
         public static final String LAVENDER
-        = "Lavender";
+        = "lavender";
 
         public static final String MACHINE
-        = "Machine";
+        = "machine";
 
         public static final String DESC_LEMON
         = "Some yellow lemons are growing here";
@@ -54,7 +54,7 @@ public class Lab {
         public static final String DESC_TOMATO
         = "Some red tomatoes are growing here.";
 
-        public static final String DESC_DESTROYING_ANGEL
+        public static final String DESC_DEATHCAP
         = "Some type of white mushroom is growing here";
 
         public static final String DESC_POPPY
@@ -73,9 +73,9 @@ public class Lab {
         = "You inserted the ingredient into the Cure Machine";
 
         public static final String SCIENTIST_APPEARS
-        = "You here a noise at the door. You look over and see that a zombie in a lab coat has found you. " 
-        + "Upon closer inspection you realize this must what happened to the scientist. " 
-        + "There's no time for concern though. You need to think fast about what to do next. "
+        = "You here a noise at the door. You look over and see that a zombie in a lab coat has found you.\n" 
+        + "Upon closer inspection you realize this must what happened to the scientist.\n" 
+        + "There's no time for concern though. You need to think fast about what to do next.\n"
         + "Should you run or fight?";
 
         public static final String FIGHT_PROMPT
@@ -85,15 +85,16 @@ public class Lab {
         = "The Machine whirs and starts to process the ingredients";
 
         public static final String KILL_SCIENTIST
-        = "Thanks to the knife you picked up you manage to fight back and kill the scientist. "
+        = "Thanks to the knife you picked up you manage to fight back and kill the scientist.\n"
         + "With no other zombies around you should have another chance to synthesize a cure";
 
         public static final String DESC_LAB = 
         "You are in a dark grey room. Only a single light is still shining. "
-        + "To your left you see rows of pots. Each with a different plant growing inside of them. "
-        + "To your right is a giant machine. It must be the one that makes a cure.";
+        + "To your left you see rows of pots. Each with a different plant growing inside of them.\n" 
+        + "the tags on the pots list: lemon, lantana, tomato, portobello, webcap, deathcap, lavende and poppy.\n"
+        + "To your right is a giant machine. It must be the one that makes a cure.\n";
 
         public static final String DESC_DEAD_SCIENTIST = 
-        " On the ground lays the scientists zombified corpse. A grim reminder of your fate if you don't get this cure right.";
+        "On the ground lays the scientists zombified corpse. A grim reminder of your fate if you don't get this cure right.";
 
 }
