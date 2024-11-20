@@ -78,6 +78,7 @@ public class Cellar extends Room {
                 return true;
             }
 
+            //Add the on Use strings to each case statement
             switch (useOn) {
                 case SLOT1:
                     if(slots[0] != null)
