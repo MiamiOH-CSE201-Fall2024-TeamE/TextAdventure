@@ -2,7 +2,11 @@ package rooms;
 
 import items.*;
 
+import static app.App.stateManager;
+import static items.Item.removeFromInventory;
 import static ui.strings.rooms.Cellar.*;
+import static ui.strings.rooms.Kitchen.TONGS;
+
 
 /**
  * This is the class for the Cellar Room.
@@ -15,6 +19,11 @@ public class Cellar extends Room {
      * The room's name.
      */
     public static final String NAME = "cellar";
+
+    /**
+     * The slots the user has to place the wine into.
+     */
+    private Item[] slots = new Item[4];
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
@@ -39,18 +48,59 @@ public class Cellar extends Room {
         getInventory().add(new Item(WINE4, DESC_WINE4, 1, 0, true, true));
         getInventory().add(new Item(WINE5, DESC_WINE5, 1, 0, true, true));
 
-        getInventory().add(new Item(WINE_HINT, DESC_WINEHINT, 1, 0, false, true));
-
         getInventory().add(new Item(VENT, DESC_VENT, 1, 1, false, true));
-        //getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
-        getInventory().add(new Item(PAPER, DESC_PAPER, 1, 1, true, false));
+        getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
+        getInventory().add(new Item(HINT_PAPER, DESC_HINT_PAPER, 1, 0, false, false));
     }  // TODO
 
     @Override
     public void load() { super.load(); }
 
     @Override
-    public boolean use(String toUse, String useOn) { return false; }  // TODO
+    public boolean use(String toUse, String useOn) {
+        // Using WINE1
+        if (toUse.equalsIgnoreCase(WINE1)) {
+
+            if (useOn == null) {
+                System.out.println(USE_WINE1_ON_SELF);
+                return true;
+            }
+
+            if (useOn.equalsIgnoreCase(SLOT1)) {
+
+                // Make sure the bottle you are trying to place doesn't already exist in the array
+                // Place Wine bottle into slots array
+                slots[0] = getInventory().get(WINE1);
+                // Print message that describes what happened
+                System.out.println();
+                // IDK if anything else needs to happen here
+
+                return true;
+            }
+        }
+        
+        if(toUse.equalsIgnoreCase(TONGS))
+        {
+            if (useOn == null)
+            {
+                //null use statement
+            }
+
+            if(toUse.equalsIgnoreCase(VENT))
+            {
+                System.out.println(USE_TONGS_ON_VENT);
+                
+                //remove from rooms inventory
+                removeFromInventory(CROWBAR);
+                //Add crowbar to player inventory
+                stateManager.getPlayer().getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, true));
+                
+                
+            }
+        }
+        
+        return super.use(toUse, useOn);
+    }  // TODO
 
     @Override
     public void pickup(String toPickUp) {}  // TODO

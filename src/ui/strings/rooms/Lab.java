@@ -12,59 +12,59 @@ public class Lab {
      */
     private Lab() {}
 
-    public static final String ITEM1
-        = "Item1";
+    public static final String LEMON
+        = "Lemon";
 
-        public static final String ITEM2
-        = "item2";
+        public static final String LANTANA
+        = "Lantana";
 
-        public static final String ITEM3
-        = "item3";
+        public static final String PORTOBELLO
+        = "portobello";
 
-        public static final String ITEM4
-        = "item4";
+        public static final String WEBCAP
+        = "Webcap";
 
-        public static final String ITEM5
-        = "item5";
+        public static final String TOMATO
+        = "Tomato";
 
-        public static final String ITEM6
-        = "item6";
+        public static final String DESTROYING_ANGEL
+        = "DestroyingAngel";
 
-        public static final String ITEM7
-        = "item7";
+        public static final String POPPY
+        = "Poppy";
 
-        public static final String ITEM8
-        = "item8";
+        public static final String LAVENDER
+        = "Lavender";
 
-        public static final String CURE_MACHINE
-        = "item8";
+        public static final String MACHINE
+        = "Machine";
 
-        public static final String DESC_ITEM1
-        = "ITEM1_DESC";
+        public static final String DESC_LEMON
+        = "Some yellow lemons are growing here";
 
-        public static final String DESC_ITEM2
-        = "ITEM2_DESC";
+        public static final String DESC_LANTANA
+        = "Some type of orange flower is growing here";
 
-        public static final String DESC_ITEM3
-        = "ITEM3_DESC";
+        public static final String DESC_PORTOBELLO
+        = "Some type of brown mushroom is growing here";
 
-        public static final String DESC_ITEM4
-        = "ITEM4_DESC";
+        public static final String DESC_WEBCAP
+        = "Some type of dark brown mushroom is growing here";
 
-        public static final String DESC_ITEM5
-        = "ITEM5_DESC";
+        public static final String DESC_TOMATO
+        = "Some red tomatoes are growing here.";
 
-        public static final String DESC_ITEM6
-        = "ITEM6_DESC";
+        public static final String DESC_DESTROYING_ANGEL
+        = "Some type of white mushroom is growing here";
 
-        public static final String DESC_ITEM7
-        = "ITEM7_DESC";
+        public static final String DESC_POPPY
+        = "Some type of red flower is growing here";
 
-        public static final String DESC_ITEM8
-        = "ITEM8_DESC";
+        public static final String DESC_LAVENDER
+        = "Some type of orange flower is growing here";
 
         public static final String DESC_CURE_MACHINE
-        = "CURE_MACHINE_DESC";
+        = "A very large and complex looking machine. There seems to be a hole on the left to insert ingredients into";
 
         public static final String USE_INGREDIENT_ON_NULL
         = "This ingredient needs to be inserted into the Cure Machine";
@@ -73,15 +73,27 @@ public class Lab {
         = "You inserted the ingredient into the Cure Machine";
 
         public static final String SCIENTIST_APPEARS
-        = "Ooga booga scientist";
+        = "You here a noise at the door. You look over and see that a zombie in a lab coat has found you. " 
+        + "Upon closer inspection you realize this must what happened to the scientist. " 
+        + "There's no time for concern though. You need to think fast about what to do next. "
+        + "Should you run or fight?";
 
         public static final String FIGHT_PROMPT
-        = "Do you want to fight?";
+        = "Try and fight the Scientist?";
 
-        public static final String SCIENTIST
-        = "Do you want to fight?";
+        public static final String RUNNING_MACHINE
+        = "The Machine whirs and starts to process the ingredients";
 
-        public static final String DESC_SCIENTIST
-        = "Do you want to fight?";
+        public static final String KILL_SCIENTIST
+        = "Thanks to the knife you picked up you manage to fight back and kill the scientist. "
+        + "With no other zombies around you should have another chance to synthesize a cure";
+
+        public static final String DESC_LAB = 
+        "You are in a dark grey room. Only a single light is still shining. "
+        + "To your left you see rows of pots. Each with a different plant growing inside of them. "
+        + "To your right is a giant machine. It must be the one that makes a cure.";
+
+        public static final String DESC_DEAD_SCIENTIST = 
+        " On the ground lays the scientists zombified corpse. A grim reminder of your fate if you don't get this cure right.";
 
 }
