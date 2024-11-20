@@ -4,8 +4,6 @@ import static app.App.stateManager;
 import static items.Item.removeFromInventory;
 
 import static ui.strings.rooms.Kitchen.*;
-import static ui.strings.rooms.Lab.DESC_LEMON;
-import static ui.strings.rooms.Lab.LEMON;
 import static ui.strings.rooms.Bedroom.KEY;
 
 import items.*;
