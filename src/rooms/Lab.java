@@ -68,21 +68,21 @@ public class Lab extends Room {  // TODO: Javadocs
         
         this(true, new Inventory(), false);
 
-        getInventory().add(new Item(ITEM1, DESC_ITEM1, 6, 0, true, true));
-        getInventory().add(new Item(ITEM2, DESC_ITEM2, 6, 0, true, true));
-        getInventory().add(new Item(ITEM3, DESC_ITEM3, 6, 0, true, true));
-        getInventory().add(new Item(ITEM4, DESC_ITEM4, 6, 0, true, true));
-        getInventory().add(new Item(ITEM5, DESC_ITEM5, 6, 0, true, true));
-        getInventory().add(new Item(ITEM6, DESC_ITEM6, 6, 0, true, true));
-        getInventory().add(new Item(ITEM7, DESC_ITEM7, 6, 0, true, true));
-        getInventory().add(new Item(ITEM8, DESC_ITEM8, 6, 0, true, true));
+        getInventory().add(new Item(LEMON, DESC_LEMON, 6, 0, true, true));
+        getInventory().add(new Item(LANTANA, DESC_LANTANA, 6, 0, true, true));
+        getInventory().add(new Item(PORTOBELLO, DESC_PORTOBELLO, 6, 0, true, true));
+        getInventory().add(new Item(WEBCAP, DESC_WEBCAP, 6, 0, true, true));
+        getInventory().add(new Item(TOMATO, DESC_TOMATO, 6, 0, true, true));
+        getInventory().add(new Item(DESTROYING_ANGEL, DESC_DESTROYING_ANGEL, 6, 0, true, true));
+        getInventory().add(new Item(POPPY, DESC_POPPY, 6, 0, true, true));
+        getInventory().add(new Item(LAVENDER, DESC_LAVENDER, 6, 0, true, true));
         getInventory().add(new Item(MACHINE, DESC_CURE_MACHINE, 1, 0, false, false));
 
         ingredients = new Item[3];
         correctIngredients = new Item[] {
-            getInventory().get(ITEM3),
-            getInventory().get(ITEM5),
-            getInventory().get(ITEM8)
+            getInventory().get(LEMON),
+            getInventory().get(LAVENDER),
+            getInventory().get(PORTOBELLO)
         };
 
         size = 0;
@@ -95,14 +95,14 @@ public class Lab extends Room {  // TODO: Javadocs
 
     @Override
     public boolean use(String toUse, String useOn) {
-        if (toUse.equalsIgnoreCase(ITEM1)
-            || toUse.equalsIgnoreCase(ITEM2)
-            || toUse.equalsIgnoreCase(ITEM3)
-            || toUse.equalsIgnoreCase(ITEM4)
-            || toUse.equalsIgnoreCase(ITEM5)
-            || toUse.equalsIgnoreCase(ITEM6)
-            || toUse.equalsIgnoreCase(ITEM7)
-            || toUse.equalsIgnoreCase(ITEM8)) {
+        if (toUse.equalsIgnoreCase(LEMON)
+            || toUse.equalsIgnoreCase(LANTANA)
+            || toUse.equalsIgnoreCase(PORTOBELLO)
+            || toUse.equalsIgnoreCase(WEBCAP)
+            || toUse.equalsIgnoreCase(TOMATO)
+            || toUse.equalsIgnoreCase(DESTROYING_ANGEL)
+            || toUse.equalsIgnoreCase(POPPY)
+            || toUse.equalsIgnoreCase(LAVENDER)) {
 
             if (useOn == null) {
                 System.out.println(USE_INGREDIENT_ON_NULL);
@@ -138,7 +138,13 @@ public class Lab extends Room {  // TODO: Javadocs
      * Returns a description of the room
      */
     @Override
-    public String getDescription() { return null; }  // TODO
+    public String getDescription() { 
+        if (aliveScientist){
+            return DESC_LAB;
+        } else {
+          return DESC_LAB + DESC_DEAD_SCIENTIST;  
+        }
+     }  // TODO
 
     @Override
     public String toString() {
