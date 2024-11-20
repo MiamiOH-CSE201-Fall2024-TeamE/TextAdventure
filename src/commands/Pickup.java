@@ -59,14 +59,6 @@ public class Pickup extends Command {
             return false;
         }
 
-        // Use turns (with confirmation)
-        if (Input.getConfirmation(Actions.USE_TURNS.formatted(1))) {
-            stateManager.getCountdown().useTurns(1);
-        } else {
-            System.out.println(Actions.CANCELLED);
-            return false;
-        }
-
         // Remove item from room inventory
         if (toPickUp.getAmount() == 1) {
             roomInventory.remove(toPickUp.toString());
