@@ -93,7 +93,14 @@ public class Check extends Command {
         }
 
         // TODO
-        System.out.println("NOT IMPLEMENTED");
+        System.out.println("You open the diary, it's pages are filled with frantic writings. \n"
+        + "\n Page One \n" + "I do not trust those around me, I must keep both ,y lab and the cure a secret. As I am a forgetful person\n"
+        + " I will write down the hints I need to continue. To enter the Lab one needs to enter 4 numbers into the keypad in the cellar. Each number is hidden in a room\n"
+        + "\n Page Two \n" + "The number in the Foyer can only be accessed by melting down my cold stare.\n"
+        + "The number in the bedroom can only be found by opening my safe.\n"
+        + "The number in the kitchen is locked in a drawer I've hidden the key in another room. \n"
+        + "\n Page Three\n" + " The number in the Cellar can only be found by lining up my wine in a specific order\n"
+        + "Here are some hints to the order");
 
         return true;
     }
