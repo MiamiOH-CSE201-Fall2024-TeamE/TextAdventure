@@ -27,20 +27,20 @@ public class Cellar {
     public static final String WINE5
         = "wine5";
 
-    public static final String SLOT1
-        = "slot1";
+    public static final String SLOTA
+        = "slota";
 
-    public static final String SLOT2
-        = "slot2";
+    public static final String SLOTB
+        = "slotb";
 
-    public static final String SLOT3
-        = "slot3";
+    public static final String SLOTC
+        = "slotc";
 
-    public static final String SLOT4
-        = "slot4";
+    public static final String SLOTD
+        = "slotd";
 
-    public static final String SLOT5
-        = "slot5";
+    public static final String SLOTE
+        = "slote";
 
     public static final String VENT
         = "vent";
@@ -60,19 +60,19 @@ public class Cellar {
     public static final String DESC_WINE5
         = "Description wine 5";
 
-    public static final String DESC_SLOT1
+    public static final String DESC_SLOTA
         = "Description wine 1";
 
-    public static final String DESC_SLOT2
+    public static final String DESC_SLOTB
         = "Description wine 2";
 
-    public static final String DESC_SLOT3
+    public static final String DESC_SLOTC
         = "Description wine 3";
 
-    public static final String DESC_SLOT4
+    public static final String DESC_SLOTD
         = "Description wine 4";
 
-    public static final String DESC_SLOT5
+    public static final String DESC_SLOTE
         = "Description wine 5";
 
     public static final String DESC_VENT
@@ -104,8 +104,12 @@ public class Cellar {
         + "It says, \"Bottles of wine, aged over time,\n"
         + "Taste best when sipped in the order of mine\".\n";
 
-    public static final String USE_WINE1_ON_SELF
-        = "You drink the wine, and then you hallucinate a piano falling on your head."; // TODO
+    /*
+     * Description for using the wine on yourself
+     */
+    public static final String USE_WINE_ON_SELF
+        = "You drink the wine, and then you hallucinate a piano falling on your head.\n"
+        + "Best to only put the wine in a slot"; // TODO
     
         public static final String USE_TONGS_ON_VENT
         = "Use statement here";

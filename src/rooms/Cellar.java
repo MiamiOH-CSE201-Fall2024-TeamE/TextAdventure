@@ -24,7 +24,12 @@ public class Cellar extends Room {
     /**
      * The slots the user has to place the wine into.
      */
-    private Item[] slots = new Item[4];
+    private Item[] slots;
+    
+    /**
+     * The correct order of wine
+     */
+    private Item[] correctSlots;
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
@@ -49,15 +54,25 @@ public class Cellar extends Room {
         getInventory().add(new Item(WINE4, DESC_WINE4, 1, 0, true, true));
         getInventory().add(new Item(WINE5, DESC_WINE5, 1, 0, true, true));
 
-        getInventory().add(new Item(SLOT1, DESC_SLOT1, 1, 0, true, true));
-        getInventory().add(new Item(SLOT2, DESC_SLOT2, 1, 0, true, true));
-        getInventory().add(new Item(SLOT3, DESC_SLOT3, 1, 0, true, true));
-        getInventory().add(new Item(SLOT4, DESC_SLOT4, 1, 0, true, true));
-        getInventory().add(new Item(SLOT5, DESC_SLOT5, 1, 0, true, true));
+        getInventory().add(new Item(SLOTA, DESC_SLOTA, 1, 0, true, true));
+        getInventory().add(new Item(SLOTB, DESC_SLOTB, 1, 0, true, true));
+        getInventory().add(new Item(SLOTC, DESC_SLOTC, 1, 0, true, true));
+        getInventory().add(new Item(SLOTD, DESC_SLOTD, 1, 0, true, true));
+        getInventory().add(new Item(SLOTE, DESC_SLOTE, 1, 0, true, true));
 
         getInventory().add(new Item(VENT, DESC_VENT, 1, 1, false, true));
         getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
         getInventory().add(new Item(HINT_PAPER, DESC_HINT_PAPER, 1, 0, false, false));
+
+        slots = new Item[5];
+        correctSlots = new Item[]{
+            getInventory().get(WINE2),
+            getInventory().get(WINE4),
+            getInventory().get(WINE5),
+            getInventory().get(WINE1),
+            getInventory().get(WINE3)
+        };
+
     }  // TODO
 
     @Override
@@ -74,13 +89,13 @@ public class Cellar extends Room {
             {
 
             if (useOn == null) {
-                System.out.println(USE_WINE1_ON_SELF);
+                System.out.println(USE_WINE_ON_SELF);
                 return true;
             }
 
             //Add the on Use strings to each case statement
             switch (useOn) {
-                case SLOT1:
+                case SLOTA:
                     if(slots[0] != null)
                         stateManager.getPlayer().getInventory().add(slots[0]);
                     slots[0] = getItem(toUse);
@@ -88,33 +103,33 @@ public class Cellar extends Room {
                     //Check if correct
                     return true;
             
-                case SLOT2:
-                    if(slots[0] != null)
-                        stateManager.getPlayer().getInventory().add(slots[0]);
+                case SLOTB:
+                    if(slots[1] != null)
+                        stateManager.getPlayer().getInventory().add(slots[1]);
                     slots[1] = getItem(toUse);
                     System.out.println(slots[1]);
                     //Check if correct
                     return true;
 
-                case SLOT3:
-                    if(slots[0] != null)
-                        stateManager.getPlayer().getInventory().add(slots[0]);
+                case SLOTC:
+                    if(slots[2] != null)
+                        stateManager.getPlayer().getInventory().add(slots[2]);
                     slots[2] = getItem(toUse);
                     System.out.println(slots[2]);
                     //Check if correct
                     return true;
 
-                case SLOT4:
-                    if(slots[0] != null)
-                        stateManager.getPlayer().getInventory().add(slots[0]);
+                case SLOTD:
+                    if(slots[3] != null)
+                        stateManager.getPlayer().getInventory().add(slots[3]);
                     slots[3] = getItem(toUse);
                     System.out.println(slots[3]);
                     //Check if correct
                     return true;
 
-                case SLOT5:
-                    if(slots[0] != null)
-                        stateManager.getPlayer().getInventory().add(slots[0]);
+                case SLOTE:
+                    if(slots[4] != null)
+                        stateManager.getPlayer().getInventory().add(slots[4]);
                     slots[4] = getItem(toUse);
                     System.out.println(slots[4]);
                     //Check if correct
@@ -153,6 +168,11 @@ public class Cellar extends Room {
 
     @Override
     public String getDescription() { return null; }  // TODO
+
+    /*
+     * Method for checking if the order of wine is correct
+     */
+    public boolean checkCorrect() {return false;} //TODO
 
     @Override
     public String toString() {

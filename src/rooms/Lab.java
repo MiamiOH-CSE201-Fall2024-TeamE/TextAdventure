@@ -76,6 +76,7 @@ public class Lab extends Room {  // TODO: Javadocs
         getInventory().add(new Item(DEATHCAP, DESC_DEATHCAP, 6, 0, true, true));
         getInventory().add(new Item(POPPY, DESC_POPPY, 6, 0, true, true));
         getInventory().add(new Item(LAVENDER, DESC_LAVENDER, 6, 0, true, true));
+        getInventory().add(new Item(APPLE, DESC_APPLE, 6, 0, true, true));
         getInventory().add(new Item(MACHINE, DESC_CURE_MACHINE, 1, 0, false, false));
 
         ingredients = new Item[3];
@@ -105,7 +106,8 @@ public class Lab extends Room {  // TODO: Javadocs
             || toUse.equalsIgnoreCase(TOMATO)
             || toUse.equalsIgnoreCase(DEATHCAP)
             || toUse.equalsIgnoreCase(POPPY)
-            || toUse.equalsIgnoreCase(LAVENDER)) {
+            || toUse.equalsIgnoreCase(LAVENDER)
+            || toUse.equalsIgnoreCase(APPLE)) {
 
             if (useOn == null) {
                 System.out.println(USE_INGREDIENT_ON_NULL);

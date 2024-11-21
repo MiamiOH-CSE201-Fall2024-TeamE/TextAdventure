@@ -36,6 +36,9 @@ public class Lab {
         public static final String LAVENDER
         = "lavender";
 
+        public static final String APPLE
+        = "apple";
+
         public static final String MACHINE
         = "machine";
 
@@ -62,6 +65,9 @@ public class Lab {
 
         public static final String DESC_LAVENDER
         = "Some type of orange flower is growing here";
+
+        public static final String DESC_APPLE
+        = "Some green apples growing here";
 
         public static final String DESC_CURE_MACHINE
         = "A very large and complex looking machine. There seems to be a hole on the left to insert ingredients into";
@@ -91,7 +97,7 @@ public class Lab {
         public static final String DESC_LAB = 
         "You are in a dark grey room. Only a single light is still shining. "
         + "To your left you see rows of pots. Each with a different plant growing inside of them.\n" 
-        + "the tags on the pots list: lemon, lantana, tomato, portobello, webcap, deathcap, lavende and poppy.\n"
+        + "the tags on the pots list: lemon, lantana, tomato, portobello, webcap, deathcap, lavender, apple and poppy.\n"
         + "To your right is a giant machine. It must be the one that makes a cure.\n";
 
         public static final String DESC_DEAD_SCIENTIST = 
