@@ -91,6 +91,20 @@ public class Cellar {
         = "crowbar";
 
     /**
+     * The name string for the 'poster' item
+     */
+    public static final String POSTER
+        = "poster";
+
+    /**
+     * The description string for the 'poster' item
+     */
+    public static final String DESC_POSTER
+        = "A faded poster on the wall it reads:\n"
+        + "\"Be safe! when foraging for mushrooms no these types are dangerous:\"\n"
+        + "Deathcap, Destroing angel, Webcap, Tigercap";
+
+    /**
      * The name string for the 'paper' item
      */
     public static final String HINT_PAPER

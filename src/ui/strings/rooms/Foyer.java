@@ -107,7 +107,7 @@ public class Foyer {
     public static final String DESC_BOOK
         = "You open the book, you turn to a page that says:\n"
         + "Let's learn about complemtary colors! To get the complementary color of a primary color you find the secondary color that is a mix of the other two primaries\n"
-        + "For example the primary color of Blue is Orange";
+        + "For example the primary color of Blue is Orange\n";
 
     /**
      * The action string for using a board by itself.
@@ -174,7 +174,7 @@ public class Foyer {
      */
     public static final String DESCRIPTION
         = "As you look around the room, you are met with a lofty, ornate foyer.\n"
-        + "On a table next to a door there is an old childrens artbook"
+        + "On a table next to a door there is an old childrens artbook.\n"
         + "Directly across from the door is a large fireplace. A painting hangs\n"
         + "askew directly above it.\n"
         + "\n"

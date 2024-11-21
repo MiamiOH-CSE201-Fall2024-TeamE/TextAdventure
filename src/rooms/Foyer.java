@@ -42,6 +42,7 @@ public class Foyer extends Room {
         getInventory().add(new Item(PAINTING, DESC_PAINTING_UNSOLVED, 1, 0, false, false));
         getInventory().add(new Item(BOARD, DESC_BOARD, 1, 1, true, true));
         getInventory().add(new Item(DOOR, DESC_DOOR, 1, 1, false, true));
+        getInventory().add(new Item(BOOK, DESC_BOOK, 1, 0, false, false));
     }
 
     @Override
