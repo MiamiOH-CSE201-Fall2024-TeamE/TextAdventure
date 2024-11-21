@@ -67,7 +67,7 @@ public class Lab {
         = "Some type of orange flower is growing here";
 
         public static final String DESC_APPLE
-        = "Some green apples growing here";
+        = "Some green apples are growing here";
 
         public static final String DESC_CURE_MACHINE
         = "A very large and complex looking machine. There seems to be a hole on the left to insert ingredients into";

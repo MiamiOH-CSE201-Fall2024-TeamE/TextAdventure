@@ -43,6 +43,12 @@ public class Foyer {
         = "door";
 
     /**
+     * The name string for the 'book' item.
+     */
+    public static final String BOOK
+        = "book";
+
+    /**
      * The description string for the 'button' item.
      */
     public static final String DESC_BUTTON
@@ -94,6 +100,14 @@ public class Foyer {
         + "of the manor. The frame shudders as a zombie crashes against the\n"
         + "outside. You should find a way to reinforce it - It won't take them\n"
         + "long to get in...\n";
+
+    /**
+     * The description string for the 'book' item.
+     */
+    public static final String DESC_BOOK
+        = "You open the book, you turn to a page that says:\n"
+        + "Let's learn about complemtary colors! To get the complementary color of a primary color you find the secondary color that is a mix of the other two primaries\n"
+        + "For example the primary color of Blue is Orange";
 
     /**
      * The action string for using a board by itself.
@@ -160,6 +174,7 @@ public class Foyer {
      */
     public static final String DESCRIPTION
         = "As you look around the room, you are met with a lofty, ornate foyer.\n"
+        + "On a table next to a door there is an old childrens artbook"
         + "Directly across from the door is a large fireplace. A painting hangs\n"
         + "askew directly above it.\n"
         + "\n"
