@@ -43,7 +43,6 @@ public class Kitchen extends Room {
         getInventory().add(new Item(DRAWER, DESC_DRAWER_LOCKED, 1, 3, false, false));
         getInventory().add(new Item(BOARD, DESC_BOARD, 3, 1, true, true));
         getInventory().add(new Item(COOKBOOK, DESC_COOKBOOK, 1, 0, false, false));
-        //getInventory().add(new Item(INGREDIENT_HINT, DESC_INGREDIENT_HINT, 1, 0, true, false)); - Figure this out
     }
 
     @Override
@@ -81,7 +80,7 @@ public class Kitchen extends Room {
                     getInventory().add(new Item(DRAWER, DESC_DRAWER_OPEN, 1, 1, false, false));
 
                     // Player can then get the ingredient hint for the lab
-                    // getInventory().add(new Item(INGREDIENT_HINT, DESC_INGREDIENT_HINT, 1, 0, true, false)); - figure out this
+                    getInventory().add(new Item(NUMBER_HINT, DESC_NUMBER_HINT, 1, 0, true, false));
                     return true;
                 } else {
                     // If used on open drawer
@@ -124,12 +123,12 @@ public class Kitchen extends Room {
             removeFromInventory(COAL);
         }
 
-        //player takes hint from from room inventory FIGURE OUT HINT
-        //if (toPickUp.equalsIgnoreCase(INGREDIENT_HINT)) {
-        //    System.out.println(INGREDIENT_HINT_PICKED_UP);
-        //    stateManager.getPlayer().getInventory().add(getInventory().get(INGREDIENT_HINT));
-        //    removeFromInventory(INGREDIENT_HINT);
-        // }
+        //player takes hint from from room inventory
+        if (toPickUp.equalsIgnoreCase(NUMBER_HINT)) {
+            System.out.println(NUMBER_HINT_PICKED_UP);
+            stateManager.getPlayer().getInventory().add(getInventory().get(NUMBER_HINT));
+            removeFromInventory(NUMBER_HINT);
+        }
     } 
 
     @Override
