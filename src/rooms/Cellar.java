@@ -208,7 +208,8 @@ public class Cellar extends Room {
         if(getItem(CELLAR_NUMBER_HINT) != null){
             getInventory().add(new Item(CELLAR_NUMBER_HINT, DESC_CELLAR_NUMBER_HINT, 1, 0, false, false));
             System.out.println("All of the sudden a neon sign turns on. It is in the shape of the number 4");
-        }    
+        }
+    }    
 
 
     /*
