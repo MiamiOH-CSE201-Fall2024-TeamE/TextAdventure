@@ -62,7 +62,7 @@ public class Cellar extends Room {
 
         getInventory().add(new Item(VENT, DESC_VENT, 1, 1, false, true));
         getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
-        getInventory().add(new Item(HINT_PAPER, DESC_HINT_PAPER, 1, 0, false, false));
+        //getInventory().add(new Item(HINT_PAPER, DESC_HINT_PAPER, 1, 0, false, false));
         getInventory().add(new Item(POSTER, DESC_POSTER, 1, 0, false, false));
         
 
@@ -82,7 +82,7 @@ public class Cellar extends Room {
 
     @Override
     public boolean use(String toUse, String useOn) {
-        // Using WINE1
+        // Using WINE
         if (toUse.equalsIgnoreCase(WINE1) 
             || (toUse.equalsIgnoreCase(WINE2))
             || (toUse.equalsIgnoreCase(WINE3))
@@ -146,7 +146,8 @@ public class Cellar extends Room {
         {
             if (useOn == null)
             {
-                //null use statement
+                System.out.println(USE_TONGS_ON_NULL);
+                return true;
             }
 
             if(toUse.equalsIgnoreCase(VENT))
