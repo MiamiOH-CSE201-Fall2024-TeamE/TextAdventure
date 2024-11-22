@@ -52,62 +52,80 @@ public class Bedroom {
      * The description string for the 'diary' item.
      */
     public static final String DESC_DIARY
-        = "";
+        = "A small, well-worn diary, filled with strange scribblings. Many of\n"
+        + "its pages appear to have been torn out.\n";
 
     /**
      * The description string for the large 'safe' item.
      */
     public static final String DESC_SAFE_LARGE
-        = "";
+        = "A large, intimidating safe stands in the corner of the room. On its\n"
+        + "locked door, in place of a keyhole, is a small glowing touchpad.\n";
 
     /**
      * The description string for the small 'safe' item.
      */
     public static final String DESC_SAFE_SMALL
-        = "";
+        = "Inside the open safe is a smaller safe, nested neatly inside like a\n"
+        + "matryoshka doll. Whatever is inside, the scientist must have really\n"
+        + "wanted to protect...\n";
 
     /**
      * The description string for the opened small 'safe' item.
      */
     public static final String DESC_SAFE_SMALL_OPEN
-        = "";
+        = "Both safes stand open, their panels glowing green in the dim light.\n"
+        + "Inside is a small, black briefcase.\n";
 
     /**
      * The description string for the 'briefcase' item.
      */
     public static final String DESC_BRIEFCASE
-        = "";
+        = "A small, locked briefcase with another glowing panel on the front,\n"
+        + "awaiting user input.\n";
 
     /**
      * The description string for the open 'briefcase' item.
      */
     public static final String DESC_BRIEFCASE_OPEN
-        = "";
+        = "The briefcase lies open inside the safe. Nothing is stored inside,\n"
+        + "but the case itself is very odd. A large number 3 is painted on the\n"
+        + "inside of it in vibrant yellow paint...\n";
 
     /**
      * The description string for the 'nightstand' item.
      */
     public static final String DESC_NIGHTSTAND
-        = "";
+        = "An antique-looking wooden nightstand with a locked drawer. Oddly,\n"
+        + "the keyhole appears to have been plugged with some kind of glue.\n"
+        + "You won't be able to open this with a key...\n";
 
     /**
      * The description string for the broken 'nightstand' item.
      */
     public static final String DESC_NIGHTSTAND_BROKEN
-        = "";
+        = "The nightstand lies tilted slightly to one side, its drawer splintered\n"
+        + "around the lock. Inside the drawer is a large, steel key.\n";
+        
+    /**
+     * The description string for the empty 'nightstand' item.
+     */
+    public static final String DESC_NIGHTSTAND_EMPTY
+    = "The nightstand lies tilted slightly to one side, its drawer splintered\n"
+    + "around the lock. The drawer is empty.\n";
 
     /**
      * The description string for the 'key' item.
      */
     public static final String DESC_KEY
-        = "";
+        = "A large, plain steel key.";
 
     /**
      * The description string for the 'board' item.
      */
     public static final String DESC_BOARD
-        = "";
-
+        = "A board sticks out from under the bed. It appears to have been\n"
+        + "dislodged from underneath by something.\n";
     /**
      * The generic description string for a code input panel (safe/briefcase).
      */
@@ -126,13 +144,14 @@ public class Bedroom {
      * The answer to the question asked by the large safe.
      */
     public static final String ANSWER_LARGE_SAFE
-        = "";
+        = "giraffe";
 
     /**
      * The success message displayed upon opening the large safe.
      */
     public static final String LARGE_SAFE_OPENED
-        = "";
+        = "The panel dings, turning green as the safe door swings open,\n"
+        + "revealing another, smaller safe inside.\n";
 
     /**
      * The question asked by the small safe.
@@ -144,13 +163,14 @@ public class Bedroom {
      * The answer to the question asked by the small safe.
      */
     public static final String ANSWER_SMALL_SAFE
-        = "";
+        = "spaghetti";
 
     /**
      * The success message displayed upon opening the small safe.
      */
     public static final String SMALL_SAFE_OPENED
-        = "";
+        = "The panel dings, turning green as the safe door swings open,\n"
+        + "revealing a small, locked briefcase inside.\n";
 
     /**
      * The question asked by the briefcase.
@@ -162,13 +182,15 @@ public class Bedroom {
      * The answer to the question asked by the briefcase.
      */
     public static final String ANSWER_BRIEFCASE
-        = "";
+        = "merlot";
 
     /**
      * The success message displayed upon opening the briefcase.
      */
     public static final String BRIEFCASE_OPENED
-        = "";
+        = "The panel dings, turning green as the briefcase clicks open,\n"
+        + "revealing a very strange sight. Nothing is inside the briefcase\n"
+        + "except for the number 3 painted onto it in vibrant yellow paint.\n";
 
     /**
      * The failure message displayed if an incorrect answer is given.
@@ -187,35 +209,55 @@ public class Bedroom {
      * The action string for using the crowbar on the nightstand.
      */
     public static final String USE_CROWBAR_ON_NIGHTSTAND
-        = "";
+        = "You pry the nightstand drawer open with the crowbar, splintering the\n"
+        + "wood as the drawer slides open. Inside is a large, steel key.\n";
 
     /**
      * The room's description.
      */
     public static final String DESCRIPTION
-        = "You are in a large bedroom. A king-sized bed sits at the center of the room, with a nightstand\n"
-        + "on either side. Each nightstand holds a lamp, but one has a small, worn diary resting next to it.\n"
+        = "You are in a large, ornate bedroom. A king-sized bed sits in the\n"
+        + "center of the room, with an old wooden nightstand to one side.\n"
         + "\n"
-        + "Directly across from the bed, an open closet reveals a mess of clothes scattered across the floor.\n"
-        + "In the corner of the room, a large briefcase sits atop a pile of clothes, its surface scratched\n"
-        + "and faded with use.\n"
+        + "%s"
+        + "%s"
         + "\n"
-        + "The room feels old and untouched, the air faintly musty from months of neglect.";
-
+        + "%s"
+        + "Directly across from the bed, an open closet reveals a mess of\n"
+        + "clothes scattered across the floor.\n"
+        + "\n"
+        + "%s"
+        + "\n"
+        + "The room feels old and untouched, the air faintly musty from months\n"
+        + "of neglect.\n";
+    public static final String DESCRIPTION_NIGHTSTAND_PART
+        = "The nightstand has a locked drawer, its keyhole plugged with some\n"
+        + "kind of glue.\n";
+    public static final String DESCRIPTION_BROKEN_NIGHTSTAND_PART
+        = "The nightstand stands ajar, its drawer splintered around the lock.\n";
+    public static final String DESCRIPTION_DIARY_PART
+        = "On top of the nightstand is a broken desk lamp and a small, worn diary.\n";
+    public static final String DESCRIPTION_NO_DIARY_PART
+        = "On top of the nightstand is a broken desk lamp.\n";
     public static final String DESCRIPTION_BOARD_PART
-        = "";
+        = "Underneath the bed is a board that appears to have been dislodged\n"
+        + "from underneath the mattress.\n"
+        + "\n";
     public static final String DESCRIPTION_NO_BOARD_PART
         = "";
     public static final String DESCRIPTION_ALL_CLOSED_PART
-        = "";
+        = "In the corner of the bedroom stands a large, intimidating safe with\n"
+        + "a glowing panel in place of a lock.\n";
     public static final String DESCRIPTION_LARGE_SAFE_OPEN_PART
-        = "";
+        = "In the corner of the bedroom stands a large safe, its door ajar.\n"
+        + "Inside is a smaller safe with another glowing panel in place of a lock.\n";
     public static final String DESCRIPTION_SMALL_SAFE_OPEN_PART
-        = "";
+        = "In the corner of the bedroom stands a large safe, its door ajar.\n"
+        + "Inside is a smaller safe, its door also ajar.\n"
+        + "Inside both safes is a small, locked briefcase.\n";
     public static final String DESCRIPTION_ALL_OPEN_PART
-        = "";
-    public static final String DESCRIPTION_NIGHTSTAND_PART
-        = "";
-    public static final String DESCRIPTION_BROKEN_NIGHTSTAND_PART
-        = "";
+        = "In the corner of the bedroom stands a large safe, its door ajar.\n"
+        + "Inside is a smaller safe, its door also ajar.\n"
+        + "Inside both safes is a small, open briefcase with then number 3\n"
+        + "painted on its inside in vibrant yellow.\n";
 }

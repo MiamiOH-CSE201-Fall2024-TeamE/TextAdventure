@@ -1,6 +1,5 @@
 package rooms;
 
-import static app.App.stateManager;
 import static items.Item.removeFromInventory;
 
 import static ui.strings.rooms.Kitchen.*;
@@ -38,7 +37,7 @@ public class Kitchen extends Room {
 
         // Fill room's inventory
         getInventory().add(new Item(KNIFE, DESC_KNIFE, 1, 5, true, true));
-        getInventory().add(new Item(OVEN, DESC_OVEN, 1, 0, false, true));
+        getInventory().add(new Item(OVEN, DESC_OVEN, 1, 1, false, true));
         getInventory().add(new Item(TONGS, DESC_TONGS, 1, 1, true, true));
         getInventory().add(new Item(DRAWER, DESC_DRAWER_LOCKED, 1, 3, false, false));
         getInventory().add(new Item(BOARD, DESC_BOARD, 3, 1, true, true));
@@ -95,41 +94,7 @@ public class Kitchen extends Room {
     }
 
     @Override
-    public void pickup(String toPickUp) {
-        // Player takes knife from room inventory
-        if (toPickUp.equalsIgnoreCase(KNIFE)) {
-            System.out.println(KNIFE_PICKED_UP);
-            stateManager.getPlayer().getInventory().add(getInventory().get(KNIFE));
-            removeFromInventory(KNIFE);
-        }
-        // Player takes tongs from room inventory
-        if (toPickUp.equalsIgnoreCase(TONGS)) {
-            System.out.println(TONGS_PICKED_UP);
-            stateManager.getPlayer().getInventory().add(getInventory().get(TONGS));
-            removeFromInventory(TONGS);
-        }
-
-        //player takes board from room inventory 
-        if (toPickUp.equalsIgnoreCase(BOARD)) {
-            System.out.println(BOARD_PICKED_UP);
-            stateManager.getPlayer().getInventory().add(getInventory().get(BOARD));
-            removeFromInventory(BOARD);
-        }
-
-        //player takes coal from room inventory 
-        if (toPickUp.equalsIgnoreCase(COAL)) {
-            System.out.println(COAL_PICKED_UP);
-            stateManager.getPlayer().getInventory().add(getInventory().get(COAL));
-            removeFromInventory(COAL);
-        }
-
-        //player takes number hint from from room inventory
-        if (toPickUp.equalsIgnoreCase(NUMBER_HINT)) {
-            System.out.println(NUMBER_HINT_PICKED_UP);
-            stateManager.getPlayer().getInventory().add(getInventory().get(NUMBER_HINT));
-            removeFromInventory(NUMBER_HINT);
-        }
-    } 
+    public void pickup(String toPickUp) { /* Do nothing */ } 
 
     @Override
     public String getDescription() {

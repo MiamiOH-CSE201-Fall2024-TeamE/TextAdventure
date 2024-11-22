@@ -147,35 +147,6 @@ public class Kitchen {
         = "The drawer is already unlocked.\n";
 
     /**
-    * Message displayed when the player picks up the knife and adds it to their inventory.
-    */
-    public static final String KNIFE_PICKED_UP
-        = "You picked up the knife and it is now in your inventory.\n";
-    
-    /**
-    * Message displayed when the player picks up the tongs and adds them to their inventory.
-    */
-    public static final String TONGS_PICKED_UP
-        = "You picked up the tongs and it is now in your inventory.\n";
-
-    /**
-    * Message displayed when the player picks up the boards and adds them to their inventory.
-    */
-    public static final String BOARD_PICKED_UP
-        = "You picked up the boards and it is now in your inventory.\n";
-
-    /**
-    * Message displayed when the player picks up the mystery note (number hint) and adds it to their inventory.
-    */
-    public static final String NUMBER_HINT_PICKED_UP
-        = "You picked up the mystery note and it is now in your inventory.\n";
-    /**
-    * Message displayed when the player picks up the coal and adds it to their inventory.
-    */
-    public static final String COAL_PICKED_UP
-        = "You picked up the coal and it is now in your inventory.\n";
-
-    /**
     * Message displayed when oven is opened.
     */
     public static final String OVEN_DOOR_OPENED

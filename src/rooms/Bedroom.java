@@ -135,7 +135,12 @@ public class Bedroom extends Room {
     }
 
     @Override
-    public void pickup(String toPickUp) { /* Do nothing */ }
+    public void pickup(String toPickUp) {
+        if (toPickUp.equalsIgnoreCase(KEY)) {
+            removeFromInventory(NIGHTSTAND);
+            getInventory().add(new Item(NIGHTSTAND, DESC_NIGHTSTAND_EMPTY, 1, 0, false, false));
+        }
+    }
 
     /*
      * Returns a description of the Room
@@ -147,24 +152,29 @@ public class Bedroom extends Room {
         Item safe = getInventory().get(SAFE);
         Item briefcase = getInventory().get(BRIEFCASE);
         Item nightstand = getInventory().get(NIGHTSTAND);
+        Item diary = getInventory().get(DIARY);
 
         return DESCRIPTION.formatted(
-
+            
+            (nightstand.getDescription().equals(DESC_NIGHTSTAND))
+                ? DESCRIPTION_NIGHTSTAND_PART
+                : DESCRIPTION_BROKEN_NIGHTSTAND_PART,
+            
+            (diary == null)
+                ? DESCRIPTION_NO_DIARY_PART
+                : DESCRIPTION_DIARY_PART,
+            
             (board == null)
                 ? DESCRIPTION_NO_BOARD_PART
                 : DESCRIPTION_BOARD_PART,
-
+            
             (safe.getDescription().equals(DESC_SAFE_LARGE))
                 ? DESCRIPTION_ALL_CLOSED_PART
                 : (safe.getDescription().equals(DESC_SAFE_SMALL))
                     ? DESCRIPTION_LARGE_SAFE_OPEN_PART
                     : (briefcase.getDescription().equals(DESC_BRIEFCASE))
                         ? DESCRIPTION_SMALL_SAFE_OPEN_PART
-                        : DESCRIPTION_ALL_OPEN_PART,
-
-            (nightstand.getDescription().equals(DESC_NIGHTSTAND))
-                ? DESCRIPTION_NIGHTSTAND_PART
-                : DESCRIPTION_BROKEN_NIGHTSTAND_PART
+                        : DESCRIPTION_ALL_OPEN_PART
         );
     }
 

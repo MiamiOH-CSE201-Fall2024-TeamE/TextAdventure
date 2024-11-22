@@ -105,9 +105,12 @@ public class Foyer {
      * The description string for the 'book' item.
      */
     public static final String DESC_BOOK
-        = "You open the book, you turn to a page that says:\n"
-        + "Let's learn about complemtary colors! To get the complementary color of a primary color you find the secondary color that is a mix of the other two primaries\n"
-        + "For example the primary color of Blue is Orange\n";
+        = "The book is open to a page about complementary colors:\n"
+        + "\tLet's learn about complementary colors! To get a primary color's\n"
+        + "\tcomplementary color, find the secondary color that is a mix of\n"
+        + "\tthe other two primaries.\n"
+        + "\tFor example the complementary color of blue is orange.\n"
+        + "Did the scientist have children?...\n";
 
     /**
      * The action string for using a board by itself.
@@ -119,7 +122,7 @@ public class Foyer {
      * The action string for using a board on the door.
      */
     public static final String USE_BOARD_ON_DOOR
-        = "You use the floorboard to reinforce the blocked door against the\n"
+        = "You use the board to reinforce the blocked door against the\n"
         + "horde outside. Your ingenious idea has bought you some extra time!\n";
 
     /**
@@ -174,9 +177,14 @@ public class Foyer {
      */
     public static final String DESCRIPTION
         = "As you look around the room, you are met with a lofty, ornate foyer.\n"
-        + "On a table next to a door there is an old childrens artbook.\n"
+        + "On a table next to a door there is an old children's art book.\n"
         + "Directly across from the door is a large fireplace. A painting hangs\n"
         + "askew directly above it.\n"
+        + "\n"
+        + "To one side of the room is a staircase that seems to lead to an\n"
+        + "upstairs bedroom. Underneath the staircase is a door leading down to\n"
+        + "a musty-smelling cellar below. Across the room from the cellar door\n"
+        + "is another door leading to what appears to be the kitchen.\n"
         + "\n"
         + "%sou continue on to the hearth, noticing a small, inconspicuous\n"
         + "button to one side of the opening in the brick.\n";
