@@ -193,7 +193,15 @@ public class Bedroom {
      * The room's description.
      */
     public static final String DESCRIPTION
-        = "";
+        = "You are in a large bedroom. A king-sized bed sits at the center of the room, with a nightstand\n"
+        + "on either side. Each nightstand holds a lamp, but one has a small, worn diary resting next to it.\n"
+        + "\n"
+        + "Directly across from the bed, an open closet reveals a mess of clothes scattered across the floor.\n"
+        + "In the corner of the room, a large briefcase sits atop a pile of clothes, its surface scratched\n"
+        + "and faded with use.\n"
+        + "\n"
+        + "The room feels old and untouched, the air faintly musty from months of neglect.";
+
     public static final String DESCRIPTION_BOARD_PART
         = "";
     public static final String DESCRIPTION_NO_BOARD_PART
