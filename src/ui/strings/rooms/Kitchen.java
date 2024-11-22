@@ -58,7 +58,7 @@ public class Kitchen {
     /**
      * The name string for the 'ingredient hint' item.
      */
-    public static final String INGREDIENT_HINT
+    public static final String NUMBER_HINT
         = "hint";
 
     /**
@@ -117,14 +117,15 @@ public class Kitchen {
      */
     public static final String DESC_BOARD
         = "In the back corner of the kitchen you see 3 rough wooden boards resting against the wall.\n"
-        + "The boards look large and heavy like they were cut in preparation of something.";
+        + "The boards look large and heavy like they were cut in preparation of something.\n";
 
     /**
      * The description string for the 'ingredient hint' item.
      */
-    public static final String DESC_INGREDIENT_HINT
+    public static final String DESC_NUMBER_HINT
         = "A small torn paper was the only thing you found in the locked drawer.\n"
-        + "On the paper is faded handwriting similar to the one you found in the journal";
+        + "On the paper is small faded handwriting similar to the journal you found.\n"
+        + "As you look closer at the note the only thing written is number 5.\n";
     
     /**
      * Message displayed when the player tries to use a key without specifying an item to use it on.
@@ -137,7 +138,7 @@ public class Kitchen {
     */
     public static final String USE_KEY_ON_DRAWER
         = "You carefully insert the key into the lock of the mysterious drawer.\n"
-        + "As you turn it, you hear a subtle click—the drawer is now unlocked."; 
+        + "As you turn it, you hear a subtle click—the drawer is now unlocked.\n"; 
 
     /**
     * Message displayed when the player attempts to unlock a drawer that is already unlocked.
@@ -166,7 +167,7 @@ public class Kitchen {
     /**
     * Message displayed when the player picks up the mystery note (ingredient hint) and adds it to their inventory.
     */
-    public static final String INGREDIENT_HINT_PICKED_UP
+    public static final String NUMBER_HINT_PICKED_UP
         = "You picked up the mystery note and it is now in your inventory.\n";
     /**
     * Message displayed when the player picks up the coal and adds it to their inventory.
@@ -218,6 +219,7 @@ public class Kitchen {
     public static final String DESCRIPTION_OPEN_DRAWER_PART
         = "The old wooden drawer creaks as it opens, revealing a small torn piece of paper.\n"
         + "No utensils or food are inside, just this mysterious note.\n";
+        
     public static final String DESCRIPTION_OVEN_OPEN_PART
         = "The heavy oven door is open, revealing a piece of coal nestled among the ashes.\n"
         + "The dark, cast-iron oven stands ready for use, its door ajar.\n";
