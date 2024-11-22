@@ -102,7 +102,9 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[0]);
                     slots[0] = getItem(toUse);
                     System.out.println(slots[0]);
-                    //Check if correct
+                    if(checkCorrect()){
+                        showClue();
+                    }
                     return true;
             
                 case SLOTB:
@@ -110,7 +112,9 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[1]);
                     slots[1] = getItem(toUse);
                     System.out.println(slots[1]);
-                    //Check if correct
+                    if(checkCorrect()){
+                        showClue();
+                    }
                     return true;
 
                 case SLOTC:
@@ -118,7 +122,9 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[2]);
                     slots[2] = getItem(toUse);
                     System.out.println(slots[2]);
-                    //Check if correct
+                    if(checkCorrect()){
+                        showClue();
+                    }
                     return true;
 
                 case SLOTD:
@@ -126,7 +132,9 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[3]);
                     slots[3] = getItem(toUse);
                     System.out.println(slots[3]);
-                    //Check if correct
+                    if(checkCorrect()){
+                        showClue();
+                    }
                     return true;
 
                 case SLOTE:
@@ -134,7 +142,9 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[4]);
                     slots[4] = getItem(toUse);
                     System.out.println(slots[4]);
-                    //Check if correct
+                    if(checkCorrect()){
+                        showClue();
+                    }
                     return true;
 
                 default:
@@ -167,16 +177,41 @@ public class Cellar extends Room {
     }  // TODO
 
     @Override
-    public void pickup(String toPickUp) {}  // TODO
+    public void pickup(String toPickUp) {} //TODO
 
+    /*
+     * Returns the description of the room
+     */
     @Override
     public String getDescription() { return null; }  // TODO
 
     /*
      * Method for checking if the order of wine is correct
      */
-    public boolean checkCorrect() {return false;} //TODO
+    public boolean checkCorrect() {
+        
+        for (int i = 0; i < slots.length; i++) {
+            if (slots[i] == null){
+                return false;
+            }
+            if (!slots[i].toString().equals(correctSlots[i].toString())) {
+                return false;
+            }
+            
+        }
+        return true;
+    }
 
+    /*
+     * Code for revealing the code if they answer the wine puzzle correctly
+     */
+    public void showClue(){
+
+    }
+
+    /*
+     * Returns the name of the room as a string
+     */
     @Override
     public String toString() {
         return NAME;
