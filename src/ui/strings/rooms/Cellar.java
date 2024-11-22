@@ -144,7 +144,7 @@ public class Cellar {
         = "You drink the wine, and then you hallucinate a piano falling on your head.\n"
         + "Best to only put the wine in a slot"; // TODO
     
-        public static final String USE_TONGS_ON_VENT
+    public static final String USE_TONGS_ON_VENT
         = "Using the tongs you barely are able to reach and grab the crowbar.\n"
         + "You got a crowbar!";
 
@@ -153,5 +153,11 @@ public class Cellar {
         + "Before you know it, you're lost in the moment, crafting an epic tong-clicking beat solo worthy\n"
         + "of a sold-out concert. For a few glorious minutes, the zombie apocalypse fades away, and it's\n"
         + "just you, the tongs, and your undeniable rhythm.";
+
+    /**
+     * The description string for the solved 'wine' puzzle.
+     */
+    public static final String DESC_WINE_SOLVED
+        = "You Win!"; // TODO
 
 }
