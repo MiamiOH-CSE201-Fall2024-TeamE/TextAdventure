@@ -105,7 +105,7 @@ public class Cellar {
     public static final String DESC_POSTER
         = "A faded poster on the wall it reads:\n"
         + "\"Be safe! when foraging for mushrooms know these types are dangerous:\"\n"
-        + "Deathcap, Destroing angel, Webcap, Tigercap";
+        + "Deathcap, Destroying angel, Webcap, Tigercap";
 
     /* 
     /**
