@@ -176,30 +176,7 @@ public class Cellar extends Room {
     }  // TODO
 
     @Override
-    public void pickup(String toPickUp) {
-        switch (toPickUp.strip().toLowerCase()) {
-            case WINE1:
-                break;
-            case WINE2:
-                break;
-            case WINE3:
-                break;
-            case WINE4:
-                break;
-            case WINE5:
-                break;
-            case SLOTA:
-                break;
-            case SLOTB:
-                break;
-            case SLOTC:
-                break;
-            case SLOTD:
-                break;
-            case SLOTE:
-                break;
-        }
-    } //TODO
+    public void pickup(String toPickUp) {} //TODO
 
     /*
      * Returns the description of the room
