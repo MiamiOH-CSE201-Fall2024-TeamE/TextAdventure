@@ -107,12 +107,17 @@ public class Cellar {
         + "\"Be safe! when foraging for mushrooms know these types are dangerous:\"\n"
         + "Deathcap, Destroying angel, Webcap, Tigercap";
 
-    /* 
-    /**
-     * The name string for the 'paper' item
-     
-    public static final String HINT_PAPER
-        = "paper";
+    /*
+     * The name for the number hint
+     */
+        public static final String CELLAR_NUMBER_HINT 
+     = "sign";
+
+     /*
+      * The description for the number hint
+      */
+     public static final String DESC_CELLAR_NUMBER_HINT 
+     = "A neon sign. It's shaped like a 4";
 
     /**
      * The room's description.
