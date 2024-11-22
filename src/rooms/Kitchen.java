@@ -79,7 +79,7 @@ public class Kitchen extends Room {
                     removeFromInventory(DRAWER);
                     getInventory().add(new Item(DRAWER, DESC_DRAWER_OPEN, 1, 1, false, false));
 
-                    // Player can then get the ingredient hint for the lab
+                    // Player can then get the number hint for the lab
                     getInventory().add(new Item(NUMBER_HINT, DESC_NUMBER_HINT, 1, 0, true, false));
                     return true;
                 } else {
@@ -123,7 +123,7 @@ public class Kitchen extends Room {
             removeFromInventory(COAL);
         }
 
-        //player takes hint from from room inventory
+        //player takes number hint from from room inventory
         if (toPickUp.equalsIgnoreCase(NUMBER_HINT)) {
             System.out.println(NUMBER_HINT_PICKED_UP);
             stateManager.getPlayer().getInventory().add(getInventory().get(NUMBER_HINT));
@@ -162,7 +162,7 @@ public class Kitchen extends Room {
             // Conditional check for drawer
             (drawer != null && drawer.getDescription().equals(DESC_DRAWER_LOCKED))
                 ? DESCRIPTION_LOCKED_DRAWER_PART
-                : DESCRIPTION_OPEN_DRAWER_PART
+                : DESCRIPTION_OPEN_DRAWER_PART,
         );
     } 
 

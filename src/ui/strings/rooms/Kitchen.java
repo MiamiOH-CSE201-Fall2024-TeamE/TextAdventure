@@ -56,7 +56,7 @@ public class Kitchen {
         + "\"There are many different types of acidic plants for cooking. These include lemons, tomatoes, limes amd oranges\"";
 
     /**
-     * The name string for the 'ingredient hint' item.
+     * The name string for the 'number hint' item.
      */
     public static final String NUMBER_HINT
         = "hint";
@@ -120,7 +120,7 @@ public class Kitchen {
         + "The boards look large and heavy like they were cut in preparation of something.\n";
 
     /**
-     * The description string for the 'ingredient hint' item.
+     * The description string for the 'number hint' item.
      */
     public static final String DESC_NUMBER_HINT
         = "A small torn paper was the only thing you found in the locked drawer.\n"
@@ -165,7 +165,7 @@ public class Kitchen {
         = "You picked up the boards and it is now in your inventory.\n";
 
     /**
-    * Message displayed when the player picks up the mystery note (ingredient hint) and adds it to their inventory.
+    * Message displayed when the player picks up the mystery note (number hint) and adds it to their inventory.
     */
     public static final String NUMBER_HINT_PICKED_UP
         = "You picked up the mystery note and it is now in your inventory.\n";
