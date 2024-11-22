@@ -146,7 +146,7 @@ public class Cellar extends Room {
         {
             if (useOn == null)
             {
-                System.out.println(USE_TONGS_ON_NULL));
+                System.out.println(USE_TONGS_ON_NULL);
                 return true;
             }
 
