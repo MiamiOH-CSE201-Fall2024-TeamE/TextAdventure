@@ -8,7 +8,6 @@ import static ui.strings.rooms.Cellar.*;
 import static ui.strings.rooms.Kitchen.TONGS;
 import static items.Item.getItem;
 
-
 /**
  * This is the class for the Cellar Room.
  *
@@ -27,7 +26,7 @@ public class Cellar extends Room {
     private Item[] slots;
     
     /**
-     * The correct order of wine
+     * The correct order of the wine.
      */
     private Item[] correctSlots;
 
@@ -48,17 +47,17 @@ public class Cellar extends Room {
         this(true, new Inventory(), false);
 
         //Fill room's inventory
-        getInventory().add(new Item(WINE1, DESC_WINE1, 1, 0, true, true));
-        getInventory().add(new Item(WINE2, DESC_WINE2, 1, 0, true, true));
-        getInventory().add(new Item(WINE3, DESC_WINE3, 1, 0, true, true));
-        getInventory().add(new Item(WINE4, DESC_WINE4, 1, 0, true, true));
-        getInventory().add(new Item(WINE5, DESC_WINE5, 1, 0, true, true));
+        getInventory().add(new Item(WINE_1, DESC_WINE_1, 1, 0, true, true));
+        getInventory().add(new Item(WINE_2, DESC_WINE_2, 1, 0, true, true));
+        getInventory().add(new Item(WINE_3, DESC_WINE_3, 1, 0, true, true));
+        getInventory().add(new Item(WINE_4, DESC_WINE_4, 1, 0, true, true));
+        getInventory().add(new Item(WINE_5, DESC_WINE_5, 1, 0, true, true));
 
-        getInventory().add(new Item(SLOTA, DESC_SLOTA, 1, 0, true, true));
-        getInventory().add(new Item(SLOTB, DESC_SLOTB, 1, 0, true, true));
-        getInventory().add(new Item(SLOTC, DESC_SLOTC, 1, 0, true, true));
-        getInventory().add(new Item(SLOTD, DESC_SLOTD, 1, 0, true, true));
-        getInventory().add(new Item(SLOTE, DESC_SLOTE, 1, 0, true, true));
+        getInventory().add(new Item(SLOT_A, DESC_SLOT_A, 1, 0, true, true));
+        getInventory().add(new Item(SLOT_B, DESC_SLOT_B, 1, 0, true, true));
+        getInventory().add(new Item(SLOT_C, DESC_SLOT_C, 1, 0, true, true));
+        getInventory().add(new Item(SLOT_D, DESC_SLOT_D, 1, 0, true, true));
+        getInventory().add(new Item(SLOT_E, DESC_SLOT_E, 1, 0, true, true));
 
         getInventory().add(new Item(VENT, DESC_VENT, 1, 1, false, true));
         getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
@@ -67,11 +66,11 @@ public class Cellar extends Room {
 
         slots = new Item[5];
         correctSlots = new Item[]{
-            getInventory().get(WINE2),
-            getInventory().get(WINE4),
-            getInventory().get(WINE5),
-            getInventory().get(WINE1),
-            getInventory().get(WINE3)
+            getInventory().get(WINE_2),
+            getInventory().get(WINE_4),
+            getInventory().get(WINE_5),
+            getInventory().get(WINE_1),
+            getInventory().get(WINE_3)
         };
 
     }  // TODO
@@ -82,11 +81,11 @@ public class Cellar extends Room {
     @Override
     public boolean use(String toUse, String useOn) {
         // Using WINE
-        if (toUse.equalsIgnoreCase(WINE1) 
-            || (toUse.equalsIgnoreCase(WINE2))
-            || (toUse.equalsIgnoreCase(WINE3))
-            || (toUse.equalsIgnoreCase(WINE4))
-            || (toUse.equalsIgnoreCase(WINE5)))
+        if (toUse.equalsIgnoreCase(WINE_1) 
+            || (toUse.equalsIgnoreCase(WINE_2))
+            || (toUse.equalsIgnoreCase(WINE_3))
+            || (toUse.equalsIgnoreCase(WINE_4))
+            || (toUse.equalsIgnoreCase(WINE_5)))
             {
 
             if (useOn == null) {
@@ -96,7 +95,7 @@ public class Cellar extends Room {
 
             //Add the on Use strings to each case statement
             switch (useOn) {
-                case SLOTA:
+                case SLOT_A:
                     if(slots[0] != null)
                         stateManager.getPlayer().getInventory().add(slots[0]);
                     slots[0] = getItem(toUse);
@@ -106,7 +105,7 @@ public class Cellar extends Room {
                     }
                     return true;
             
-                case SLOTB:
+                case SLOT_B:
                     if(slots[1] != null)
                         stateManager.getPlayer().getInventory().add(slots[1]);
                     slots[1] = getItem(toUse);
@@ -116,7 +115,7 @@ public class Cellar extends Room {
                     }
                     return true;
 
-                case SLOTC:
+                case SLOT_C:
                     if(slots[2] != null)
                         stateManager.getPlayer().getInventory().add(slots[2]);
                     slots[2] = getItem(toUse);
@@ -126,7 +125,7 @@ public class Cellar extends Room {
                     }
                     return true;
 
-                case SLOTD:
+                case SLOT_D:
                     if(slots[3] != null)
                         stateManager.getPlayer().getInventory().add(slots[3]);
                     slots[3] = getItem(toUse);
@@ -136,7 +135,7 @@ public class Cellar extends Room {
                     }
                     return true;
 
-                case SLOTE:
+                case SLOT_E:
                     if(slots[4] != null)
                         stateManager.getPlayer().getInventory().add(slots[4]);
                     slots[4] = getItem(toUse);
@@ -178,14 +177,11 @@ public class Cellar extends Room {
     @Override
     public void pickup(String toPickUp) {} //TODO
 
-    /*
-     * Returns the description of the room
-     */
     @Override
     public String getDescription() { return null; }  // TODO
 
-    /*
-     * Method for checking if the order of wine is correct
+    /**
+     * Checks if the order of the wine is correct.
      */
     public boolean checkCorrect() {
         
@@ -201,8 +197,8 @@ public class Cellar extends Room {
         return true;
     }
 
-    /*
-     * Code for revealing the code if they answer the wine puzzle correctly
+    /**
+     * Reveals the code if the player answers the wine puzzle correctly.
      */
     public void showClue(){
         if (getItem(CELLAR_NUMBER_HINT) != null) {
@@ -211,9 +207,6 @@ public class Cellar extends Room {
         }
     }    
 
-    /*
-     * Returns the name of the room as a string
-     */
     @Override
     public String toString() {
         return NAME;

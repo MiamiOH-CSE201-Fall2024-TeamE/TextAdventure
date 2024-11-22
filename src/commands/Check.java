@@ -108,8 +108,8 @@ public class Check extends Command {
         + "-  Wine 3 is on the end.\n"
         + "\n Page Four\n" + "Once in the lab, to make the cure you need 3 ingredients put in this order:\n"
         + "1. An acidic food\n"
-        + "2. A flower that is the complementary color of the first ingrdient\n"
-        + "3. A mushroom. make sure it is safe to injest");
+        + "2. A flower that is the complementary color of the first ingredient\n"
+        + "3. A mushroom. make sure it is safe to ingest");
 
         return true;
     }

@@ -48,9 +48,6 @@ public class Lab extends Room {  // TODO: Javadocs
      */
     private boolean aliveScientist;
 
-
-    
-
     /**
      * Instantiates a new room with a specified inventory and lock status.
      *
@@ -91,17 +88,16 @@ public class Lab extends Room {  // TODO: Javadocs
         aliveScientist = true;
     }  // TODO
 
-    /*
-     * Details what happens when the room is loaded
-     */
     @Override
     public void load() { 
         
         stateManager.getRoom(Bedroom.NAME).lock();
         stateManager.getRoom(Kitchen.NAME).lock();
         stateManager.getRoom(Cellar.NAME).lock();
+        stateManager.getRoom(Foyer.NAME).lock();
         
-        super.load(); }  // TODO
+        super.load();
+    }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) {

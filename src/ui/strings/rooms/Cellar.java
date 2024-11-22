@@ -12,67 +12,67 @@ public class Cellar {
      */
     private Cellar() {}
 
-    public static final String WINE1
+    public static final String WINE_1
         = "wine1";
 
-    public static final String WINE2
+    public static final String WINE_2
         = "wine2";
 
-    public static final String WINE3
+    public static final String WINE_3
         = "wine3";
 
-    public static final String WINE4
+    public static final String WINE_4
         = "wine4";
 
-    public static final String WINE5
+    public static final String WINE_5
         = "wine5";
 
-    public static final String SLOTA
+    public static final String SLOT_A
         = "slota";
 
-    public static final String SLOTB
+    public static final String SLOT_B
         = "slotb";
 
-    public static final String SLOTC
+    public static final String SLOT_C
         = "slotc";
 
-    public static final String SLOTD
+    public static final String SLOT_D
         = "slotd";
 
-    public static final String SLOTE
+    public static final String SLOT_E
         = "slote";
 
     public static final String VENT
         = "vent";
 
-    public static final String DESC_WINE1
+    public static final String DESC_WINE_1
         = "A wine bottle with the number 1 on it.";
 
-    public static final String DESC_WINE2
+    public static final String DESC_WINE_2
         = "A wine bottle with the number 2 on it.";
 
-    public static final String DESC_WINE3
+    public static final String DESC_WINE_3
         = "A wine bottle with the number 3 on it.";
 
-    public static final String DESC_WINE4
+    public static final String DESC_WINE_4
         = "A wine bottle with the number 4 on it.";
 
-    public static final String DESC_WINE5
+    public static final String DESC_WINE_5
         = "A wine bottle with the number 5 on it.";
 
-    public static final String DESC_SLOTA
+    public static final String DESC_SLOT_A
         = "The left most slot for wine.";
 
-    public static final String DESC_SLOTB
+    public static final String DESC_SLOT_B
         = "The slot in between the left slot and middle slot for wine.";
 
-    public static final String DESC_SLOTC
+    public static final String DESC_SLOT_C
         = "The middle slot for wine";
 
-    public static final String DESC_SLOTD
+    public static final String DESC_SLOT_D
         = "The slot in between the middle slot and right slot for wine";
 
-    public static final String DESC_SLOTE
+    public static final String DESC_SLOT_E
         = "The right most slot for wine";
 
     public static final String DESC_VENT
