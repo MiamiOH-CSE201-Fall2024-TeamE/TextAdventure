@@ -92,10 +92,16 @@ public class Lab extends Room {  // TODO: Javadocs
     }  // TODO
 
     /*
-     * Details what happens 
+     * Details what happens when the room is loaded
      */
     @Override
-    public void load() { super.load(); }  // TODO
+    public void load() { 
+        
+        stateManager.getRoom(Bedroom.NAME).lock();
+        stateManager.getRoom(Kitchen.NAME).lock();
+        stateManager.getRoom(Cellar.NAME).lock();
+        
+        super.load(); }  // TODO
 
     @Override
     public boolean use(String toUse, String useOn) {
