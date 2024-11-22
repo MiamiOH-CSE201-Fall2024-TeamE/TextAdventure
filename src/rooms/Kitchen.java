@@ -162,7 +162,7 @@ public class Kitchen extends Room {
             // Conditional check for drawer
             (drawer != null && drawer.getDescription().equals(DESC_DRAWER_LOCKED))
                 ? DESCRIPTION_LOCKED_DRAWER_PART
-                : DESCRIPTION_OPEN_DRAWER_PART,
+                : DESCRIPTION_OPEN_DRAWER_PART
         );
     } 
 
