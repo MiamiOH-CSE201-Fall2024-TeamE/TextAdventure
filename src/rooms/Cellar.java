@@ -82,7 +82,7 @@ public class Cellar extends Room {
 
     @Override
     public boolean use(String toUse, String useOn) {
-        // Using WINE1
+        // Using WINE
         if (toUse.equalsIgnoreCase(WINE1) 
             || (toUse.equalsIgnoreCase(WINE2))
             || (toUse.equalsIgnoreCase(WINE3))
@@ -146,7 +146,8 @@ public class Cellar extends Room {
         {
             if (useOn == null)
             {
-                //null use statement
+                System.out.println(USE_TONGS_ON_NULL));
+                return true;
             }
 
             if(toUse.equalsIgnoreCase(VENT))
