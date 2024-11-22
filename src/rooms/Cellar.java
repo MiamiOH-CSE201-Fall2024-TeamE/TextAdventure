@@ -199,14 +199,15 @@ public class Cellar extends Room {
             }
             
         }
+        showClue();
         return true;
     }
 
     /*
      * Code for revealing the code if they answer the wine puzzle correctly
      */
-    public void showClue(){
-
+    public void showClue() {
+        System.out.println(DESC_WINE_SOLVED);
     }
 
     /*
