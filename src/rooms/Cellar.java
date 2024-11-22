@@ -199,7 +199,6 @@ public class Cellar extends Room {
             }
             
         }
-        showClue();
         return true;
     }
 
