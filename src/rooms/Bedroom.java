@@ -42,7 +42,6 @@ public class Bedroom extends Room {
         getInventory().add(new Item(NIGHTSTAND, DESC_NIGHTSTAND, 1, 0, false, false));
         getInventory().add(new Item(BOARD, DESC_BOARD, 1, 1, true, true));
 
-        // TODO: Some ingredient hint (to figure out later)
     }
 
     @Override
@@ -138,6 +137,9 @@ public class Bedroom extends Room {
     @Override
     public void pickup(String toPickUp) { /* Do nothing */ }
 
+    /*
+     * Returns a description of the Room
+     */
     @Override
     public String getDescription() {
 
