@@ -120,10 +120,9 @@ public class Cellar {
     public static final String DESCRIPTION
         = "You step into the cellar, a cold, dim space filled with the scent of aged wood and dust. \n"
         + "The faint sound of dripping water echoes in the distance. Against one wall stands a wine rack, \n"
-        + "five wine bottles arranged on sensors in a puzzling order. A scrap of paper lies on a small table nearby, \n"
-        + "its edges frayed and stained with age.\n"
+        + "five wine bottles arranged on sensors in a puzzling order."
         + "\n"
-        + "A curious anticipation fills the air, urging you to inspect the paper and bottles more closely.\n";
+        + "A curious anticipation fills the air, urging you to inspect the bottles more closely.\n";
 
     /**
      * The description string for the 'rock' item.
