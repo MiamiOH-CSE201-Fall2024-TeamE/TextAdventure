@@ -79,7 +79,7 @@ public class Foyer {
     public static final String DESC_PAINTING_SOLVED
         = "The large canvas hangs above the fireplace, its blue frame glinting\n"
         + "in the faint light. Superimposed on the once-blank canvas is a large,\n"
-        + "badly-painted number: 7. Why would the scientist go to such lengths\n"
+        + "red, badly-painted number: 7. Why would the scientist go to such lengths\n"
         + "to hide such a meaningless result?...\n";
 
     /**

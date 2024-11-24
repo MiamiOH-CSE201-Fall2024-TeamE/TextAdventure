@@ -34,6 +34,18 @@ public class Input {
     }
 
     /**
+     * Gets the user's input.
+     *
+     * @return A int argument passed by the user.
+     */
+    public static int getInputInt(String prompt) {
+        System.out.print(prompt);
+        int ret = inputScanner.nextInt();
+        System.out.println();
+        return ret;
+    }
+
+    /**
      * Gets confirmation from the user.
      *
      * @param prompt The prompt to get confirmation for, without punctuation.

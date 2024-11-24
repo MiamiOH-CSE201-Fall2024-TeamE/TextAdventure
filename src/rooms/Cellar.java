@@ -6,6 +6,9 @@ import static app.App.stateManager;
 import static items.Item.removeFromInventory;
 import static ui.strings.rooms.Cellar.*;
 import static ui.strings.rooms.Kitchen.TONGS;
+
+import game.Input;
+
 import static items.Item.getItem;
 
 /**
@@ -29,6 +32,16 @@ public class Cellar extends Room {
      * The correct order of the wine.
      */
     private Item[] correctSlots;
+
+    /*
+     * The array for holding the number pad combination
+     */
+    private int[] numberpad;
+
+    /*
+     * The array with the solution the the number pad.
+     */
+    private int[] correctNumberpad;
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
@@ -62,6 +75,9 @@ public class Cellar extends Room {
         getInventory().add(new Item(VENT, DESC_VENT, 1, 1, false, true));
         getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
         getInventory().add(new Item(POSTER, DESC_POSTER, 1, 0, false, false));
+        getInventory().add(new Item(NUMBERPAD, DESC_NUMBERPAD, 1, 0, false, false));
+
+        
         
 
         slots = new Item[5];
@@ -72,6 +88,9 @@ public class Cellar extends Room {
             getInventory().get(WINE_1),
             getInventory().get(WINE_3)
         };
+        
+        numberpad = new int[4];
+        correctNumberpad = new int[]{7,4,5,3};
 
     }  // TODO
 
@@ -100,7 +119,7 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[0]);
                     slots[0] = getItem(toUse);
                     System.out.println(slots[0]);
-                    if(checkCorrect()){
+                    if(checkWineCorrect()){
                         showClue();
                     }
                     return true;
@@ -110,7 +129,7 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[1]);
                     slots[1] = getItem(toUse);
                     System.out.println(slots[1]);
-                    if(checkCorrect()){
+                    if(checkWineCorrect()){
                         showClue();
                     }
                     return true;
@@ -120,7 +139,7 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[2]);
                     slots[2] = getItem(toUse);
                     System.out.println(slots[2]);
-                    if(checkCorrect()){
+                    if(checkWineCorrect()){
                         showClue();
                     }
                     return true;
@@ -130,7 +149,7 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[3]);
                     slots[3] = getItem(toUse);
                     System.out.println(slots[3]);
-                    if(checkCorrect()){
+                    if(checkWineCorrect()){
                         showClue();
                     }
                     return true;
@@ -140,7 +159,7 @@ public class Cellar extends Room {
                         stateManager.getPlayer().getInventory().add(slots[4]);
                     slots[4] = getItem(toUse);
                     System.out.println(slots[4]);
-                    if(checkCorrect()){
+                    if(checkWineCorrect()){
                         showClue();
                     }
                     return true;
@@ -170,6 +189,10 @@ public class Cellar extends Room {
                 
             }
         }
+
+        if (toUse.equalsIgnoreCase(NUMBERPAD)){
+            runNumberpad();
+        }
         
         return super.use(toUse, useOn);
     }  // TODO
@@ -178,12 +201,14 @@ public class Cellar extends Room {
     public void pickup(String toPickUp) {} //TODO
 
     @Override
-    public String getDescription() { return null; }  // TODO
+    public String getDescription() { return CELLAR_DESCRIPTION; }  // TODO
 
     /**
      * Checks if the order of the wine is correct.
+     * 
+     * @Return true if the combination is correct. False if otherwise
      */
-    public boolean checkCorrect() {
+    private boolean checkWineCorrect() {
         
         for (int i = 0; i < slots.length; i++) {
             if (slots[i] == null){
@@ -197,13 +222,44 @@ public class Cellar extends Room {
         return true;
     }
 
+    /*
+     * Checks if the numberpad combination is correct
+     * 
+     * @Return true if the combination is correct. False if otherwise
+     */
+    private boolean checkNumberpadCorrect(){
+       
+        for (int i = 0; i < numberpad.length; i++) {
+            if (numberpad[i] != (correctNumberpad[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void runNumberpad(){
+        System.out.println("You approach the numberpad, above it are 4 squares. In order the colors are"
+        + "red, green, blue, and yellow.");
+        numberpad[0] = Input.getInputInt("What number will you enter for the red square?");
+        numberpad[0] = Input.getInputInt("What number will you enter for the green square?");
+        numberpad[0] = Input.getInputInt("What number will you enter for the blue square?");
+        numberpad[0] = Input.getInputInt("What number will you enter for the yellow square?");
+
+        if (checkNumberpadCorrect()){
+            System.out.print(CORRECT_NUMBERPAD);
+            stateManager.getRoom(Lab.NAME).unlock();
+        } else {
+            System.out.print("Nothing happens. the code must be something else");
+        }
+    }
+
     /**
      * Reveals the code if the player answers the wine puzzle correctly.
      */
     public void showClue(){
         if (getItem(CELLAR_NUMBER_HINT) != null) {
             getInventory().add(new Item(CELLAR_NUMBER_HINT, DESC_CELLAR_NUMBER_HINT, 1, 0, false, false));
-            System.out.println("All of the sudden a neon sign turns on. It is in the shape of the number 4");
+            System.out.println("All of the sudden a green neon sign turns on. It is in the shape of the number 4");
         }
     }    
 

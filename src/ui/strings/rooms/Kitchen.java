@@ -138,7 +138,8 @@ public class Kitchen {
     */
     public static final String USE_KEY_ON_DRAWER
         = "You carefully insert the key into the lock of the mysterious drawer.\n"
-        + "As you turn it, you hear a subtle click—the drawer is now unlocked.\n"; 
+        + "As you turn it, you hear a subtle click—the drawer is now unlocked.\n"
+        + "In the drawer is a number 5 painted in Yellow."; 
 
     /**
     * Message displayed when the player attempts to unlock a drawer that is already unlocked.

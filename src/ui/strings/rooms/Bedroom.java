@@ -190,7 +190,7 @@ public class Bedroom {
     public static final String BRIEFCASE_OPENED
         = "The panel dings, turning green as the briefcase clicks open,\n"
         + "revealing a very strange sight. Nothing is inside the briefcase\n"
-        + "except for the number 3 painted onto it in vibrant yellow paint.\n";
+        + "except for the number 3 painted onto it in a cool blue paint.\n";
 
     /**
      * The failure message displayed if an incorrect answer is given.

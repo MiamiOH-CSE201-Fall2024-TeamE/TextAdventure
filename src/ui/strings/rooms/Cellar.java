@@ -117,7 +117,7 @@ public class Cellar {
       * The description for the number hint
       */
      public static final String DESC_CELLAR_NUMBER_HINT 
-     = "A neon sign. It's shaped like a 4";
+     = "A green neon sign. It's shaped like a 4";
 
     /**
      * The room's description.
@@ -129,14 +129,22 @@ public class Cellar {
         + "\n"
         + "A curious anticipation fills the air, urging you to inspect the bottles more closely.\n";
 
-    /**
-     * The description string for the 'rock' item.
-     
-    public static final String DESC_HINT_PAPER
-        = "A strange scrap of paper exists within your vicinity.\n"
-        + "It says, \"Bottles of wine, aged over time,\n"
-        + "Taste best when sipped in the order of mine\".\n";
-    */
+    
+    /*
+     * Item name for the numberpad
+     */
+    public static final String NUMBERPAD 
+        = "numberpad";
+
+    /*
+     * Description for the numberpad
+     */
+    public static final String DESC_NUMBERPAD 
+        = "A number pad. Above the number pad there are 4 squares. Each square is a different color. From left to right its red, green, blue, yellow";
+
+    public static final String CORRECT_NUMBERPAD
+        = "The squares all flash green and you see the door open. Time to enter into the lab...";
+
     /*
      * Description for using the wine on yourself
      */
@@ -160,4 +168,9 @@ public class Cellar {
     public static final String DESC_WINE_SOLVED
         = "You Win!"; // TODO
 
+
+    public static final String CELLAR_DESCRIPTION
+        = "You enter the old cellar. To your left is a numberpad right next to a locked door. There's also a poster"
+        + " hangng on the side wall. In the center there are 5 wine bottles numbered 1 to 5. There are also 5 slots lettered A - E"
+        + "To the right you can see a musty vent."; 
 }
