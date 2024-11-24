@@ -21,19 +21,19 @@ import java.io.PrintStream;
  */
 public class AppTest {
 
-    private InputStream stdin;
-    private PrintStream stdout;
+    private static InputStream stdin;
+    private static PrintStream stdout;
     
-    private ByteArrayOutputStream out;
+    private static ByteArrayOutputStream out;
 
     @BeforeAll
-    public void saveSystemInOut() {
+    public static void saveSystemInOut() {
         stdin = System.in;
         stdout = System.out;
     }
 
     @AfterAll
-    public void loadSystemInOut() {
+    public static void loadSystemInOut() {
         System.setIn(stdin);
         System.setOut(stdout);
     }
@@ -62,7 +62,7 @@ public class AppTest {
      * 
      * @param input The input string for the application to read.
      */
-    private void setInput(String input) {
+    private static void setInput(String input) {
         System.setIn(new ByteArrayInputStream(input.getBytes()));
     }
 
@@ -71,7 +71,7 @@ public class AppTest {
      * 
      * @return The program's output.
      */
-    private String getOutput() {
+    private static String getOutput() {
         return out.toString();
     }
 }

@@ -5,7 +5,7 @@ import static ui.strings.rooms.Room.*;
 import items.Inventory;
 
 /**
- * Provides the data and methods necessary to build an interactable room.
+ * Provides the data and methods necessary to build an interactive room.
  *
  * @version 1.0.0
  */
