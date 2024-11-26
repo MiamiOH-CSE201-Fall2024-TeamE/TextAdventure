@@ -99,7 +99,7 @@ public class Check extends Command {
         + "\n Page Two \n" + "The number in the Foyer can only be accessed by melting down my cold stare.\n"
         + "The number in the bedroom can only be found by opening my safe.\n"
         + "The number in the kitchen is locked in a drawer. I've hidden the key in another room. \n"
-        + "\n Page Three\n" + " The number in the Cellar can only be found by lining up my wine in a specific order.\n"
+        + "\n Page Three\n" + "The number in the Cellar can only be found by lining up my wine in a specific order.\n"
         + "Here are some hints to the order:\n"
         + "-  The number on the wine on the far left plus the one on the far right equals the one in the middle.\n"
         + "-  The number on the wine in slot B is larger than the ones in slots D and E.\n"

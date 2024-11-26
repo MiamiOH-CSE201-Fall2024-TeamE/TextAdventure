@@ -71,7 +71,7 @@ public class Tutorial {
     public static final String USE_ROCK_ON_CAR
         = "You take a rock and throw it through the front window of the car,\n"
         + "causing an earsplitting crash. The zombies quickly swarm the car,\n"
-        + "searching for the source of the noise. The way to the manor is\n"
+        + "searching for the source of the noise. The way to the manor's foyer is\n"
         + "clear...\n";
 
     /**

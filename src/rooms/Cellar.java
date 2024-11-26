@@ -75,7 +75,7 @@ public class Cellar extends Room {
         getInventory().add(new Item(VENT, DESC_VENT, 1, 1, false, true));
         getInventory().add(new Item(CROWBAR, DESC_CROWBAR, 1, 1, false, false));
         getInventory().add(new Item(POSTER, DESC_POSTER, 1, 0, false, false));
-        getInventory().add(new Item(NUMBERPAD, DESC_NUMBERPAD, 1, 0, false, false));
+        getInventory().add(new Item(NUMBERPAD, DESC_NUMBERPAD, 1, 1, false, true));
 
         
         
@@ -240,10 +240,10 @@ public class Cellar extends Room {
     private void runNumberpad(){
         System.out.println("You approach the numberpad, above it are 4 squares. In order the colors are"
         + "red, green, blue, and yellow.");
-        numberpad[0] = Input.getInputInt("What number will you enter for the red square?");
-        numberpad[0] = Input.getInputInt("What number will you enter for the green square?");
-        numberpad[0] = Input.getInputInt("What number will you enter for the blue square?");
-        numberpad[0] = Input.getInputInt("What number will you enter for the yellow square?");
+        numberpad[0] = Input.getInputInt("What number will you enter for the red square? ");
+        numberpad[1] = Input.getInputInt("What number will you enter for the green square? ");
+        numberpad[2] = Input.getInputInt("What number will you enter for the blue square? ");
+        numberpad[3] = Input.getInputInt("What number will you enter for the yellow square? ");
 
         if (checkNumberpadCorrect()){
             System.out.print(CORRECT_NUMBERPAD);

@@ -171,6 +171,6 @@ public class Cellar {
 
     public static final String CELLAR_DESCRIPTION
         = "You enter the old cellar. To your left is a numberpad right next to a locked door. There's also a poster"
-        + " hangng on the side wall. In the center there are 5 wine bottles numbered 1 to 5. There are also 5 slots lettered A - E"
+        + " hangng on the side wall. In the center there are 5 wine bottles numbered 1 to 5. There are also 5 slots lettered A - E. "
         + "To the right you can see a musty vent."; 
 }
