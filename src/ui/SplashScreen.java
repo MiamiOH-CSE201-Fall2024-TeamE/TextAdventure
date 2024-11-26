@@ -42,6 +42,26 @@ public class SplashScreen {
                 System.out.println(GOODBYE_ENDING);
                 break;
 
+            case StateManager.END_1ST_TRY:
+                System.out.println(TRUE_ENDING);
+                break;
+                
+            case StateManager.END_SCI_DIE:
+                System.out.println(SCI_DIE_ENDING);
+                break;
+
+            case StateManager.END_SCI_RUN:
+                System.out.println(ESCAPE_ENDING);
+                break;
+
+            case StateManager.END_2ND_TRY:
+                System.out.println(ALT_ENDING);
+                break;
+
+            case StateManager.END_FAIL:
+                System.out.println(FAIL_ENDING);
+                break;
+
             case StateManager.END_DIE:
                 System.out.println(DIE_ENDING);
                 break;

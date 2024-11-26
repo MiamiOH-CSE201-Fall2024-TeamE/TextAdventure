@@ -70,7 +70,7 @@ public class Countdown {
 
         turnsRemaining -= turns;
 
-        if (turnsRemaining <= 0) {
+        if (turnsRemaining < 0) {
             stateManager.getPlayer().kill(true);
             return false;
         }

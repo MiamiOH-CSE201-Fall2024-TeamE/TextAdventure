@@ -90,7 +90,7 @@ public class Bedroom {
     public static final String DESC_BRIEFCASE_OPEN
         = "The briefcase lies open inside the safe. Nothing is stored inside,\n"
         + "but the case itself is very odd. A large number 3 is painted on the\n"
-        + "inside of it in vibrant yellow paint...\n";
+        + "inside of it in cool blue paint...\n";
 
     /**
      * The description string for the 'nightstand' item.
@@ -118,7 +118,7 @@ public class Bedroom {
      * The description string for the 'key' item.
      */
     public static final String DESC_KEY
-        = "A large, plain steel key.";
+        = "A large, plain steel key.\n";
 
     /**
      * The description string for the 'board' item.
@@ -211,6 +211,44 @@ public class Bedroom {
     public static final String USE_CROWBAR_ON_NIGHTSTAND
         = "You pry the nightstand drawer open with the crowbar, splintering the\n"
         + "wood as the drawer slides open. Inside is a large, steel key.\n";
+    
+    /**
+     * The diary's full description (for 'check diary').
+     */
+    public static final String DIARY_FULL_DESC
+        = "You open the diary and see that its pages are filled with frantic writings.\n"
+        + "\n"
+        + "Page 1:\n"
+        + "  I do not trust those around me. I must keep both my lab and the cure\n"
+        + "  a secret. I am a forgetful person, but I cannot leave instructions\n"
+        + "  for any random person to find. I will write down the hints I need to\n"
+        + "  continue.\n"
+        + "  To enter the lab one needs to enter 4 numbers into the keypad in the\n"
+        + "  cellar. Each number is hidden in a room.\n"
+        + "\n"
+        + "Page 2:\n"
+        + "  The number in the Foyer can be accessed by melting my cold stare.\n"
+        + "  The number in the Bedroom can be found inside my safe.\n"
+        + "  The number in the Kitchen is locked in a drawer, the key hidden elsewhere.\n"
+        + "\n"
+        + "Page 3:\n"
+        + "  The number in the Cellar will be revealed when my wine is\n"
+        + "  arranged in the correct order.\n"
+        + "  I will leave some hints below:\n"
+        + "    - The number of the wine in the middle is equal to the numbers\n"
+        + "      on the leftmost and rightmost wines, summed together.\n"
+        + "    - The number of the wine in slot B is larger than the numbers\n"
+        + "      of the wines in slots D and E.\n"
+        + "    - Wine 4 is to the left of wine 5.\n"
+        + "    - Wine 1 is two to the right of wine 4.\n"
+        + "    - Wine 3 is at one end.\n"
+        + "\n"
+        + "Page Four\n"
+        + "  Once in the lab, to make the cure you will need 3 ingredients,\n"
+        + "  placed in the following order:\n"
+        + "    1. An acidic food.\n"
+        + "    2. A flower that is the complementary color of the first ingredient.\n"
+        + "    3. A mushroom that is safe to ingest.\n";
 
     /**
      * The room's description.
@@ -259,5 +297,5 @@ public class Bedroom {
         = "In the corner of the bedroom stands a large safe, its door ajar.\n"
         + "Inside is a smaller safe, its door also ajar.\n"
         + "Inside both safes is a small, open briefcase with then number 3\n"
-        + "painted on its inside in vibrant yellow.\n";
+        + "painted on its inside in cool blue.\n";
 }

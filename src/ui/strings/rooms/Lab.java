@@ -12,95 +12,211 @@ public class Lab {
      */
     private Lab() {}
 
+    /**
+     * The name string for the 'lemon' item.
+     */
     public static final String LEMON
         = "lemon";
 
-        public static final String LANTANA
+    /**
+     * The name string for the 'lantana' item.
+     */
+    public static final String LANTANA
         = "lantana";
 
-        public static final String PORTOBELLO
+    /**
+     * The name string for the 'portobello' item.
+     */
+    public static final String PORTOBELLO
         = "portobello";
 
-        public static final String WEBCAP
+    /**
+     * The name string for the 'webcap' item.
+     */
+    public static final String WEBCAP
         = "webcap";
 
-        public static final String TOMATO
+    /**
+     * The name string for the 'tomato' item.
+     */
+    public static final String TOMATO
         = "tomato";
 
-        public static final String DEATHCAP
+    /**
+     * The name string for the 'deathcap' item.
+     */
+    public static final String DEATHCAP
         = "deathcap";
 
-        public static final String POPPY
+    /**
+     * The name string for the 'poppy' item.
+     */
+    public static final String POPPY
         = "poppy";
 
-        public static final String LAVENDER
+    /**
+     * The name string for the 'lavender' item.
+     */
+    public static final String LAVENDER
         = "lavender";
 
-        public static final String APPLE
+    /**
+     * The name string for the 'apple' item.
+     */
+    public static final String APPLE
         = "apple";
 
-        public static final String MACHINE
+    /**
+     * The name string for the 'machine' item.
+     */
+    public static final String MACHINE
         = "machine";
 
-        public static final String DESC_LEMON
-        = "Some yellow lemons are growing here";
+    /**
+     * The description string for the 'lemon' item.
+     */
+    public static final String DESC_LEMON
+        = "It's an ordinary looking lemon.\n";
 
-        public static final String DESC_LANTANA
-        = "Some type of orange flower is growing here";
+    /**
+     * The description string for the 'lantana' item.
+     */
+    public static final String DESC_LANTANA
+        = "Each flower consists of a vibrant orange cluster of smaller flowers.\n";
 
-        public static final String DESC_PORTOBELLO
-        = "Some type of brown mushroom is growing here";
+    /**
+     * The description string for the 'portobello' item.
+     */
+    public static final String DESC_PORTOBELLO
+        = "It's a large, unassuming mushroom with a pleasant, earthy smell.\n";
 
-        public static final String DESC_WEBCAP
-        = "Some type of dark brown mushroom is growing here";
+    /**
+     * The description string for the 'webcap' item.
+     */
+    public static final String DESC_WEBCAP
+        = "It smells faintly of radishes.\n";
 
-        public static final String DESC_TOMATO
-        = "Some red tomatoes are growing here.";
+    /**
+     * The description string for the 'tomato' item.
+     */
+    public static final String DESC_TOMATO
+        = "It's an ordinary looking tomato.\n";
 
-        public static final String DESC_DEATHCAP
-        = "Some type of white mushroom is growing here";
+    /**
+     * The description string for the 'deathcap' item.
+     */
+    public static final String DESC_DEATHCAP
+        = "It's a small, white mushroom with a sickly sweet smell.\n";
 
-        public static final String DESC_POPPY
-        = "Some type of red flower is growing here";
+    /**
+     * The description string for the 'poppy' item.
+     */
+    public static final String DESC_POPPY
+        = "It's an ordinary looking red poppy.\n";
 
-        public static final String DESC_LAVENDER
-        = "Some type of orange flower is growing here";
+    /**
+     * The description string for the 'lavender' item.
+     */
+    public static final String DESC_LAVENDER
+        = "Each flower is a tall, vibrant purple shoot of smaller flowers.\n";
 
-        public static final String DESC_APPLE
-        = "Some green apples are growing here";
+    /**
+     * The description string for the 'apple' item.
+     */
+    public static final String DESC_APPLE
+        = "It's some variety of green apple.\n";
 
-        public static final String DESC_CURE_MACHINE
-        = "A very large and complex looking machine. There seems to be a hole on the left to insert ingredients into";
+    /**
+     * The description string for the 'machine' item.
+     */
+    public static final String DESC_MACHINE
+        = "It's a very large and complex looking machine. In the center is a\n"
+        + "large glass vial. There is a small port on the left, seemingly made\n"
+        + "to insert ingredients into.\n";
 
-        public static final String USE_INGREDIENT_ON_NULL
-        = "This ingredient needs to be inserted into the Cure Machine";
+    /**
+     * The action string for using an ingredient by itself.
+     */
+    public static final String USE_INGREDIENT_ON_NULL
+        = "This ingredient won't do much good without the lab machine...\n";
 
-        public static final String USE_INGREDIENT_ON_CURE_MACHINE
-        = "You inserted the ingredient into the Cure Machine";
+    /**
+     * The action string for using an ingredient on the cure machine.
+     */
+    public static final String USE_INGREDIENT_ON_MACHINE
+        = "The machine whirrs, pulling the ingredient into it before crushing\n"
+        + "it finely and adding it to the vial within.\n";
 
-        public static final String SCIENTIST_APPEARS
-        = "You here a noise at the door. You look over and see that a zombie in a lab coat has found you.\n" 
-        + "Upon closer inspection you realize this must what happened to the scientist.\n" 
-        + "There's no time for concern though. You need to think fast about what to do next.\n"
-        + "Should you run or fight?";
+    /**
+     * The event string for the machine running.
+     */
+    public static final String RUNNING_MACHINE
+        = "The machine whirs to life and begins processing the ingredients within.\n";
 
-        public static final String FIGHT_PROMPT
-        = "Try and fight the Scientist?";
+    /**
+     * The event string for getting the cure correct.
+     */
+    public static final String CURE_CORRECT
+        = "The screen turns green, and with a soft *ding*, the vial is released\n"
+        + "from the machine. The screen displays the words CURE FOUND.\n";
 
-        public static final String RUNNING_MACHINE
-        = "The Machine whirs and starts to process the ingredients";
+    /**
+     * The event string for getting the cure incorrect.
+     */
+    public static final String CURE_INCORRECT
+        = "The screen flashes red with the words FAILED TO CREATE CURE.\n";
 
-        public static final String KILL_SCIENTIST
-        = "Thanks to the knife you picked up you manage to fight back and kill the scientist.\n"
-        + "With no other zombies around you should have another chance to synthesize a cure";
+    /**
+     * The encounter string for the scientist appearing.
+     */
+    public static final String SCIENTIST_APPEARS
+        = "You suddenly hear a loud growl coming from the dark corner of the room.\n"
+        + "You turn to be met by a gruesome zombie, mere inches away. It is\n"
+        + "wearing a tattered lab coat. In a flash, you realize that this must\n"
+        + "be the scientist.\n"
+        + "\n"
+        + "Your stomach drops. You only have two choices: run, or fight.\n";
 
-        public static final String DESC_LAB = 
-        "You are in a dark grey room. Only a single light is still shining. "
-        + "To your left you see rows of pots. Each with a different plant growing inside of them.\n" 
-        + "the tags on the pots list: lemon, lantana, tomato, portobello, webcap, deathcap, lavender, apple and poppy.\n"
-        + "To your right is a giant machine. It must be the one that makes a cure.\n";
+    /**
+     * The prompt string for fighting the scientist.
+     */
+    public static final String FIGHT_PROMPT
+        = "Do you choose to fight the scientist";
 
-        public static final String DESC_DEAD_SCIENTIST = 
-        "On the ground lays the scientists zombified corpse. A grim reminder of your fate if you don't get this cure right.";
+    /**
+     * The event string for killing the scientist.
+     */
+    public static final String KILL_SCIENTIST
+        = "In a split-second's haze, you pull out the knife you found in the\n"
+        + "kitchen and stab the zombie scientist, sending him lifeless to the\n"
+        + "floor. With no other zombies around, you should have another chance\n"
+        + "to synthesize a cure.\n";
 
+    /**
+     * The room's first load description.
+     */
+    public static final String LOAD
+        = "As you walk into the lab, you hear a loud crash from upstairs.\n"
+        + "The zombies have broken into the foyer! You hurriedly close the\n"
+        + "heavy vault door with a crash, trapping the zombies out...and you in.\n";
+
+    /**
+     * The room's description.
+     */
+    public static final String DESCRIPTION
+        = "You are in a dimly lit, grey room. A single, flickering light shines\n"
+        + "from overhead. A bright purple glow comes from your left. Turning,\n"
+        + "you see several rows of pots under grow lights, each with a different\n"
+        + "plant growing inside of them.\n"
+        + "\n"
+        + "The tags on the pots list each plant's name: lemon, lantana, tomato,\n"
+        + "portobello, webcap, deathcap, lavender, apple and poppy.\n"
+        + "Directly in front of you, the only other thing visible in the poor\n"
+        + "lighting of this room, is a giant machine. This must be the way to\n"
+        + "make a cure.\n"
+        + "%s";
+    public static final String DESCRIPTION_SCIENTIST_PART
+        = "\n"
+        + "On the ground to your right lays the scientist's zombified corpse.\n"
+        + "It serves as a grim reminder of your fate if you fail to make this cure.\n";
 }

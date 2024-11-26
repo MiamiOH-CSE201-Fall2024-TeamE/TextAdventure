@@ -1,6 +1,3 @@
-/***************************************
- * THIS ROOM'S LOGIC IS FULLY COMPLETE *
- ***************************************/
 package rooms;
 
 import static items.Item.removeFromInventory;
@@ -46,9 +43,6 @@ public class Bedroom extends Room {
         getInventory().add(new Item(BOARD, DESC_BOARD, 1, 1, true, true));
 
     }
-
-    @Override
-    public void load() { super.load(); }
 
     @Override
     public boolean use(String toUse, String useOn) {

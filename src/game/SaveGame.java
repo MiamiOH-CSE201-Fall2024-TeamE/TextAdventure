@@ -51,6 +51,33 @@ public class SaveGame {
                     item.getAmount(), item.turnsToUse(),
                     item.canPickUp(), item.canUse());
             }
+
+            if (room instanceof Cellar) {
+                Item[] slots = ((Cellar) room).getSlots();
+                boolean doorOpened = ((Cellar) room).doorOpened();
+
+                saveFile.printf("cellar.slot1: %s\n", slots[0].toString());
+                saveFile.printf("cellar.slot2: %s\n", slots[1].toString());
+                saveFile.printf("cellar.slot3: %s\n", slots[2].toString());
+                saveFile.printf("cellar.slot4: %s\n", slots[3].toString());
+                saveFile.printf("cellar.slot5: %s\n", slots[4].toString());
+
+                saveFile.printf("cellar.doorOpened: %s\n", doorOpened);
+            }
+
+            if (room instanceof Lab) {
+                Item[] ingredients = ((Lab) room).getIngredients();
+                int labSize = ((Lab) room).getSize();
+                boolean isScientistAlive = ((Lab) room).isScientistAlive();
+
+                saveFile.printf("lab.ingredient1: %s\n", (ingredients[0] == null) ? "NULL" : ingredients[0].toString());
+                saveFile.printf("lab.ingredient2: %s\n", (ingredients[1] == null) ? "NULL" : ingredients[1].toString());
+                saveFile.printf("lab.ingredient3: %s\n", (ingredients[2] == null) ? "NULL" : ingredients[2].toString());
+                
+                saveFile.printf("lab.size: %d\n", labSize);
+                saveFile.printf("lab.isScientistAlive: %s\n", isScientistAlive);
+            }
+
             saveFile.println();
         }
 
@@ -125,8 +152,13 @@ public class SaveGame {
                             new Bedroom(isLocked, inventory, hasLoaded));
                         break;
                     case Cellar.NAME:
+                        Item[] slots = new Item[5];
+                        for (int j = 0; j < slots.length; j++) {
+                            slots[j] = inventory.get(saveFile.nextLine().split(" ")[1]);
+                        }
+                        boolean doorOpened = Boolean.valueOf(saveFile.nextLine().split(" ")[1]);
                         stateManager.getRooms().put(roomName,
-                            new Cellar(isLocked, inventory, hasLoaded));
+                            new Cellar(isLocked, inventory, hasLoaded, slots, doorOpened));
                         break;
                     case Foyer.NAME:
                         stateManager.getRooms().put(roomName,
@@ -137,8 +169,14 @@ public class SaveGame {
                             new Kitchen(isLocked, inventory, hasLoaded));
                         break;
                     case Lab.NAME:
+                        Item[] ingredients = new Item[3];
+                        for (int j = 0; j < ingredients.length; j++) {
+                            ingredients[j] = inventory.get(saveFile.nextLine().split(" ")[1]);
+                        }
+                        int labSize = Integer.valueOf(saveFile.nextLine().split(" ")[1]);
+                        boolean isScientistAlive = Boolean.valueOf(saveFile.nextLine().split(" ")[1]);
                         stateManager.getRooms().put(roomName,
-                            new Lab(isLocked, inventory, hasLoaded));
+                            new Lab(isLocked, inventory, hasLoaded, ingredients, labSize, isScientistAlive));
                         break;
                     case Tutorial.NAME:
                         stateManager.getRooms().put(roomName,

@@ -3,6 +3,8 @@ package commands;
 import static app.App.stateManager;
 import static items.Item.getItem;
 
+import static ui.strings.rooms.Bedroom.DIARY_FULL_DESC;
+
 import ui.strings.commands.Aliases;
 import ui.strings.commands.Descriptions;
 import ui.strings.commands.Errors;
@@ -92,25 +94,8 @@ public class Check extends Command {
             return false;
         }
 
-        // TODO
-        System.out.println("You open the diary, it's pages are filled with frantic writings. \n"
-        + "\n Page One \n" + "I do not trust those around me, I must keep both my lab and the cure a secret. As I am a forgetful person\n"
-        + "I will write down the hints I need to continue. To enter the Lab one needs to enter 4 numbers into the keypad in the cellar. Each number is hidden in a room\n"
-        + "\n Page Two \n" + "The number in the Foyer can only be accessed by melting down my cold stare.\n"
-        + "The number in the bedroom can only be found by opening my safe.\n"
-        + "The number in the kitchen is locked in a drawer. I've hidden the key in another room. \n"
-        + "\n Page Three\n" + "The number in the Cellar can only be found by lining up my wine in a specific order.\n"
-        + "Here are some hints to the order:\n"
-        + "-  The number on the wine on the far left plus the one on the far right equals the one in the middle.\n"
-        + "-  The number on the wine in slot B is larger than the ones in slots D and E.\n"
-        + "-  Wine 4 is to the left of Wine 5."
-        + "-  Wine 1 is next to Wine 5.\n"
-        + "-  Wine 3 is on the end.\n"
-        + "\n Page Four\n" + "Once in the lab, to make the cure you need 3 ingredients put in this order:\n"
-        + "1. An acidic food\n"
-        + "2. A flower that is the complementary color of the first ingredient\n"
-        + "3. A mushroom. make sure it is safe to ingest");
-
+        // Print diary pages
+        System.out.println(DIARY_FULL_DESC);
         return true;
     }
 

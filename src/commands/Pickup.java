@@ -33,6 +33,8 @@ public class Pickup extends Command {
             item = args[1];
         } else if (args.length == 3) {
             item = args[2];
+        } else if (args.length == 4) {
+            item = args[3];
         } else {
             System.out.printf(Errors.INVALID, args[0]);
             return false;

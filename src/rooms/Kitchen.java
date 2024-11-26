@@ -1,6 +1,7 @@
 package rooms;
 
-import static items.Item.removeFromInventory;
+import static items.Item.*;
+import static app.App.stateManager;
 
 import static ui.strings.rooms.Kitchen.*;
 import static ui.strings.rooms.Bedroom.KEY;
@@ -45,17 +46,16 @@ public class Kitchen extends Room {
     }
 
     @Override
-    public void load() { super.load(); }
-
-    @Override
     public boolean use(String toUse, String useOn) { 
 
         // Player opens oven
         if (toUse.equalsIgnoreCase(OVEN)) {
             System.out.println(OVEN_DOOR_OPENED);
+
             removeFromInventory(OVEN);
             getInventory().add(new Item(OVEN, DESC_OVEN_OPEN, 1, 1, false, false));
-            getInventory().add(new Item(COAL, DESC_COAL, 1, 1, true, true));
+            stateManager.getPlayer().getInventory().add(new Item(COAL, DESC_COAL, 1, 1, true, true));
+            
             return true;
         }
 
@@ -69,17 +69,19 @@ public class Kitchen extends Room {
             
             if (useOn.equalsIgnoreCase(DRAWER)) {
                 // Get the current drawer item
-                Item drawer = getInventory().get(DRAWER);
+                Item drawer = getItem(DRAWER);
                 
                 // Check if the drawer is locked based on its description
-                if (drawer != null && drawer.getDescription().equals(DESC_DRAWER_LOCKED)) {
+                if (drawer.getDescription().equals(DESC_DRAWER_LOCKED)) {
                     // Changes locked drawer to open
                     System.out.println(USE_KEY_ON_DRAWER);
+
                     removeFromInventory(DRAWER);
                     getInventory().add(new Item(DRAWER, DESC_DRAWER_OPEN, 1, 1, false, false));
 
                     // Player can then get the number hint for the lab
-                    getInventory().add(new Item(NUMBER_HINT, DESC_NUMBER_HINT, 1, 0, true, false));
+                    getInventory().add(new Item(PAPER, DESC_PAPER, 1, 0, true, false));
+                    
                     return true;
                 } else {
                     // If used on open drawer
@@ -105,27 +107,28 @@ public class Kitchen extends Room {
         Item drawer = getInventory().get(DRAWER);
 
         return DESCRIPTION.formatted(
-            // Conditional check for knife and tongs
-            (knife == null && tongs != null)
-                ? DESCRIPTION_JUST_KNIFE_PART
-                : (tongs == null && knife != null)
-                    ? DESCRIPTION_JUST_TONGS_PART
-                    : (knife != null && tongs != null)
-                        ? DESCRIPTION_BOTH_TONGS_KNIFE_PART
-                        : "",
+            // Conditional check for knife
+            (knife == null)
+                ? ""
+                : DESCRIPTION_KNIFE_PART,
+
+            // Conditional check for tongs
+            (tongs == null)
+                ? ""
+                : DESCRIPTION_TONGS_PART,
 
             // Conditional check for oven description
-            (oven != null && oven.getDescription().equals(DESC_OVEN))
-                ? DESCRIPTION_OVEN_OPEN_PART
-                : DESCRIPTION_OVEN_CLOSED_PART,
+            (oven.getDescription().equals(DESC_OVEN))
+                ? DESCRIPTION_OVEN_CLOSED_PART
+                : DESCRIPTION_OVEN_OPEN_PART,
 
             // Conditional check for boards
             (boards == null)
-                ? DESCRIPTION_NO_BOARD_PART
+                ? ""
                 : DESCRIPTION_BOARD_PART,
 
             // Conditional check for drawer
-            (drawer != null && drawer.getDescription().equals(DESC_DRAWER_LOCKED))
+            (drawer.getDescription().equals(DESC_DRAWER_LOCKED))
                 ? DESCRIPTION_LOCKED_DRAWER_PART
                 : DESCRIPTION_OPEN_DRAWER_PART
         );

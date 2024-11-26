@@ -2,21 +2,20 @@ package rooms;
 
 import static items.Item.*;
 import static game.StateManager.*;
+import static app.App.stateManager;
 
 import static ui.strings.rooms.Lab.*;
 import static ui.strings.rooms.Kitchen.KNIFE;
-import static app.App.stateManager;
 
 import game.Input;
 import items.*;
-
 
 /**
  * This is the class for the Lab Room.
  *
  * @version 1.0.0
  */
-public class Lab extends Room {  // TODO: Javadocs
+public class Lab extends Room {
 
     /**
      * The room's name.
@@ -43,10 +42,10 @@ public class Lab extends Room {  // TODO: Javadocs
      */
     private int ending;
 
-    /*
-     * Boolean determining if the scientist is alive
+    /**
+     * Whether or not the scientist is alive.
      */
-    private boolean aliveScientist;
+    private boolean isScientistAlive;
 
     /**
      * Instantiates a new room with a specified inventory and lock status.
@@ -54,62 +53,67 @@ public class Lab extends Room {  // TODO: Javadocs
      * @param isLocked Whether or not the room is locked.
      * @param inventory The room's inventory.
      */
-    public Lab(boolean isLocked, Inventory inventory, boolean hasLoaded) {
+    public Lab(boolean isLocked, Inventory inventory, boolean hasLoaded, Item[] ingredients, int size, boolean isScientistAlive) {
         super(isLocked, inventory, hasLoaded);
+
+        this.ingredients = ingredients;
+        this.size = size;
+        this.isScientistAlive = isScientistAlive;
+        
+        correctIngredients = new Item[] {
+            new Item(LEMON, DESC_LEMON, 6, 0, true, true),
+            new Item(LAVENDER, DESC_LAVENDER, 6, 0, true, true),
+            new Item(PORTOBELLO, DESC_PORTOBELLO, 6, 0, true, true)
+        };
+        
+        ending = END_NONE;
     }
 
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
     public Lab() { 
-        
-        this(true, new Inventory(), false);
+        this(true, new Inventory(), false, new Item[3], 0, true);
 
-        getInventory().add(new Item(LEMON, DESC_LEMON, 6, 0, true, true));
+        getInventory().add(correctIngredients[0]);
+        getInventory().add(correctIngredients[1]);
+        getInventory().add(correctIngredients[2]);
         getInventory().add(new Item(LANTANA, DESC_LANTANA, 6, 0, true, true));
-        getInventory().add(new Item(PORTOBELLO, DESC_PORTOBELLO, 6, 0, true, true));
         getInventory().add(new Item(WEBCAP, DESC_WEBCAP, 6, 0, true, true));
         getInventory().add(new Item(TOMATO, DESC_TOMATO, 6, 0, true, true));
         getInventory().add(new Item(DEATHCAP, DESC_DEATHCAP, 6, 0, true, true));
         getInventory().add(new Item(POPPY, DESC_POPPY, 6, 0, true, true));
-        getInventory().add(new Item(LAVENDER, DESC_LAVENDER, 6, 0, true, true));
         getInventory().add(new Item(APPLE, DESC_APPLE, 6, 0, true, true));
-        getInventory().add(new Item(MACHINE, DESC_CURE_MACHINE, 1, 0, false, false));
-
-        ingredients = new Item[3];
-        correctIngredients = new Item[] {
-            getInventory().get(LEMON),
-            getInventory().get(LAVENDER),
-            getInventory().get(PORTOBELLO)
-        };
-
-        size = 0;
-        ending = END_NONE;
-        aliveScientist = true;
-    }  // TODO
+        getInventory().add(new Item(MACHINE, DESC_MACHINE, 1, 0, false, false));
+    }
 
     @Override
-    public void load() { 
-        
+    public void load() {
+
+        // Lock all rooms
         stateManager.getRoom(Bedroom.NAME).lock();
         stateManager.getRoom(Kitchen.NAME).lock();
         stateManager.getRoom(Cellar.NAME).lock();
         stateManager.getRoom(Foyer.NAME).lock();
+
+        // Print initial load message
+        System.out.println(LOAD);
         
         super.load();
-    }  // TODO
+    }
 
     @Override
     public boolean use(String toUse, String useOn) {
+        
         if (toUse.equalsIgnoreCase(LEMON)
-            || toUse.equalsIgnoreCase(LANTANA)
-            || toUse.equalsIgnoreCase(PORTOBELLO)
-            || toUse.equalsIgnoreCase(WEBCAP)
-            || toUse.equalsIgnoreCase(TOMATO)
-            || toUse.equalsIgnoreCase(DEATHCAP)
-            || toUse.equalsIgnoreCase(POPPY)
-            || toUse.equalsIgnoreCase(LAVENDER)
-            || toUse.equalsIgnoreCase(APPLE)) {
+         || toUse.equalsIgnoreCase(LANTANA)
+         || toUse.equalsIgnoreCase(PORTOBELLO)
+         || toUse.equalsIgnoreCase(WEBCAP)
+         || toUse.equalsIgnoreCase(TOMATO)
+         || toUse.equalsIgnoreCase(DEATHCAP)
+         || toUse.equalsIgnoreCase(POPPY)
+         || toUse.equalsIgnoreCase(LAVENDER)
+         || toUse.equalsIgnoreCase(APPLE)) {
 
             if (useOn == null) {
                 System.out.println(USE_INGREDIENT_ON_NULL);
@@ -118,55 +122,70 @@ public class Lab extends Room {  // TODO: Javadocs
 
             switch (useOn) {
                 case MACHINE:
-                    System.out.println(USE_INGREDIENT_ON_CURE_MACHINE);
+                    System.out.println(USE_INGREDIENT_ON_MACHINE);
+
                     ingredients[size] = getItem(toUse);
-                    size++;
                     removeFromInventory(toUse);
-                    if(size == ingredients.length){
+
+                    size++;
+                    if(size == ingredients.length) {
                         machineFilled();
                     }
-                    break;
 
-                default:
-                    break;
+                    return true;
             }
-            return true;
-
         }
 
         // Default case
         return super.use(toUse, useOn);
-    }  // TODO
+    }
 
     @Override
-    public void pickup(String toPickUp) {}  // TODO
+    public void pickup(String toPickUp) { /* Do nothing */ }
 
-    /*
-     * Returns a description of the room
-     */
     @Override
     public String getDescription() { 
-        if (aliveScientist){
-            return DESC_LAB;
-        } else {
-          return DESC_LAB + DESC_DEAD_SCIENTIST;  
-        }
-     }  // TODO
+        return DESCRIPTION.formatted(isScientistAlive ? "" : DESCRIPTION_SCIENTIST_PART);
+    }
 
     @Override
     public String toString() {
         return NAME;
     }
-    
 
-    /*
-     * Handles events once the machine is filled. Will check if the solution is correct
-     *  and also runs the Scientist Encounter Method if the scientist is alive and the solution is wrong
+    /**
+     * Returns a list of ingredients currently in the machine.
+     * 
+     * @return The ingredients currently in the machine.
      */
-    public void machineFilled(){
+    public Item[] getIngredients() { return ingredients; }
+
+    /**
+     * Returns the size of the ingredients list.
+     * 
+     * @return The size of the ingredients list.
+     */
+    public int getSize() { return size; }
+
+    /**
+     * Returns whether or not the scientist is still alive.
+     * 
+     * @return Whether or not the scientist is still alive.
+     */
+    public boolean isScientistAlive() { return isScientistAlive; }
+    
+    /**
+     * Handles events once the machine is filled. Will check if the solution is
+     *     correct and run the scientist encounter if the scientist is alive and
+     *     the solution is wrong.
+     */
+    public void machineFilled() {
         System.out.println(RUNNING_MACHINE);
-        if (checkCorrect()){
-            if (aliveScientist){
+
+        if (checkCorrect()) {
+            System.out.println(CURE_CORRECT);
+
+            if (isScientistAlive) {
                 ending = END_1ST_TRY;
                 stateManager.quitGame();
             } else {
@@ -174,7 +193,9 @@ public class Lab extends Room {  // TODO: Javadocs
                 stateManager.quitGame();
             }
         } else {
-            if(aliveScientist){
+            System.out.println(CURE_INCORRECT);
+
+            if (isScientistAlive) {
                 runScientistEncounter();
             } else {
                 ending = END_FAIL;
@@ -188,9 +209,11 @@ public class Lab extends Room {  // TODO: Javadocs
      */
     public void runScientistEncounter() {  
         System.out.println(SCIENTIST_APPEARS);
+
         if (Input.getConfirmation(FIGHT_PROMPT)) {
             if (getItem(KNIFE) != null) {
                 System.out.println(KILL_SCIENTIST);
+                isScientistAlive = false;
                 size = 0;
             } else {
                 ending = END_SCI_DIE;
@@ -200,7 +223,7 @@ public class Lab extends Room {  // TODO: Javadocs
             ending = END_SCI_RUN;
             stateManager.quitGame();
         }
-    }  // TODO
+    }
 
     /**
      * Checks if the cure solution is correct.
@@ -208,13 +231,12 @@ public class Lab extends Room {  // TODO: Javadocs
      * @return True if the cure is correct, false otherwise.
      */
     public boolean checkCorrect() {
-                
         for (int i = 0; i < ingredients.length; i++) {
-                if (!ingredients[i].toString().equals(correctIngredients[i].toString())) {
-                    return false;
-                }
+            if (!ingredients[i].toString().equals(correctIngredients[i].toString())) {
+                return false;
             }
-            return true;
+        }
+        return true;
     }
 
     /**

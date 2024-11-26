@@ -1,6 +1,3 @@
-/***************************************
- * THIS ROOM'S LOGIC IS FULLY COMPLETE *
- ***************************************/
 package rooms;
 
 import static app.App.stateManager;

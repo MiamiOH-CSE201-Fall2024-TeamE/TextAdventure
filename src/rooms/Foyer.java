@@ -1,6 +1,3 @@
-/***************************************
- * THIS ROOM'S LOGIC IS FULLY COMPLETE *
- ***************************************/
 package rooms;
 
 import static app.App.stateManager;
@@ -50,7 +47,7 @@ public class Foyer extends Room {
 
     @Override
     public void load() {
-        stateManager.getCountdown().setTurns(1000);  // TODO: Balance changes
+        stateManager.getCountdown().setTurns(10);  // TODO: Balance changes
 
         // Unlock main manor rooms
         stateManager.getRoom(Bedroom.NAME).unlock();

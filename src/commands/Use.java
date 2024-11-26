@@ -28,6 +28,16 @@ public class Use extends Command {
     @Override
     public boolean execute(String[] args) {
 
+        // Special case: cellar puzzle
+        if (args.length == 6
+         && (args[1].equalsIgnoreCase("wine")
+          || args[1].equalsIgnoreCase("slot"))
+         && (args[4].equalsIgnoreCase("wine")
+          || args[4].equalsIgnoreCase("slot"))
+        ) {
+            args = new String[] { args[0], args[2], args[3], args[5] };
+        }
+
         // Ensure correct number of arguments
         if (args.length != 2 && args.length != 4) {
             System.out.printf(Errors.INVALID, args[0]);
