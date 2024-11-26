@@ -51,7 +51,7 @@ public class Kitchen {
     /**
      * The name string for the 'cookbook' item.
      */
-    public static final String COOKBOOK 
+    public static final String COOKBOOK
         = "cookbook";
 
     /**
@@ -132,7 +132,7 @@ public class Kitchen {
     public static final String DESC_PAPER
         = "On the paper is some small, faded handwriting, written in yellow ink.\n"
         + "As you look closer, the only thing written is number 5.\n";
-    
+
     /**
      * The action string for using the 'key' item by itself.
      */
@@ -146,7 +146,7 @@ public class Kitchen {
         = "You carefully insert the key into the lock of the mysterious drawer.\n"
         + "As you turn it, you hear a subtle click - the drawer is now unlocked.\n"
         + "In the drawer is a small piece of paper with the number 5 written\n"
-        + "on it in yellow ink.\n"; 
+        + "on it in yellow ink.\n";
 
     /**
      * The action string for using the 'key' item on the open drawer.

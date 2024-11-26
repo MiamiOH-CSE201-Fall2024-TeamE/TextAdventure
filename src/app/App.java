@@ -1,9 +1,9 @@
 package app;
 
-import ui.strings.commands.Errors;
-
 import static ui.strings.SaveGame.SAVE_GAME;
 import static ui.strings.Input.INPUT_INDICATOR;
+
+import ui.strings.commands.Errors;
 
 import commands.Command;
 import game.Input;

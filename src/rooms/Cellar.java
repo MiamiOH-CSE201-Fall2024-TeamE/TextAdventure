@@ -1,8 +1,7 @@
 package rooms;
 
 import static app.App.stateManager;
-import static items.Item.removeFromInventory;
-import static items.Item.getItem;
+import static items.Item.*;
 
 import static ui.strings.rooms.Cellar.*;
 import static ui.strings.rooms.Kitchen.TONGS;
@@ -26,7 +25,7 @@ public class Cellar extends Room {
      * The slots the user has to place the wine into.
      */
     private Item[] slots;
-    
+
     /**
      * The correct order of the wine.
      */
@@ -41,7 +40,7 @@ public class Cellar extends Room {
      * The solution the the number pad.
      */
     private int[] correctNumberPad;
-    
+
     /**
      * Whether or not the lab door is opened.
      */
@@ -66,7 +65,7 @@ public class Cellar extends Room {
             new Item(WINE_1, DESC_WINE_1, 1, 0, true, true),
             new Item(WINE_3, DESC_WINE_3, 1, 0, true, true)
         };
-        
+
         numberPad = new int[4];
         correctNumberPad = new int[] { 7, 4, 3, 5 };
     }
@@ -106,7 +105,7 @@ public class Cellar extends Room {
     public boolean use(String toUse, String useOn) {
 
         // Using wine
-        if (toUse.equalsIgnoreCase(WINE_1) 
+        if (toUse.equalsIgnoreCase(WINE_1)
          || toUse.equalsIgnoreCase(WINE_2)
          || toUse.equalsIgnoreCase(WINE_3)
          || toUse.equalsIgnoreCase(WINE_4)
@@ -150,8 +149,8 @@ public class Cellar extends Room {
 
                 if (wine != null) {
                     System.out.println(SWAP_WINES.formatted(
-                        toUse, 
-                        wine.toString(), 
+                        toUse,
+                        wine.toString(),
                         wine.toString()
                     ));
                     stateManager.getPlayer().getInventory().add(wine);
@@ -160,7 +159,7 @@ public class Cellar extends Room {
                 }
 
                 slots[index] = getItem(toUse);
-                
+
                 if (stateManager.getPlayer().getInventory().get(toUse) != null) {
                     Item temp = getItem(toUse);
                     removeFromInventory(toUse);
@@ -174,7 +173,7 @@ public class Cellar extends Room {
                 return true;
             }
         }
-        
+
         // Using the tongs
         if (toUse.equalsIgnoreCase(TONGS)) {
 
@@ -185,7 +184,7 @@ public class Cellar extends Room {
 
             if (useOn.equalsIgnoreCase(VENT)) {
                 System.out.println(USE_TONGS_ON_VENT);
-                
+
                 // Remove crowbar from room's inventory and add to player's
                 removeFromInventory(CROWBAR);
                 removeFromInventory(VENT);
@@ -200,7 +199,7 @@ public class Cellar extends Room {
             runNumberPad();
             return true;
         }
-        
+
         return super.use(toUse, useOn);
     }
 
@@ -235,21 +234,21 @@ public class Cellar extends Room {
 
     /**
      * Returns the current layout of the slots in this room.
-     * 
+     *
      * @return The slots the user has to place the wine into.
      */
     public Item[] getSlots() { return slots; }
 
     /**
      * Returns whether or not the door is currently opened.
-     * 
+     *
      * @return Whether or not the door is currently opened.
      */
     public boolean doorOpened() { return doorOpened; }
 
     /**
      * Checks if the order of the wine is correct.
-     * 
+     *
      * @return True if the combination is correct, false otherwise.
      */
     private boolean checkWineCorrect() {
@@ -263,7 +262,7 @@ public class Cellar extends Room {
 
     /**
      * Checks if the number pad combination is correct.
-     * 
+     *
      * @return True if the combination is correct, false otherwise.
      */
     private boolean checkNumberPadCorrect() {
@@ -312,7 +311,7 @@ public class Cellar extends Room {
             System.out.println(SIGN_ACTIVATED);
             getInventory().add(new Item(SIGN, DESC_SIGN, 1, 0, false, false));
         }
-    }    
+    }
 
     @Override
     public String toString() {

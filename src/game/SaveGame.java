@@ -1,6 +1,7 @@
 package game;
 
 import static app.App.stateManager;
+
 import static ui.strings.SaveGame.GAME_SAVED;
 
 import java.io.File;
@@ -73,7 +74,7 @@ public class SaveGame {
                 saveFile.printf("lab.ingredient1: %s\n", (ingredients[0] == null) ? "NULL" : ingredients[0].toString());
                 saveFile.printf("lab.ingredient2: %s\n", (ingredients[1] == null) ? "NULL" : ingredients[1].toString());
                 saveFile.printf("lab.ingredient3: %s\n", (ingredients[2] == null) ? "NULL" : ingredients[2].toString());
-                
+
                 saveFile.printf("lab.size: %d\n", labSize);
                 saveFile.printf("lab.isScientistAlive: %s\n", isScientistAlive);
             }

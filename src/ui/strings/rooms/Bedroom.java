@@ -106,7 +106,7 @@ public class Bedroom {
     public static final String DESC_NIGHTSTAND_BROKEN
         = "The nightstand lies tilted slightly to one side, its drawer splintered\n"
         + "around the lock. Inside the drawer is a large, steel key.\n";
-        
+
     /**
      * The description string for the empty 'nightstand' item.
      */
@@ -211,7 +211,7 @@ public class Bedroom {
     public static final String USE_CROWBAR_ON_NIGHTSTAND
         = "You pry the nightstand drawer open with the crowbar, splintering the\n"
         + "wood as the drawer slides open. Inside is a large, steel key.\n";
-    
+
     /**
      * The diary's full description (for 'check diary').
      */

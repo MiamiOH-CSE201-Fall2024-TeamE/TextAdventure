@@ -76,19 +76,14 @@ public class Check extends Command {
             return false;
         }
 
-
-        /* Check inventory */
-
+        // Check inventory
         if (checkingInventory) {
             System.out.println(Descriptions.INVENTORY);
             System.out.println(stateManager.getPlayer().getInventory().toString());
             return true;
         }
 
-
-        /* Check diary */
-
-        // Ensure player has diary
+        // Check diary
         if (getItem("diary") == null) {
             System.out.printf(Errors.ITEM_NOT_FOUND, "diary");
             return false;

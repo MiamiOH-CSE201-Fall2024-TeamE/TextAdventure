@@ -1,8 +1,8 @@
 package rooms;
 
-import static items.Item.*;
-import static game.StateManager.*;
 import static app.App.stateManager;
+import static game.StateManager.*;
+import static items.Item.*;
 
 import static ui.strings.rooms.Lab.*;
 import static ui.strings.rooms.Kitchen.KNIFE;
@@ -59,20 +59,20 @@ public class Lab extends Room {
         this.ingredients = ingredients;
         this.size = size;
         this.isScientistAlive = isScientistAlive;
-        
+
         correctIngredients = new Item[] {
             new Item(LEMON, DESC_LEMON, 6, 0, true, true),
             new Item(LAVENDER, DESC_LAVENDER, 6, 0, true, true),
             new Item(PORTOBELLO, DESC_PORTOBELLO, 6, 0, true, true)
         };
-        
+
         ending = END_NONE;
     }
 
     /**
      * Instantiates a new room with the room's default inventory and lock status.
      */
-    public Lab() { 
+    public Lab() {
         this(true, new Inventory(), false, new Item[3], 0, true);
 
         getInventory().add(correctIngredients[0]);
@@ -98,13 +98,13 @@ public class Lab extends Room {
 
         // Print initial load message
         System.out.println(LOAD);
-        
+
         super.load();
     }
 
     @Override
     public boolean use(String toUse, String useOn) {
-        
+
         if (toUse.equalsIgnoreCase(LEMON)
          || toUse.equalsIgnoreCase(LANTANA)
          || toUse.equalsIgnoreCase(PORTOBELLO)
@@ -128,7 +128,7 @@ public class Lab extends Room {
                     removeFromInventory(toUse);
 
                     size++;
-                    if(size == ingredients.length) {
+                    if (size == ingredients.length) {
                         machineFilled();
                     }
 
@@ -144,7 +144,7 @@ public class Lab extends Room {
     public void pickup(String toPickUp) { /* Do nothing */ }
 
     @Override
-    public String getDescription() { 
+    public String getDescription() {
         return DESCRIPTION.formatted(isScientistAlive ? "" : DESCRIPTION_SCIENTIST_PART);
     }
 
@@ -155,25 +155,25 @@ public class Lab extends Room {
 
     /**
      * Returns a list of ingredients currently in the machine.
-     * 
+     *
      * @return The ingredients currently in the machine.
      */
     public Item[] getIngredients() { return ingredients; }
 
     /**
      * Returns the size of the ingredients list.
-     * 
+     *
      * @return The size of the ingredients list.
      */
     public int getSize() { return size; }
 
     /**
      * Returns whether or not the scientist is still alive.
-     * 
+     *
      * @return Whether or not the scientist is still alive.
      */
     public boolean isScientistAlive() { return isScientistAlive; }
-    
+
     /**
      * Handles events once the machine is filled. Will check if the solution is
      *     correct and run the scientist encounter if the scientist is alive and
@@ -203,11 +203,11 @@ public class Lab extends Room {
             }
         }
     }
-    
+
     /**
      * Handles player interaction when the scientist spawns.
      */
-    public void runScientistEncounter() {  
+    public void runScientistEncounter() {
         System.out.println(SCIENTIST_APPEARS);
 
         if (Input.getConfirmation(FIGHT_PROMPT)) {
@@ -227,7 +227,7 @@ public class Lab extends Room {
 
     /**
      * Checks if the cure solution is correct.
-     * 
+     *
      * @return True if the cure is correct, false otherwise.
      */
     public boolean checkCorrect() {
@@ -241,7 +241,7 @@ public class Lab extends Room {
 
     /**
      * Returns the current ending state of the room.
-     * 
+     *
      * @return One of END_NONE, END_1ST_TRY, END_SCI_DIE, END_SCI_RUN,
      *         END_2ND_TRY, or END_FAIL.
      */

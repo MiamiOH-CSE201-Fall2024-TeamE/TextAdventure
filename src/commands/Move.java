@@ -6,8 +6,9 @@ import ui.strings.commands.Actions;
 import ui.strings.commands.Aliases;
 import ui.strings.commands.Descriptions;
 import ui.strings.commands.Errors;
-import rooms.Foyer;
+
 import rooms.Room;
+import rooms.Foyer;
 
 /**
  * Defines the logic for the 'move' command.

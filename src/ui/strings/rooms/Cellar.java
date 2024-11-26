@@ -93,13 +93,13 @@ public class Cellar {
     /**
      * The name string for the 'sign' item.
      */
-    public static final String SIGN 
+    public static final String SIGN
         = "sign";
 
     /**
      * The name string for the 'numberpad' item.
      */
-    public static final String NUMBER_PAD 
+    public static final String NUMBER_PAD
         = "numberpad";
 
     /**
@@ -207,14 +207,14 @@ public class Cellar {
     /**
      * The description string for the 'sign' item.
      */
-     public static final String DESC_SIGN 
+     public static final String DESC_SIGN
      = "A large, green neon sign shines on the wall, vibrantly displaying\n"
      + "the number 4.\n";
 
     /**
      * The description string for the 'numberpad' item.
      */
-    public static final String DESC_NUMBER_PAD 
+    public static final String DESC_NUMBER_PAD
         = "It appears similar to a typical numberpad lock, but each digit along\n"
         + "the top is marked with a color: red, green, blue, and yellow.\n";
 
@@ -224,7 +224,7 @@ public class Cellar {
     public static final String USE_WINE_ON_NULL
         = "You open the wine and take a sip. It tastes very bitter and unpleasant,\n"
         + "causing you to recoil in disgust. Perhaps this wasn't meant for drinking.\n";
-    
+
     /**
      * The action string for using tongs bby themselves.
      */

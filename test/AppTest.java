@@ -23,7 +23,7 @@ public class AppTest {
 
     private static InputStream stdin;
     private static PrintStream stdout;
-    
+
     private static ByteArrayOutputStream out;
 
     @BeforeAll
@@ -47,7 +47,7 @@ public class AppTest {
     @Test
     @Timeout(value = 5, unit = SECONDS)
     public void testExitApp() {
-        
+
         setInput("exit\n"
                + "y\n"
                + "n\n");
@@ -59,7 +59,7 @@ public class AppTest {
 
     /**
      * Sets System.in to a specific input string for testing.
-     * 
+     *
      * @param input The input string for the application to read.
      */
     private static void setInput(String input) {
@@ -68,7 +68,7 @@ public class AppTest {
 
     /**
      * Retrieves the program's output after running.
-     * 
+     *
      * @return The program's output.
      */
     private static String getOutput() {

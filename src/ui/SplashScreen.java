@@ -45,7 +45,7 @@ public class SplashScreen {
             case StateManager.END_1ST_TRY:
                 System.out.println(TRUE_ENDING);
                 break;
-                
+
             case StateManager.END_SCI_DIE:
                 System.out.println(SCI_DIE_ENDING);
                 break;

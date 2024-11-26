@@ -47,7 +47,7 @@ public class Foyer extends Room {
 
     @Override
     public void load() {
-        stateManager.getCountdown().setTurns(10);  // TODO: Balance changes
+        stateManager.getCountdown().setTurns(10);
 
         // Unlock main manor rooms
         stateManager.getRoom(Bedroom.NAME).unlock();

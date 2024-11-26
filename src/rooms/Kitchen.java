@@ -1,7 +1,7 @@
 package rooms;
 
-import static items.Item.*;
 import static app.App.stateManager;
+import static items.Item.*;
 
 import static ui.strings.rooms.Kitchen.*;
 import static ui.strings.rooms.Bedroom.KEY;
@@ -46,7 +46,7 @@ public class Kitchen extends Room {
     }
 
     @Override
-    public boolean use(String toUse, String useOn) { 
+    public boolean use(String toUse, String useOn) {
 
         // Player opens oven
         if (toUse.equalsIgnoreCase(OVEN)) {
@@ -55,7 +55,7 @@ public class Kitchen extends Room {
             removeFromInventory(OVEN);
             getInventory().add(new Item(OVEN, DESC_OVEN_OPEN, 1, 1, false, false));
             stateManager.getPlayer().getInventory().add(new Item(COAL, DESC_COAL, 1, 1, true, true));
-            
+
             return true;
         }
 
@@ -66,11 +66,11 @@ public class Kitchen extends Room {
                 System.out.println(USE_KEY_ON_NULL);
                 return true;
             }
-            
+
             if (useOn.equalsIgnoreCase(DRAWER)) {
                 // Get the current drawer item
                 Item drawer = getItem(DRAWER);
-                
+
                 // Check if the drawer is locked based on its description
                 if (drawer.getDescription().equals(DESC_DRAWER_LOCKED)) {
                     // Changes locked drawer to open
@@ -81,7 +81,7 @@ public class Kitchen extends Room {
 
                     // Player can then get the number hint for the lab
                     getInventory().add(new Item(PAPER, DESC_PAPER, 1, 0, true, false));
-                    
+
                     return true;
                 } else {
                     // If used on open drawer
@@ -96,7 +96,7 @@ public class Kitchen extends Room {
     }
 
     @Override
-    public void pickup(String toPickUp) { /* Do nothing */ } 
+    public void pickup(String toPickUp) { /* Do nothing */ }
 
     @Override
     public String getDescription() {
@@ -132,10 +132,10 @@ public class Kitchen extends Room {
                 ? DESCRIPTION_LOCKED_DRAWER_PART
                 : DESCRIPTION_OPEN_DRAWER_PART
         );
-    } 
+    }
 
     @Override
-    public String toString() { 
-        return NAME; 
+    public String toString() {
+        return NAME;
     }
 }

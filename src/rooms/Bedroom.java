@@ -152,19 +152,19 @@ public class Bedroom extends Room {
         Item diary = getInventory().get(DIARY);
 
         return DESCRIPTION.formatted(
-            
+
             (nightstand.getDescription().equals(DESC_NIGHTSTAND))
                 ? DESCRIPTION_NIGHTSTAND_PART
                 : DESCRIPTION_BROKEN_NIGHTSTAND_PART,
-            
+
             (diary == null)
                 ? DESCRIPTION_NO_DIARY_PART
                 : DESCRIPTION_DIARY_PART,
-            
+
             (board == null)
                 ? DESCRIPTION_NO_BOARD_PART
                 : DESCRIPTION_BOARD_PART,
-            
+
             (safe.getDescription().equals(DESC_SAFE_LARGE))
                 ? DESCRIPTION_ALL_CLOSED_PART
                 : (safe.getDescription().equals(DESC_SAFE_SMALL))
