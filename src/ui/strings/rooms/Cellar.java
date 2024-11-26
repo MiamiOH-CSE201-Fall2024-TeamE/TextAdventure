@@ -309,7 +309,10 @@ public class Cellar {
         + "    - Slot E: Wine %s\n"
         + "\n"
         + "%s"
-        + "%s";
+        + "%s"
+        + "\n"
+        + "In the corner is a dark, mysterious metal vent, darkness behind its\n"
+        + "iron bars...\n";
     public static final String DESCRIPTION_SIGN_PART
         = "A bright green neon sign shines above the table, displaying\n"
         + "the number 4.\n"
