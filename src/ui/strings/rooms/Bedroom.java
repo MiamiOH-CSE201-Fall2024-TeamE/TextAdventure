@@ -241,7 +241,7 @@ public class Bedroom {
         + "      of the wines in slots D and E.\n"
         + "    - Wine 4 is to the left of wine 5.\n"
         + "    - Wine 1 is two to the right of wine 4.\n"
-        + "    - Wine 3 is at one end.\n"
+        + "    - Wine 3 is at the end.\n"
         + "\n"
         + "Page Four\n"
         + "  Once in the lab, to make the cure you will need 3 ingredients,\n"
