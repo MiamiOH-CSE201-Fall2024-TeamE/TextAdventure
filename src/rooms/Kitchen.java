@@ -54,7 +54,7 @@ public class Kitchen extends Room {
 
             removeFromInventory(OVEN);
             getInventory().add(new Item(OVEN, DESC_OVEN_OPEN, 1, 1, false, false));
-            stateManager.getPlayer().getInventory().add(new Item(COAL, DESC_COAL, 1, 1, true, true));
+            getInventory().add(new Item(COAL, DESC_COAL, 1, 1, true, true));
 
             return true;
         }

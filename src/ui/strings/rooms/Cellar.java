@@ -197,12 +197,12 @@ public class Cellar {
      */
     public static final String DESC_POSTER
         = "The poster is faded, but upon closer inspection, you can see that it reads:\n"
-        + "\tBe safe! When foraging for mushrooms, know which ones are toxic!\n"
-        + "Underneath, 4 different types of mushroom are listed:"
-        + "  - Deathcap\n"
-        + "  - Destroying angel\n"
-        + "  - Webcap\n"
-        + "  - Tigercap\n";
+        + "\nBe safe! When foraging for mushrooms, know which ones are toxic!\n"
+        + "Underneath, 4 different types of mushroom are listed: \n"
+        + "\t  - Deathcap\n"
+        + "\t  - Destroying angel\n"
+        + "\t  - Webcap\n"
+        + "\t  - Tigercap\n";
 
     /**
      * The description string for the 'sign' item.
@@ -312,7 +312,8 @@ public class Cellar {
         + "%s"
         + "\n"
         + "In the corner is a dark, mysterious metal vent, darkness behind its\n"
-        + "iron bars...\n";
+        + "iron bars...\n"
+        + "\nAbove the vent is an old poster. It's text has faded over time.\n";
     public static final String DESCRIPTION_SIGN_PART
         = "A bright green neon sign shines above the table, displaying\n"
         + "the number 4.\n"
