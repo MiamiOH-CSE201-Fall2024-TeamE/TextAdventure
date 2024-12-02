@@ -75,7 +75,8 @@ public class SplashScreen {
         + "\n"
         + "His personal manor...\n"
         + "\n"
-        + "------------------------------------------------------------------\n";
+        + "------------------------------------------------------------------\n"
+        + "\n<type HELP to learn the list of commands> \n";
 
     /**
      * The splash screen text for saving/quitting the game.
