@@ -1,6 +1,5 @@
 package rooms;
 
-import static app.App.stateManager;
 import static items.Item.*;
 
 import static ui.strings.rooms.Kitchen.*;
